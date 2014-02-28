@@ -23,6 +23,13 @@ class ActorTest extends ModelTest
         $this->assertInstanceOf('\Xabbuh\XApiCommon\Model\Agent', $actor);
     }
 
+    public function testDeserializeAgentWithoutObjectType()
+    {
+        $actor = $this->deserialize($this->loadFixture('agent_without_object_type'));
+
+        $this->assertInstanceOf('\Xabbuh\XApiCommon\Model\Agent', $actor);
+    }
+
     public function testDeserializeGroup()
     {
         $actor = $this->deserialize($this->loadFixture('group'));
