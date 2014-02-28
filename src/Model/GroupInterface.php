@@ -12,37 +12,37 @@
 namespace Xabbuh\XApiCommon\Model;
 
 /**
- * A group of {@link Agent Agents} of a {@link Statement}.
+ * A group of {@link AgentInterface Agents} of a {@link StatementInterface}.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-interface GroupInterface extends ActorInterface
+interface GroupInterface extends ActorInterface, Object
 {
     /**
      * Adds a member to this group.
      *
-     * @param AgentInterface $agent The member to add
+     * @param \Xabbuh\XApiCommon\Model\AgentInterface $agent The member to add
      */
     public function addMember(AgentInterface $agent);
 
     /**
      * Removes a member.
      *
-     * @param AgentInterface $agent The member to remove
+     * @param \Xabbuh\XApiCommon\Model\AgentInterface $agent The member to remove
      */
     public function removeMember(AgentInterface $agent);
 
     /**
      * Sets the members of this group.
      *
-     * @param AgentInterface[] $members The members
+     * @param \Xabbuh\XApiCommon\Model\AgentInterface[] $members The members
      */
     public function setMembers(array $members);
 
     /**
      * Returns the members of this group.
      *
-     * @return AgentInterface[] The members
+     * @return \Xabbuh\XApiCommon\Model\AgentInterface[] The members
      */
     public function getMembers();
 }

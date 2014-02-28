@@ -12,9 +12,9 @@
 namespace Xabbuh\XApiCommon\Tests\Model;
 
 use JMS\Serializer\EventDispatcher\EventDispatcher;
-use JMS\Serializer\SerializationContext;
 use JMS\Serializer\SerializerBuilder;
 use Xabbuh\XApiCommon\Serializer\Event\ActorEventSubscriber;
+use Xabbuh\XApiCommon\Serializer\Event\ObjectEventSubscriber;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -34,6 +34,7 @@ abstract class ModelTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->subscribers[] = new ActorEventSubscriber();
+        $this->subscribers[] = new ObjectEventSubscriber();
         $subscribers = $this->subscribers;
 
         $builder = SerializerBuilder::create();
