@@ -1,0 +1,27 @@
+{
+    "name": "xabbuh/xapi-common",
+    "type": "library",
+    "description": "base package for Experience API implementations",
+    "keywords": ["xAPI", "Experience API", "Tin Can API"],
+    "homepage": "https://github.com/xabbuh/xapi-common",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Flothmann",
+            "homepage": "https://github.com/xabbuh"
+        }
+    ],
+    "require": {
+        "jms/serializer": "~0.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xabbuh\\XApiCommon\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
