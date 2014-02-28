@@ -11,8 +11,6 @@
 
 namespace Xabbuh\XApiCommon\Model;
 
-use JMS\Serializer\Annotation as JMS;
-
 /**
  * A group of {@link Agent Agents} of a {@link Statement}.
  *
@@ -23,8 +21,6 @@ class Group extends Actor implements GroupInterface
     /**
      * The members of the Group
      * @var AgentInterface[]
-     * @JMS\SerializedName("member")
-     * @JMS\Type("array<Xabbuh\XApiCommon\Model\Agent>")
      */
     protected $members = array();
 

@@ -11,8 +11,6 @@
 
 namespace Xabbuh\XApiCommon\Model;
 
-use JMS\Serializer\Annotation as JMS;
-
 /**
  * Definition of an {@link ActivityInterface Activity}.
  *
@@ -23,21 +21,18 @@ class Definition implements DefinitionInterface
     /**
      * The human readable activity name
      * @var array
-     * @JMS\Type("array<string,string>")
      */
     protected $name;
 
     /**
      * The human readable activity description
      * @var array
-     * @JMS\Type("array<string,string>")
      */
     protected $description;
 
     /**
      * The type of the {@link ActivityInterface Activity}
      * @var string
-     * @JMS\Type("string")
      */
     protected $type;
 

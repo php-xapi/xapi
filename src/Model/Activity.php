@@ -11,8 +11,6 @@
 
 namespace Xabbuh\XApiCommon\Model;
 
-use JMS\Serializer\Annotation as JMS;
-
 /**
  * An Activity in a {@StatementInterface}.
  *
@@ -23,14 +21,12 @@ class Activity implements ActivityInterface
     /**
      * The Activity's unique identifier
      * @var string
-     * @JMS\Type("string")
      */
     protected $id;
 
     /**
      * The Activity's {@link DefinitionInterface Definition}
      * @var \Xabbuh\XApiCommon\Model\DefinitionInterface
-     * @JMS\Type("Xabbuh\XApiCommon\Model\Definition")
      */
     protected $definition;
 

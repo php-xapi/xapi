@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serializer>
+    <class name="Xabbuh\XApiCommon\Model\Activity" exclusion-policy="ALL">
+        <property name="id" type="string" expose="true" />
+        <property name="definition"
+            type="Xabbuh\XApiCommon\Model\Definition"
+            expose="true"
+        />
+    </class>
+</serializer>

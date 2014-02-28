@@ -11,50 +11,40 @@
 
 namespace Xabbuh\XApiCommon\Model;
 
-use JMS\Serializer\Annotation as JMS;
-
 /**
  * The Actor of a {@link Statement}.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
- *
- * @JMS\Discriminator(field="objectType", map={"Agent": "Xabbuh\XApiCommon\Model\Agent", "Group": "Xabbuh\XApiCommon\Model\Group"})
  */
 class Actor implements ActorInterface
 {
     /**
      * Name of the {@link Agent} or {@link Group}
      * @var string
-     * @JMS\Type("string")
      */
     protected $name;
 
     /**
      * A mailto IRI
      * @var string
-     * @JMS\Type("string")
      */
     protected $mbox;
 
     /**
      * The SHA1 hash of a mailto IRI
      * @var string
-     * @JMS\Type("string")
      */
     protected $mboxSha1Sum;
 
     /**
      * An openID uniquely identifying an Agent
      * @var string
-     * @JMS\SerializedName("openid")
-     * @JMS\Type("string")
      */
     protected $openId;
 
     /**
      * A user account on an existing system
      * @var AccountInterface
-     * @JMS\Type("Xabbuh\XApiCommon\Model\Account")
      */
     protected $account;
 

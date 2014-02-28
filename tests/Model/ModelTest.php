@@ -38,6 +38,7 @@ abstract class ModelTest extends \PHPUnit_Framework_TestCase
         $subscribers = $this->subscribers;
 
         $builder = SerializerBuilder::create();
+        $builder->addMetadataDir(__DIR__.'/../../metadata/serializer');
         $builder->configureListeners(
             function (EventDispatcher $dispatcher) use ($subscribers) {
                 foreach ($subscribers as $subscriber) {

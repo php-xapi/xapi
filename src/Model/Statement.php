@@ -11,8 +11,6 @@
 
 namespace Xabbuh\XApiCommon\Model;
 
-use JMS\Serializer\Annotation as JMS;
-
 /**
  * An Experience API {@link https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md#statement Statement}.
  *
@@ -23,28 +21,24 @@ class Statement implements StatementInterface
     /**
      * The unique identifier
      * @var string
-     * @JMS\Type("string")
      */
     protected $id;
 
     /**
      * The {@link VerbInterface Verb}
      * @var \Xabbuh\XApiCommon\Model\VerbInterface $verb
-     * @JMS\Type("Xabbuh\XApiCommon\Model\Verb")
      */
     protected $verb;
 
     /**
      * The {@ActorInterface Actor}
      * @var \Xabbuh\XApiCommon\Model\ActorInterface
-     * @JMS\Type("Xabbuh\XApiCommon\Model\Actor")
      */
     protected $actor;
 
     /**
      * The {@link Object}
      * @var \Xabbuh\XApiCommon\Model\Object
-     * @JMS\Type("Xabbuh\XApiCommon\Model\Object")
      */
     protected $object;
 

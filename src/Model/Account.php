@@ -11,8 +11,6 @@
 
 namespace Xabbuh\XApiCommon\Model;
 
-use JMS\Serializer\Annotation as JMS;
-
 /**
  * A user account on an existing system.
  *
@@ -23,15 +21,12 @@ class Account implements AccountInterface
     /**
      * Canonical home page for the system the account is on
      * @var string
-     * @JMS\Type("string")
-     * @JMS\SerializedName("homePage")
      */
     protected $homePage;
 
     /**
      * The unique id or name used to log in to this account
      * @var string
-     * @JMS\Type("string")
      */
     protected $name;
 
