@@ -12,7 +12,8 @@
         }
     ],
     "require": {
-        "jms/serializer": "~0.11"
+        "jms/serializer": "~0.11",
+        "symfony/validator": "~2.2"
     },
     "autoload": {
         "psr-4": {

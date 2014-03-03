@@ -13,6 +13,7 @@ namespace Xabbuh\XApiCommon\Tests\Model;
 
 use JMS\Serializer\EventDispatcher\EventDispatcher;
 use JMS\Serializer\SerializerBuilder;
+use Symfony\Component\Validator\Validation;
 use Xabbuh\XApiCommon\Serializer\Event\ActorEventSubscriber;
 use Xabbuh\XApiCommon\Serializer\Event\ObjectEventSubscriber;
 
@@ -31,6 +32,11 @@ abstract class ModelTest extends \PHPUnit_Framework_TestCase
      */
     protected $subscribers = array();
 
+    /**
+     * @var \Symfony\Component\Validator\Validator
+     */
+    protected $validator;
+
     protected function setUp()
     {
         $this->subscribers[] = new ActorEventSubscriber();
@@ -47,6 +53,10 @@ abstract class ModelTest extends \PHPUnit_Framework_TestCase
             }
         );
         $this->serializer = $builder->build();
+
+        $this->validator = Validation::createValidatorBuilder()
+            ->addXmlMapping(__DIR__.'/../../metadata/validator/Statement.xml')
+            ->getValidator();
     }
 
     protected function loadFixture($name)
@@ -70,5 +80,10 @@ abstract class ModelTest extends \PHPUnit_Framework_TestCase
     {
         $actual = $this->serialize($data);
         $this->assertEquals(json_decode($expected), json_decode($actual));
+    }
+
+    protected function loadAndDeserialize($name)
+    {
+        return $this->deserialize($this->loadAndDeserialize($name));
     }
 }

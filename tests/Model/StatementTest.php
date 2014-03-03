@@ -72,4 +72,67 @@ class StatementTest extends ModelTest
             $statement
         );
     }
+
+    public function testValidateMinimalStatement()
+    {
+        $statement = $this->loadAndDeserialize('minimal_statement');
+
+        $this->validateStatement($statement, 0);
+    }
+
+    public function testValidStatement()
+    {
+        $statement = new Statement();
+        $statement->setId(md5(uniqid()));
+        $statement->setActor(new Actor());
+        $statement->setVerb(new Verb());
+        $statement->setObject(new Activity());
+
+        $this->validateStatement($statement, 0);
+    }
+
+    public function testWithoutId()
+    {
+        $statement = new Statement();
+        $statement->setActor(new Actor());
+        $statement->setVerb(new Verb());
+        $statement->setObject(new Activity());
+
+        $this->validateStatement($statement, 1);
+    }
+
+    public function testWithoutActor()
+    {
+        $statement = new Statement();
+        $statement->setId(md5(uniqid()));
+        $statement->setVerb(new Verb());
+        $statement->setObject(new Activity());
+
+        $this->validateStatement($statement, 1);
+    }
+
+    public function testWithoutVerb()
+    {
+        $statement = new Statement();
+        $statement->setId(md5(uniqid()));
+        $statement->setActor(new Actor());
+        $statement->setObject(new Activity());
+
+        $this->validateStatement($statement, 1);
+    }
+
+    public function testWithoutObject()
+    {
+        $statement = new Statement();
+        $statement->setId(md5(uniqid()));
+        $statement->setActor(new Actor());
+        $statement->setVerb(new Verb());
+
+        $this->validateStatement($statement, 1);
+    }
+
+    private function validateStatement(Statement $statement, $violationCount)
+    {
+        $this->assertEquals($violationCount, $this->validator->validate($statement)->count());
+    }
 }
