@@ -13,6 +13,7 @@
     ],
     "require": {
         "jms/serializer": "~0.11",
+        "symfony/config": "~2.2",
         "symfony/validator": "~2.2"
     },
     "autoload": {
