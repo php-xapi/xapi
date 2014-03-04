@@ -36,4 +36,26 @@ class AgentTest extends ModelTest
 
         $this->serializeAndValidateData($this->loadFixture('agent'), $agent);
     }
+
+    public function testValidateAgent()
+    {
+        $agent = $this->loadAndDeserialize('agent');
+
+        $this->validateAgent($agent, 0);
+    }
+
+    public function testValidateAgentWithoutInverseFunctionalIdentifier()
+    {
+        $agent = new Agent();
+
+        $this->validateAgent($agent, 1);
+    }
+
+    private function validateAgent(Agent $agent, $validationCount)
+    {
+        $this->assertEquals(
+            $validationCount,
+            $this->validator->validate($agent)->count()
+        );
+    }
 }

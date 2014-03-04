@@ -19,6 +19,13 @@ namespace Xabbuh\XApiCommon\Model;
 interface ActorInterface
 {
     /**
+     * Returns the Actor's inverse functional identifier.
+     *
+     * @return string The inverse functional identifier
+     */
+    public function getInverseFunctionalIdentifier();
+
+    /**
      * Sets the name of the {@link Agent} or {@link Group}.
      *
      * @param string $name The name

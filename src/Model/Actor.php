@@ -51,6 +51,30 @@ class Actor implements ActorInterface
     /**
      * {@inheritDoc}
      */
+    public function getInverseFunctionalIdentifier()
+    {
+        if (null !== $this->mbox) {
+            return $this->mbox;
+        }
+
+        if (null !== $this->mboxSha1Sum) {
+            return $this->mboxSha1Sum;
+        }
+
+        if (null !== $this->openId) {
+            return $this->openId;
+        }
+
+        if (null !== $this->account) {
+            return $this->account;
+        }
+
+        return null;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function setName($name)
     {
         $this->name = $name;

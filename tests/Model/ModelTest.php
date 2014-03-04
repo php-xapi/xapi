@@ -55,6 +55,8 @@ abstract class ModelTest extends \PHPUnit_Framework_TestCase
         $this->serializer = $builder->build();
 
         $this->validator = Validation::createValidatorBuilder()
+            ->addXmlMapping(__DIR__.'/../../metadata/validator/Agent.xml')
+            ->addXmlMapping(__DIR__.'/../../metadata/validator/Group.xml')
             ->addXmlMapping(__DIR__.'/../../metadata/validator/Statement.xml')
             ->getValidator();
     }
@@ -84,6 +86,6 @@ abstract class ModelTest extends \PHPUnit_Framework_TestCase
 
     protected function loadAndDeserialize($name)
     {
-        return $this->deserialize($this->loadAndDeserialize($name));
+        return $this->deserialize($this->loadFixture($name));
     }
 }

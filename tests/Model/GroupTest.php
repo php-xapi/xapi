@@ -59,4 +59,26 @@ class GroupTest extends ModelTest
 
         $this->serializeAndValidateData($this->loadFixture('group'), $group);
     }
+
+    public function testValidateAnonymousGroup()
+    {
+        $group = $this->loadAndDeserialize('anonymous_group');
+
+        $this->validateGroup($group, 'anonymous', 0);
+    }
+
+    public function testValidateIdentifiedGroup()
+    {
+        $group = $this->loadAndDeserialize('group');
+
+        $this->validateGroup($group, 'identified', 0);
+    }
+
+    private function validateGroup(Group $group, $validationGroup, $validationCount)
+    {
+        $this->assertEquals(
+            $validationCount,
+            $this->validator->validate($group, array($validationGroup))->count()
+        );
+    }
 }
