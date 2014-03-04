@@ -55,6 +55,7 @@ abstract class ModelTest extends \PHPUnit_Framework_TestCase
         $this->serializer = $builder->build();
 
         $this->validator = Validation::createValidatorBuilder()
+            ->addXmlMapping(__DIR__.'/../../metadata/validator/Activity.xml')
             ->addXmlMapping(__DIR__.'/../../metadata/validator/Agent.xml')
             ->addXmlMapping(__DIR__.'/../../metadata/validator/Group.xml')
             ->addXmlMapping(__DIR__.'/../../metadata/validator/Statement.xml')

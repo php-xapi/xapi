@@ -70,4 +70,26 @@ class ActivityTest extends ModelTest
             $activity
         );
     }
+
+    public function testValidateActivity()
+    {
+        $activity = $this->loadAndDeserialize('activity');
+
+        $this->validateActivity($activity, 0);
+    }
+
+    public function testValidateActivityWithoutId()
+    {
+        $activity = new Activity();
+
+        $this->validateActivity($activity, 1);
+    }
+
+    private function validateActivity(Activity $activity, $violationCount)
+    {
+        $this->assertEquals(
+            $violationCount,
+            $this->validator->validate($activity)->count()
+        );
+    }
 }
