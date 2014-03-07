@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <serializer>
-    <class name="Xabbuh\XApiCommon\Model\Account" exclusion-policy="ALL">
+    <class name="Xabbuh\XApi\Common\Model\Account" exclusion-policy="ALL">
         <property name="homePage"
             type="string"
             serialized-name="homePage"

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApiCommon\Tests\Model;
+namespace Xabbuh\XApi\Common\Tests\Model;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -20,20 +20,20 @@ class ActorTest extends ModelTest
     {
         $actor = $this->deserialize($this->loadFixture('agent'));
 
-        $this->assertInstanceOf('\Xabbuh\XApiCommon\Model\Agent', $actor);
+        $this->assertInstanceOf('\Xabbuh\XApi\Common\Model\Agent', $actor);
     }
 
     public function testDeserializeAgentWithoutObjectType()
     {
         $actor = $this->deserialize($this->loadFixture('agent_without_object_type'));
 
-        $this->assertInstanceOf('\Xabbuh\XApiCommon\Model\Agent', $actor);
+        $this->assertInstanceOf('\Xabbuh\XApi\Common\Model\Agent', $actor);
     }
 
     public function testDeserializeGroup()
     {
         $actor = $this->deserialize($this->loadFixture('group'));
 
-        $this->assertInstanceOf('\Xabbuh\XApiCommon\Model\Group', $actor);
+        $this->assertInstanceOf('\Xabbuh\XApi\Common\Model\Group', $actor);
     }
 }

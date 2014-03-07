@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApiCommon\Model;
+namespace Xabbuh\XApi\Common\Model;
 
 /**
  * An Experience API {@link https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md#statement Statement}.
@@ -26,19 +26,19 @@ class Statement implements StatementInterface
 
     /**
      * The {@link VerbInterface Verb}
-     * @var \Xabbuh\XApiCommon\Model\VerbInterface $verb
+     * @var \Xabbuh\XApi\Common\Model\VerbInterface $verb
      */
     protected $verb;
 
     /**
      * The {@ActorInterface Actor}
-     * @var \Xabbuh\XApiCommon\Model\ActorInterface
+     * @var \Xabbuh\XApi\Common\Model\ActorInterface
      */
     protected $actor;
 
     /**
      * The {@link Object}
-     * @var \Xabbuh\XApiCommon\Model\Object
+     * @var \Xabbuh\XApi\Common\Model\Object
      */
     protected $object;
 

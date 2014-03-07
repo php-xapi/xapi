@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApiCommon\Tests\Model;
+namespace Xabbuh\XApi\Common\Tests\Model;
 
-use Xabbuh\XApiCommon\Model\Verb;
+use Xabbuh\XApi\Common\Model\Verb;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -20,7 +20,7 @@ class VerbTest extends ModelTest
 {
     public function testDeserialize()
     {
-        /** @var \Xabbuh\XApiCommon\Model\Verb $verb */
+        /** @var \Xabbuh\XApi\Common\Model\Verb $verb */
         $verb = $this->deserialize($this->loadFixture('verb'));
 
         $this->assertEquals(

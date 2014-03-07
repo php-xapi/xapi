@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<serializer>
-    <class name="Xabbuh\XApiCommon\Model\Statement" exclusion-policy="ALL">
-        <property name="id" type="string" expose="true" />
-        <property name="verb" type="Xabbuh\XApiCommon\Model\Verb" expose="true" />
-        <property name="actor" type="Xabbuh\XApiCommon\Model\Actor" expose="true" />
-        <property name="object" type="Xabbuh\XApiCommon\Model\Object" expose="true" />
-    </class>
-</serializer>

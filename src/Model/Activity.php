@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApiCommon\Model;
+namespace Xabbuh\XApi\Common\Model;
 
 /**
  * An Activity in a {@StatementInterface}.
@@ -26,7 +26,7 @@ class Activity implements ActivityInterface
 
     /**
      * The Activity's {@link DefinitionInterface Definition}
-     * @var \Xabbuh\XApiCommon\Model\DefinitionInterface
+     * @var \Xabbuh\XApi\Common\Model\DefinitionInterface
      */
     protected $definition;
 

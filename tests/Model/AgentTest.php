@@ -9,10 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApiCommon\Tests\Model;
+namespace Xabbuh\XApi\Common\Tests\Model;
 
-use Xabbuh\XApiCommon\Model\Agent;
-use Xabbuh\XApiCommon\Model\IFI;
+use Xabbuh\XApi\Common\Model\Agent;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -21,7 +20,7 @@ class AgentTest extends ModelTest
 {
     public function testDeserialize()
     {
-        /** @var \Xabbuh\XApiCommon\Model\Agent $agent */
+        /** @var \Xabbuh\XApi\Common\Model\Agent $agent */
         $agent = $this->deserialize($this->loadFixture('agent'));
 
         $this->assertEquals('Christian', $agent->getName());

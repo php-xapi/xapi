@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApiCommon\Tests\Model;
+namespace Xabbuh\XApi\Common\Tests\Model;
 
-use Xabbuh\XApiCommon\Model\Account;
+use Xabbuh\XApi\Common\Model\Account;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -37,7 +37,7 @@ class AccountTest extends ModelTest
 
     public function testDeserialize()
     {
-        /** @var \Xabbuh\XApiCommon\Model\Account $account */
+        /** @var \Xabbuh\XApi\Common\Model\Account $account */
         $account = $this->deserialize($this->fixture);
 
         $this->assertEquals('http://www.example.com', $account->getHomePage());

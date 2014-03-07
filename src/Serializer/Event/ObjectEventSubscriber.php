@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApiCommon\Serializer\Event;
+namespace Xabbuh\XApi\Common\Serializer\Event;
 
 use JMS\Serializer\EventDispatcher\EventSubscriberInterface;
 use JMS\Serializer\EventDispatcher\PreDeserializeEvent;
 
 /**
- * Event listener modifying {@link \Xabbuh\XApiCommon\Model\Actor} data during
+ * Event listener modifying {@link \Xabbuh\XApi\Common\Model\Actor} data during
  * the serialization and deserialization process.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -37,7 +37,7 @@ class ObjectEventSubscriber implements EventSubscriberInterface
 
     /**
      * Listener that is executed before the deserialization process takes place
-     * for {@link \Xabbuh\XApiCommon\Model\Object} instances.
+     * for {@link \Xabbuh\XApi\Common\Model\Object} instances.
      *
      * @param PreDeserializeEvent $event The event being handled
      */
@@ -45,7 +45,7 @@ class ObjectEventSubscriber implements EventSubscriberInterface
     {
         $type = $event->getType();
 
-        if ('Xabbuh\XApiCommon\Model\Object' === $type['name']) {
+        if ('Xabbuh\XApi\Common\Model\Object' === $type['name']) {
             $data = $event->getData();
 
             if (!isset($data['objectType'])) {

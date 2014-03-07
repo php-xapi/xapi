@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApiCommon\Tests\Validator;
+namespace Xabbuh\XApi\Common\Tests\Validator;
 
 use Symfony\Component\Validator\ValidatorInterface;
-use Xabbuh\XApiCommon\Validator\Validator;
+use Xabbuh\XApi\Common\Validator\Validator;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -45,16 +45,16 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $metadataFactory = $validator->getMetadataFactory();
 
         $this->assertTrue(
-            $metadataFactory->hasMetadataFor('\Xabbuh\XApiCommon\Model\Activity')
+            $metadataFactory->hasMetadataFor('\Xabbuh\XApi\Common\Model\Activity')
         );
         $this->assertTrue(
-            $metadataFactory->hasMetadataFor('\Xabbuh\XApiCommon\Model\Agent')
+            $metadataFactory->hasMetadataFor('\Xabbuh\XApi\Common\Model\Agent')
         );
         $this->assertTrue(
-            $metadataFactory->hasMetadataFor('\Xabbuh\XApiCommon\Model\Activity')
+            $metadataFactory->hasMetadataFor('\Xabbuh\XApi\Common\Model\Activity')
         );
         $this->assertTrue(
-            $metadataFactory->hasMetadataFor('\Xabbuh\XApiCommon\Model\Activity')
+            $metadataFactory->hasMetadataFor('\Xabbuh\XApi\Common\Model\Activity')
         );
     }
 }

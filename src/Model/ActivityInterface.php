@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApiCommon\Model;
+namespace Xabbuh\XApi\Common\Model;
 
 /**
  * An Activity in a {@StatementInterface}.
@@ -35,14 +35,14 @@ interface ActivityInterface extends Object
     /**
      * Sets the Activity's {@link DefinitionInterface Definition}.
      *
-     * @param \Xabbuh\XApiCommon\Model\DefinitionInterface $definition The definition
+     * @param \Xabbuh\XApi\Common\Model\DefinitionInterface $definition The definition
      */
     public function setDefinition(DefinitionInterface $definition);
 
     /**
      * Returns the Activity's {@link DefinitionInterface Definition}.
      *
-     * @return \Xabbuh\XApiCommon\Model\DefinitionInterface The Definition
+     * @return \Xabbuh\XApi\Common\Model\DefinitionInterface The Definition
      */
     public function getDefinition();
 }

@@ -9,11 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApiCommon\Tests\Model;
-use Xabbuh\XApiCommon\Model\Activity;
-use Xabbuh\XApiCommon\Model\Actor;
-use Xabbuh\XApiCommon\Model\Statement;
-use Xabbuh\XApiCommon\Model\Verb;
+namespace Xabbuh\XApi\Common\Tests\Model;
+
+use Xabbuh\XApi\Common\Model\Activity;
+use Xabbuh\XApi\Common\Model\Actor;
+use Xabbuh\XApi\Common\Model\Statement;
+use Xabbuh\XApi\Common\Model\Verb;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -22,7 +23,7 @@ class StatementTest extends ModelTest
 {
     public function testDeserializeMinimalStatement()
     {
-        /** @var \Xabbuh\XApiCommon\Model\Statement $statement */
+        /** @var \Xabbuh\XApi\Common\Model\Statement $statement */
         $statement = $this->deserialize($this->loadFixture('minimal_statement'));
 
         $this->assertEquals(

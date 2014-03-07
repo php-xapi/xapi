@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serializer>
+    <class name="Xabbuh\XApi\Common\Model\Object"
+        discriminator-field-name="objectType"
+        exclusion-policy="ALL"
+    >
+        <discriminator-class value="Activity">Xabbuh\XApi\Common\Model\Activity</discriminator-class>
+        <discriminator-class value="Agent">Xabbuh\XApi\Common\Model\Agent</discriminator-class>
+        <discriminator-class value="Group">Xabbuh\XApi\Common\Model\Group</discriminator-class>
+    </class>
+</serializer>

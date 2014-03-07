@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApiCommon\Model;
+namespace Xabbuh\XApi\Common\Model;
 
 /**
  * A group of {@link Agent Agents} of a {@link Statement}.

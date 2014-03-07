@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApiCommon\Tests\Model;
+namespace Xabbuh\XApi\Common\Tests\Model;
 
-use Xabbuh\XApiCommon\Model\Activity;
-use Xabbuh\XApiCommon\Model\Definition;
+use Xabbuh\XApi\Common\Model\Activity;
+use Xabbuh\XApi\Common\Model\Definition;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -21,7 +21,7 @@ class ActivityTest extends ModelTest
 {
     public function testDeserialize()
     {
-        /** @var \Xabbuh\XApiCommon\Model\Activity $activity */
+        /** @var \Xabbuh\XApi\Common\Model\Activity $activity */
         $activity = $this->deserialize($this->loadFixture('activity'));
 
         $this->assertEquals(

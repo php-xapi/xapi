@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <serializer>
-    <class name="Xabbuh\XApiCommon\Model\Definition" exclusion-policy="ALL">
+    <class name="Xabbuh\XApi\Common\Model\Definition" exclusion-policy="ALL">
         <property name="name" type="array&lt;string,string&gt;" expose="true" />
         <property name="description"
             type="array&lt;string,string&gt;"

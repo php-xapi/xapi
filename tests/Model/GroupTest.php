@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApiCommon\Tests\Model;
+namespace Xabbuh\XApi\Common\Tests\Model;
 
-use Xabbuh\XApiCommon\Model\Account;
-use Xabbuh\XApiCommon\Model\Agent;
-use Xabbuh\XApiCommon\Model\Group;
+use Xabbuh\XApi\Common\Model\Account;
+use Xabbuh\XApi\Common\Model\Agent;
+use Xabbuh\XApi\Common\Model\Group;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -22,7 +22,7 @@ class GroupTest extends ModelTest
 {
     public function testDeserialize()
     {
-        /** @var \Xabbuh\XApiCommon\Model\Group $group */
+        /** @var \Xabbuh\XApi\Common\Model\Group $group */
         $group = $this->deserialize($this->loadFixture('group'));
 
         $this->assertEquals('Example Group', $group->getName());

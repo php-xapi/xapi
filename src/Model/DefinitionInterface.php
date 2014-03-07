@@ -8,7 +8,7 @@
 * file that was distributed with this source code.
 */
 
-namespace Xabbuh\XApiCommon\Model;
+namespace Xabbuh\XApi\Common\Model;
 
 /**
  * Definition of an {@link ActivityInterface Activity}.

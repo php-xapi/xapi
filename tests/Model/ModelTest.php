@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApiCommon\Tests\Model;
+namespace Xabbuh\XApi\Common\Tests\Model;
 
 use JMS\Serializer\EventDispatcher\EventDispatcher;
 use JMS\Serializer\SerializerBuilder;
 use Symfony\Component\Validator\Validation;
-use Xabbuh\XApiCommon\Serializer\Event\ActorEventSubscriber;
-use Xabbuh\XApiCommon\Serializer\Event\ObjectEventSubscriber;
+use Xabbuh\XApi\Common\Serializer\Event\ActorEventSubscriber;
+use Xabbuh\XApi\Common\Serializer\Event\ObjectEventSubscriber;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>

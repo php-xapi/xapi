@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <serializer>
-    <class name="Xabbuh\XApiCommon\Model\Group" exclusion-policy="ALL">
+    <class name="Xabbuh\XApi\Common\Model\Group" exclusion-policy="ALL">
         <property name="members"
-            type="array&lt;Xabbuh\XApiCommon\Model\Agent&gt;"
+            type="array&lt;Xabbuh\XApi\Common\Model\Agent&gt;"
             serialized-name="member"
             expose="true"
         />

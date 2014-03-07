@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApiCommon\Model;
+namespace Xabbuh\XApi\Common\Model;
 
 /**
  * A group of {@link AgentInterface Agents} of a {@link StatementInterface}.
@@ -21,28 +21,28 @@ interface GroupInterface extends ActorInterface, Object
     /**
      * Adds a member to this group.
      *
-     * @param \Xabbuh\XApiCommon\Model\AgentInterface $agent The member to add
+     * @param \Xabbuh\XApi\Common\Model\AgentInterface $agent The member to add
      */
     public function addMember(AgentInterface $agent);
 
     /**
      * Removes a member.
      *
-     * @param \Xabbuh\XApiCommon\Model\AgentInterface $agent The member to remove
+     * @param \Xabbuh\XApi\Common\Model\AgentInterface $agent The member to remove
      */
     public function removeMember(AgentInterface $agent);
 
     /**
      * Sets the members of this group.
      *
-     * @param \Xabbuh\XApiCommon\Model\AgentInterface[] $members The members
+     * @param \Xabbuh\XApi\Common\Model\AgentInterface[] $members The members
      */
     public function setMembers(array $members);
 
     /**
      * Returns the members of this group.
      *
-     * @return \Xabbuh\XApiCommon\Model\AgentInterface[] The members
+     * @return \Xabbuh\XApi\Common\Model\AgentInterface[] The members
      */
     public function getMembers();
 }

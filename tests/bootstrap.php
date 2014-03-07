@@ -4,4 +4,4 @@ if (!file_exists($autoloadFile = __DIR__.'/../vendor/autoload.php')) {
 }
 
 $loader = require $autoloadFile;
-$loader->addPsr4('Xabbuh\XApiCommon\Tests\\', __DIR__);
+$loader->addPsr4('Xabbuh\XApi\Common\Tests\\', __DIR__);

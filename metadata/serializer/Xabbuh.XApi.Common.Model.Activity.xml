@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <serializer>
-    <class name="Xabbuh\XApiCommon\Model\Verb" exclusion-policy="ALL">
+    <class name="Xabbuh\XApi\Common\Model\Activity" exclusion-policy="ALL">
         <property name="id" type="string" expose="true" />
-        <property name="display"
-            type="array&lt;string,string&gt;"
+        <property name="definition"
+            type="Xabbuh\XApi\Common\Model\Definition"
             expose="true"
         />
     </class>

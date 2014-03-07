@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApiCommon\Model;
+namespace Xabbuh\XApi\Common\Model;
 
 /**
  * The Actor of a {@link Statement}.
@@ -84,7 +84,7 @@ interface ActorInterface
     /**
      * Sets the user account of an existing system.
      *
-     * @param \Xabbuh\XApiCommon\Model\AccountInterface $account The account
+     * @param \Xabbuh\XApi\Common\Model\AccountInterface $account The account
      */
     public function setAccount(AccountInterface $account);
 

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApiCommon\Model;
+namespace Xabbuh\XApi\Common\Model;
 
 /**
  * An Experience API {@link https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md#statement Statement}.
@@ -35,42 +35,42 @@ interface StatementInterface
     /**
      * Sets the Statement's {@link VerbInterface Verb}.
      *
-     * @param \Xabbuh\XApiCommon\Model\VerbInterface $verb The Verb
+     * @param \Xabbuh\XApi\Common\Model\VerbInterface $verb The Verb
      */
     public function setVerb(VerbInterface $verb);
 
     /**
      * Returns the Statement's {@link VerbInterface Verb}.
      *
-     * @return \Xabbuh\XApiCommon\Model\VerbInterface The Verb
+     * @return \Xabbuh\XApi\Common\Model\VerbInterface The Verb
      */
     public function getVerb();
 
     /**
      * Sets the Statement's {@link ActorInterface Actor}.
      *
-     * @param \Xabbuh\XApiCommon\Model\ActorInterface $actor The Actor
+     * @param \Xabbuh\XApi\Common\Model\ActorInterface $actor The Actor
      */
     public function setActor(ActorInterface $actor);
 
     /**
      * Returns the Statement's {@link ActorInterface Actor}.
      *
-     * @return \Xabbuh\XApiCommon\Model\ActorInterface The Actor
+     * @return \Xabbuh\XApi\Common\Model\ActorInterface The Actor
      */
     public function getActor();
 
     /**
      * Sets the Statement's {@link Object}.
      *
-     * @param \Xabbuh\XApiCommon\Model\Object $object The Object
+     * @param \Xabbuh\XApi\Common\Model\Object $object The Object
      */
     public function setObject(Object $object);
 
     /**
      * Returns the Statement's {@link Object}.
      *
-     * @return \Xabbuh\XApiCommon\Model\Object The Object
+     * @return \Xabbuh\XApi\Common\Model\Object The Object
      */
     public function getObject();
 }
