@@ -16,7 +16,7 @@ use Symfony\Component\Validator\ValidatorBuilderInterface;
 
 /**
  * Entry point to setup the {@link \Symfony\Component\Validator\Validator}
- * component for the eXperience API.
+ * component for the Experience API.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
