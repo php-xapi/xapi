@@ -16,7 +16,7 @@ namespace Xabbuh\XApi\Common\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-interface GroupInterface extends ActorInterface, Object
+interface GroupInterface extends ActorInterface
 {
     /**
      * Adds a member to this group.

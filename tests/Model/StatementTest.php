@@ -40,9 +40,11 @@ class StatementTest extends ModelTest
         $this->assertEquals('http://adlnet.gov/expapi/verbs/created', $verb->getId());
         $this->assertEquals('created', $display['en-US']);
 
+        /** @var \Xabbuh\XApi\Common\Model\Activity $activity */
+        $activity = $statement->getObject();
         $this->assertEquals(
             'http://example.adlnet.gov/xapi/example/activity',
-            $statement->getObject()->getId()
+            $activity->getId()
         );
     }
 
