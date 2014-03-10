@@ -9,6 +9,7 @@
         <whitelist>
             <directory>.</directory>
             <exclude>
+                <directory>./src/Exception</directory>
                 <directory>./tests</directory>
                 <directory>./vendor</directory>
             </exclude>
