@@ -50,10 +50,6 @@ class StatementTest extends ModelTest
 
     public function testSerializeMinimalStatement()
     {
-        $this->markTestSkipped(
-            'waiting for https://github.com/schmittjoh/serializer/pull/238 to get merged'
-        );
-
         $statement = new Statement();
         $statement->setId('12345678-1234-5678-1234-567812345678');
 
