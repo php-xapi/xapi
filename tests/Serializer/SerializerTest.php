@@ -18,6 +18,13 @@ use Xabbuh\XApi\Common\Serializer\Serializer;
  */
 class SerializerTest extends \PHPUnit_Framework_TestCase
 {
+    public function testGetMetadataDirectory()
+    {
+        $dir = Serializer::getMetadataDirectory();
+
+        $this->assertEquals(realpath($dir), realpath(__DIR__.'/../../metadata/serializer'));
+    }
+
     public function testRegisterXApiMetadata()
     {
         $serializerBuilder = $this->getMock('\JMS\Serializer\SerializerBuilder');

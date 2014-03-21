@@ -25,13 +25,23 @@ use Xabbuh\XApi\Common\Serializer\Event\ObjectEventSubscriber;
 class Serializer
 {
     /**
+     * Returns the directory containing the Serializer metadata.
+     *
+     * @return string The metadata directory
+     */
+    public static function getMetadataDirectory()
+    {
+        return __DIR__.'/../../metadata/serializer';
+    }
+
+    /**
      * Registers serialization metadata for the xAPI models on a SerializerBuilder.
      *
      * @param SerializerBuilder $builder The SerializerBuilder
      */
     public static function registerXApiMetadata(SerializerBuilder $builder)
     {
-        $builder->addMetadataDir(__DIR__.'/../../metadata/serializer');
+        $builder->addMetadataDir(static::getMetadataDirectory());
     }
 
     /**
