@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns="http://xabbuh.de/schema/dic/xabbuh/xapi-client"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://xabbuh.de/schema/dic/xabbuh/xapi-client"
+    elementFormDefault="qualified"
+>
+    <xsd:element name="config" type="config" />
+
+    <xsd:complexType name="config">
+        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="client" type="client" />
+        </xsd:choice>
+    </xsd:complexType>
+
+    <xsd:complexType name="client">
+        <xsd:attribute name="name" type="xsd:string" use="required" />
+        <xsd:attribute name="base-url" type="xsd:string" use="required" />
+        <xsd:attribute name="username" type="xsd:string" />
+        <xsd:attribute name="password" type="xsd:string" />
+        <xsd:attribute name="version" type="xsd:string" />
+    </xsd:complexType>
+</xsd:schema>
