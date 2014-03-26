@@ -41,7 +41,7 @@ class Serializer
      */
     public static function registerXApiMetadata(SerializerBuilder $builder)
     {
-        $builder->addMetadataDir(static::getMetadataDirectory());
+        $builder->addMetadataDir(static::getMetadataDirectory(), 'Xabbuh\XApi\Common\Model');
     }
 
     /**
