@@ -11,48 +11,26 @@
 
 namespace Xabbuh\XApi\Common\Serializer\Event;
 
-use JMS\Serializer\EventDispatcher\EventSubscriberInterface;
-use JMS\Serializer\EventDispatcher\PreDeserializeEvent;
-
 /**
  * Event listener modifying {@link \Xabbuh\XApi\Common\Model\Actor} data during
  * the serialization and deserialization process.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class ActorEventSubscriber implements EventSubscriberInterface
+class ActorEventSubscriber extends AddDataSubscriber
 {
-    /**
-     * {@inheritDoc}
-     */
-    public static function getSubscribedEvents()
+    protected function supportsClass($class)
     {
-        return array(
-            array(
-                'event' => 'serializer.pre_deserialize',
-                'method' => 'onPreDeserialize',
-            ),
-        );
+        return 'Xabbuh\XApi\Common\Model\Actor' === $class;
     }
 
-    /**
-     * Listener that is executed before the deserialization process takes place
-     * for {@link \Xabbuh\XApi\Common\Model\Actor} objects.
-     *
-     * @param PreDeserializeEvent $event The event being handled
-     */
-    public function onPreDeserialize(PreDeserializeEvent $event)
+    protected function isDataModificationNeeded($data)
     {
-        $type = $event->getType();
+        return !isset($data['objectType']);
+    }
 
-        if ('Xabbuh\XApi\Common\Model\Actor' === $type['name']) {
-            $data = $event->getData();
-
-            if (!isset($data['objectType'])) {
-                $data['objectType'] = 'Agent';
-            }
-
-            $event->setData($data);
-        }
+    protected function getAdditionalData()
+    {
+        return array('objectType' => 'Agent');
     }
 }
