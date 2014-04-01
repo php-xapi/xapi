@@ -41,4 +41,9 @@ class VerbTest extends ModelTest
 
         $this->serializeAndValidateData($this->loadFixture('verb'), $verb);
     }
+
+    public function testCreateVoidVerb()
+    {
+        $this->assertEquals('http://adlnet.gov/expapi/verbs/voided', Verb::createVoidVerb()->getId());
+    }
 }
