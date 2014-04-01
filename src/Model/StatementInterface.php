@@ -73,4 +73,12 @@ interface StatementInterface
      * @return \Xabbuh\XApi\Common\Model\Object The Object
      */
     public function getObject();
+
+    /**
+     * Returns a {@link StatementReferenceInterface  StatementReference} for
+     * the Statement.
+     *
+     * @return StatementReferenceInterface The reference
+     */
+    public function getStatementReference();
 }

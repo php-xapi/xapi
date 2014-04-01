@@ -105,4 +105,15 @@ class Statement implements StatementInterface
     {
         return $this->object;
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getStatementReference()
+    {
+        $reference = new StatementReference();
+        $reference->setStatementId($this->id);
+
+        return $reference;
+    }
 }

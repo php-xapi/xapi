@@ -7,5 +7,6 @@
         <discriminator-class value="Activity">Xabbuh\XApi\Common\Model\Activity</discriminator-class>
         <discriminator-class value="Agent">Xabbuh\XApi\Common\Model\Agent</discriminator-class>
         <discriminator-class value="Group">Xabbuh\XApi\Common\Model\Group</discriminator-class>
+        <discriminator-class value="StatementRef">Xabbuh\XApi\Common\Model\StatementReference</discriminator-class>
     </class>
 </serializer>

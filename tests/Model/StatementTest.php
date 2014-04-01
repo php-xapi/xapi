@@ -48,6 +48,33 @@ class StatementTest extends ModelTest
         );
     }
 
+    public function testDeserializeWithStatementReference()
+    {
+        /** @var \Xabbuh\XApi\Common\Model\Statement $statement */
+        $statement = $this->deserialize($this->loadFixture('statement_with_statement_ref'));
+
+        $this->assertEquals(
+            '12345678-1234-5678-1234-567812345678',
+            $statement->getId()
+        );
+        $this->assertEquals(
+            'mailto:xapi@adlnet.gov',
+            $statement->getActor()->getMbox()
+        );
+
+        $verb = $statement->getVerb();
+        $display = $verb->getDisplay();
+        $this->assertEquals('http://adlnet.gov/expapi/verbs/created', $verb->getId());
+        $this->assertEquals('created', $display['en-US']);
+
+        /** @var \Xabbuh\XApi\Common\Model\StatementReferenceInterface $statementReference */
+        $statementReference = $statement->getObject();
+        $this->assertEquals(
+            '8f87ccde-bb56-4c2e-ab83-44982ef22df0',
+            $statementReference->getStatementId()
+        );
+    }
+
     public function testSerializeMinimalStatement()
     {
         $statement = new Statement();
@@ -128,6 +155,24 @@ class StatementTest extends ModelTest
         $statement->setVerb(new Verb());
 
         $this->validateStatement($statement, 1);
+    }
+
+    public function testGetStatementReference()
+    {
+        $statement = new Statement();
+        $statement->setId('e05aa883-acaf-40ad-bf54-02c8ce485fb0');
+        $statement->setActor(new Actor());
+        $statement->setVerb(new Verb());
+        $statementReference = $statement->getStatementReference();
+
+        $this->assertInstanceOf(
+            '\Xabbuh\XApi\Common\Model\StatementReferenceInterface',
+            $statementReference
+        );
+        $this->assertEquals(
+            'e05aa883-acaf-40ad-bf54-02c8ce485fb0',
+            $statementReference->getStatementId()
+        );
     }
 
     private function validateStatement(Statement $statement, $violationCount)
