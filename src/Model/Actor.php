@@ -16,7 +16,7 @@ namespace Xabbuh\XApi\Common\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class Actor implements ActorInterface
+abstract class Actor implements ActorInterface
 {
     /**
      * Name of the {@link Agent} or {@link Group}

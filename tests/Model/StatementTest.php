@@ -12,7 +12,7 @@
 namespace Xabbuh\XApi\Common\Tests\Model;
 
 use Xabbuh\XApi\Common\Model\Activity;
-use Xabbuh\XApi\Common\Model\Actor;
+use Xabbuh\XApi\Common\Model\Agent;
 use Xabbuh\XApi\Common\Model\Statement;
 use Xabbuh\XApi\Common\Model\Verb;
 
@@ -80,7 +80,7 @@ class StatementTest extends ModelTest
         $statement = new Statement();
         $statement->setId('12345678-1234-5678-1234-567812345678');
 
-        $actor = new Actor();
+        $actor = new Agent();
         $actor->setMbox('mailto:xapi@adlnet.gov');
         $statement->setActor($actor);
 
@@ -110,7 +110,7 @@ class StatementTest extends ModelTest
     {
         $statement = new Statement();
         $statement->setId(md5(uniqid()));
-        $statement->setActor(new Actor());
+        $statement->setActor(new Agent());
         $statement->setVerb(new Verb());
         $statement->setObject(new Activity());
 
@@ -120,7 +120,7 @@ class StatementTest extends ModelTest
     public function testWithoutId()
     {
         $statement = new Statement();
-        $statement->setActor(new Actor());
+        $statement->setActor(new Agent());
         $statement->setVerb(new Verb());
         $statement->setObject(new Activity());
 
@@ -141,7 +141,7 @@ class StatementTest extends ModelTest
     {
         $statement = new Statement();
         $statement->setId(md5(uniqid()));
-        $statement->setActor(new Actor());
+        $statement->setActor(new Agent());
         $statement->setObject(new Activity());
 
         $this->validateStatement($statement, 1);
@@ -151,7 +151,7 @@ class StatementTest extends ModelTest
     {
         $statement = new Statement();
         $statement->setId(md5(uniqid()));
-        $statement->setActor(new Actor());
+        $statement->setActor(new Agent());
         $statement->setVerb(new Verb());
 
         $this->validateStatement($statement, 1);
@@ -161,7 +161,7 @@ class StatementTest extends ModelTest
     {
         $statement = new Statement();
         $statement->setId('e05aa883-acaf-40ad-bf54-02c8ce485fb0');
-        $statement->setActor(new Actor());
+        $statement->setActor(new Agent());
         $statement->setVerb(new Verb());
         $statementReference = $statement->getStatementReference();
 
@@ -179,7 +179,7 @@ class StatementTest extends ModelTest
     {
         $statement = new Statement();
         $statement->setId('e05aa883-acaf-40ad-bf54-02c8ce485fb0');
-        $actor = new Actor();
+        $actor = new Agent();
         $actor->setMbox('mailto:xapi@adlnet.gov');
         $voidStatement = $statement->getVoidStatement($actor);
 

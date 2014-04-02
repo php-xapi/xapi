@@ -12,7 +12,7 @@
 namespace Xabbuh\XApi\Common\Tests\Model;
 
 use Xabbuh\XApi\Common\Model\Activity;
-use Xabbuh\XApi\Common\Model\Actor;
+use Xabbuh\XApi\Common\Model\Agent;
 use Xabbuh\XApi\Common\Model\Statement;
 use Xabbuh\XApi\Common\Model\StatementResult;
 use Xabbuh\XApi\Common\Model\Verb;
@@ -44,7 +44,7 @@ class StatementResultTest extends ModelTest
         $statement1 = new Statement();
         $statement1->setId('12345678-1234-5678-1234-567812345678');
 
-        $actor = new Actor();
+        $actor = new Agent();
         $actor->setMbox('mailto:alice@example.com');
         $statement1->setActor($actor);
 
@@ -60,7 +60,7 @@ class StatementResultTest extends ModelTest
         $statement2 = new Statement();
         $statement2->setId('12345678-1234-5678-1234-567812345679');
 
-        $actor = new Actor();
+        $actor = new Agent();
         $actor->setMbox('mailto:bob@example.com');
         $statement2->setActor($actor);
 
