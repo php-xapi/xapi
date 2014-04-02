@@ -81,4 +81,13 @@ interface StatementInterface
      * @return StatementReferenceInterface The reference
      */
     public function getStatementReference();
+
+    /**
+     * Returns a Statement that voids the current Statement.
+     *
+     * @param ActorInterface $actor The Actor voiding this Statement
+     *
+     * @return StatementInterface The voiding Statement
+     */
+    public function getVoidStatement(ActorInterface $actor);
 }

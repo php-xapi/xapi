@@ -116,4 +116,19 @@ class Statement implements StatementInterface
 
         return $reference;
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getVoidStatement(ActorInterface $actor)
+    {
+        $voidStatement = new Statement();
+        $voidStatement->setActor($actor);
+        $voidStatement->setVerb(Verb::createVoidVerb());
+        $statementReference = new StatementReference();
+        $statementReference->setStatementId($this->id);
+        $voidStatement->setObject($statementReference);
+
+        return $voidStatement;
+    }
 }

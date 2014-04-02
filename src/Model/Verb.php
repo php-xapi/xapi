@@ -63,6 +63,14 @@ class Verb implements VerbInterface
     }
 
     /**
+     * {@inheritDoc}
+     */
+    public function isVoidVerb()
+    {
+        return 'http://adlnet.gov/expapi/verbs/voided' === $this->id;
+    }
+
+    /**
      * Creates a Verb that can be used to void a {@link StatementInterface Statement}.
      *
      * @return Verb

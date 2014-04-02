@@ -175,6 +175,29 @@ class StatementTest extends ModelTest
         );
     }
 
+    public function testGetVoidStatement()
+    {
+        $statement = new Statement();
+        $statement->setId('e05aa883-acaf-40ad-bf54-02c8ce485fb0');
+        $actor = new Actor();
+        $actor->setMbox('mailto:xapi@adlnet.gov');
+        $voidStatement = $statement->getVoidStatement($actor);
+
+        /** @var \Xabbuh\XApi\Common\Model\StatementReferenceInterface $statementReference */
+        $statementReference = $voidStatement->getObject();
+
+        $this->assertEquals($actor, $voidStatement->getActor());
+        $this->assertTrue($voidStatement->getVerb()->isVoidVerb());
+        $this->assertInstanceOf(
+            '\Xabbuh\XApi\Common\Model\StatementReferenceInterface',
+            $statementReference
+        );
+        $this->assertEquals(
+            'e05aa883-acaf-40ad-bf54-02c8ce485fb0',
+            $statementReference->getStatementId()
+        );
+    }
+
     private function validateStatement(Statement $statement, $violationCount)
     {
         $this->assertEquals($violationCount, $this->validator->validate($statement)->count());
