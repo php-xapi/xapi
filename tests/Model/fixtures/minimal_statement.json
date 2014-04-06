@@ -11,6 +11,7 @@
         }
     },
     "object": {
-        "id": "http://example.adlnet.gov/xapi/example/activity"
+        "id": "http://example.adlnet.gov/xapi/example/activity",
+        "objectType": "Activity"
     }
 }

@@ -63,14 +63,14 @@ interface StatementInterface
     /**
      * Sets the Statement's {@link Object}.
      *
-     * @param \Xabbuh\XApi\Common\Model\Object $object The Object
+     * @param \Xabbuh\XApi\Common\Model\ObjectInterface $object The Object
      */
-    public function setObject(Object $object);
+    public function setObject(ObjectInterface $object);
 
     /**
      * Returns the Statement's {@link Object}.
      *
-     * @return \Xabbuh\XApi\Common\Model\Object The Object
+     * @return \Xabbuh\XApi\Common\Model\ObjectInterface The Object
      */
     public function getObject();
 

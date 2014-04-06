@@ -14,6 +14,7 @@ namespace Xabbuh\XApi\Common\Tests\Model;
 use Xabbuh\XApi\Common\Model\Activity;
 use Xabbuh\XApi\Common\Model\Agent;
 use Xabbuh\XApi\Common\Model\Statement;
+use Xabbuh\XApi\Common\Model\StatementReference;
 use Xabbuh\XApi\Common\Model\Verb;
 
 /**
@@ -95,6 +96,30 @@ class StatementTest extends ModelTest
 
         $this->serializeAndValidateData(
             $this->loadFixture('minimal_statement'),
+            $statement
+        );
+    }
+
+    public function testSerializeWithStatementReference()
+    {
+        $statement = new Statement();
+        $statement->setId('12345678-1234-5678-1234-567812345678');
+
+        $actor = new Agent();
+        $actor->setMbox('mailto:xapi@adlnet.gov');
+        $statement->setActor($actor);
+
+        $verb = new Verb();
+        $verb->setId('http://adlnet.gov/expapi/verbs/created');
+        $verb->setDisplay(array('en-US' => 'created'));
+        $statement->setVerb($verb);
+
+        $statementReference = new StatementReference();
+        $statementReference->setStatementId('8f87ccde-bb56-4c2e-ab83-44982ef22df0');
+        $statement->setObject($statementReference);
+
+        $this->serializeAndValidateData(
+            $this->loadFixture('statement_with_statement_ref'),
             $statement
         );
     }

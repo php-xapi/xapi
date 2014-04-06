@@ -16,7 +16,7 @@ namespace Xabbuh\XApi\Common\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-interface ActorInterface extends Object
+interface ActorInterface extends ObjectInterface
 {
     /**
      * Returns the Actor's inverse functional identifier.

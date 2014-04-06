@@ -12,10 +12,10 @@
 namespace Xabbuh\XApi\Common\Model;
 
 /**
- * The object of a {@link Statement}.
+ * The object of a {@link StatementInterface Statement}.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-abstract class Object implements ObjectInterface
+interface ObjectInterface
 {
 }

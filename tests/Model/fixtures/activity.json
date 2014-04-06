@@ -10,5 +10,6 @@
             "en-US": "An example of an activity"
         },
         "type": "http://www.example.co.uk/types/exampleactivitytype"
-    }
+    },
+    "objectType": "Activity"
 }

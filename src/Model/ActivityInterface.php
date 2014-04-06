@@ -16,7 +16,7 @@ namespace Xabbuh\XApi\Common\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-interface ActivityInterface extends Object
+interface ActivityInterface extends ObjectInterface
 {
     /**
      * Sets this Activity's unique identifier.

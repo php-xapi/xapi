@@ -16,7 +16,7 @@ namespace Xabbuh\XApi\Common\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-interface StatementReferenceInterface extends Object
+interface StatementReferenceInterface extends ObjectInterface
 {
     /**
      * Sets the id of the referenced Statement.

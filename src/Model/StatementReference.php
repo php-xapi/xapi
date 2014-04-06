@@ -16,7 +16,7 @@ namespace Xabbuh\XApi\Common\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class StatementReference implements StatementReferenceInterface
+class StatementReference extends Object implements StatementReferenceInterface
 {
     /**
      * @var string The id of the referenced Statement

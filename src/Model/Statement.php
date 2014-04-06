@@ -38,7 +38,7 @@ class Statement implements StatementInterface
 
     /**
      * The {@link Object}
-     * @var \Xabbuh\XApi\Common\Model\Object
+     * @var \Xabbuh\XApi\Common\Model\ObjectInterface
      */
     protected $object;
 
@@ -93,7 +93,7 @@ class Statement implements StatementInterface
     /**
      * {@inheritDoc}
      */
-    public function setObject(Object $object)
+    public function setObject(ObjectInterface $object)
     {
         $this->object = $object;
     }
