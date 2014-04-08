@@ -2,5 +2,6 @@
 <serializer>
     <class name="Xabbuh\XApi\Common\Model\StatementResult" exclusion-policy="ALL">
         <property name="statements" type="array&lt;Xabbuh\XApi\Common\Model\Statement&gt;" expose="true" />
+        <property name="moreUrlPath" type="string" serialized-name="more" expose="true" />
     </class>
 </serializer>

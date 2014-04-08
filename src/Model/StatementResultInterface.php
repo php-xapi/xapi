@@ -32,4 +32,18 @@ interface StatementResultInterface
      * @return StatementInterface[] The Statements
      */
     public function getStatements();
+
+    /**
+     * Sets the absolute path under which the next results can be retrieved.
+     *
+     * @param string $urlPath The URL path
+     */
+    public function setMoreUrlPath($urlPath);
+
+    /**
+     * Returns the absolute path under which the next results can be retrieved.
+     *
+     * @return string The URL path
+     */
+    public function getMoreUrlPath();
 }

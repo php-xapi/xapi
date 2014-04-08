@@ -26,6 +26,11 @@ class StatementResult implements StatementResultInterface
     protected $statements;
 
     /**
+     * @var string
+     */
+    protected $moreUrlPath;
+
+    /**
      * {@inheritDoc}
      */
     public function setStatements(array $statements)
@@ -39,5 +44,21 @@ class StatementResult implements StatementResultInterface
     public function getStatements()
     {
         return $this->statements;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setMoreUrlPath($urlPath)
+    {
+        $this->moreUrlPath = $urlPath;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getMoreUrlPath()
+    {
+        return $this->moreUrlPath;
     }
 }
