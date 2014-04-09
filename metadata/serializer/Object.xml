@@ -8,5 +8,6 @@
         <discriminator-class value="Agent">Xabbuh\XApi\Common\Model\Agent</discriminator-class>
         <discriminator-class value="Group">Xabbuh\XApi\Common\Model\Group</discriminator-class>
         <discriminator-class value="StatementRef">Xabbuh\XApi\Common\Model\StatementReference</discriminator-class>
+        <discriminator-class value="SubStatement">Xabbuh\XApi\Common\Model\SubStatement</discriminator-class>
     </class>
 </serializer>

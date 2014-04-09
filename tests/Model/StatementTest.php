@@ -76,6 +76,44 @@ class StatementTest extends ModelTest
         );
     }
 
+    public function testDeserializeWithSubStatement()
+    {
+        /** @var \Xabbuh\XApi\Common\Model\Statement $statement */
+        $statement = $this->deserialize($this->loadFixture('statement_with_sub_statement'));
+
+        $this->assertEquals(
+            'mailto:test@example.com',
+            $statement->getActor()->getMbox()
+        );
+
+        $verb = $statement->getVerb();
+        $display = $verb->getDisplay();
+        $this->assertEquals('http://example.com/planned', $verb->getId());
+        $this->assertEquals('planned', $display['en-US']);
+
+        /** @var \Xabbuh\XApi\Common\Model\SubStatementInterface $subStatement */
+        $subStatement = $statement->getObject();
+        $this->assertInstanceOf(
+            '\Xabbuh\XApi\Common\Model\SubStatementInterface',
+            $subStatement
+        );
+
+        $this->assertEquals(
+            'mailto:test@example.com',
+            $subStatement->getActor()->getMbox()
+        );
+
+        $verb = $subStatement->getVerb();
+        $display = $verb->getDisplay();
+        $this->assertEquals('http://example.com/visited', $verb->getId());
+        $this->assertEquals('will visit', $display['en-US']);
+
+        $this->assertInstanceOf(
+            '\Xabbuh\XApi\Common\Model\ActivityInterface',
+            $subStatement->getObject()
+        );
+    }
+
     public function testSerializeMinimalStatement()
     {
         $statement = new Statement();
