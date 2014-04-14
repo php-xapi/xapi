@@ -75,6 +75,20 @@ interface StatementInterface
     public function getObject();
 
     /**
+     * Sets the {@link ActivityInterface Activity} {@link ResultInterface Result}.
+     *
+     * @param ResultInterface $result The Result
+     */
+    public function setResult(ResultInterface $result);
+
+    /**
+     * Returns the {@link ActivityInterface Activity} {@link ResultInterface Result}.
+     *
+     * @return ResultInterface The Result
+     */
+    public function getResult();
+
+    /**
      * Returns a {@link StatementReferenceInterface  StatementReference} for
      * the Statement.
      *

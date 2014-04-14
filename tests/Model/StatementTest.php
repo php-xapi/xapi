@@ -13,6 +13,8 @@ namespace Xabbuh\XApi\Common\Tests\Model;
 
 use Xabbuh\XApi\Common\Model\Activity;
 use Xabbuh\XApi\Common\Model\Agent;
+use Xabbuh\XApi\Common\Model\Result;
+use Xabbuh\XApi\Common\Model\Score;
 use Xabbuh\XApi\Common\Model\Statement;
 use Xabbuh\XApi\Common\Model\StatementReference;
 use Xabbuh\XApi\Common\Model\Verb;
@@ -114,6 +116,21 @@ class StatementTest extends ModelTest
         );
     }
 
+    public function testDeserializeWithResult()
+    {
+        /** @var \Xabbuh\XApi\Common\Model\StatementInterface $statement */
+        $statement = $this->deserialize($this->loadFixture('statement_with_result'));
+        $result = $statement->getResult();
+
+        $this->assertInstanceOf(
+            '\Xabbuh\XApi\Common\Model\ResultInterface',
+            $result
+        );
+        $this->assertEquals(0.95, $result->getScore()->getScaled(), '', 0.01);
+        $this->assertTrue($result->getSuccess());
+        $this->assertTrue($result->getCompletion());
+    }
+
     public function testSerializeMinimalStatement()
     {
         $statement = new Statement();
@@ -158,6 +175,32 @@ class StatementTest extends ModelTest
 
         $this->serializeAndValidateData(
             $this->loadFixture('statement_with_statement_ref'),
+            $statement
+        );
+    }
+
+    public function testSerializeWithResult()
+    {
+        $agent = new Agent();
+        $agent->setMbox('mailto:alice@example.com');
+        $verb = new Verb();
+        $verb->setId('http://adlnet.gov/expapi/verbs/attempted');
+        $activity = new Activity();
+        $activity->setId('http://example.adlnet.gov/xapi/example/simpleCBT');
+        $score = new Score();
+        $score->setScaled(0.95);
+        $result = new Result();
+        $result->setScore($score);
+        $result->setSuccess(true);
+        $result->setCompletion(true);
+        $statement = new Statement();
+        $statement->setActor($agent);
+        $statement->setVerb($verb);
+        $statement->setObject($activity);
+        $statement->setResult($result);
+
+        $this->serializeAndValidateData(
+            $this->loadFixture('statement_with_result'),
             $statement
         );
     }

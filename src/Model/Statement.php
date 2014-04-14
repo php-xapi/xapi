@@ -43,6 +43,12 @@ class Statement implements StatementInterface
     protected $object;
 
     /**
+     * The {@link ActivityInterface Activity} {@link ResultInterface Result}
+     * @var \Xabbuh\XApi\Common\Model\ResultInterface
+     */
+    protected $result;
+
+    /**
      * {@inheritDoc}
      */
     public function setId($id)
@@ -104,6 +110,22 @@ class Statement implements StatementInterface
     public function getObject()
     {
         return $this->object;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setResult(ResultInterface $result)
+    {
+        $this->result = $result;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getResult()
+    {
+        return $this->result;
     }
 
     /**
