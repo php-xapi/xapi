@@ -31,7 +31,7 @@ class Serializer
      */
     public static function getMetadataDirectory()
     {
-        return __DIR__.'/../../metadata/serializer';
+        return __DIR__.'/../metadata/serializer';
     }
 
     /**

@@ -30,10 +30,10 @@ class Validator
     public static function registerXApiConstraints(ValidatorBuilderInterface $builder)
     {
         $builder->addXmlMappings(array(
-            __DIR__.'/../../metadata/validator/Activity.xml',
-            __DIR__.'/../../metadata/validator/Agent.xml',
-            __DIR__.'/../../metadata/validator/Group.xml',
-            __DIR__.'/../../metadata/validator/Statement.xml'
+            __DIR__.'/../metadata/validator/Activity.xml',
+            __DIR__.'/../metadata/validator/Agent.xml',
+            __DIR__.'/../metadata/validator/Group.xml',
+            __DIR__.'/../metadata/validator/Statement.xml'
         ));
     }
 

@@ -25,7 +25,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Xabbuh\\XApi\\Common\\": "src/"
+            "Xabbuh\\XApi\\Common\\": "./"
         }
     },
     "extra": {
