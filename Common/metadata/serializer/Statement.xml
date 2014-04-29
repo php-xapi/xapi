@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serializer>
+    <class name="Xabbuh\XApi\Common\Model\Statement" exclusion-policy="ALL">
+        <property name="id" type="string" expose="true"/>
+        <property name="verb" type="Xabbuh\XApi\Common\Model\Verb" expose="true"/>
+        <property name="actor" type="Xabbuh\XApi\Common\Model\Actor" expose="true"/>
+        <property name="object" type="Xabbuh\XApi\Common\Model\Object" expose="true"/>
+        <property name="result" type="Xabbuh\XApi\Common\Model\Result" expose="true"/>
+    </class>
+</serializer>

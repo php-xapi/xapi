@@ -1,0 +1,36 @@
+{
+    "name": "xabbuh/xapi-common",
+    "type": "library",
+    "description": "base package for Experience API implementations",
+    "keywords": ["xAPI", "Experience API", "Tin Can API"],
+    "homepage": "https://github.com/xabbuh/xapi-common",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Flothmann",
+            "homepage": "https://github.com/xabbuh"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/xabbuh/serializer.git"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "jms/serializer": "dev-polymorphic-bugfix",
+        "symfony/config": "~2.2",
+        "symfony/validator": "~2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xabbuh\\XApi\\Common\\": "./"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}

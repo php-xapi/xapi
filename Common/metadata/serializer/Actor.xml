@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serializer>
+    <class name="Xabbuh\XApi\Common\Model\Actor"
+        discriminator-field-name="objectType"
+        exclusion-policy="ALL"
+    >
+        <discriminator-class value="Agent">Xabbuh\XApi\Common\Model\Agent</discriminator-class>
+        <discriminator-class value="Group">Xabbuh\XApi\Common\Model\Group</discriminator-class>
+        <property name="name" type="string" expose="true" />
+        <property name="mbox" type="string" expose="true" />
+        <property name="mboxSha1Sum" type="string" expose="true" />
+        <property name="openId"
+            type="string"
+            serialized-name="openid"
+            expose="true"
+        />
+        <property name="account"
+            type="Xabbuh\XApi\Common\Model\Account"
+            expose="true"
+        />
+    </class>
+</serializer>

@@ -1,0 +1,20 @@
+{
+    "actor":{
+        "objectType": "Agent",
+        "mbox":"mailto:alice@example.com"
+    },
+    "verb":{
+        "id":"http://adlnet.gov/expapi/verbs/attempted"
+    },
+    "object":{
+        "objectType": "Activity",
+        "id":"http://example.adlnet.gov/xapi/example/simpleCBT"
+    },
+    "result":{
+        "score":{
+            "scaled":0.95
+        },
+        "success":true,
+        "completion":true
+    }
+}
