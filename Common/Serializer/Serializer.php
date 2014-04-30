@@ -15,6 +15,7 @@ use JMS\Serializer\EventDispatcher\EventDispatcher;
 use JMS\Serializer\SerializerBuilder;
 use Xabbuh\XApi\Common\Serializer\Event\ActorEventSubscriber;
 use Xabbuh\XApi\Common\Serializer\Event\ObjectEventSubscriber;
+use Xabbuh\XApi\Common\Serializer\Event\SetSerializedTypeEventSubscriber;
 
 /**
  * Entry point to setup the {@link \JMS\Serializer\Serializer JMS Serializer}
@@ -54,6 +55,7 @@ class Serializer
         $builder->configureListeners(function (EventDispatcher $dispatcher) {
             $dispatcher->addSubscriber(new ActorEventSubscriber());
             $dispatcher->addSubscriber(new ObjectEventSubscriber());
+            $dispatcher->addSubscriber(new SetSerializedTypeEventSubscriber());
         });
     }
 

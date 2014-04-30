@@ -16,6 +16,7 @@ use JMS\Serializer\SerializerBuilder;
 use Symfony\Component\Validator\Validation;
 use Xabbuh\XApi\Common\Serializer\Event\ActorEventSubscriber;
 use Xabbuh\XApi\Common\Serializer\Event\ObjectEventSubscriber;
+use Xabbuh\XApi\Common\Serializer\Event\SetSerializedTypeEventSubscriber;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -41,6 +42,7 @@ abstract class ModelTest extends \PHPUnit_Framework_TestCase
     {
         $this->subscribers[] = new ActorEventSubscriber();
         $this->subscribers[] = new ObjectEventSubscriber();
+        $this->subscribers[] = new SetSerializedTypeEventSubscriber();
         $subscribers = $this->subscribers;
 
         $builder = SerializerBuilder::create();
