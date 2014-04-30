@@ -2,6 +2,7 @@
 <phpunit colors="true" bootstrap="vendor/autoload.php">
     <testsuites>
         <testsuite name="collection of Experience API libraries">
+            <directory>./Bundle/*/Tests</directory>
             <directory>./*/Tests</directory>
         </testsuite>
     </testsuites>
@@ -11,8 +12,10 @@
             <exclude>
                 <directory>./*/Exception</directory>
                 <directory>./*/Tests</directory>
-                <directory>./vendor</directory>
                 <directory>./*/vendor</directory>
+                <directory>./Bundle/*/Resources</directory>
+                <directory>./Bundle/*/Tests</directory>
+                <directory>./vendor</directory>
             </exclude>
         </whitelist>
     </filter>

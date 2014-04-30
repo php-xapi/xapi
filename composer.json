@@ -16,6 +16,7 @@
         "guzzle/guzzle": "~3.7",
         "jms/serializer": "~0.16",
         "symfony/config": "~2.2",
+        "symfony/dependency-injection": "~2.2",
         "symfony/validator": "~2.2"
     },
     "replace": {
