@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services
+        http://symfony.com/schema/dic/services/services-1.0.xsd"
+>
+    <parameters>
+        <parameter key="xabbuh_xapi_client.client_manager.class">Xabbuh\XApi\ClientBundle\Manager\ClientManager</parameter>
+    </parameters>
+    <services>
+        <service id="xabbuh_xapi_client.client_manager" class="%xabbuh_xapi_client.client_manager.class%" />
+    </services>
+</container>
