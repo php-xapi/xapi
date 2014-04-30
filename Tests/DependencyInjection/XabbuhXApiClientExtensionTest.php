@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApi\ClientBundle\Tests\DependencyInjection;
+namespace Xabbuh\XApi\Bundle\ClientBundle\Tests\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
-use Xabbuh\XApi\ClientBundle\DependencyInjection\XabbuhXApiClientExtension;
+use Xabbuh\XApi\Bundle\ClientBundle\DependencyInjection\XabbuhXApiClientExtension;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>

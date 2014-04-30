@@ -13,7 +13,7 @@ namespace Xabbuh\XApi\ClientBundle\Tests\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
-use Xabbuh\XApi\ClientBundle\DependencyInjection\Compiler\RegisterClientsPass;
+use Xabbuh\XApi\Bundle\ClientBundle\DependencyInjection\Compiler\RegisterClientsPass;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>

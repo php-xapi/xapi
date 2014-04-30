@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApi\ClientBundle\Manager;
+namespace Xabbuh\XApi\Bundle\ClientBundle\Manager;
 
 /**
  * XApiClient manager.

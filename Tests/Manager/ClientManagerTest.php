@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApi\ClientBundle\Tests\Manager;
+namespace Xabbuh\XApi\Bundle\ClientBundle\Tests\Manager;
 
-use Xabbuh\XApi\ClientBundle\Manager\ClientManager;
+use Xabbuh\XApi\Bundle\ClientBundle\Manager\ClientManager;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>

@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApi\ClientBundle\Tests\DependencyInjection;
+namespace Xabbuh\XApi\Bundle\ClientBundle\Tests\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Processor;
-use Xabbuh\XApi\ClientBundle\DependencyInjection\Configuration;
+use Xabbuh\XApi\Bundle\ClientBundle\DependencyInjection\Configuration;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>

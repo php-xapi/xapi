@@ -10,15 +10,8 @@
             "homepage": "https://github.com/xabbuh"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/xabbuh/serializer.git"
-        }
-    ],
     "require": {
         "php": ">=5.3.0",
-        "jms/serializer": "dev-polymorphic-bugfix",
         "jms/serializer-bundle": "~0.9",
         "symfony/config": "~2.2",
         "symfony/dependency-injection": "~2.2",
@@ -28,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Xabbuh\\XApi\\ClientBundle\\": ""
+            "Xabbuh\\XApi\\Bundle\\ClientBundle\\": ""
         }
     },
     "extra": {

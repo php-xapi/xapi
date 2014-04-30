@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApi\ClientBundle\Tests\DependencyInjection\Compiler;
+namespace Xabbuh\XApi\Bundle\ClientBundle\Tests\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Definition;
-use Xabbuh\XApi\ClientBundle\DependencyInjection\Compiler\RegisterSerializerMetadataPass;
+use Xabbuh\XApi\Bundle\ClientBundle\DependencyInjection\Compiler\RegisterSerializerMetadataPass;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>

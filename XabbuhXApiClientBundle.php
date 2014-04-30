@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApi\ClientBundle;
+namespace Xabbuh\XApi\Bundle\ClientBundle;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use Xabbuh\XApi\ClientBundle\DependencyInjection\Compiler\RegisterClientsPass;
-use Xabbuh\XApi\ClientBundle\DependencyInjection\Compiler\RegisterSerializerMetadataPass;
-use Xabbuh\XApi\ClientBundle\DependencyInjection\XabbuhXApiClientExtension;
+use Xabbuh\XApi\Bundle\ClientBundle\DependencyInjection\Compiler\RegisterClientsPass;
+use Xabbuh\XApi\Bundle\ClientBundle\DependencyInjection\Compiler\RegisterSerializerMetadataPass;
+use Xabbuh\XApi\Bundle\ClientBundle\DependencyInjection\XabbuhXApiClientExtension;
 
 /**
  * Experience API client bundle.
