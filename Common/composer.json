@@ -11,15 +11,9 @@
             "homepage": "https://github.com/xabbuh"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/xabbuh/serializer.git"
-        }
-    ],
     "require": {
         "php": ">=5.3.0",
-        "jms/serializer": "dev-polymorphic-bugfix",
+        "jms/serializer": "~0.16",
         "symfony/config": "~2.2",
         "symfony/validator": "~2.2"
     },
