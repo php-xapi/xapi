@@ -11,8 +11,6 @@
 
 namespace Xabbuh\XApi\Common\Serializer\Event;
 
-use JMS\Serializer\EventDispatcher\PreDeserializeEvent;
-
 /**
  * Event listener modifying {@link \Xabbuh\XApi\Common\Model\Actor} data during
  * the serialization and deserialization process.
