@@ -44,6 +44,15 @@ class SerializerTest extends \PHPUnit_Framework_TestCase
         Serializer::registerXApiEventSubscriber($serializerBuilder);
     }
 
+    public function testRegisterXApiHandler()
+    {
+        $serializerBuilder = $this->getMock('\JMS\Serializer\SerializerBuilder');
+        $serializerBuilder->expects($this->once())
+            ->method('configureHandlers');
+
+        Serializer::registerXApiHandler($serializerBuilder);
+    }
+
     public function testRegisterXApi()
     {
         $serializerBuilder = $this->getMock('\JMS\Serializer\SerializerBuilder');
@@ -51,6 +60,8 @@ class SerializerTest extends \PHPUnit_Framework_TestCase
             ->method('addMetadataDir');
         $serializerBuilder->expects($this->once())
             ->method('configureListeners');
+        $serializerBuilder->expects($this->once())
+            ->method('configureHandlers');
 
         Serializer::registerXApi($serializerBuilder);
     }

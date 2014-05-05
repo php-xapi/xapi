@@ -12,10 +12,13 @@
 namespace Xabbuh\XApi\Common\Serializer;
 
 use JMS\Serializer\EventDispatcher\EventDispatcher;
+use JMS\Serializer\Handler\HandlerRegistryInterface;
 use JMS\Serializer\SerializerBuilder;
 use Xabbuh\XApi\Common\Serializer\Event\ActorEventSubscriber;
+use Xabbuh\XApi\Common\Serializer\Event\DocumentDataWrapper;
 use Xabbuh\XApi\Common\Serializer\Event\ObjectEventSubscriber;
 use Xabbuh\XApi\Common\Serializer\Event\SetSerializedTypeEventSubscriber;
+use Xabbuh\XApi\Common\Serializer\Handler\DocumentDataUnwrapper;
 
 /**
  * Entry point to setup the {@link \JMS\Serializer\Serializer JMS Serializer}
@@ -54,8 +57,21 @@ class Serializer
     {
         $builder->configureListeners(function (EventDispatcher $dispatcher) {
             $dispatcher->addSubscriber(new ActorEventSubscriber());
+            $dispatcher->addSubscriber(new DocumentDataWrapper());
             $dispatcher->addSubscriber(new ObjectEventSubscriber());
             $dispatcher->addSubscriber(new SetSerializedTypeEventSubscriber());
+        });
+    }
+
+    /**
+     * Registers handlers for the xAPI models on a SerializerBuilder.
+     *
+     * @param SerializerBuilder $builder The SerializerBuilder
+     */
+    public static function registerXApiHandler(SerializerBuilder $builder)
+    {
+        $builder->configureHandlers(function (HandlerRegistryInterface $handlerRegistry) {
+            $handlerRegistry->registerSubscribingHandler(new DocumentDataUnwrapper());
         });
     }
 
@@ -69,6 +85,7 @@ class Serializer
     {
         static::registerXApiMetadata($builder);
         static::registerXApiEventSubscriber($builder);
+        static::registerXApiHandler($builder);
     }
 
     /**
@@ -80,8 +97,7 @@ class Serializer
     public static function createSerializerBuilder()
     {
         $builder = SerializerBuilder::create();
-        static::registerXApiMetadata($builder);
-        static::registerXApiEventSubscriber($builder);
+        static::registerXApi($builder);
 
         return $builder;
     }

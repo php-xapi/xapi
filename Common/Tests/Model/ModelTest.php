@@ -12,11 +12,14 @@
 namespace Xabbuh\XApi\Common\Tests\Model;
 
 use JMS\Serializer\EventDispatcher\EventDispatcher;
+use JMS\Serializer\Handler\HandlerRegistryInterface;
 use JMS\Serializer\SerializerBuilder;
 use Symfony\Component\Validator\Validation;
 use Xabbuh\XApi\Common\Serializer\Event\ActorEventSubscriber;
+use Xabbuh\XApi\Common\Serializer\Event\DocumentDataWrapper;
 use Xabbuh\XApi\Common\Serializer\Event\ObjectEventSubscriber;
 use Xabbuh\XApi\Common\Serializer\Event\SetSerializedTypeEventSubscriber;
+use Xabbuh\XApi\Common\Serializer\Handler\DocumentDataUnwrapper;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -40,21 +43,22 @@ abstract class ModelTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->subscribers[] = new ActorEventSubscriber();
-        $this->subscribers[] = new ObjectEventSubscriber();
-        $this->subscribers[] = new SetSerializedTypeEventSubscriber();
-        $subscribers = $this->subscribers;
-
         $builder = SerializerBuilder::create();
         $builder->addMetadataDir(
             __DIR__.'/../../metadata/serializer',
             'Xabbuh\XApi\Common\Model'
         );
         $builder->configureListeners(
-            function (EventDispatcher $dispatcher) use ($subscribers) {
-                foreach ($subscribers as $subscriber) {
-                    $dispatcher->addSubscriber($subscriber);
-                }
+            function (EventDispatcher $dispatcher) {
+                $dispatcher->addSubscriber(new ActorEventSubscriber());
+                $dispatcher->addSubscriber(new DocumentDataWrapper());
+                $dispatcher->addSubscriber(new ObjectEventSubscriber());
+                $dispatcher->addSubscriber(new SetSerializedTypeEventSubscriber());
+            }
+        );
+        $builder->configureHandlers(
+            function (HandlerRegistryInterface $registry) {
+                $registry->registerSubscribingHandler(new DocumentDataUnwrapper());
             }
         );
         $this->serializer = $builder->build();
