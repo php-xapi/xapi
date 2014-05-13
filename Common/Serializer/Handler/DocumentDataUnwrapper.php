@@ -29,12 +29,20 @@ class DocumentDataUnwrapper implements SubscribingHandlerInterface
      */
     public static function getSubscribingMethods()
     {
-        return array(array(
-            'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
-            'format' => 'json',
-            'type' => 'Xabbuh\XApi\Common\Model\Document',
-            'method' => 'unwrapData',
-        ));
+        return array(
+            array(
+                'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
+                'format' => 'json',
+                'type' => 'Xabbuh\XApi\Common\Model\Document',
+                'method' => 'unwrapData',
+            ),
+            array(
+                'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
+                'format' => 'json',
+                'type' => 'Xabbuh\XApi\Common\Model\StateDocument',
+                'method' => 'unwrapData',
+            ),
+        );
     }
 
     public function unwrapData(JsonSerializationVisitor $visitor, Document $document, array $type, Context $context)

@@ -20,7 +20,7 @@ class DocumentTest extends ModelTest
 {
     public function testArrayAccessMethods()
     {
-        $document = new Document();
+        $document = $this->createDocument();
 
         $this->assertFalse(isset($document['x']));
 
@@ -40,7 +40,7 @@ class DocumentTest extends ModelTest
 
     public function testGetData()
     {
-        $document = new Document();
+        $document = $this->createDocument();
         $document['x'] = 'foo';
         $document['y'] = 'bar';
 
@@ -58,10 +58,15 @@ class DocumentTest extends ModelTest
 
     public function testSerializeDocument()
     {
-        $document = new Document();
+        $document = $this->createDocument();
         $document['x'] = 'foo';
         $document['y'] = 'bar';
 
         $this->serializeAndValidateData($this->loadFixture('document'), $document);
+    }
+
+    protected function createDocument()
+    {
+        return new Document();
     }
 }
