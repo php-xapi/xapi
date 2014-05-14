@@ -39,6 +39,12 @@ class DocumentDataUnwrapper implements SubscribingHandlerInterface
             array(
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'json',
+                'type' => 'Xabbuh\XApi\Common\Model\ActivityProfileDocument',
+                'method' => 'unwrapData',
+            ),
+            array(
+                'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
+                'format' => 'json',
                 'type' => 'Xabbuh\XApi\Common\Model\StateDocument',
                 'method' => 'unwrapData',
             ),
