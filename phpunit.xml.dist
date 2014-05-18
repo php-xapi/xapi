@@ -10,6 +10,7 @@
         <whitelist>
             <directory>.</directory>
             <exclude>
+                <directory>./*/doc</directory>
                 <directory>./*/Exception</directory>
                 <directory>./*/Tests</directory>
                 <directory>./*/vendor</directory>
