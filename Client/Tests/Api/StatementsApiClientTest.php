@@ -32,7 +32,7 @@ class StatementsApiClientTest extends ApiClientTest
     protected function setUp()
     {
         parent::setUp();
-        $this->client = new StatementsApiClient($this->requestExecutor, $this->serializer, '1.0.1');
+        $this->client = new StatementsApiClient($this->requestHandler, $this->serializer, '1.0.1');
     }
 
     public function testStoreStatement()
@@ -69,6 +69,24 @@ class StatementsApiClientTest extends ApiClientTest
         );
 
         $this->assertEquals($statement, $this->client->storeStatement($statement));
+    }
+
+    public function testStoreStatementWithIdEnsureThatTheIdIsNotOverwritten()
+    {
+        $statementId = '12345678-1234-5678-1234-567812345678';
+        $statement = $this->createStatement();
+        $statement->setId($statementId);
+        $this->validateStoreApiCall(
+            'put',
+            'statements',
+            array('statementId' => $statementId),
+            204,
+            '',
+            $statement
+        );
+        $storedStatement = $this->client->storeStatement($statement);
+
+        $this->assertEquals($statementId, $storedStatement->getId());
     }
 
     public function testStoreStatements()
