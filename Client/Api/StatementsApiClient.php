@@ -123,14 +123,14 @@ class StatementsApiClient extends ApiClient implements StatementsApiClientInterf
      */
     private function doStoreStatements($statements, $method = 'post', $parameters = array(), $validStatusCode = 200)
     {
-        $request = $this->requestHandler->createRequest(
+        $request = $this->requestExecutor->createRequest(
             $method,
             'statements',
             $parameters,
             $this->serializer->serialize($statements, 'json')
         );
 
-        $response = $this->requestHandler->executeRequest($request, array($validStatusCode));
+        $response = $this->requestExecutor->executeRequest($request, array($validStatusCode));
         $statementIds = json_decode($response->getBody(true));
 
         if (is_array($statements)) {
@@ -146,7 +146,13 @@ class StatementsApiClient extends ApiClient implements StatementsApiClientInterf
             return $createdStatements;
         } else {
             $createdStatement = clone $statements;
-            $createdStatement->setId($statementIds[0]);
+            switch($validStatusCode){
+                case 204:
+                    // Statement have been sent with a predefined ID, so return directly
+                    break;
+                default:
+                    $createdStatement->setId($statementIds[0]);
+            }
 
             return $createdStatement;
         }
@@ -162,8 +168,8 @@ class StatementsApiClient extends ApiClient implements StatementsApiClientInterf
      */
     private function doGetStatements($url, array $urlParameters = array())
     {
-        $request = $this->requestHandler->createRequest('get', $url, $urlParameters);
-        $response = $this->requestHandler->executeRequest($request, array(200));
+        $request = $this->requestExecutor->createRequest('get', $url, $urlParameters);
+        $response = $this->requestExecutor->executeRequest($request, array(200));
 
         if (isset($urlParameters['statementId']) || isset($urlParameters['voidedStatementId'])) {
             $class = 'Xabbuh\XApi\Common\Model\Statement';
