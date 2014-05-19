@@ -146,12 +146,9 @@ class StatementsApiClient extends ApiClient implements StatementsApiClientInterf
             return $createdStatements;
         } else {
             $createdStatement = clone $statements;
-            switch($validStatusCode){
-                case 204:
-                    // Statement have been sent with a predefined ID, so return directly
-                    break;
-                default:
-                    $createdStatement->setId($statementIds[0]);
+            
+            if (200 === $validStatusCode) {
+                $createdStatement->setId($statementIds[0]);
             }
 
             return $createdStatement;
