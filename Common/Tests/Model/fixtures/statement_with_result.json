@@ -12,7 +12,10 @@
     },
     "result":{
         "score":{
-            "scaled":0.95
+            "scaled":0.95,
+            "raw": 31,
+            "min":0,
+            "max":50
         },
         "success":true,
         "completion":true

@@ -9,12 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApi\Common\Tests\Model;
+namespace Xabbuh\XApi\Common\Tests\Serializer;
 
 use JMS\Serializer\EventDispatcher\EventDispatcher;
 use JMS\Serializer\Handler\HandlerRegistryInterface;
 use JMS\Serializer\SerializerBuilder;
-use Symfony\Component\Validator\Validation;
 use Xabbuh\XApi\Common\Serializer\Event\ActorEventSubscriber;
 use Xabbuh\XApi\Common\Serializer\Event\DocumentDataWrapper;
 use Xabbuh\XApi\Common\Serializer\Event\ObjectEventSubscriber;
@@ -24,22 +23,12 @@ use Xabbuh\XApi\Common\Serializer\Handler\DocumentDataUnwrapper;
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-abstract class ModelTest extends \PHPUnit_Framework_TestCase
+abstract class AbstractSerializerTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \JMS\Serializer\Serializer
+     * @var \JMS\Serializer\SerializerInterface
      */
     protected $serializer;
-
-    /**
-     * @var \JMS\Serializer\EventDispatcher\EventSubscriberInterface[]
-     */
-    protected $subscribers = array();
-
-    /**
-     * @var \Symfony\Component\Validator\Validator
-     */
-    protected $validator;
 
     protected function setUp()
     {
@@ -62,25 +51,15 @@ abstract class ModelTest extends \PHPUnit_Framework_TestCase
             }
         );
         $this->serializer = $builder->build();
-
-        $this->validator = Validation::createValidatorBuilder()
-            ->addXmlMapping(__DIR__.'/../../metadata/validator/Activity.xml')
-            ->addXmlMapping(__DIR__.'/../../metadata/validator/Agent.xml')
-            ->addXmlMapping(__DIR__.'/../../metadata/validator/Group.xml')
-            ->addXmlMapping(__DIR__.'/../../metadata/validator/Statement.xml')
-            ->addXmlMapping(__DIR__.'/../../metadata/validator/StatementReference.xml')
-            ->getValidator();
     }
 
     protected function loadFixture($name)
     {
-        return file_get_contents(__DIR__.'/fixtures/'.$name.'.json');
+        return file_get_contents(__DIR__.'/../Model/fixtures/'.$name.'.json');
     }
 
-    protected function loadAndParseFixture($name)
+    protected function assertJsonEquals($expected, $actual)
     {
-        $type = str_replace(array('Tests\\', 'Test'), '', get_class($this));
-
-        return $this->serializer->deserialize($this->loadFixture($name), $type, 'json');
+        $this->assertEquals(json_decode($expected), json_decode($actual));
     }
 }

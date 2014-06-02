@@ -18,30 +18,6 @@ use Xabbuh\XApi\Common\Model\Verb;
  */
 class VerbTest extends ModelTest
 {
-    public function testDeserialize()
-    {
-        /** @var \Xabbuh\XApi\Common\Model\Verb $verb */
-        $verb = $this->deserialize($this->loadFixture('verb'));
-
-        $this->assertEquals(
-            'http://www.adlnet.gov/XAPIprofile/ran(travelled_a_distance)',
-            $verb->getId()
-        );
-        $this->assertEquals(
-            array('en-US' => 'ran', 'es' => 'corrió'),
-            $verb->getDisplay()
-        );
-    }
-
-    public function testSerialize()
-    {
-        $verb = new Verb();
-        $verb->setId('http://www.adlnet.gov/XAPIprofile/ran(travelled_a_distance)');
-        $verb->setDisplay(array('en-US' => 'ran', 'es' => 'corrió'));
-
-        $this->serializeAndValidateData($this->loadFixture('verb'), $verb);
-    }
-
     public function testIsVoidVerb()
     {
         $verb = new Verb();

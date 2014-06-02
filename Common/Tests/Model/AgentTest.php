@@ -18,27 +18,9 @@ use Xabbuh\XApi\Common\Model\Agent;
  */
 class AgentTest extends ModelTest
 {
-    public function testDeserialize()
-    {
-        /** @var \Xabbuh\XApi\Common\Model\Agent $agent */
-        $agent = $this->deserialize($this->loadFixture('agent'));
-
-        $this->assertEquals('Christian', $agent->getName());
-        $this->assertEquals('mailto:christian@example.com', $agent->getMbox());
-    }
-
-    public function testSerialize()
-    {
-        $agent = new Agent();
-        $agent->setName('Christian');
-        $agent->setMbox('mailto:christian@example.com');
-
-        $this->serializeAndValidateData($this->loadFixture('agent'), $agent);
-    }
-
     public function testValidateAgent()
     {
-        $agent = $this->loadAndDeserialize('agent');
+        $agent = $this->loadAndParseFixture('agent');
 
         $this->validateAgent($agent, 0);
     }

@@ -47,24 +47,6 @@ class DocumentTest extends ModelTest
         $this->assertEquals(array('x' => 'foo', 'y' => 'bar'), $document->getData());
     }
 
-    public function testDeserializeDocument()
-    {
-        /** @var \Xabbuh\XApi\Common\Model\Document $document */
-        $document = $this->deserialize($this->loadFixture('document'));
-
-        $this->assertEquals('foo', $document['x']);
-        $this->assertEquals('bar', $document['y']);
-    }
-
-    public function testSerializeDocument()
-    {
-        $document = $this->createDocument();
-        $document['x'] = 'foo';
-        $document['y'] = 'bar';
-
-        $this->serializeAndValidateData($this->loadFixture('document'), $document);
-    }
-
     protected function createDocument()
     {
         return new Document();

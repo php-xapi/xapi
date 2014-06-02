@@ -9,23 +9,36 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApi\Common\Tests\Model;
+namespace Xabbuh\XApi\Common\Tests\Serializer;
 
 use Xabbuh\XApi\Common\Model\Activity;
 use Xabbuh\XApi\Common\Model\Agent;
 use Xabbuh\XApi\Common\Model\Statement;
 use Xabbuh\XApi\Common\Model\StatementResult;
 use Xabbuh\XApi\Common\Model\Verb;
+use Xabbuh\XApi\Common\Serializer\StatementResultSerializer;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class StatementResultTest extends ModelTest
+class StatementResultSerializerTest extends AbstractSerializerTest
 {
+    /**
+     * @var StatementResultSerializer
+     */
+    private $statementResultSerializer;
+
+    protected function setUp()
+    {
+        parent::setUp();
+        $this->statementResultSerializer = new StatementResultSerializer($this->serializer);
+    }
     public function testDeserializeStatementResult()
     {
         /** @var \Xabbuh\XApi\Common\Model\StatementResult $statementResult */
-        $statementResult = $this->deserialize($this->loadFixture('statement_result'));
+        $statementResult = $this->statementResultSerializer->deserializeStatementResult(
+            $this->loadFixture('statement_result')
+        );
         $statements = $statementResult->getStatements();
 
         $this->assertEquals(2, count($statements));
@@ -77,16 +90,18 @@ class StatementResultTest extends ModelTest
         $statementResult = new StatementResult();
         $statementResult->setStatements(array($statement1, $statement2));
 
-        $this->serializeAndValidateData(
+        $this->assertJsonEquals(
             $this->loadFixture('statement_result'),
-            $statementResult
+            $this->statementResultSerializer->serializeStatementResult($statementResult)
         );
     }
 
     public function testDeserializeStatementResultWithMore()
     {
         /** @var \Xabbuh\XApi\Common\Model\StatementResult $statementResult */
-        $statementResult = $this->deserialize($this->loadFixture('statement_result_with_more'));
+        $statementResult = $this->statementResultSerializer->deserializeStatementResult(
+            $this->loadFixture('statement_result_with_more')
+        );
         $statements = $statementResult->getStatements();
 
         $this->assertEquals(2, count($statements));
@@ -142,9 +157,9 @@ class StatementResultTest extends ModelTest
         $statementResult->setStatements(array($statement1, $statement2));
         $statementResult->setMoreUrlPath('/xapi/statements/more/b381d8eca64a61a42c7b9b4ecc2fabb6');
 
-        $this->serializeAndValidateData(
+        $this->assertJsonEquals(
             $this->loadFixture('statement_result_with_more'),
-            $statementResult
+            $this->statementResultSerializer->serializeStatementResult($statementResult)
         );
     }
 }
