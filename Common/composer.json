@@ -17,6 +17,9 @@
         "symfony/config": "~2.2",
         "symfony/validator": "~2.2"
     },
+    "require-dev": {
+        "symfony/property-access": "~2.2"
+    },
     "autoload": {
         "psr-4": {
             "Xabbuh\\XApi\\Common\\": ""
