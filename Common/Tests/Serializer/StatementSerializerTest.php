@@ -44,7 +44,7 @@ class StatementSerializerTest extends AbstractSerializerTest
         );
 
         $this->assertEquals(
-            '12345678-1234-5678-1234-567812345678',
+            '12345678-1234-5678-8234-567812345678',
             $statement->getId()
         );
         $this->assertEquals(
@@ -157,7 +157,7 @@ class StatementSerializerTest extends AbstractSerializerTest
     public function testSerializeMinimalStatement()
     {
         $statement = new Statement();
-        $statement->setId('12345678-1234-5678-1234-567812345678');
+        $statement->setId('12345678-1234-5678-8234-567812345678');
 
         $actor = new Agent();
         $actor->setMbox('mailto:xapi@adlnet.gov');

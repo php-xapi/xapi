@@ -31,7 +31,7 @@ class StatementTest extends ModelTest
     public function testValidStatement()
     {
         $statement = new Statement();
-        $statement->setId(md5(uniqid()));
+        $statement->setId('12345678-1234-5678-8234-567812345678');
         $statement->setActor(new Agent());
         $statement->setVerb(new Verb());
         $statement->setObject(new Activity());
@@ -49,10 +49,21 @@ class StatementTest extends ModelTest
         $this->validateStatement($statement, 1);
     }
 
+    public function testNotUuidIdInvalidates()
+    {
+        $statement = new Statement();
+        $statement->setId('foo');
+        $statement->setActor(new Agent());
+        $statement->setVerb(new Verb());
+        $statement->setObject(new Activity());
+
+        $this->validateStatement($statement, 1);
+    }
+
     public function testWithoutActor()
     {
         $statement = new Statement();
-        $statement->setId(md5(uniqid()));
+        $statement->setId('12345678-1234-5678-8234-567812345678');
         $statement->setVerb(new Verb());
         $statement->setObject(new Activity());
 
@@ -62,7 +73,7 @@ class StatementTest extends ModelTest
     public function testWithoutVerb()
     {
         $statement = new Statement();
-        $statement->setId(md5(uniqid()));
+        $statement->setId('12345678-1234-5678-8234-567812345678');
         $statement->setActor(new Agent());
         $statement->setObject(new Activity());
 
@@ -72,7 +83,7 @@ class StatementTest extends ModelTest
     public function testWithoutObject()
     {
         $statement = new Statement();
-        $statement->setId(md5(uniqid()));
+        $statement->setId('12345678-1234-5678-8234-567812345678');
         $statement->setActor(new Agent());
         $statement->setVerb(new Verb());
 
