@@ -12,7 +12,6 @@
 namespace Xabbuh\XApi\Common\Serializer;
 
 use JMS\Serializer\SerializerInterface;
-use Xabbuh\XApi\Common\Model\StatementInterface;
 use Xabbuh\XApi\Common\Model\StatementResultInterface;
 
 /**
