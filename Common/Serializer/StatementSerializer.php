@@ -66,7 +66,7 @@ class StatementSerializer implements StatementSerializerInterface
     {
         return $this->serializer->deserialize(
             $data,
-            'array<Xabbuh\XApi\Storage\MongoDB\Document\Statement>',
+            'array<Xabbuh\XApi\Common\Model\Statement>',
             'json'
         );
     }
