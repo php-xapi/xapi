@@ -154,6 +154,25 @@ class StatementSerializerTest extends AbstractSerializerTest
         $this->assertTrue($result->getCompletion());
     }
 
+    public function testDeserializeStatementCollection()
+    {
+        /** @var \Xabbuh\XApi\Common\Model\Statement[] $statements */
+        $statements = $this->statementSerializer->deserializeStatements(
+            $this->loadFixture('statement_collection')
+        );
+
+        $this->assertTrue(is_array($statements));
+        $this->assertCount(2, $statements);
+        $this->assertEquals(
+            '12345678-1234-5678-8234-567812345678',
+            $statements[0]->getId()
+        );
+        $this->assertEquals(
+            '12345678-1234-5678-8234-567812345679',
+            $statements[1]->getId()
+        );
+    }
+
     public function testSerializeMinimalStatement()
     {
         $statement = new Statement();

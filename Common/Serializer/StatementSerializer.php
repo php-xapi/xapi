@@ -58,4 +58,16 @@ class StatementSerializer implements StatementSerializerInterface
             'json'
         );
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function deserializeStatements($data)
+    {
+        return $this->serializer->deserialize(
+            $data,
+            'array<Xabbuh\XApi\Storage\MongoDB\Document\Statement>',
+            'json'
+        );
+    }
 }

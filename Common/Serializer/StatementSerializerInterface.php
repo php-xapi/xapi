@@ -46,4 +46,13 @@ interface StatementSerializerInterface
      * @return StatementInterface The parsed statement
      */
     public function deserializeStatement($data);
+
+    /**
+     * Parses a serialized collection of statements.
+     *
+     * @param string $data The serialized statements
+     *
+     * @return StatementInterface[] The parsed statements
+     */
+    public function deserializeStatements($data);
 }
