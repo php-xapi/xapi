@@ -1,0 +1,31 @@
+{
+    "name": "xabbuh/xapi-mongodb-storage",
+    "description": "MongoDB driver implementation of an xAPI storage",
+    "keywords": ["xAPI", "Tin Can API", "Experience API", "storage", "database", "repository", "document", "MongoDB"],
+    "homepage": "https://github.com/xabbuh/xapi-mongodb-storage/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Flothmann",
+            "homepage": "https://github.com/xabbuh"
+        }
+    ],
+    "require": {
+        "doctrine/mongodb-odm": "~1.0@dev",
+        "doctrine/mongodb-odm-bundle": "~3.0@dev",
+        "xabbuh/xapi-storage-api": "~1.0@dev"
+    },
+    "provide": {
+        "xabbuh/xapi-storage-implementation": "1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xabbuh\\XApi\\Storage\\MongoDB\\": "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}

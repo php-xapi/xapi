@@ -1,0 +1,14 @@
+<doctrine-mongo-mapping xmlns="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping
+        http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping.xsd"
+>
+    <document name="Xabbuh\XApi\Storage\MongoDB\Document\Statement">
+        <field fieldName="id" id="true" strategy="UUID" />
+        <reference-one field="verb" target-document="Xabbuh\XApi\Storage\MongoDB\Document\Verb">
+            <cascade>
+                <persist/>
+            </cascade>
+        </reference-one>
+    </document>
+</doctrine-mongo-mapping>
