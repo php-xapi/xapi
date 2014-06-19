@@ -11,12 +11,13 @@
 
 namespace Xabbuh\XApi\Common\Tests\Serializer;
 
-use Xabbuh\XApi\Common\Model\ActivityProfileDocument;
-use Xabbuh\XApi\Common\Model\AgentProfileDocument;
-use Xabbuh\XApi\Common\Model\Document;
-use Xabbuh\XApi\Common\Model\StateDocument;
 use Xabbuh\XApi\Common\Serializer\DocumentSerializer;
+use Xabbuh\XApi\Common\Test\Fixture\DocumentFixtures;
+use Xabbuh\XApi\Common\Test\Fixture\DocumentJsonFixtures;
 
+/**
+ * @author Christian Flothmann <christian.flothmann@xabbuh.de>
+ */
 class DocumentSerializerTest extends AbstractSerializerTest
 {
     /**
@@ -33,7 +34,7 @@ class DocumentSerializerTest extends AbstractSerializerTest
     public function testDeserializeActivityProfileDocument()
     {
         /** @var \Xabbuh\XApi\Common\Model\Document $document */
-        $document = $this->documentSerializer->deserializeActivityProfileDocument($this->loadFixture('document'));
+        $document = $this->documentSerializer->deserializeActivityProfileDocument(DocumentJsonFixtures::getDocument());
 
         $this->assertInstanceOf(
             '\Xabbuh\XApi\Common\Model\ActivityProfileDocumentInterface',
@@ -46,7 +47,7 @@ class DocumentSerializerTest extends AbstractSerializerTest
     public function testDeserializeAgentProfileDocument()
     {
         /** @var \Xabbuh\XApi\Common\Model\Document $document */
-        $document = $this->documentSerializer->deserializeAgentProfileDocument($this->loadFixture('document'));
+        $document = $this->documentSerializer->deserializeAgentProfileDocument(DocumentJsonFixtures::getDocument());
 
         $this->assertInstanceOf(
             '\Xabbuh\XApi\Common\Model\AgentProfileDocumentInterface',
@@ -59,7 +60,7 @@ class DocumentSerializerTest extends AbstractSerializerTest
     public function testDeserializeStateDocument()
     {
         /** @var \Xabbuh\XApi\Common\Model\Document $document */
-        $document = $this->documentSerializer->deserializeStateDocument($this->loadFixture('document'));
+        $document = $this->documentSerializer->deserializeStateDocument(DocumentJsonFixtures::getDocument());
 
         $this->assertInstanceOf(
             '\Xabbuh\XApi\Common\Model\StateDocumentInterface',
@@ -71,48 +72,40 @@ class DocumentSerializerTest extends AbstractSerializerTest
 
     public function testSerializeDocument()
     {
-        $document = new Document();
-        $document['x'] = 'foo';
-        $document['y'] = 'bar';
+        $document = DocumentFixtures::getDocument();
 
         $this->assertJsonEquals(
-            $this->loadFixture('document'),
+            DocumentJsonFixtures::getDocument(),
             $this->documentSerializer->serializeDocument($document)
         );
     }
 
     public function testSerializeActivityProfileDocument()
     {
-        $document = new ActivityProfileDocument();
-        $document['x'] = 'foo';
-        $document['y'] = 'bar';
+        $document = DocumentFixtures::getActivityProfileDocument();
 
         $this->assertJsonEquals(
-            $this->loadFixture('document'),
+            DocumentJsonFixtures::getDocument(),
             $this->documentSerializer->serializeDocument($document)
         );
     }
 
     public function testSerializeAgentProfileDocument()
     {
-        $document = new AgentProfileDocument();
-        $document['x'] = 'foo';
-        $document['y'] = 'bar';
+        $document = DocumentFixtures::getAgentProfileDocument();
 
         $this->assertJsonEquals(
-            $this->loadFixture('document'),
+            DocumentJsonFixtures::getDocument(),
             $this->documentSerializer->serializeDocument($document)
         );
     }
 
     public function testSerializeStateDocument()
     {
-        $document = new StateDocument();
-        $document['x'] = 'foo';
-        $document['y'] = 'bar';
+        $document = DocumentFixtures::getStateDocument();
 
         $this->assertJsonEquals(
-            $this->loadFixture('document'),
+            DocumentJsonFixtures::getDocument(),
             $this->documentSerializer->serializeDocument($document)
         );
     }

@@ -71,16 +71,4 @@ abstract class ModelTest extends \PHPUnit_Framework_TestCase
             ->addXmlMapping(__DIR__.'/../../metadata/validator/StatementReference.xml')
             ->getValidator();
     }
-
-    protected function loadFixture($name)
-    {
-        return file_get_contents(__DIR__.'/fixtures/'.$name.'.json');
-    }
-
-    protected function loadAndParseFixture($name)
-    {
-        $type = str_replace(array('Tests\\', 'Test'), '', get_class($this));
-
-        return $this->serializer->deserialize($this->loadFixture($name), $type, 'json');
-    }
 }

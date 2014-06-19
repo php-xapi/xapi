@@ -12,6 +12,8 @@
 namespace Xabbuh\XApi\Common\Tests\Model;
 
 use Xabbuh\XApi\Common\Model\Agent;
+use Xabbuh\XApi\Common\Model\AgentInterface;
+use Xabbuh\XApi\Common\Test\Fixture\ActorFixtures;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -20,7 +22,7 @@ class AgentTest extends ModelTest
 {
     public function testValidateAgent()
     {
-        $agent = $this->loadAndParseFixture('agent');
+        $agent = ActorFixtures::getAgent();
 
         $this->validateAgent($agent, 0);
     }
@@ -32,7 +34,7 @@ class AgentTest extends ModelTest
         $this->validateAgent($agent, 1);
     }
 
-    private function validateAgent(Agent $agent, $validationCount)
+    private function validateAgent(AgentInterface $agent, $validationCount)
     {
         $this->assertEquals(
             $validationCount,

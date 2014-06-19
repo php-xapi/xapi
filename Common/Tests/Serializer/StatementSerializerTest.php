@@ -11,14 +11,9 @@
 
 namespace Xabbuh\XApi\Common\Tests\Serializer;
 
-use Xabbuh\XApi\Common\Model\Activity;
-use Xabbuh\XApi\Common\Model\Agent;
-use Xabbuh\XApi\Common\Model\Result;
-use Xabbuh\XApi\Common\Model\Score;
-use Xabbuh\XApi\Common\Model\Statement;
-use Xabbuh\XApi\Common\Model\StatementReference;
-use Xabbuh\XApi\Common\Model\Verb;
 use Xabbuh\XApi\Common\Serializer\StatementSerializer;
+use Xabbuh\XApi\Common\Test\Fixture\StatementFixtures;
+use Xabbuh\XApi\Common\Test\Fixture\StatementJsonFixtures;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -40,7 +35,7 @@ class StatementSerializerTest extends AbstractSerializerTest
     {
         /** @var \Xabbuh\XApi\Common\Model\Statement $statement */
         $statement = $this->statementSerializer->deserializeStatement(
-            $this->loadFixture('minimal_statement')
+            StatementJsonFixtures::getMinimalStatement()
         );
 
         $this->assertEquals(
@@ -69,11 +64,11 @@ class StatementSerializerTest extends AbstractSerializerTest
     {
         /** @var \Xabbuh\XApi\Common\Model\Statement $statement */
         $statement = $this->statementSerializer->deserializeStatement(
-            $this->loadFixture('statement_with_statement_ref')
+            StatementJsonFixtures::getStatementWithStatementRef()
         );
 
         $this->assertEquals(
-            '12345678-1234-5678-1234-567812345678',
+            '12345678-1234-5678-8234-567812345678',
             $statement->getId()
         );
         $this->assertEquals(
@@ -98,7 +93,7 @@ class StatementSerializerTest extends AbstractSerializerTest
     {
         /** @var \Xabbuh\XApi\Common\Model\Statement $statement */
         $statement = $this->statementSerializer->deserializeStatement(
-            $this->loadFixture('statement_with_sub_statement')
+            StatementJsonFixtures::getStatementWithSubStatement()
         );
 
         $this->assertEquals(
@@ -138,7 +133,7 @@ class StatementSerializerTest extends AbstractSerializerTest
     {
         /** @var \Xabbuh\XApi\Common\Model\StatementInterface $statement */
         $statement = $this->statementSerializer->deserializeStatement(
-            $this->loadFixture('statement_with_result')
+            StatementJsonFixtures::getStatementWithResult()
         );
         $result = $statement->getResult();
 
@@ -158,7 +153,7 @@ class StatementSerializerTest extends AbstractSerializerTest
     {
         /** @var \Xabbuh\XApi\Common\Model\Statement[] $statements */
         $statements = $this->statementSerializer->deserializeStatements(
-            $this->loadFixture('statement_collection')
+            StatementJsonFixtures::getStatementCollection()
         );
 
         $this->assertTrue(is_array($statements));
@@ -175,77 +170,30 @@ class StatementSerializerTest extends AbstractSerializerTest
 
     public function testSerializeMinimalStatement()
     {
-        $statement = new Statement();
-        $statement->setId('12345678-1234-5678-8234-567812345678');
-
-        $actor = new Agent();
-        $actor->setMbox('mailto:xapi@adlnet.gov');
-        $statement->setActor($actor);
-
-        $verb = new Verb();
-        $verb->setId('http://adlnet.gov/expapi/verbs/created');
-        $verb->setDisplay(array('en-US' => 'created'));
-        $statement->setVerb($verb);
-
-        $activity = new Activity();
-        $activity->setId('http://example.adlnet.gov/xapi/example/activity');
-        $statement->setObject($activity);
+        $statement = StatementFixtures::getMinimalStatement();
 
         $this->assertJsonEquals(
-            $this->loadFixture('minimal_statement'),
+            StatementJsonFixtures::getMinimalStatement(),
             $this->statementSerializer->serializeStatement($statement)
         );
     }
 
     public function testSerializeWithStatementReference()
     {
-        $statement = new Statement();
-        $statement->setId('12345678-1234-5678-1234-567812345678');
-
-        $actor = new Agent();
-        $actor->setMbox('mailto:xapi@adlnet.gov');
-        $statement->setActor($actor);
-
-        $verb = new Verb();
-        $verb->setId('http://adlnet.gov/expapi/verbs/created');
-        $verb->setDisplay(array('en-US' => 'created'));
-        $statement->setVerb($verb);
-
-        $statementReference = new StatementReference();
-        $statementReference->setStatementId('8f87ccde-bb56-4c2e-ab83-44982ef22df0');
-        $statement->setObject($statementReference);
+        $statement = StatementFixtures::getStatementWithStatementRef();
 
         $this->assertJsonEquals(
-            $this->loadFixture('statement_with_statement_ref'),
+            StatementJsonFixtures::getStatementWithStatementRef(),
             $this->statementSerializer->serializeStatement($statement)
         );
     }
 
     public function testSerializeWithResult()
     {
-        $agent = new Agent();
-        $agent->setMbox('mailto:alice@example.com');
-        $verb = new Verb();
-        $verb->setId('http://adlnet.gov/expapi/verbs/attempted');
-        $activity = new Activity();
-        $activity->setId('http://example.adlnet.gov/xapi/example/simpleCBT');
-        $score = new Score();
-        $score->setScaled(0.95);
-        $score->setRaw(31);
-        $score->setMin(0);
-        $score->setMax(50);
-        $result = new Result();
-        $result->setScore($score);
-        $result->setSuccess(true);
-        $result->setCompletion(true);
-        $statement = new Statement();
-        $statement->setActor($agent);
-        $statement->setVerb($verb);
-        $statement->setObject($activity);
-        $statement->setResult($result);
+        $statement = StatementFixtures::getStatementWithResult();
 
         $this->assertJsonEquals(
-            $this->loadFixture('statement_with_result'),
+            StatementJsonFixtures::getStatementWithResult(),
             $this->statementSerializer->serializeStatement($statement)
         );
     }

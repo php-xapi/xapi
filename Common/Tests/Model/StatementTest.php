@@ -14,7 +14,9 @@ namespace Xabbuh\XApi\Common\Tests\Model;
 use Xabbuh\XApi\Common\Model\Activity;
 use Xabbuh\XApi\Common\Model\Agent;
 use Xabbuh\XApi\Common\Model\Statement;
+use Xabbuh\XApi\Common\Model\StatementInterface;
 use Xabbuh\XApi\Common\Model\Verb;
+use Xabbuh\XApi\Common\Test\Fixture\StatementFixtures;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -23,7 +25,7 @@ class StatementTest extends ModelTest
 {
     public function testValidateMinimalStatement()
     {
-        $statement = $this->loadAndParseFixture('minimal_statement');
+        $statement = StatementFixtures::getMinimalStatement();
 
         $this->validateStatement($statement, 0);
     }
@@ -131,7 +133,7 @@ class StatementTest extends ModelTest
         );
     }
 
-    private function validateStatement(Statement $statement, $violationCount)
+    private function validateStatement(StatementInterface $statement, $violationCount)
     {
         $this->assertEquals($violationCount, $this->validator->validate($statement)->count());
     }

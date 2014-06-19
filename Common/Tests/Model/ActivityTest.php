@@ -12,7 +12,8 @@
 namespace Xabbuh\XApi\Common\Tests\Model;
 
 use Xabbuh\XApi\Common\Model\Activity;
-use Xabbuh\XApi\Common\Model\Definition;
+use Xabbuh\XApi\Common\Model\ActivityInterface;
+use Xabbuh\XApi\Common\Test\Fixture\ActivityFixtures;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -21,7 +22,7 @@ class ActivityTest extends ModelTest
 {
     public function testValidateActivity()
     {
-        $activity = $this->loadAndParseFixture('activity');
+        $activity = ActivityFixtures::getActivity();
 
         $this->validateActivity($activity, 0);
     }
@@ -33,7 +34,7 @@ class ActivityTest extends ModelTest
         $this->validateActivity($activity, 1);
     }
 
-    private function validateActivity(Activity $activity, $violationCount)
+    private function validateActivity(ActivityInterface $activity, $violationCount)
     {
         $this->assertEquals(
             $violationCount,

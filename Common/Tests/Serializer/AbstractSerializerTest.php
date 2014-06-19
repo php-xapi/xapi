@@ -53,11 +53,6 @@ abstract class AbstractSerializerTest extends \PHPUnit_Framework_TestCase
         $this->serializer = $builder->build();
     }
 
-    protected function loadFixture($name)
-    {
-        return file_get_contents(__DIR__.'/../Model/fixtures/'.$name.'.json');
-    }
-
     protected function assertJsonEquals($expected, $actual)
     {
         $this->assertEquals(json_decode($expected), json_decode($actual));

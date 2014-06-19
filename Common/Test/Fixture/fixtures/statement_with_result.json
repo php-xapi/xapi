@@ -1,0 +1,27 @@
+{
+    "id": "12345678-1234-5678-8234-567812345678",
+    "actor": {
+        "mbox": "mailto:xapi@adlnet.gov",
+        "objectType": "Agent"
+    },
+    "verb": {
+        "id": "http://adlnet.gov/expapi/verbs/created",
+        "display": {
+            "en-US": "created"
+        }
+    },
+    "object":{
+        "objectType": "Activity",
+        "id":"http://example.adlnet.gov/xapi/example/activity"
+    },
+    "result":{
+        "score":{
+            "scaled":0.95,
+            "raw": 31,
+            "min":0,
+            "max":50
+        },
+        "success":true,
+        "completion":true
+    }
+}

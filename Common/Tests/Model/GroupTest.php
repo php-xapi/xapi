@@ -11,9 +11,8 @@
 
 namespace Xabbuh\XApi\Common\Tests\Model;
 
-use Xabbuh\XApi\Common\Model\Account;
-use Xabbuh\XApi\Common\Model\Agent;
-use Xabbuh\XApi\Common\Model\Group;
+use Xabbuh\XApi\Common\Model\GroupInterface;
+use Xabbuh\XApi\Common\Test\Fixture\ActorFixtures;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -22,19 +21,19 @@ class GroupTest extends ModelTest
 {
     public function testValidateAnonymousGroup()
     {
-        $group = $this->loadAndParseFixture('anonymous_group');
+        $group = ActorFixtures::getAnonymousGroup();
 
         $this->validateGroup($group, 'anonymous', 0);
     }
 
     public function testValidateIdentifiedGroup()
     {
-        $group = $this->loadAndParseFixture('group');
+        $group = ActorFixtures::getGroup();
 
         $this->validateGroup($group, 'identified', 0);
     }
 
-    private function validateGroup(Group $group, $validationGroup, $validationCount)
+    private function validateGroup(GroupInterface $group, $validationGroup, $validationCount)
     {
         $this->assertEquals(
             $validationCount,

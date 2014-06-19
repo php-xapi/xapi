@@ -1,9 +1,9 @@
 {
     "statements": [
         {
-            "id": "12345678-1234-5678-1234-567812345678",
+            "id": "12345678-1234-5678-8234-567812345678",
             "actor": {
-                "mbox": "mailto:alice@example.com",
+                "mbox": "mailto:xapi@adlnet.gov",
                 "objectType": "Agent"
             },
             "verb": {
@@ -18,7 +18,7 @@
             }
         },
         {
-            "id": "12345678-1234-5678-1234-567812345679",
+            "id": "12345678-1234-5678-8234-567812345679",
             "actor": {
                 "mbox": "mailto:bob@example.com",
                 "objectType": "Agent"
