@@ -19,15 +19,34 @@ namespace Xabbuh\XApi\Common\Model;
  */
 interface ResultInterface
 {
+    /**
+     * Sets the score the user achieved.
+     *
+     * @param ScoreInterface $score The score
+     */
     public function setScore(ScoreInterface $score);
 
     /**
-     * @return ScoreInterface
+     * Returns the user's score.
+     *
+     * @return ScoreInterface The score
      */
     public function getScore();
 
+    /**
+     * Sets whether or not the user finished a task successfully.
+     *
+     * @param boolean $success True if the user finished an exercise successfully,
+     *                         false otherwise
+     */
     public function setSuccess($success);
 
+    /**
+     * Returns whether or not the user finished a task successfully.
+     *
+     * @return boolean True if the user finished an exercise successfully,
+     *                 false otherwise
+     */
     public function getSuccess();
 
     /**
