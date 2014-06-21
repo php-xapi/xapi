@@ -1,0 +1,27 @@
+{
+    "name": "xabbuh/xapi-doctrine-storage",
+    "description": "common classes for Doctrine based driver implementations of an xAPI storage",
+    "keywords": ["xAPI", "Tin Can API", "Experience API", "storage", "database", "repository", "document", "Doctrine"],
+    "homepage": "https://github.com/xabbuh/xapi-doctrine-storage/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Flothmann",
+            "homepage": "https://github.com/xabbuh"
+        }
+    ],
+    "require": {
+        "xabbuh/xapi-common": "~1.0@dev",
+        "xabbuh/xapi-storage-api": "~1.0@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xabbuh\\XApi\\Storage\\Doctrine\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
