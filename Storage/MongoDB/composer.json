@@ -11,17 +11,19 @@
         }
     ],
     "require": {
-        "doctrine/mongodb-odm": "~1.0@dev",
-        "doctrine/mongodb-odm-bundle": "~3.0@dev",
-        "xabbuh/xapi-doctrine-storage": "~1.0@dev",
-        "xabbuh/xapi-storage-api": "~1.0@dev"
+        "doctrine/mongodb-odm": "~1.0",
+        "doctrine/mongodb-odm-bundle": "~3.0",
+        "xabbuh/xapi-doctrine-storage": "~1.0",
+        "xabbuh/xapi-storage-api": "~1.0"
     },
     "require-dev": {
-        "xabbuh/xapi-common": "~1.0@dev"
+        "xabbuh/xapi-common": "~1.0"
     },
     "provide": {
         "xabbuh/xapi-storage-implementation": "1.0"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Xabbuh\\XApi\\Storage\\MongoDB\\": ""
