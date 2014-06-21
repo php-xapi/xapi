@@ -13,6 +13,7 @@ namespace Xabbuh\XApi\Storage\MongoDB\Repository;
 
 use Doctrine\ODM\MongoDB\DocumentRepository;
 use Xabbuh\XApi\Common\Model\StatementInterface;
+use Xabbuh\XApi\Storage\Doctrine\Repository\StatementRepositoryInterface;
 use Xabbuh\XApi\Storage\MongoDB\Document\Statement;
 
 /**
@@ -20,7 +21,7 @@ use Xabbuh\XApi\Storage\MongoDB\Document\Statement;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class StatementRepository extends DocumentRepository
+class StatementRepository extends DocumentRepository implements StatementRepositoryInterface
 {
     /**
      * Saves a {@link StatementInterface statement} in the underlying storage.
