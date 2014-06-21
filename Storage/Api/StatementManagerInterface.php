@@ -52,6 +52,9 @@ interface StatementManagerInterface
      * Stores a {@link StatementInterface statement}.
      *
      * @param StatementInterface $statement The statement to store
+     * @param bool               $flush     Whether or not to flush the
+     *                                      managed objects (i.e. write them
+     *                                      to the data storage)
      */
-    public function updateStatement(StatementInterface $statement);
+    public function save(StatementInterface $statement, $flush = true);
 }

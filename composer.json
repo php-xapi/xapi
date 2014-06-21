@@ -22,11 +22,15 @@
         "symfony/validator": "~2.5"
     },
     "require-dev": {
+        "doctrine/mongodb-odm": "~1.0@dev",
+        "doctrine/mongodb-odm-bundle": "~3.0@dev",
         "symfony/property-access": "~2.2"
     },
     "replace": {
         "xabbuh/xapi-client": "self.version",
-        "xabbuh/xapi-common": "self.version"
+        "xabbuh/xapi-common": "self.version",
+        "xabbuh/xapi-mongodb-storage-api": "self.version",
+        "xabbuh/xapi-storage-api": "self.version"
     },
     "autoload": {
         "psr-4": {

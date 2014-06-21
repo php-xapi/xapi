@@ -15,12 +15,15 @@
         "doctrine/mongodb-odm-bundle": "~3.0@dev",
         "xabbuh/xapi-storage-api": "~1.0@dev"
     },
+    "require-dev": {
+        "xabbuh/xapi-common": "~1.0@dev"
+    },
     "provide": {
         "xabbuh/xapi-storage-implementation": "1.0"
     },
     "autoload": {
         "psr-4": {
-            "Xabbuh\\XApi\\Storage\\MongoDB\\": "src"
+            "Xabbuh\\XApi\\Storage\\MongoDB\\": ""
         }
     },
     "extra": {
