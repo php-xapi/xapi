@@ -55,7 +55,6 @@ class XabbuhLrsExtensionTest extends AbstractExtensionTestCase
     private function validateContainerBuilder()
     {
         $this->validateSerializers();
-        $this->validateControllers();
     }
 
     private function validateSerializers()
@@ -78,23 +77,5 @@ class XabbuhLrsExtensionTest extends AbstractExtensionTestCase
                 new Reference('jms_serializer')
             );
         }
-    }
-
-    private function validateControllers()
-    {
-        $this->assertContainerBuilderHasService(
-            'xabbuh_lrs.statements_controller',
-            'Xabbuh\XApi\Bundle\LrsBundle\Controller\StatementsController'
-        );
-        $this->assertContainerBuilderHasServiceDefinitionWithArgument(
-            'xabbuh_lrs.statements_controller',
-            0,
-            new Reference('xabbuh_lrs.statement_manager')
-        );
-        $this->assertContainerBuilderHasServiceDefinitionWithArgument(
-            'xabbuh_lrs.statements_controller',
-            1,
-            new Reference('xabbuh_lrs.statement_serializer')
-        );
     }
 }
