@@ -24,6 +24,7 @@
     "require-dev": {
         "doctrine/mongodb-odm": "~1.0",
         "doctrine/mongodb-odm-bundle": "~3.0",
+        "matthiasnoback/symfony-dependency-injection-test": "~0.6",
         "symfony/property-access": "~2.2"
     },
     "replace": {

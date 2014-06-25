@@ -1,0 +1,37 @@
+{
+    "name": "xabbuh/lrs-bundle",
+    "description": "A Symfony bundle providing an xAPI Learning Record Store",
+    "type": "symfony-bundle",
+    "keywords": ["xAPI", "Experience API", "Tin Can API", "LRS", "Learning Record Store", "Symfony", "bundle"],
+    "homepage": "https://github.com/xabbuh/LrsBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Flothmann",
+            "homepage": "https://github.com/xabbuh"
+        }
+    ],
+    "require": {
+        "jms/serializer-bundle": "~0.9",
+        "xabbuh/xapi-storage-implementation": "~1.0"
+    },
+    "require-dev": {
+        "matthiasnoback/symfony-dependency-injection-test": "~0.6",
+        "xabbuh/xapi-mongodb-storage": "~1.0"
+    },
+    "suggest": {
+        "xabbuh/xapi-storage-mongodb": "Allow to store statements in MongoDB "
+    },
+    "autoload": {
+        "psr-4": {
+            "Xabbuh\\XApi\\Bundle\\LrsBundle\\": ""
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
