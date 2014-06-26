@@ -37,12 +37,12 @@ class XabbuhLrsExtensionTest extends AbstractExtensionTestCase
         $this->validateContainerBuilder();
         $this->assertContainerBuilderHasService(
             'xabbuh_lrs.statement_manager',
-            'Xabbuh\XApi\Storage\MongoDB\Manager\StatementManager'
+            'Xabbuh\XApi\Storage\Doctrine\Manager\StatementManager'
         );
         $this->assertContainerBuilderHasServiceDefinitionWithArgument(
             'xabbuh_lrs.statement_manager',
             0,
-            new Reference('xabbuh_lrs.statement_object_manager')
+            new Reference('xabbuh_lrs.statement_repository')
         );
         $this->assertContainerBuilderHasService('xabbuh_lrs.statement_object_manager');
     }
