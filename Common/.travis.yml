@@ -8,3 +8,7 @@ php:
   - hhvm
 
 before_script: composer install
+
+matrix:
+  allow_failurs:
+    - php: hhvm
