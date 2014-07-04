@@ -2009,12 +2009,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-common.git",
-                "reference": "6767853e9e42f8c38ff5582d7730d8ea6a3cf4f1"
+                "reference": "56132aa180efac579cddf023c2841aaa03656616"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-common/zipball/6767853e9e42f8c38ff5582d7730d8ea6a3cf4f1",
-                "reference": "6767853e9e42f8c38ff5582d7730d8ea6a3cf4f1",
+                "url": "https://api.github.com/repos/xabbuh/xapi-common/zipball/56132aa180efac579cddf023c2841aaa03656616",
+                "reference": "56132aa180efac579cddf023c2841aaa03656616",
                 "shasum": ""
             },
             "require": {
@@ -2054,7 +2054,7 @@
                 "Tin Can API",
                 "xAPI"
             ],
-            "time": "2014-06-19 15:30:23"
+            "time": "2014-07-03 19:41:11"
         },
         {
             "name": "xabbuh/xapi-doctrine-storage",
@@ -2062,17 +2062,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-doctrine-storage.git",
-                "reference": "ea98b388b266058f95b3769199445aad90d9f31d"
+                "reference": "30494e18aa4936bd27d5d9b96a20f98c87c21420"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/ea98b388b266058f95b3769199445aad90d9f31d",
-                "reference": "ea98b388b266058f95b3769199445aad90d9f31d",
+                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/30494e18aa4936bd27d5d9b96a20f98c87c21420",
+                "reference": "30494e18aa4936bd27d5d9b96a20f98c87c21420",
                 "shasum": ""
             },
             "require": {
-                "xabbuh/xapi-common": "~1.0@dev",
-                "xabbuh/xapi-storage-api": "~1.0@dev"
+                "doctrine/common": "~2.4",
+                "xabbuh/xapi-common": "~1.0",
+                "xabbuh/xapi-storage-api": "~1.0"
             },
             "type": "library",
             "extra": {
@@ -2107,7 +2108,7 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2014-06-21 23:06:47"
+            "time": "2014-07-04 08:41:23"
         },
         {
             "name": "xabbuh/xapi-storage-api",
