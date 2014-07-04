@@ -3,7 +3,9 @@
     xsi:schemaLocation="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping
         http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping.xsd"
 >
-    <document name="Xabbuh\XApi\Storage\MongoDB\Document\Statement">
+    <document name="Xabbuh\XApi\Storage\MongoDB\Document\Statement"
+        repository-class="Xabbuh\XApi\Storage\MongoDB\Repository\StatementRepository"
+    >
         <field fieldName="id" id="true" strategy="UUID" />
         <reference-one field="verb" target-document="Xabbuh\XApi\Storage\MongoDB\Document\Verb">
             <cascade>
