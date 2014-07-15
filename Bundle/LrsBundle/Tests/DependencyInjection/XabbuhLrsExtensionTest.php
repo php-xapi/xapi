@@ -55,6 +55,7 @@ class XabbuhLrsExtensionTest extends AbstractExtensionTestCase
     private function validateContainerBuilder()
     {
         $this->validateSerializers();
+        $this->validateListeners();
     }
 
     private function validateSerializers()
@@ -75,6 +76,39 @@ class XabbuhLrsExtensionTest extends AbstractExtensionTestCase
                 $id,
                 0,
                 new Reference('jms_serializer')
+            );
+        }
+    }
+
+    private function validateListeners()
+    {
+        $listeners = array(
+            array(
+                'id' => 'xabbuh_lrs.listener.statement_serializer',
+                'className' => 'StatementSerializerListener',
+                'serializer' => 'xabbuh_lrs.statement_serializer',
+            ),
+            array(
+                'id' => 'xabbuh_lrs.listener.statement_result_serializer',
+                'className' => 'StatementResultSerializerListener',
+                'serializer' => 'xabbuh_lrs.statement_result_serializer',
+            ),
+        );
+
+        foreach ($listeners as $listener) {
+            $this->assertContainerBuilderHasService(
+                $listener['id'],
+                'Xabbuh\XApi\Bundle\LrsBundle\Listener\\'.$listener['className']
+            );
+            $this->assertContainerBuilderHasServiceDefinitionWithArgument(
+                $listener['id'],
+                0,
+                new Reference($listener['serializer'])
+            );
+            $this->assertContainerBuilderHasServiceDefinitionWithTag(
+                $listener['id'],
+                'kernel.event_listener',
+                array('event' => 'kernel.view', 'method' => 'onKernelView')
             );
         }
     }

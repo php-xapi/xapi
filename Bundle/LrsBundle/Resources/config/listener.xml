@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services
+        http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="xabbuh_lrs.listener.statement_serializer.class">Xabbuh\XApi\Bundle\LrsBundle\Listener\StatementSerializerListener</parameter>
+        <parameter key="xabbuh_lrs.listener.statement_result_serializer.class">Xabbuh\XApi\Bundle\LrsBundle\Listener\StatementResultSerializerListener</parameter>
+    </parameters>
+
+    <services>
+        <service id="xabbuh_lrs.listener.statement_serializer" class="%xabbuh_lrs.listener.statement_serializer.class%" public="true">
+            <argument type="service" id="xabbuh_lrs.statement_serializer" />
+            <tag name="kernel.event_listener" event="kernel.view" method="onKernelView" />
+        </service>
+        <service id="xabbuh_lrs.listener.statement_result_serializer" class="%xabbuh_lrs.listener.statement_result_serializer.class%" public="true">
+            <argument type="service" id="xabbuh_lrs.statement_result_serializer" />
+            <tag name="kernel.event_listener" event="kernel.view" method="onKernelView" />
+        </service>
+    </services>
+</container>

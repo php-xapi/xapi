@@ -41,6 +41,7 @@ class XabbuhLrsExtension extends Extension
                 break;
         }
 
+        $loader->load('listener.xml');
         $loader->load('serializer.xml');
     }
 }
