@@ -11,8 +11,6 @@
 
 namespace Xabbuh\XApi\Bundle\LrsBundle\Listener;
 
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent;
 use Xabbuh\XApi\Common\Model\StatementResultInterface;
 use Xabbuh\XApi\Common\Serializer\StatementResultSerializerInterface;
 
@@ -22,7 +20,7 @@ use Xabbuh\XApi\Common\Serializer\StatementResultSerializerInterface;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class StatementResultSerializerListener
+class StatementResultSerializerListener extends AbstractSerializerListener
 {
     /**
      * @var \Xabbuh\XApi\Common\Serializer\StatementResultSerializerInterface
@@ -35,22 +33,18 @@ class StatementResultSerializerListener
     }
 
     /**
-     * Serializes a statement result that was produced by a controller and
-     * creates the corresponding JSON response.
-     *
-     * @param GetResponseForControllerResultEvent $event The HTTP kernel event
+     * {@inheritDoc}
      */
-    public function onKernelView(GetResponseForControllerResultEvent $event)
+    protected function isControllerResultSupported($result)
     {
-        if (!$event->getControllerResult() instanceof StatementResultInterface) {
-            return;
-        }
+        return $result instanceof StatementResultInterface;
+    }
 
-        $response = new Response(
-            $this->serializer->serializeStatementResult($event->getControllerResult()),
-            200,
-            array('Content-Type' => 'application/json')
-        );
-        $event->setResponse($response);
+    /**
+     * {@inheritDoc}
+     */
+    protected function serializeControllerResult($result)
+    {
+        return $this->serializer->serializeStatementResult($result);
     }
 }
