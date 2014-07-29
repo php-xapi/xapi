@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApi\Common\Test\Fixture;
+namespace Xabbuh\XApi\Common\Tests\Fixtures;
 
 /**
  * JSON encoded fixtures.
@@ -27,6 +27,6 @@ abstract class JsonFixtures
      */
     protected static function load($file)
     {
-        return file_get_contents(__DIR__.'/fixtures/'.$file.'.json');
+        return file_get_contents(__DIR__.'/data/'.$file.'.json');
     }
 }

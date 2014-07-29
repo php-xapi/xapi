@@ -13,7 +13,7 @@ namespace Xabbuh\XApi\Common\Tests\Model;
 
 use Xabbuh\XApi\Common\Model\Agent;
 use Xabbuh\XApi\Common\Model\AgentInterface;
-use Xabbuh\XApi\Common\Test\Fixture\ActorFixtures;
+use Xabbuh\XApi\DataFixtures\ActorFixtures;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>

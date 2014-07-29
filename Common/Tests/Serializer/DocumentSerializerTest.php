@@ -12,8 +12,8 @@
 namespace Xabbuh\XApi\Common\Tests\Serializer;
 
 use Xabbuh\XApi\Common\Serializer\DocumentSerializer;
-use Xabbuh\XApi\Common\Test\Fixture\DocumentFixtures;
-use Xabbuh\XApi\Common\Test\Fixture\DocumentJsonFixtures;
+use Xabbuh\XApi\Common\Tests\Fixtures\DocumentJsonFixtures;
+use Xabbuh\XApi\DataFixtures\DocumentFixtures;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>

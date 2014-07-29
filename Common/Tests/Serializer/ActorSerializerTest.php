@@ -12,8 +12,8 @@
 namespace Xabbuh\XApi\Common\Tests\Serializer;
 
 use Xabbuh\XApi\Common\Serializer\ActorSerializer;
-use Xabbuh\XApi\Common\Test\Fixture\ActorFixtures;
-use Xabbuh\XApi\Common\Test\Fixture\ActorJsonFixtures;
+use Xabbuh\XApi\Common\Tests\Fixtures\ActorJsonFixtures;
+use Xabbuh\XApi\DataFixtures\ActorFixtures;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>

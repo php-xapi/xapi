@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApi\Common\Test\Fixture;
+namespace Xabbuh\XApi\DataFixtures;
 
 use Xabbuh\XApi\Common\Model\Account;
 use Xabbuh\XApi\Common\Model\Agent;

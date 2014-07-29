@@ -13,7 +13,7 @@ namespace Xabbuh\XApi\Common\Tests\Model;
 
 use Xabbuh\XApi\Common\Model\Activity;
 use Xabbuh\XApi\Common\Model\ActivityInterface;
-use Xabbuh\XApi\Common\Test\Fixture\ActivityFixtures;
+use Xabbuh\XApi\DataFixtures\ActivityFixtures;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>

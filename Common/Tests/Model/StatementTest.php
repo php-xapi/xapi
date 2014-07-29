@@ -16,7 +16,7 @@ use Xabbuh\XApi\Common\Model\Agent;
 use Xabbuh\XApi\Common\Model\Statement;
 use Xabbuh\XApi\Common\Model\StatementInterface;
 use Xabbuh\XApi\Common\Model\Verb;
-use Xabbuh\XApi\Common\Test\Fixture\StatementFixtures;
+use Xabbuh\XApi\DataFixtures\StatementFixtures;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
