@@ -30,7 +30,12 @@
     },
     "replace": {
         "xabbuh/xapi-client": "self.version",
+        "xabbuh/xapi-client-bundle": "self.version",
         "xabbuh/xapi-common": "self.version",
+        "xabbuh/xapi-data-fixtures": "self.version",
+        "xabbuh/xapi-doctrine-storage": "self.version",
+        "xabbuh/xapi-lrs-bundle": "self.version",
+        "xabbuh/xapi-model": "self.version",
         "xabbuh/xapi-mongodb-storage-api": "self.version",
         "xabbuh/xapi-storage-api": "self.version"
     },
