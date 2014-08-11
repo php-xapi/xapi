@@ -11,8 +11,8 @@
 
 namespace Xabbuh\XApi\Storage\MongoDB\Document;
 
-use Xabbuh\XApi\Common\Model\Statement as BaseStatement;
-use Xabbuh\XApi\Common\Model\StatementInterface;
+use Xabbuh\XApi\Model\Statement as BaseStatement;
+use Xabbuh\XApi\Model\StatementInterface;
 
 /**
  * A {@link StatementInterface statement} mapped to a MongoDB document.

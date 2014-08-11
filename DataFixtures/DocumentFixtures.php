@@ -11,10 +11,10 @@
 
 namespace Xabbuh\XApi\DataFixtures;
 
-use Xabbuh\XApi\Common\Model\ActivityProfileDocument;
-use Xabbuh\XApi\Common\Model\AgentProfileDocument;
-use Xabbuh\XApi\Common\Model\Document;
-use Xabbuh\XApi\Common\Model\StateDocument;
+use Xabbuh\XApi\Model\ActivityProfileDocument;
+use Xabbuh\XApi\Model\AgentProfileDocument;
+use Xabbuh\XApi\Model\Document;
+use Xabbuh\XApi\Model\StateDocument;
 
 /**
  * Document fixtures.
@@ -26,7 +26,7 @@ class DocumentFixtures
     /**
      * Loads a document.
      *
-     * @return \Xabbuh\XApi\Common\Model\DocumentInterface
+     * @return \Xabbuh\XApi\Model\DocumentInterface
      */
     public static function getDocument()
     {
@@ -40,7 +40,7 @@ class DocumentFixtures
     /**
      * Loads an activity profile document.
      *
-     * @return \Xabbuh\XApi\Common\Model\ActivityProfileDocumentInterface
+     * @return \Xabbuh\XApi\Model\ActivityProfileDocumentInterface
      */
     public static function getActivityProfileDocument()
     {
@@ -54,7 +54,7 @@ class DocumentFixtures
     /**
      * Loads an agent profile document.
      *
-     * @return \Xabbuh\XApi\Common\Model\AgentProfileDocumentInterface
+     * @return \Xabbuh\XApi\Model\AgentProfileDocumentInterface
      */
     public static function getAgentProfileDocument()
     {
@@ -68,7 +68,7 @@ class DocumentFixtures
     /**
      * Loads a state document.
      *
-     * @return \Xabbuh\XApi\Common\Model\StateDocumentInterface
+     * @return \Xabbuh\XApi\Model\StateDocumentInterface
      */
     public static function getStateDocument()
     {

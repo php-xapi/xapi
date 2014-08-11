@@ -11,8 +11,8 @@
 
 namespace Xabbuh\XApi\DataFixtures;
 
-use Xabbuh\XApi\Common\Model\Activity;
-use Xabbuh\XApi\Common\Model\Definition;
+use Xabbuh\XApi\Model\Activity;
+use Xabbuh\XApi\Model\Definition;
 
 /**
  * Activity fixtures.
@@ -24,7 +24,7 @@ class ActivityFixtures
     /**
      * Loads an activity.
      *
-     * @return \Xabbuh\XApi\Common\Model\ActivityInterface
+     * @return \Xabbuh\XApi\Model\ActivityInterface
      */
     public static function getActivity()
     {

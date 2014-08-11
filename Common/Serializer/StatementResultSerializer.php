@@ -12,10 +12,10 @@
 namespace Xabbuh\XApi\Common\Serializer;
 
 use JMS\Serializer\SerializerInterface;
-use Xabbuh\XApi\Common\Model\StatementResultInterface;
+use Xabbuh\XApi\Model\StatementResultInterface;
 
 /**
- * Serialize and deserialize {@link \Xabbuh\XApi\Common\Model\StatementResultInterface statement results}.
+ * Serialize and deserialize {@link \Xabbuh\XApi\Model\StatementResultInterface statement results}.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
@@ -46,7 +46,7 @@ class StatementResultSerializer implements StatementResultSerializerInterface
     {
         return $this->serializer->deserialize(
             $data,
-            'Xabbuh\XApi\Common\Model\StatementResult',
+            'Xabbuh\XApi\Model\StatementResult',
             'json'
         );
     }

@@ -46,8 +46,8 @@ class SetSerializedTypeEventSubscriber implements EventSubscriberInterface
 
         $type = $event->getType();
         $polymorphicTypes = array(
-            'Xabbuh\XApi\Common\Model\Actor',
-            'Xabbuh\XApi\Common\Model\Object',
+            'Xabbuh\XApi\Model\Actor',
+            'Xabbuh\XApi\Model\Object',
         );
 
         if (in_array($type['name'], $polymorphicTypes)) {

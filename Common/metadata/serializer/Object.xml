@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <serializer>
-    <class name="Xabbuh\XApi\Common\Model\Object"
+    <class name="Xabbuh\XApi\Model\Object"
         discriminator-field-name="objectType"
         exclusion-policy="ALL"
     >
-        <discriminator-class value="Activity">Xabbuh\XApi\Common\Model\Activity</discriminator-class>
-        <discriminator-class value="Agent">Xabbuh\XApi\Common\Model\Agent</discriminator-class>
-        <discriminator-class value="Group">Xabbuh\XApi\Common\Model\Group</discriminator-class>
-        <discriminator-class value="StatementRef">Xabbuh\XApi\Common\Model\StatementReference</discriminator-class>
-        <discriminator-class value="SubStatement">Xabbuh\XApi\Common\Model\SubStatement</discriminator-class>
+        <discriminator-class value="Activity">Xabbuh\XApi\Model\Activity</discriminator-class>
+        <discriminator-class value="Agent">Xabbuh\XApi\Model\Agent</discriminator-class>
+        <discriminator-class value="Group">Xabbuh\XApi\Model\Group</discriminator-class>
+        <discriminator-class value="StatementRef">Xabbuh\XApi\Model\StatementReference</discriminator-class>
+        <discriminator-class value="SubStatement">Xabbuh\XApi\Model\SubStatement</discriminator-class>
     </class>
 </serializer>

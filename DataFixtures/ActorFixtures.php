@@ -11,9 +11,9 @@
 
 namespace Xabbuh\XApi\DataFixtures;
 
-use Xabbuh\XApi\Common\Model\Account;
-use Xabbuh\XApi\Common\Model\Agent;
-use Xabbuh\XApi\Common\Model\Group;
+use Xabbuh\XApi\Model\Account;
+use Xabbuh\XApi\Model\Agent;
+use Xabbuh\XApi\Model\Group;
 
 /**
  * Actor fixtures.
@@ -25,7 +25,7 @@ class ActorFixtures
     /**
      * Loads an agent.
      *
-     * @return \Xabbuh\XApi\Common\Model\AgentInterface
+     * @return \Xabbuh\XApi\Model\AgentInterface
      */
     public static function getAgent()
     {
@@ -39,7 +39,7 @@ class ActorFixtures
     /**
      * Loads a group.
      *
-     * @return \Xabbuh\XApi\Common\Model\GroupInterface
+     * @return \Xabbuh\XApi\Model\GroupInterface
      */
     public static function getGroup()
     {
@@ -56,7 +56,7 @@ class ActorFixtures
     /**
      * Loads an anonymous group.
      *
-     * @return \Xabbuh\XApi\Common\Model\GroupInterface
+     * @return \Xabbuh\XApi\Model\GroupInterface
      */
     public static function getAnonymousGroup()
     {

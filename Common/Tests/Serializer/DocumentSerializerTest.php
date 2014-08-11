@@ -33,11 +33,11 @@ class DocumentSerializerTest extends AbstractSerializerTest
 
     public function testDeserializeActivityProfileDocument()
     {
-        /** @var \Xabbuh\XApi\Common\Model\Document $document */
+        /** @var \Xabbuh\XApi\Model\Document $document */
         $document = $this->documentSerializer->deserializeActivityProfileDocument(DocumentJsonFixtures::getDocument());
 
         $this->assertInstanceOf(
-            '\Xabbuh\XApi\Common\Model\ActivityProfileDocumentInterface',
+            '\Xabbuh\XApi\Model\ActivityProfileDocumentInterface',
             $document
         );
         $this->assertEquals('foo', $document['x']);
@@ -46,11 +46,11 @@ class DocumentSerializerTest extends AbstractSerializerTest
 
     public function testDeserializeAgentProfileDocument()
     {
-        /** @var \Xabbuh\XApi\Common\Model\Document $document */
+        /** @var \Xabbuh\XApi\Model\Document $document */
         $document = $this->documentSerializer->deserializeAgentProfileDocument(DocumentJsonFixtures::getDocument());
 
         $this->assertInstanceOf(
-            '\Xabbuh\XApi\Common\Model\AgentProfileDocumentInterface',
+            '\Xabbuh\XApi\Model\AgentProfileDocumentInterface',
             $document
         );
         $this->assertEquals('foo', $document['x']);
@@ -59,11 +59,11 @@ class DocumentSerializerTest extends AbstractSerializerTest
 
     public function testDeserializeStateDocument()
     {
-        /** @var \Xabbuh\XApi\Common\Model\Document $document */
+        /** @var \Xabbuh\XApi\Model\Document $document */
         $document = $this->documentSerializer->deserializeStateDocument(DocumentJsonFixtures::getDocument());
 
         $this->assertInstanceOf(
-            '\Xabbuh\XApi\Common\Model\StateDocumentInterface',
+            '\Xabbuh\XApi\Model\StateDocumentInterface',
             $document
         );
         $this->assertEquals('foo', $document['x']);

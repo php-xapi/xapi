@@ -32,7 +32,7 @@ class StatementResultSerializerTest extends AbstractSerializerTest
     }
     public function testDeserializeStatementResult()
     {
-        /** @var \Xabbuh\XApi\Common\Model\StatementResult $statementResult */
+        /** @var \Xabbuh\XApi\Model\StatementResult $statementResult */
         $statementResult = $this->statementResultSerializer->deserializeStatementResult(
             StatementResultJsonFixtures::getStatementResult()
         );
@@ -62,7 +62,7 @@ class StatementResultSerializerTest extends AbstractSerializerTest
 
     public function testDeserializeStatementResultWithMore()
     {
-        /** @var \Xabbuh\XApi\Common\Model\StatementResult $statementResult */
+        /** @var \Xabbuh\XApi\Model\StatementResult $statementResult */
         $statementResult = $this->statementResultSerializer->deserializeStatementResult(
             StatementResultJsonFixtures::getStatementResultWithMore()
         );

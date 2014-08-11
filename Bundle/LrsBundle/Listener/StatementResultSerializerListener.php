@@ -11,8 +11,8 @@
 
 namespace Xabbuh\XApi\Bundle\LrsBundle\Listener;
 
-use Xabbuh\XApi\Common\Model\StatementResultInterface;
 use Xabbuh\XApi\Common\Serializer\StatementResultSerializerInterface;
+use Xabbuh\XApi\Model\StatementResultInterface;
 
 /**
  * Kernel event listener transforming statement results into proper JSON

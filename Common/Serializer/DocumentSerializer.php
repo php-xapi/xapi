@@ -12,7 +12,7 @@
 namespace Xabbuh\XApi\Common\Serializer;
 
 use JMS\Serializer\SerializerInterface;
-use Xabbuh\XApi\Common\Model\DocumentInterface;
+use Xabbuh\XApi\Model\DocumentInterface;
 
 /**
  * Serialize and deserialize {@link DocumentInterface documents}.
@@ -44,7 +44,7 @@ class DocumentSerializer implements DocumentSerializerInterface
      */
     public function deserializeActivityProfileDocument($data)
     {
-        return $this->serializer->deserialize($data, 'Xabbuh\XApi\Common\Model\ActivityProfileDocument', 'json');
+        return $this->serializer->deserialize($data, 'Xabbuh\XApi\Model\ActivityProfileDocument', 'json');
     }
 
     /**
@@ -52,7 +52,7 @@ class DocumentSerializer implements DocumentSerializerInterface
      */
     public function deserializeAgentProfileDocument($data)
     {
-        return $this->serializer->deserialize($data, 'Xabbuh\XApi\Common\Model\AgentProfileDocument', 'json');
+        return $this->serializer->deserialize($data, 'Xabbuh\XApi\Model\AgentProfileDocument', 'json');
     }
 
     /**
@@ -60,6 +60,6 @@ class DocumentSerializer implements DocumentSerializerInterface
      */
     public function deserializeStateDocument($data)
     {
-        return $this->serializer->deserialize($data, 'Xabbuh\XApi\Common\Model\StateDocument', 'json');
+        return $this->serializer->deserialize($data, 'Xabbuh\XApi\Model\StateDocument', 'json');
     }
 }

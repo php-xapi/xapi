@@ -21,7 +21,7 @@ class ActivityJsonFixtures extends JsonFixtures
     /**
      * Loads an activity.
      *
-     * @return \Xabbuh\XApi\Common\Model\ActivityInterface
+     * @return string
      */
     public static function getActivity()
     {

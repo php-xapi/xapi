@@ -13,8 +13,8 @@ namespace Xabbuh\XApi\Common\Tests\Serializer\Event;
 
 use JMS\Serializer\EventDispatcher\PreSerializeEvent;
 use JMS\Serializer\SerializationContext;
-use Xabbuh\XApi\Common\Model\Activity;
-use Xabbuh\XApi\Common\Model\Agent;
+use Xabbuh\XApi\Model\Activity;
+use Xabbuh\XApi\Model\Agent;
 use Xabbuh\XApi\Common\Serializer\Event\SetSerializedTypeEventSubscriber;
 
 /**
@@ -48,7 +48,7 @@ class SetSerializedTypeEventSubscriberTest extends \PHPUnit_Framework_TestCase
     public function testSetActorTypeWithAgent()
     {
         $type = array(
-            'name' => 'Xabbuh\XApi\Common\Model\Actor',
+            'name' => 'Xabbuh\XApi\Model\Actor',
             'params' => array(),
         );
         $object = new Agent();
@@ -56,13 +56,13 @@ class SetSerializedTypeEventSubscriberTest extends \PHPUnit_Framework_TestCase
         $this->eventSubscriber->onPreSerialize($event);
 
         $type = $event->getType();
-        $this->assertEquals('Xabbuh\XApi\Common\Model\Agent', $type['name']);
+        $this->assertEquals('Xabbuh\XApi\Model\Agent', $type['name']);
     }
 
     public function testSetObjectTypeWithActivity()
     {
         $type = array(
-            'name' => 'Xabbuh\XApi\Common\Model\Object',
+            'name' => 'Xabbuh\XApi\Model\Object',
             'params' => array(),
         );
         $object = new Activity();
@@ -70,6 +70,6 @@ class SetSerializedTypeEventSubscriberTest extends \PHPUnit_Framework_TestCase
         $this->eventSubscriber->onPreSerialize($event);
 
         $type = $event->getType();
-        $this->assertEquals('Xabbuh\XApi\Common\Model\Activity', $type['name']);
+        $this->assertEquals('Xabbuh\XApi\Model\Activity', $type['name']);
     }
 }

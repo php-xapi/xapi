@@ -35,7 +35,7 @@ class ActorSerializerTest extends AbstractSerializerTest
     {
         $actor = $this->actorSerializer->deserializeActor(ActorJsonFixtures::getAgent());
 
-        $this->assertInstanceOf('\Xabbuh\XApi\Common\Model\Agent', $actor);
+        $this->assertInstanceOf('\Xabbuh\XApi\Model\Agent', $actor);
         $this->assertEquals('Christian', $actor->getName());
         $this->assertEquals('mailto:christian@example.com', $actor->getMbox());
     }
@@ -44,12 +44,12 @@ class ActorSerializerTest extends AbstractSerializerTest
     {
         $actor = $this->actorSerializer->deserializeActor(ActorJsonFixtures::getAgentWithoutObjectType());
 
-        $this->assertInstanceOf('\Xabbuh\XApi\Common\Model\Agent', $actor);
+        $this->assertInstanceOf('\Xabbuh\XApi\Model\Agent', $actor);
     }
 
     public function testDeserializeGroup()
     {
-        /** @var \Xabbuh\XApi\Common\Model\Group $group */
+        /** @var \Xabbuh\XApi\Model\Group $group */
         $group = $this->actorSerializer->deserializeActor(ActorJsonFixtures::getGroup());
 
         $this->assertEquals('Example Group', $group->getName());

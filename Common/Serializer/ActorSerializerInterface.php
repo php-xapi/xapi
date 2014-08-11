@@ -11,7 +11,7 @@
 
 namespace Xabbuh\XApi\Common\Serializer;
 
-use Xabbuh\XApi\Common\Model\ActorInterface;
+use Xabbuh\XApi\Model\ActorInterface;
 
 /**
  * Serialize and deserialize {@link ActorInterface actors}.

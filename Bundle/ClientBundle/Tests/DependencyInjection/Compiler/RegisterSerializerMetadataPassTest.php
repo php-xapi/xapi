@@ -45,7 +45,7 @@ class RegisterSerializerMetadataPassTest extends \PHPUnit_Framework_TestCase
     {
         $this->compilerPass->process($this->containerBuilder);
 
-        $this->assertArrayHasKey('Xabbuh\XApi\Common\Model', $this->fileLocator->getArgument(0));
+        $this->assertArrayHasKey('Xabbuh\XApi\Model', $this->fileLocator->getArgument(0));
     }
 
     private function createFileLocatorDefinition()

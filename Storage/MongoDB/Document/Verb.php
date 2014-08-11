@@ -11,8 +11,8 @@
 
 namespace Xabbuh\XApi\Storage\MongoDB\Document;
 
-use Xabbuh\XApi\Common\Model\Verb as BaseVerb;
-use Xabbuh\XApi\Common\Model\VerbInterface;
+use Xabbuh\XApi\Model\Verb as BaseVerb;
+use Xabbuh\XApi\Model\VerbInterface;
 
 /**
  * A {@link VerbInterface verb} mapped to a MongoDB document.

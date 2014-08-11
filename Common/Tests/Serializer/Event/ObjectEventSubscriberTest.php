@@ -27,7 +27,7 @@ class ObjectEventSubscriberTest extends AddDataSubscriberTest
     {
         return array(
             array(
-                array('name' => 'Xabbuh\XApi\Common\Model\Object'),
+                array('name' => 'Xabbuh\XApi\Model\Object'),
                 array(
                     'id' => 'http://www.example.co.uk/exampleactivity',
                     'definition' => array(
@@ -59,7 +59,7 @@ class ObjectEventSubscriberTest extends AddDataSubscriberTest
                 ),
             ),
             array(
-                array('name' => 'Xabbuh\XApi\Common\Model\Object'),
+                array('name' => 'Xabbuh\XApi\Model\Object'),
                 array(
                     'name' => 'Example Group',
                     'account' => array(
@@ -80,7 +80,7 @@ class ObjectEventSubscriberTest extends AddDataSubscriberTest
                 ),
             ),
             array(
-                array('name' => 'Xabbuh\XApi\Common\Model\Actor'),
+                array('name' => 'Xabbuh\XApi\Model\Actor'),
                 array(
                     'name' => 'Christian',
                     'mbox' => 'mailto:christian@example.com',

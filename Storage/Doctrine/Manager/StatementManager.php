@@ -11,7 +11,7 @@
 
 namespace Xabbuh\XApi\Storage\Doctrine\Manager;
 
-use Xabbuh\XApi\Common\Model\StatementInterface;
+use Xabbuh\XApi\Model\StatementInterface;
 use Xabbuh\XApi\Storage\Api\StatementManager as BaseStatementManager;
 use Xabbuh\XApi\Storage\Doctrine\Repository\StatementRepositoryInterface;
 

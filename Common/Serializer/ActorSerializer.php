@@ -12,7 +12,7 @@
 namespace Xabbuh\XApi\Common\Serializer;
 
 use JMS\Serializer\SerializerInterface;
-use Xabbuh\XApi\Common\Model\ActorInterface;
+use Xabbuh\XApi\Model\ActorInterface;
 
 /**
  * Serialize and deserialize {@link ActorInterface actors}.
@@ -44,6 +44,6 @@ class ActorSerializer implements ActorSerializerInterface
      */
     public function deserializeActor($data)
     {
-        return $this->serializer->deserialize($data, 'Xabbuh\XApi\Common\Model\Actor', 'json');
+        return $this->serializer->deserialize($data, 'Xabbuh\XApi\Model\Actor', 'json');
     }
 }

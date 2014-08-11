@@ -96,7 +96,7 @@ abstract class AbstractSerializerListenerTest extends \PHPUnit_Framework_TestCas
 
     private function createDomainObjectMock()
     {
-        return $this->getMock('\Xabbuh\XApi\Common\Model\\'.$this->domainObjectClass.'Interface');
+        return $this->getMock('\Xabbuh\XApi\Model\\'.$this->domainObjectClass.'Interface');
     }
 
     /**

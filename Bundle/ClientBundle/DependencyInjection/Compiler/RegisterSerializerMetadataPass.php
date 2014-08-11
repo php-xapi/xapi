@@ -29,7 +29,7 @@ class RegisterSerializerMetadataPass implements CompilerPassInterface
     {
         $fileLocator = $container->findDefinition('jms_serializer.metadata.file_locator');
         $dirs = $fileLocator->getArgument(0);
-        $dirs['Xabbuh\XApi\Common\Model'] = Serializer::getMetadataDirectory();
+        $dirs['Xabbuh\XApi\Model'] = Serializer::getMetadataDirectory();
         $fileLocator->replaceArgument(0, $dirs);
     }
 }

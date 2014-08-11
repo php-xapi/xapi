@@ -27,7 +27,7 @@ class ActorEventSubscriberTest extends AddDataSubscriberTest
     {
         return array(
             array(
-                array('name' => 'Xabbuh\XApi\Common\Model\Actor'),
+                array('name' => 'Xabbuh\XApi\Model\Actor'),
                 array(
                     'name' => 'Christian',
                     'mbox' => 'mailto:christian@example.com',
@@ -39,7 +39,7 @@ class ActorEventSubscriberTest extends AddDataSubscriberTest
                 ),
             ),
             array(
-                array('name' => 'Xabbuh\XApi\Common\Model\Actor'),
+                array('name' => 'Xabbuh\XApi\Model\Actor'),
                 array(
                     'name' => 'Example Group',
                     'account' => array(
@@ -60,7 +60,7 @@ class ActorEventSubscriberTest extends AddDataSubscriberTest
                 ),
             ),
             array(
-                array('name' => 'Xabbuh\XApi\Common\Model\Object'),
+                array('name' => 'Xabbuh\XApi\Model\Object'),
                 array(
                     'id' => 'http://www.example.co.uk/exampleactivity',
                     'definition' => array(

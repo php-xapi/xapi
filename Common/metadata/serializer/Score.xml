@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <serializer>
-    <class name="Xabbuh\XApi\Common\Model\Score" exclusion-policy="ALL">
+    <class name="Xabbuh\XApi\Model\Score" exclusion-policy="ALL">
         <property name="scaled" type="double" expose="true"/>
         <property name="raw" type="double" expose="true"/>
         <property name="min" type="double" expose="true"/>

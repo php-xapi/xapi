@@ -45,16 +45,16 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $metadataFactory = $validator->getMetadataFactory();
 
         $this->assertTrue(
-            $metadataFactory->hasMetadataFor('\Xabbuh\XApi\Common\Model\Activity')
+            $metadataFactory->hasMetadataFor('\Xabbuh\XApi\Model\Activity')
         );
         $this->assertTrue(
-            $metadataFactory->hasMetadataFor('\Xabbuh\XApi\Common\Model\Agent')
+            $metadataFactory->hasMetadataFor('\Xabbuh\XApi\Model\Agent')
         );
         $this->assertTrue(
-            $metadataFactory->hasMetadataFor('\Xabbuh\XApi\Common\Model\Activity')
+            $metadataFactory->hasMetadataFor('\Xabbuh\XApi\Model\Activity')
         );
         $this->assertTrue(
-            $metadataFactory->hasMetadataFor('\Xabbuh\XApi\Common\Model\Activity')
+            $metadataFactory->hasMetadataFor('\Xabbuh\XApi\Model\Activity')
         );
     }
 }

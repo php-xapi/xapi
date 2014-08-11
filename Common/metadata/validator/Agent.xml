@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping
         http://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd"
 >
-    <class name="Xabbuh\XApi\Common\Model\Agent">
+    <class name="Xabbuh\XApi\Model\Agent">
         <getter property="inverseFunctionalIdentifier">
             <constraint name="NotBlank" />
         </getter>

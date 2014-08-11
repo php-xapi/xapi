@@ -30,7 +30,7 @@ class SerializerTest extends \PHPUnit_Framework_TestCase
         $serializerBuilder = $this->getMock('\JMS\Serializer\SerializerBuilder');
         $serializerBuilder->expects($this->once())
             ->method('addMetadataDir')
-            ->with($this->anything(), 'Xabbuh\XApi\Common\Model');
+            ->with($this->anything(), 'Xabbuh\XApi\Model');
 
         Serializer::registerXApiMetadata($serializerBuilder);
     }

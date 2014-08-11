@@ -15,7 +15,7 @@ use JMS\Serializer\Context;
 use JMS\Serializer\GraphNavigator;
 use JMS\Serializer\Handler\SubscribingHandlerInterface;
 use JMS\Serializer\JsonSerializationVisitor;
-use Xabbuh\XApi\Common\Model\Document;
+use Xabbuh\XApi\Model\Document;
 
 /**
  * Unwraps the data of an xAPI document during the serialization process.
@@ -33,25 +33,25 @@ class DocumentDataUnwrapper implements SubscribingHandlerInterface
             array(
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'json',
-                'type' => 'Xabbuh\XApi\Common\Model\Document',
+                'type' => 'Xabbuh\XApi\Model\Document',
                 'method' => 'unwrapData',
             ),
             array(
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'json',
-                'type' => 'Xabbuh\XApi\Common\Model\ActivityProfileDocument',
+                'type' => 'Xabbuh\XApi\Model\ActivityProfileDocument',
                 'method' => 'unwrapData',
             ),
             array(
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'json',
-                'type' => 'Xabbuh\XApi\Common\Model\AgentProfileDocument',
+                'type' => 'Xabbuh\XApi\Model\AgentProfileDocument',
                 'method' => 'unwrapData',
             ),
             array(
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'json',
-                'type' => 'Xabbuh\XApi\Common\Model\StateDocument',
+                'type' => 'Xabbuh\XApi\Model\StateDocument',
                 'method' => 'unwrapData',
             ),
         );

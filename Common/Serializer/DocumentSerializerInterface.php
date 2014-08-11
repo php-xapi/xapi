@@ -11,7 +11,7 @@
 
 namespace Xabbuh\XApi\Common\Serializer;
 
-use Xabbuh\XApi\Common\Model\DocumentInterface;
+use Xabbuh\XApi\Model\DocumentInterface;
 
 /**
  * Serialize and deserialize {@link DocumentInterface documents}.

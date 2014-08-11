@@ -35,7 +35,7 @@ abstract class AbstractSerializerTest extends \PHPUnit_Framework_TestCase
         $builder = SerializerBuilder::create();
         $builder->addMetadataDir(
             __DIR__.'/../../metadata/serializer',
-            'Xabbuh\XApi\Common\Model'
+            'Xabbuh\XApi\Model'
         );
         $builder->configureListeners(
             function (EventDispatcher $dispatcher) {

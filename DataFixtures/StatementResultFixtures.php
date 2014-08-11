@@ -11,7 +11,7 @@
 
 namespace Xabbuh\XApi\DataFixtures;
 
-use Xabbuh\XApi\Common\Model\StatementResult;
+use Xabbuh\XApi\Model\StatementResult;
 
 /**
  * Statement result fixtures.
@@ -23,7 +23,7 @@ class StatementResultFixtures
     /**
      * Loads a statement result.
      *
-     * @return \Xabbuh\XApi\Common\Model\StatementResultInterface
+     * @return \Xabbuh\XApi\Model\StatementResultInterface
      */
     public static function getStatementResult()
     {
@@ -44,7 +44,7 @@ class StatementResultFixtures
     /**
      * Loads a statement result including a more reference.
      *
-     * @return \Xabbuh\XApi\Common\Model\StatementResultInterface
+     * @return \Xabbuh\XApi\Model\StatementResultInterface
      */
     public static function getStatementResultWithMore()
     {

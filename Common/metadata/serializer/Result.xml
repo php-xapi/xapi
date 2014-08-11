@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <serializer>
-    <class name="Xabbuh\XApi\Common\Model\Result" exclusion-policy="ALL">
-        <property name="score" type="Xabbuh\XApi\Common\Model\Score" expose="true"/>
+    <class name="Xabbuh\XApi\Model\Result" exclusion-policy="ALL">
+        <property name="score" type="Xabbuh\XApi\Model\Score" expose="true"/>
         <property name="success" type="boolean" expose="true"/>
         <property name="completion" type="boolean" expose="true"/>
         <property name="response" type="string" expose="true"/>

@@ -11,7 +11,7 @@
 
 namespace Xabbuh\XApi\Storage\Doctrine\Repository;
 
-use Xabbuh\XApi\Common\Model\StatementInterface;
+use Xabbuh\XApi\Model\StatementInterface;
 
 /**
  * {@link StatementInterface Statement} repository interface defintion.

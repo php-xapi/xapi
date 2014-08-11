@@ -36,7 +36,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Xabbuh\\XApi\\": "./"
+            "Xabbuh\\XApi\\": "",
+            "Xabbuh\\XApi\\Model\\": "Model/src/"
         }
     },
     "minimum-stability": "dev",

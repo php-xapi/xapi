@@ -11,7 +11,7 @@
 
 namespace Xabbuh\XApi\Storage\Api;
 
-use Xabbuh\XApi\Common\Model\StatementInterface;
+use Xabbuh\XApi\Model\StatementInterface;
 
 /**
  * Statement manager.

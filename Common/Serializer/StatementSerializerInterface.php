@@ -11,10 +11,10 @@
 
 namespace Xabbuh\XApi\Common\Serializer;
 
-use Xabbuh\XApi\Common\Model\StatementInterface;
+use Xabbuh\XApi\Model\StatementInterface;
 
 /**
- * Serialize and deserialize {@link \Xabbuh\XApi\Common\Model\StatementInterface statements}.
+ * Serialize and deserialize {@link \Xabbuh\XApi\Model\StatementInterface statements}.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */

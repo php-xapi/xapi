@@ -14,7 +14,7 @@ namespace Xabbuh\XApi\Common\Tests\Serializer\Handler;
 use JMS\Serializer\JsonSerializationVisitor;
 use JMS\Serializer\Naming\CamelCaseNamingStrategy;
 use JMS\Serializer\SerializationContext;
-use Xabbuh\XApi\Common\Model\Document;
+use Xabbuh\XApi\Model\Document;
 use Xabbuh\XApi\Common\Serializer\Handler\DocumentDataUnwrapper;
 
 /**
@@ -38,7 +38,7 @@ class DocumentDataUnwrapperTest extends \PHPUnit_Framework_TestCase
         $document['x'] = 'foo';
         $document['y'] = 'bar';
         $visitor = new JsonSerializationVisitor(new CamelCaseNamingStrategy());
-        $type = array('name' => 'Xabbuh\XApi\Common\Model\Document', 'params' => array());
+        $type = array('name' => 'Xabbuh\XApi\Model\Document', 'params' => array());
         $context = new SerializationContext();
         $this->handler->unwrapData($visitor, $document, $type, $context);
 

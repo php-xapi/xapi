@@ -11,13 +11,13 @@
 
 namespace Xabbuh\XApi\DataFixtures;
 
-use Xabbuh\XApi\Common\Model\Agent;
-use Xabbuh\XApi\Common\Model\Activity;
-use Xabbuh\XApi\Common\Model\Result;
-use Xabbuh\XApi\Common\Model\Score;
-use Xabbuh\XApi\Common\Model\Statement;
-use Xabbuh\XApi\Common\Model\StatementReference;
-use Xabbuh\XApi\Common\Model\Verb;
+use Xabbuh\XApi\Model\Agent;
+use Xabbuh\XApi\Model\Activity;
+use Xabbuh\XApi\Model\Result;
+use Xabbuh\XApi\Model\Score;
+use Xabbuh\XApi\Model\Statement;
+use Xabbuh\XApi\Model\StatementReference;
+use Xabbuh\XApi\Model\Verb;
 
 /**
  * Statement fixtures.
@@ -29,7 +29,7 @@ class StatementFixtures
     /**
      * Loads a minimal valid statement.
      *
-     * @return \Xabbuh\XApi\Common\Model\StatementInterface
+     * @return \Xabbuh\XApi\Model\StatementInterface
      */
     public static function getMinimalStatement()
     {
@@ -55,7 +55,7 @@ class StatementFixtures
     /**
      * Loads a statement including a reference to another statement.
      *
-     * @return \Xabbuh\XApi\Common\Model\StatementInterface
+     * @return \Xabbuh\XApi\Model\StatementInterface
      */
     public static function getStatementWithStatementRef()
     {
@@ -71,7 +71,7 @@ class StatementFixtures
     /**
      * Loads a statement including a result.
      *
-     * @return \Xabbuh\XApi\Common\Model\StatementInterface
+     * @return \Xabbuh\XApi\Model\StatementInterface
      */
     public static function getStatementWithResult()
     {

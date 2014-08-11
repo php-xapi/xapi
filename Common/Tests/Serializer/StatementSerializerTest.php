@@ -33,7 +33,7 @@ class StatementSerializerTest extends AbstractSerializerTest
 
     public function testDeserializeMinimalStatement()
     {
-        /** @var \Xabbuh\XApi\Common\Model\Statement $statement */
+        /** @var \Xabbuh\XApi\Model\Statement $statement */
         $statement = $this->statementSerializer->deserializeStatement(
             StatementJsonFixtures::getMinimalStatement()
         );
@@ -52,7 +52,7 @@ class StatementSerializerTest extends AbstractSerializerTest
         $this->assertEquals('http://adlnet.gov/expapi/verbs/created', $verb->getId());
         $this->assertEquals('created', $display['en-US']);
 
-        /** @var \Xabbuh\XApi\Common\Model\Activity $activity */
+        /** @var \Xabbuh\XApi\Model\Activity $activity */
         $activity = $statement->getObject();
         $this->assertEquals(
             'http://example.adlnet.gov/xapi/example/activity',
@@ -62,7 +62,7 @@ class StatementSerializerTest extends AbstractSerializerTest
 
     public function testDeserializeWithStatementReference()
     {
-        /** @var \Xabbuh\XApi\Common\Model\Statement $statement */
+        /** @var \Xabbuh\XApi\Model\Statement $statement */
         $statement = $this->statementSerializer->deserializeStatement(
             StatementJsonFixtures::getStatementWithStatementRef()
         );
@@ -81,7 +81,7 @@ class StatementSerializerTest extends AbstractSerializerTest
         $this->assertEquals('http://adlnet.gov/expapi/verbs/created', $verb->getId());
         $this->assertEquals('created', $display['en-US']);
 
-        /** @var \Xabbuh\XApi\Common\Model\StatementReferenceInterface $statementReference */
+        /** @var \Xabbuh\XApi\Model\StatementReferenceInterface $statementReference */
         $statementReference = $statement->getObject();
         $this->assertEquals(
             '8f87ccde-bb56-4c2e-ab83-44982ef22df0',
@@ -91,7 +91,7 @@ class StatementSerializerTest extends AbstractSerializerTest
 
     public function testDeserializeWithSubStatement()
     {
-        /** @var \Xabbuh\XApi\Common\Model\Statement $statement */
+        /** @var \Xabbuh\XApi\Model\Statement $statement */
         $statement = $this->statementSerializer->deserializeStatement(
             StatementJsonFixtures::getStatementWithSubStatement()
         );
@@ -106,10 +106,10 @@ class StatementSerializerTest extends AbstractSerializerTest
         $this->assertEquals('http://example.com/planned', $verb->getId());
         $this->assertEquals('planned', $display['en-US']);
 
-        /** @var \Xabbuh\XApi\Common\Model\SubStatementInterface $subStatement */
+        /** @var \Xabbuh\XApi\Model\SubStatementInterface $subStatement */
         $subStatement = $statement->getObject();
         $this->assertInstanceOf(
-            '\Xabbuh\XApi\Common\Model\SubStatementInterface',
+            '\Xabbuh\XApi\Model\SubStatementInterface',
             $subStatement
         );
 
@@ -124,21 +124,21 @@ class StatementSerializerTest extends AbstractSerializerTest
         $this->assertEquals('will visit', $display['en-US']);
 
         $this->assertInstanceOf(
-            '\Xabbuh\XApi\Common\Model\ActivityInterface',
+            '\Xabbuh\XApi\Model\ActivityInterface',
             $subStatement->getObject()
         );
     }
 
     public function testDeserializeWithResult()
     {
-        /** @var \Xabbuh\XApi\Common\Model\StatementInterface $statement */
+        /** @var \Xabbuh\XApi\Model\StatementInterface $statement */
         $statement = $this->statementSerializer->deserializeStatement(
             StatementJsonFixtures::getStatementWithResult()
         );
         $result = $statement->getResult();
 
         $this->assertInstanceOf(
-            '\Xabbuh\XApi\Common\Model\ResultInterface',
+            '\Xabbuh\XApi\Model\ResultInterface',
             $result
         );
         $this->assertEquals(0.95, $result->getScore()->getScaled(), '', 0.01);
@@ -151,7 +151,7 @@ class StatementSerializerTest extends AbstractSerializerTest
 
     public function testDeserializeStatementCollection()
     {
-        /** @var \Xabbuh\XApi\Common\Model\Statement[] $statements */
+        /** @var \Xabbuh\XApi\Model\Statement[] $statements */
         $statements = $this->statementSerializer->deserializeStatements(
             StatementJsonFixtures::getStatementCollection()
         );
