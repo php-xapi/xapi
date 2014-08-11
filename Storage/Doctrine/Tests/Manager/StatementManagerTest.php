@@ -11,7 +11,7 @@
 
 namespace Xabbuh\XApi\Storage\Doctrine\Tests\Manager;
 
-use Xabbuh\XApi\Common\Test\Fixture\StatementFixtures;
+use Xabbuh\XApi\DataFixtures\StatementFixtures;
 use Xabbuh\XApi\Storage\Doctrine\Manager\StatementManager;
 
 /**
