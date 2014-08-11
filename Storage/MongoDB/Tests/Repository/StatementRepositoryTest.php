@@ -11,7 +11,7 @@
 
 namespace Xabbuh\XApi\Storage\MongoDB\Tests\Repository;
 
-use Xabbuh\XApi\Common\Test\Fixture\StatementFixtures;
+use Xabbuh\XApi\DataFixtures\StatementFixtures;
 use Xabbuh\XApi\Storage\MongoDB\Document\Statement;
 use Xabbuh\XApi\Storage\MongoDB\Repository\StatementRepository;
 
