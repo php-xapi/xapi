@@ -10,6 +10,11 @@
             "homepage": "https://github.com/xabbuh"
         }
     ],
+    "require": {
+        "xabbuh/xapi-model": "~1.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Xabbuh\\XApi\\Storage\\Api\\": ""
