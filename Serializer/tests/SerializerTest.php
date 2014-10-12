@@ -22,7 +22,7 @@ class SerializerTest extends \PHPUnit_Framework_TestCase
     {
         $dir = Serializer::getMetadataDirectory();
 
-        $this->assertEquals(realpath($dir), realpath(__DIR__.'/../../metadata/serializer'));
+        $this->assertEquals(realpath(__DIR__.'/../metadata'), realpath($dir));
     }
 
     public function testRegisterXApiMetadata()
