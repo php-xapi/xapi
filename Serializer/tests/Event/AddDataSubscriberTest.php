@@ -1,0 +1,65 @@
+<?php
+
+/*
+ * This file is part of the xAPI package.
+ *
+ * (c) Christian Flothmann <christian.flothmann@xabbuh.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Xabbuh\XApi\Serializer\Tests\Event;
+
+use JMS\Serializer\DeserializationContext;
+use JMS\Serializer\EventDispatcher\PreDeserializeEvent;
+use Xabbuh\XApi\Serializer\Event\AddDataSubscriber;
+
+/**
+ * @author Christian Flothmann <christian.flothmann@xabbuh.de>
+ */
+abstract class AddDataSubscriberTest extends \PHPUnit_Framework_TestCase
+{
+    /**
+     * @var AddDataSubscriber
+     */
+    protected $eventSubscriber;
+
+    public function testGetSubscribedEvents()
+    {
+        $this->assertEquals(
+            array(
+                array(
+                    'event' => 'serializer.pre_deserialize',
+                    'method' => 'onPreDeserialize',
+                ),
+            ),
+            $this->eventSubscriber->getSubscribedEvents()
+        );
+    }
+
+    /**
+     * @dataProvider getEventData
+     */
+    public function testOnPreDeserialize($type, $rawData, $expectedData)
+    {
+        $event = new PreDeserializeEvent(
+            $this->createDeserelizationContext(),
+            $rawData,
+            $type
+        );
+        $this->eventSubscriber->onPreDeserialize($event);
+
+        $this->assertEquals($expectedData, $event->getData());
+    }
+
+    abstract public function getEventData();
+
+    /**
+     * @return DeserializationContext
+     */
+    private function createDeserelizationContext()
+    {
+        return $this->getMock('\JMS\Serializer\DeserializationContext');
+    }
+}

@@ -5,10 +5,10 @@
         http://symfony.com/schema/dic/services/services-1.0.xsd"
 >
     <parameters>
-        <parameter key="xabbuh_lrs.actor_serializer.class">Xabbuh\XApi\Common\Serializer\ActorSerializer</parameter>
-        <parameter key="xabbuh_lrs.document_serializer.class">Xabbuh\XApi\Common\Serializer\DocumentSerializer</parameter>
-        <parameter key="xabbuh_lrs.statement_result_serializer.class">Xabbuh\XApi\Common\Serializer\StatementResultSerializer</parameter>
-        <parameter key="xabbuh_lrs.statement_serializer.class">Xabbuh\XApi\Common\Serializer\StatementSerializer</parameter>
+        <parameter key="xabbuh_lrs.actor_serializer.class">Xabbuh\XApi\Serializer\ActorSerializer</parameter>
+        <parameter key="xabbuh_lrs.document_serializer.class">Xabbuh\XApi\Serializer\DocumentSerializer</parameter>
+        <parameter key="xabbuh_lrs.statement_result_serializer.class">Xabbuh\XApi\Serializer\StatementResultSerializer</parameter>
+        <parameter key="xabbuh_lrs.statement_serializer.class">Xabbuh\XApi\Serializer\StatementSerializer</parameter>
     </parameters>
     <services>
         <service id="xabbuh_lrs.actor_serializer" class="%xabbuh_lrs.actor_serializer.class%" public="false">

@@ -13,7 +13,7 @@ namespace Xabbuh\XApi\Bundle\ClientBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Xabbuh\XApi\Common\Serializer\Serializer;
+use Xabbuh\XApi\Serializer\Serializer;
 
 /**
  * Compiler pass adding Serializer metadata for the xAPI model classes.

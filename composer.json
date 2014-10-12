@@ -42,7 +42,9 @@
     "autoload": {
         "psr-4": {
             "Xabbuh\\XApi\\": "",
-            "Xabbuh\\XApi\\Model\\": "Model/src/"
+            "Xabbuh\\XApi\\Model\\": "Model/src/",
+            "Xabbuh\\XApi\\Serializer\\": "Serializer/src/",
+            "Xabbuh\\XApi\\Validator\\": "Validator/src/"
         }
     },
     "minimum-stability": "dev",

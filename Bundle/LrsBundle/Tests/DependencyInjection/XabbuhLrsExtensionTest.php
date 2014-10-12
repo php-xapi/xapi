@@ -61,10 +61,10 @@ class XabbuhLrsExtensionTest extends AbstractExtensionTestCase
     private function validateSerializers()
     {
         $serializers = array(
-            'xabbuh_lrs.actor_serializer' => 'Xabbuh\XApi\Common\Serializer\ActorSerializer',
-            'xabbuh_lrs.document_serializer' => 'Xabbuh\XApi\Common\Serializer\DocumentSerializer',
-            'xabbuh_lrs.statement_result_serializer' => 'Xabbuh\XApi\Common\Serializer\StatementResultSerializer',
-            'xabbuh_lrs.statement_serializer' => 'Xabbuh\XApi\Common\Serializer\StatementSerializer',
+            'xabbuh_lrs.actor_serializer' => 'Xabbuh\XApi\Serializer\ActorSerializer',
+            'xabbuh_lrs.document_serializer' => 'Xabbuh\XApi\Serializer\DocumentSerializer',
+            'xabbuh_lrs.statement_result_serializer' => 'Xabbuh\XApi\Serializer\StatementResultSerializer',
+            'xabbuh_lrs.statement_serializer' => 'Xabbuh\XApi\Serializer\StatementSerializer',
         );
 
         foreach ($serializers as $id => $class) {

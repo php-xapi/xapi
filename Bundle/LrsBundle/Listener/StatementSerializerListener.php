@@ -11,8 +11,8 @@
 
 namespace Xabbuh\XApi\Bundle\LrsBundle\Listener;
 
-use Xabbuh\XApi\Common\Serializer\StatementSerializerInterface;
 use Xabbuh\XApi\Model\StatementInterface;
+use Xabbuh\XApi\Serializer\StatementSerializerInterface;
 
 /**
  * Kernel event listener transforming statements into proper JSON responses.
@@ -22,7 +22,7 @@ use Xabbuh\XApi\Model\StatementInterface;
 class StatementSerializerListener extends AbstractSerializerListener
 {
     /**
-     * @var \Xabbuh\XApi\Common\Serializer\StatementSerializerInterface
+     * @var StatementSerializerInterface
      */
     private $serializer;
 
