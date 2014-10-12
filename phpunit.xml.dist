@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit colors="true" bootstrap="vendor/autoload.php">
+<phpunit colors="true" bootstrap="bootstrap.php">
     <testsuites>
         <testsuite name="collection of Experience API libraries">
             <directory>./Bundle/*/Tests</directory>
             <directory>./*/Tests</directory>
+            <directory>./*/tests</directory>
         </testsuite>
     </testsuites>
     <filter>
@@ -13,6 +14,7 @@
                 <directory>./*/doc</directory>
                 <directory>./*/Exception</directory>
                 <directory>./*/Tests</directory>
+                <directory>./*/tests</directory>
                 <directory>./*/vendor</directory>
                 <directory>./Bundle/*/Resources</directory>
                 <directory>./Bundle/*/Tests</directory>
