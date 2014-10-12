@@ -3,6 +3,7 @@
     <testsuites>
         <testsuite name="collection of Experience API libraries">
             <directory>./Bundle/*/Tests</directory>
+            <directory>./Storage/*/Tests</directory>
             <directory>./*/Tests</directory>
             <directory>./*/tests</directory>
         </testsuite>
@@ -11,6 +12,7 @@
         <whitelist>
             <directory>.</directory>
             <exclude>
+                <file>bootstrap.php</file>
                 <directory>./*/doc</directory>
                 <directory>./*/Exception</directory>
                 <directory>./*/Tests</directory>
@@ -18,6 +20,9 @@
                 <directory>./*/vendor</directory>
                 <directory>./Bundle/*/Resources</directory>
                 <directory>./Bundle/*/Tests</directory>
+                <directory>./Bundle/*/vendor</directory>
+                <directory>./Storage/*/Tests</directory>
+                <directory>./Storage/*/vendor</directory>
                 <directory>./vendor</directory>
             </exclude>
         </whitelist>
