@@ -17,6 +17,7 @@
         "symfony/http-kernel": "~2.2",
         "xabbuh/xapi-common": "~1.0",
         "xabbuh/xapi-model": "~1.0",
+        "xabbuh/xapi-serializer": "~1.0",
         "xabbuh/xapi-storage-implementation": "~1.0"
     },
     "require-dev": {
