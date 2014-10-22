@@ -1783,12 +1783,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-common.git",
-                "reference": "95cf8b64a8675d6bcf17699ad16ab36c8644dc4c"
+                "reference": "597ca186ed36b3cd287beb4dd23a1420ad1f108c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-common/zipball/95cf8b64a8675d6bcf17699ad16ab36c8644dc4c",
-                "reference": "95cf8b64a8675d6bcf17699ad16ab36c8644dc4c",
+                "url": "https://api.github.com/repos/xabbuh/xapi-common/zipball/597ca186ed36b3cd287beb4dd23a1420ad1f108c",
+                "reference": "597ca186ed36b3cd287beb4dd23a1420ad1f108c",
                 "shasum": ""
             },
             "require": {
@@ -1822,7 +1822,7 @@
                 "Tin Can API",
                 "xAPI"
             ],
-            "time": "2014-10-12 16:06:32"
+            "time": "2014-10-13 20:05:25"
         },
         {
             "name": "xabbuh/xapi-data-fixtures",
@@ -1880,12 +1880,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-doctrine-storage.git",
-                "reference": "4508e014e87c9559f9f5367775d6a5959c452485"
+                "reference": "8b1ab40ee774e019e2847bf4c7b7b6ee64815aef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/4508e014e87c9559f9f5367775d6a5959c452485",
-                "reference": "4508e014e87c9559f9f5367775d6a5959c452485",
+                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/8b1ab40ee774e019e2847bf4c7b7b6ee64815aef",
+                "reference": "8b1ab40ee774e019e2847bf4c7b7b6ee64815aef",
                 "shasum": ""
             },
             "require": {
@@ -1927,7 +1927,7 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2014-08-11 20:15:31"
+            "time": "2014-10-12 18:00:24"
         },
         {
             "name": "xabbuh/xapi-model",
@@ -1935,12 +1935,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-model.git",
-                "reference": "ae647d4b5a4f219b458df096c57cf8e79f15744f"
+                "reference": "0d7c1fddf6061b555070c2aedc8c5e3a3030561e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-model/zipball/ae647d4b5a4f219b458df096c57cf8e79f15744f",
-                "reference": "ae647d4b5a4f219b458df096c57cf8e79f15744f",
+                "url": "https://api.github.com/repos/xabbuh/xapi-model/zipball/0d7c1fddf6061b555070c2aedc8c5e3a3030561e",
+                "reference": "0d7c1fddf6061b555070c2aedc8c5e3a3030561e",
                 "shasum": ""
             },
             "require": {
@@ -1975,7 +1975,7 @@
                 "models",
                 "xAPI"
             ],
-            "time": "2014-10-12 16:06:32"
+            "time": "2014-10-12 18:00:24"
         },
         {
             "name": "xabbuh/xapi-mongodb-storage",
@@ -1983,12 +1983,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-mongodb-storage.git",
-                "reference": "dab45615bc1ea30eb2ec84dad88e88202731b8e3"
+                "reference": "7914ab2d1262fe6e0826ac296fc14c3d14ef1e2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-mongodb-storage/zipball/dab45615bc1ea30eb2ec84dad88e88202731b8e3",
-                "reference": "dab45615bc1ea30eb2ec84dad88e88202731b8e3",
+                "url": "https://api.github.com/repos/xabbuh/xapi-mongodb-storage/zipball/7914ab2d1262fe6e0826ac296fc14c3d14ef1e2d",
+                "reference": "7914ab2d1262fe6e0826ac296fc14c3d14ef1e2d",
                 "shasum": ""
             },
             "require": {
@@ -2036,7 +2036,7 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2014-09-07 07:50:05"
+            "time": "2014-10-12 18:00:24"
         },
         {
             "name": "xabbuh/xapi-serializer",
@@ -2044,12 +2044,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-serializer.git",
-                "reference": "8de53c5ab9dec101d13cbb892a4750971bc2c896"
+                "reference": "9ee012526fc6a7b2ec0b63197ad3e620aafb60df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-serializer/zipball/8de53c5ab9dec101d13cbb892a4750971bc2c896",
-                "reference": "8de53c5ab9dec101d13cbb892a4750971bc2c896",
+                "url": "https://api.github.com/repos/xabbuh/xapi-serializer/zipball/9ee012526fc6a7b2ec0b63197ad3e620aafb60df",
+                "reference": "9ee012526fc6a7b2ec0b63197ad3e620aafb60df",
                 "shasum": ""
             },
             "require": {
@@ -2089,7 +2089,7 @@
                 "serializer",
                 "xAPI"
             ],
-            "time": "2014-10-12 16:06:32"
+            "time": "2014-10-12 18:00:24"
         },
         {
             "name": "xabbuh/xapi-storage-api",
@@ -2145,20 +2145,20 @@
     "packages-dev": [
         {
             "name": "doctrine/instantiator",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/instantiator.git",
-                "reference": "8806c41c178ad4a2e87294b851d730779555d252"
+                "reference": "f976e5de371104877ebc89bd8fecb0019ed9c119"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/8806c41c178ad4a2e87294b851d730779555d252",
-                "reference": "8806c41c178ad4a2e87294b851d730779555d252",
+                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/f976e5de371104877ebc89bd8fecb0019ed9c119",
+                "reference": "f976e5de371104877ebc89bd8fecb0019ed9c119",
                 "shasum": ""
             },
             "require": {
-                "php": "~5.3"
+                "php": ">=5.3,<8.0-DEV"
             },
             "require-dev": {
                 "athletic/athletic": "~0.1.8",
@@ -2195,20 +2195,20 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2014-10-04 22:48:25"
+            "time": "2014-10-13 12:58:55"
         },
         {
             "name": "matthiasnoback/symfony-config-test",
-            "version": "v0.3.0",
+            "version": "v0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/matthiasnoback/SymfonyConfigTest.git",
-                "reference": "d9ccdb619b600c6170374bb37e999dd9848e5a07"
+                "reference": "8d3a62aa4ba4e9f2c4d3e8a635a047cd74e6c102"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/matthiasnoback/SymfonyConfigTest/zipball/d9ccdb619b600c6170374bb37e999dd9848e5a07",
-                "reference": "d9ccdb619b600c6170374bb37e999dd9848e5a07",
+                "url": "https://api.github.com/repos/matthiasnoback/SymfonyConfigTest/zipball/8d3a62aa4ba4e9f2c4d3e8a635a047cd74e6c102",
+                "reference": "8d3a62aa4ba4e9f2c4d3e8a635a047cd74e6c102",
                 "shasum": ""
             },
             "require": {
@@ -2242,7 +2242,7 @@
                 "phpunit",
                 "symfony"
             ],
-            "time": "2014-09-10 14:14:18"
+            "time": "2014-10-12 20:31:08"
         },
         {
             "name": "matthiasnoback/symfony-dependency-injection-test",
@@ -2540,16 +2540,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.3.1",
+            "version": "4.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "06005259429c156c02596add91f6a59c7dc3d4af"
+                "reference": "23e4e0310f037aae873cc81b8658dbbb82878f71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/06005259429c156c02596add91f6a59c7dc3d4af",
-                "reference": "06005259429c156c02596add91f6a59c7dc3d4af",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/23e4e0310f037aae873cc81b8658dbbb82878f71",
+                "reference": "23e4e0310f037aae873cc81b8658dbbb82878f71",
                 "shasum": ""
             },
             "require": {
@@ -2560,7 +2560,7 @@
                 "ext-spl": "*",
                 "php": ">=5.3.3",
                 "phpunit/php-code-coverage": "~2.0",
-                "phpunit/php-file-iterator": "~1.3.1",
+                "phpunit/php-file-iterator": "~1.3.2",
                 "phpunit/php-text-template": "~1.2",
                 "phpunit/php-timer": "~1.0.2",
                 "phpunit/phpunit-mock-objects": "~2.3",
@@ -2610,7 +2610,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-10-06 06:20:35"
+            "time": "2014-10-22 11:43:12"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -2785,16 +2785,16 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "6288ebbf6fa3ed2b2ff2d69c356fbaaf4f0971a7"
+                "reference": "0d9bf79554d2a999da194a60416c15cf461eb67d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/6288ebbf6fa3ed2b2ff2d69c356fbaaf4f0971a7",
-                "reference": "6288ebbf6fa3ed2b2ff2d69c356fbaaf4f0971a7",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/0d9bf79554d2a999da194a60416c15cf461eb67d",
+                "reference": "0d9bf79554d2a999da194a60416c15cf461eb67d",
                 "shasum": ""
             },
             "require": {
@@ -2806,7 +2806,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "1.2.x-dev"
                 }
             },
             "autoload": {
@@ -2831,7 +2831,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2014-10-07 09:23:16"
+            "time": "2014-10-22 06:38:05"
         },
         {
             "name": "sebastian/exporter",
@@ -2932,76 +2932,6 @@
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
             "time": "2014-03-07 15:35:33"
-        },
-        {
-            "name": "symfony/validator",
-            "version": "v2.5.5",
-            "target-dir": "Symfony/Component/Validator",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/Validator.git",
-                "reference": "64f61505843ca5e6c647244f5a4b6812c1279427"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Validator/zipball/64f61505843ca5e6c647244f5a4b6812c1279427",
-                "reference": "64f61505843ca5e6c647244f5a4b6812c1279427",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3",
-                "symfony/translation": "~2.0"
-            },
-            "require-dev": {
-                "doctrine/annotations": "~1.0",
-                "doctrine/cache": "~1.0",
-                "egulias/email-validator": "~1.0",
-                "symfony/config": "~2.2",
-                "symfony/expression-language": "~2.4",
-                "symfony/http-foundation": "~2.1",
-                "symfony/intl": "~2.3",
-                "symfony/property-access": "~2.2",
-                "symfony/yaml": "~2.0"
-            },
-            "suggest": {
-                "doctrine/annotations": "For using the annotation mapping. You will also need doctrine/cache.",
-                "doctrine/cache": "For using the default cached annotation reader and metadata cache.",
-                "egulias/email-validator": "Strict (RFC compliant) email validation",
-                "symfony/config": "",
-                "symfony/expression-language": "For using the 2.4 Expression validator",
-                "symfony/http-foundation": "",
-                "symfony/intl": "",
-                "symfony/property-access": "For using the 2.4 Validator API",
-                "symfony/yaml": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.5-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Symfony\\Component\\Validator\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                }
-            ],
-            "description": "Symfony Validator Component",
-            "homepage": "http://symfony.com",
-            "time": "2014-09-28 15:22:14"
         },
         {
             "name": "symfony/yaml",

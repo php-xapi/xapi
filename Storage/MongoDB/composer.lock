@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "doctrine/annotations",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "d9b1a37e9351ddde1f19f09a02e3d6ee92e82efd"
+                "reference": "6a6bec0670bb6e71a263b08bc1b98ea242928633"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/d9b1a37e9351ddde1f19f09a02e3d6ee92e82efd",
-                "reference": "d9b1a37e9351ddde1f19f09a02e3d6ee92e82efd",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/6a6bec0670bb6e71a263b08bc1b98ea242928633",
+                "reference": "6a6bec0670bb6e71a263b08bc1b98ea242928633",
                 "shasum": ""
             },
             "require": {
@@ -45,17 +45,6 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/",
-                    "role": "Creator"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com",
-                    "homepage": "http://www.instaclick.com"
-                },
-                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
@@ -64,10 +53,16 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
                     "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
-                    "role": "Developer of wrapped JMSSerializerBundle"
+                    "email": "schmittjoh@gmail.com"
                 }
             ],
             "description": "Docblock Annotations Parser",
@@ -77,20 +72,20 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2014-07-06 15:52:21"
+            "time": "2014-09-25 16:45:30"
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.3.0",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "e16d7adf45664a50fa86f515b6d5e7f670130449"
+                "reference": "cf483685798a72c93bf4206e3dd6358ea07d64e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/e16d7adf45664a50fa86f515b6d5e7f670130449",
-                "reference": "e16d7adf45664a50fa86f515b6d5e7f670130449",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/cf483685798a72c93bf4206e3dd6358ea07d64e7",
+                "reference": "cf483685798a72c93bf4206e3dd6358ea07d64e7",
                 "shasum": ""
             },
             "require": {
@@ -106,7 +101,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.4.x-dev"
                 }
             },
             "autoload": {
@@ -120,17 +115,6 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan H. Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/",
-                    "role": "Creator"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com",
-                    "homepage": "http://www.instaclick.com"
-                },
-                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
@@ -139,10 +123,16 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
                     "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
-                    "role": "Developer of wrapped JMSSerializerBundle"
+                    "email": "schmittjoh@gmail.com"
                 }
             ],
             "description": "Caching library offering an object-oriented API for many cache backends",
@@ -151,7 +141,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2013-10-25 19:04:14"
+            "time": "2014-09-17 14:24:04"
         },
         {
             "name": "doctrine/collections",
@@ -562,17 +552,17 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.5.4",
+            "version": "v2.5.5",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "748beed2a1e73179c3f5154d33fe6ae100c1aeb1"
+                "reference": "ca053eaa031c93afb68a71e4eb1f4168dfd4a661"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/748beed2a1e73179c3f5154d33fe6ae100c1aeb1",
-                "reference": "748beed2a1e73179c3f5154d33fe6ae100c1aeb1",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/ca053eaa031c93afb68a71e4eb1f4168dfd4a661",
+                "reference": "ca053eaa031c93afb68a71e4eb1f4168dfd4a661",
                 "shasum": ""
             },
             "require": {
@@ -613,7 +603,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-08-14 16:10:54"
+            "time": "2014-09-25 09:53:56"
         },
         {
             "name": "xabbuh/xapi-data-fixtures",
@@ -671,12 +661,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-doctrine-storage.git",
-                "reference": "4508e014e87c9559f9f5367775d6a5959c452485"
+                "reference": "8b1ab40ee774e019e2847bf4c7b7b6ee64815aef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/4508e014e87c9559f9f5367775d6a5959c452485",
-                "reference": "4508e014e87c9559f9f5367775d6a5959c452485",
+                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/8b1ab40ee774e019e2847bf4c7b7b6ee64815aef",
+                "reference": "8b1ab40ee774e019e2847bf4c7b7b6ee64815aef",
                 "shasum": ""
             },
             "require": {
@@ -718,7 +708,7 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2014-08-11 20:15:31"
+            "time": "2014-10-12 18:00:24"
         },
         {
             "name": "xabbuh/xapi-model",
@@ -726,12 +716,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-model.git",
-                "reference": "16fc29fc0279dee75a09d4c8d650874f921b50e1"
+                "reference": "0d7c1fddf6061b555070c2aedc8c5e3a3030561e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-model/zipball/16fc29fc0279dee75a09d4c8d650874f921b50e1",
-                "reference": "16fc29fc0279dee75a09d4c8d650874f921b50e1",
+                "url": "https://api.github.com/repos/xabbuh/xapi-model/zipball/0d7c1fddf6061b555070c2aedc8c5e3a3030561e",
+                "reference": "0d7c1fddf6061b555070c2aedc8c5e3a3030561e",
                 "shasum": ""
             },
             "require": {
@@ -766,7 +756,7 @@
                 "models",
                 "xAPI"
             ],
-            "time": "2014-09-07 07:29:39"
+            "time": "2014-10-12 18:00:24"
         },
         {
             "name": "xabbuh/xapi-storage-api",
@@ -1078,17 +1068,17 @@
         },
         {
             "name": "symfony/config",
-            "version": "v2.5.4",
+            "version": "v2.5.5",
             "target-dir": "Symfony/Component/Config",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Config.git",
-                "reference": "080eabdc256c1d7a3a7cf6296271edb68eb1ab2b"
+                "reference": "0316364bfebc8b080077c731a99f189341476bd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Config/zipball/080eabdc256c1d7a3a7cf6296271edb68eb1ab2b",
-                "reference": "080eabdc256c1d7a3a7cf6296271edb68eb1ab2b",
+                "url": "https://api.github.com/repos/symfony/Config/zipball/0316364bfebc8b080077c731a99f189341476bd7",
+                "reference": "0316364bfebc8b080077c731a99f189341476bd7",
                 "shasum": ""
             },
             "require": {
@@ -1122,21 +1112,21 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "http://symfony.com",
-            "time": "2014-08-31 03:22:04"
+            "time": "2014-09-23 05:25:11"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v2.5.4",
+            "version": "v2.5.5",
             "target-dir": "Symfony/Component/Filesystem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Filesystem.git",
-                "reference": "a765efd199e02ff4001c115c318e219030be9364"
+                "reference": "4e62fab0060a826561c78b665925b37c870c45f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/a765efd199e02ff4001c115c318e219030be9364",
-                "reference": "a765efd199e02ff4001c115c318e219030be9364",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/4e62fab0060a826561c78b665925b37c870c45f5",
+                "reference": "4e62fab0060a826561c78b665925b37c870c45f5",
                 "shasum": ""
             },
             "require": {
@@ -1169,21 +1159,21 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "http://symfony.com",
-            "time": "2014-09-03 09:00:14"
+            "time": "2014-09-22 09:14:18"
         },
         {
             "name": "symfony/translation",
-            "version": "v2.5.4",
+            "version": "v2.5.5",
             "target-dir": "Symfony/Component/Translation",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Translation.git",
-                "reference": "7526ad65f1961b2422ab33e4d3b05f92be16e5e2"
+                "reference": "170c0d895616e1a6a35681ffb0b9e339f58ab928"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Translation/zipball/7526ad65f1961b2422ab33e4d3b05f92be16e5e2",
-                "reference": "7526ad65f1961b2422ab33e4d3b05f92be16e5e2",
+                "url": "https://api.github.com/repos/symfony/Translation/zipball/170c0d895616e1a6a35681ffb0b9e339f58ab928",
+                "reference": "170c0d895616e1a6a35681ffb0b9e339f58ab928",
                 "shasum": ""
             },
             "require": {
@@ -1191,6 +1181,7 @@
             },
             "require-dev": {
                 "symfony/config": "~2.0",
+                "symfony/intl": "~2.3",
                 "symfony/yaml": "~2.2"
             },
             "suggest": {
@@ -1224,21 +1215,21 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "http://symfony.com",
-            "time": "2014-09-03 09:00:14"
+            "time": "2014-09-23 05:25:11"
         },
         {
             "name": "symfony/validator",
-            "version": "v2.5.4",
+            "version": "v2.5.5",
             "target-dir": "Symfony/Component/Validator",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Validator.git",
-                "reference": "d23b909823dae2f43b7b6137cafb110fb2df047a"
+                "reference": "64f61505843ca5e6c647244f5a4b6812c1279427"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Validator/zipball/d23b909823dae2f43b7b6137cafb110fb2df047a",
-                "reference": "d23b909823dae2f43b7b6137cafb110fb2df047a",
+                "url": "https://api.github.com/repos/symfony/Validator/zipball/64f61505843ca5e6c647244f5a4b6812c1279427",
+                "reference": "64f61505843ca5e6c647244f5a4b6812c1279427",
                 "shasum": ""
             },
             "require": {
@@ -1294,7 +1285,7 @@
             ],
             "description": "Symfony Validator Component",
             "homepage": "http://symfony.com",
-            "time": "2014-08-31 03:34:15"
+            "time": "2014-09-28 15:22:14"
         },
         {
             "name": "xabbuh/xapi-common",
@@ -1302,24 +1293,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-common.git",
-                "reference": "9022a2bea307572bd52fe3809c31726568d45e74"
+                "reference": "597ca186ed36b3cd287beb4dd23a1420ad1f108c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-common/zipball/9022a2bea307572bd52fe3809c31726568d45e74",
-                "reference": "9022a2bea307572bd52fe3809c31726568d45e74",
+                "url": "https://api.github.com/repos/xabbuh/xapi-common/zipball/597ca186ed36b3cd287beb4dd23a1420ad1f108c",
+                "reference": "597ca186ed36b3cd287beb4dd23a1420ad1f108c",
                 "shasum": ""
             },
             "require": {
-                "jms/serializer": "~0.16",
-                "php": ">=5.3.0",
-                "symfony/config": "~2.2",
-                "symfony/validator": "~2.5",
-                "xabbuh/xapi-model": "~1.0"
-            },
-            "require-dev": {
-                "symfony/property-access": "~2.2",
-                "xabbuh/xapi-data-fixtures": "~1.0"
+                "php": ">=5.3.0"
             },
             "type": "library",
             "extra": {
@@ -1349,21 +1332,13 @@
                 "Tin Can API",
                 "xAPI"
             ],
-            "time": "2014-09-07 07:29:39"
+            "time": "2014-10-13 20:05:25"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [
-
-    ],
+    "stability-flags": [],
     "prefer-stable": true,
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "platform": [],
+    "platform-dev": []
 }
