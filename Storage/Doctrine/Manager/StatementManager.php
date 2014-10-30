@@ -11,12 +11,12 @@
 
 namespace Xabbuh\XApi\Storage\Doctrine\Manager;
 
-use Xabbuh\XApi\Model\StatementInterface;
+use Xabbuh\XApi\Model\Statement;
 use Xabbuh\XApi\Storage\Api\StatementManager as BaseStatementManager;
 use Xabbuh\XApi\Storage\Doctrine\Repository\StatementRepositoryInterface;
 
 /**
- * Doctrine based {@link StatementInterface statement} manager.
+ * Doctrine based {@link Statement} manager.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
@@ -51,7 +51,7 @@ class StatementManager extends BaseStatementManager
     /**
      * {@inheritDoc}
      */
-    public function save(StatementInterface $statement, $flush = true)
+    public function save(Statement $statement, $flush = true)
     {
         $this->repository->save($statement, $flush);
     }

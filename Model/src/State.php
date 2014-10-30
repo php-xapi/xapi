@@ -16,15 +16,15 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class State implements StateInterface
+class State
 {
     /**
-     * @var ActivityInterface The associated activity
+     * @var Activity The associated activity
      */
     protected $activity;
 
     /**
-     * @var ActorInterface The associated actor
+     * @var Actor The associated actor
      */
     protected $actor;
 
@@ -39,15 +39,19 @@ class State implements StateInterface
     protected $stateId;
 
     /**
-     * {@inheritDoc}
+     * Sets the activity.
+     *
+     * @param Activity $activity The activity
      */
-    public function setActivity(ActivityInterface $activity)
+    public function setActivity(Activity $activity)
     {
         $this->activity = $activity;
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the activity.
+     *
+     * @return Activity The activity
      */
     public function getActivity()
     {
@@ -55,15 +59,19 @@ class State implements StateInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the actor.
+     *
+     * @param Actor $actor The actor
      */
-    public function setActor(ActorInterface $actor)
+    public function setActor(Actor $actor)
     {
         $this->actor = $actor;
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the actor.
+     *
+     * @return Actor The actor
      */
     public function getActor()
     {
@@ -71,7 +79,9 @@ class State implements StateInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the optional registration id.
+     *
+     * @param string $registrationId The registration id
      */
     public function setRegistrationId($registrationId)
     {
@@ -79,7 +89,9 @@ class State implements StateInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the registration id.
+     *
+     * @return string The registration id
      */
     public function getRegistrationId()
     {
@@ -87,7 +99,9 @@ class State implements StateInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the state's id.
+     *
+     * @param string $stateId The id
      */
     public function setStateId($stateId)
     {
@@ -95,7 +109,9 @@ class State implements StateInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the state's id.
+     *
+     * @return string The id
      */
     public function getStateId()
     {

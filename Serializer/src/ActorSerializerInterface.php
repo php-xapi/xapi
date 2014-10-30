@@ -11,10 +11,10 @@
 
 namespace Xabbuh\XApi\Serializer;
 
-use Xabbuh\XApi\Model\ActorInterface;
+use Xabbuh\XApi\Model\Actor;
 
 /**
- * Serialize and deserialize {@link ActorInterface actors}.
+ * Serialize and deserialize {@link Actor actors}.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
@@ -23,18 +23,18 @@ interface ActorSerializerInterface
     /**
      * Serializes an actor into a JSON encoded string.
      *
-     * @param ActorInterface $actor The actor to serialize
+     * @param Actor $actor The actor to serialize
      *
      * @return string The serialized actor
      */
-    public function serializeActor(ActorInterface $actor);
+    public function serializeActor(Actor $actor);
 
     /**
      * Parses a serialized actor.
      *
      * @param string $data The serialized actor
      *
-     * @return ActorInterface The parsed actor
+     * @return Actor The parsed actor
      */
     public function deserializeActor($data);
 }

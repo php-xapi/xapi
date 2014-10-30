@@ -12,10 +12,9 @@
 namespace Xabbuh\XApi\Storage\MongoDB\Document;
 
 use Xabbuh\XApi\Model\Verb as BaseVerb;
-use Xabbuh\XApi\Model\VerbInterface;
 
 /**
- * A {@link VerbInterface verb} mapped to a MongoDB document.
+ * A {@link BaseVerb verb} mapped to a MongoDB document.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
@@ -26,7 +25,7 @@ class Verb extends BaseVerb
      */
     protected $identifier;
 
-    public function __construct(VerbInterface $verb)
+    public function __construct(BaseVerb $verb)
     {
         $this->id = $verb->getId();
         $this->display = $verb->getDisplay();

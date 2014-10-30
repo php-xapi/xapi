@@ -11,6 +11,8 @@
 
 namespace Xabbuh\XApi\Model\Tests;
 
+use Xabbuh\XApi\Model\Document;
+
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
@@ -46,7 +48,7 @@ abstract class AbstractDocumentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return \Xabbuh\XApi\Model\DocumentInterface
+     * @return Document
      */
     abstract protected function createDocument();
 }

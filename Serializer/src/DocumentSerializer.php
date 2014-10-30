@@ -12,10 +12,10 @@
 namespace Xabbuh\XApi\Serializer;
 
 use JMS\Serializer\SerializerInterface;
-use Xabbuh\XApi\Model\DocumentInterface;
+use Xabbuh\XApi\Model\Document;
 
 /**
- * Serialize and deserialize {@link DocumentInterface documents}.
+ * Serialize and deserialize {@link Document documents}.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
@@ -34,7 +34,7 @@ class DocumentSerializer implements DocumentSerializerInterface
     /**
      * {@inheritDoc}
      */
-    public function serializeDocument(DocumentInterface $document)
+    public function serializeDocument(Document $document)
     {
         return $this->serializer->serialize($document, 'json');
     }

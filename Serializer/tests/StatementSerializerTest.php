@@ -81,7 +81,7 @@ class StatementSerializerTest extends AbstractSerializerTest
         $this->assertEquals('http://adlnet.gov/expapi/verbs/created', $verb->getId());
         $this->assertEquals('created', $display['en-US']);
 
-        /** @var \Xabbuh\XApi\Model\StatementReferenceInterface $statementReference */
+        /** @var \Xabbuh\XApi\Model\StatementReference $statementReference */
         $statementReference = $statement->getObject();
         $this->assertEquals(
             '8f87ccde-bb56-4c2e-ab83-44982ef22df0',
@@ -106,12 +106,9 @@ class StatementSerializerTest extends AbstractSerializerTest
         $this->assertEquals('http://example.com/planned', $verb->getId());
         $this->assertEquals('planned', $display['en-US']);
 
-        /** @var \Xabbuh\XApi\Model\SubStatementInterface $subStatement */
+        /** @var \Xabbuh\XApi\Model\SubStatement $subStatement */
         $subStatement = $statement->getObject();
-        $this->assertInstanceOf(
-            '\Xabbuh\XApi\Model\SubStatementInterface',
-            $subStatement
-        );
+        $this->assertInstanceOf('\Xabbuh\XApi\Model\SubStatement', $subStatement);
 
         $this->assertEquals(
             'mailto:test@example.com',
@@ -123,24 +120,18 @@ class StatementSerializerTest extends AbstractSerializerTest
         $this->assertEquals('http://example.com/visited', $verb->getId());
         $this->assertEquals('will visit', $display['en-US']);
 
-        $this->assertInstanceOf(
-            '\Xabbuh\XApi\Model\ActivityInterface',
-            $subStatement->getObject()
-        );
+        $this->assertInstanceOf('\Xabbuh\XApi\Model\Activity', $subStatement->getObject());
     }
 
     public function testDeserializeWithResult()
     {
-        /** @var \Xabbuh\XApi\Model\StatementInterface $statement */
+        /** @var \Xabbuh\XApi\Model\Statement $statement */
         $statement = $this->statementSerializer->deserializeStatement(
             StatementJsonFixtures::getStatementWithResult()
         );
         $result = $statement->getResult();
 
-        $this->assertInstanceOf(
-            '\Xabbuh\XApi\Model\ResultInterface',
-            $result
-        );
+        $this->assertInstanceOf('\Xabbuh\XApi\Model\Result', $result);
         $this->assertEquals(0.95, $result->getScore()->getScaled(), '', 0.01);
         $this->assertEquals(31, $result->getScore()->getRaw());
         $this->assertEquals(0, $result->getScore()->getMin());

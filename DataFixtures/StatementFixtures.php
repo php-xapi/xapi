@@ -29,7 +29,7 @@ class StatementFixtures
     /**
      * Loads a minimal valid statement.
      *
-     * @return \Xabbuh\XApi\Model\StatementInterface
+     * @return Statement
      */
     public static function getMinimalStatement()
     {
@@ -55,7 +55,7 @@ class StatementFixtures
     /**
      * Loads a statement including a reference to another statement.
      *
-     * @return \Xabbuh\XApi\Model\StatementInterface
+     * @return Statement
      */
     public static function getStatementWithStatementRef()
     {
@@ -71,7 +71,7 @@ class StatementFixtures
     /**
      * Loads a statement including a result.
      *
-     * @return \Xabbuh\XApi\Model\StatementInterface
+     * @return Statement
      */
     public static function getStatementWithResult()
     {

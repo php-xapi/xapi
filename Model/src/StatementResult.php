@@ -13,15 +13,14 @@ namespace Xabbuh\XApi\Model;
 
 /**
  * Result when querying a Learning Record Store (LRS) for a list of
- * {@link StatementInterface Statements}.
+ * {@link Statement Statements}.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class StatementResult implements StatementResultInterface
+class StatementResult
 {
     /**
-     * The collection of Statements
-     * @var StatementInterface[]
+     * @var Statement[] The collection of Statements
      */
     protected $statements;
 
@@ -31,7 +30,9 @@ class StatementResult implements StatementResultInterface
     protected $moreUrlPath;
 
     /**
-     * {@inheritDoc}
+     * Sets the result's Statements.
+     *
+     * @param Statement[] $statements The collection of Statements
      */
     public function setStatements(array $statements)
     {
@@ -39,7 +40,9 @@ class StatementResult implements StatementResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the Statements.
+     *
+     * @return Statement[] The Statements
      */
     public function getStatements()
     {
@@ -47,7 +50,9 @@ class StatementResult implements StatementResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the absolute path under which the next results can be retrieved.
+     *
+     * @param string $urlPath The URL path
      */
     public function setMoreUrlPath($urlPath)
     {
@@ -55,7 +60,9 @@ class StatementResult implements StatementResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the absolute path under which the next results can be retrieved.
+     *
+     * @return string The URL path
      */
     public function getMoreUrlPath()
     {

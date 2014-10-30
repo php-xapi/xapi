@@ -12,15 +12,15 @@
 namespace Xabbuh\XApi\Model;
 
 /**
- * An {@link ActorInterface Actor's} outcome related to the
- * {@link StatementInterface Statement} in which it is included.
+ * An {@link Actor Actor's} outcome related to the {@link Statement} in which
+ * it is included.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class Result implements ResultInterface
+class Result
 {
     /**
-     * @var ScoreInterface The score
+     * @var Score The score
      */
     protected $score;
 
@@ -45,15 +45,19 @@ class Result implements ResultInterface
     protected $duration;
 
     /**
-     * {@inheritDoc}
+     * Sets the score the user achieved.
+     *
+     * @param Score $score The score
      */
-    public function setScore(ScoreInterface $score)
+    public function setScore(Score $score)
     {
         $this->score = $score;
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the user's score.
+     *
+     * @return Score The score
      */
     public function getScore()
     {
@@ -61,7 +65,10 @@ class Result implements ResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets whether or not the user finished a task successfully.
+     *
+     * @param boolean $success True if the user finished an exercise successfully,
+     *                         false otherwise
      */
     public function setSuccess($success)
     {
@@ -69,7 +76,10 @@ class Result implements ResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns whether or not the user finished a task successfully.
+     *
+     * @return boolean True if the user finished an exercise successfully,
+     *                 false otherwise
      */
     public function getSuccess()
     {
@@ -77,7 +87,10 @@ class Result implements ResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the completion status.
+     *
+     * @param boolean $completion True, if the Activity was completed, false
+     *                            otherwise
      */
     public function setCompletion($completion)
     {
@@ -85,7 +98,10 @@ class Result implements ResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the completion status.
+     *
+     * @return boolean $completion True, if the Activity was completed, false
+     *                             otherwise
      */
     public function getCompletion()
     {
@@ -93,7 +109,9 @@ class Result implements ResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets a response for the given activity.
+     *
+     * @param string $response The response
      */
     public function setResponse($response)
     {
@@ -101,7 +119,9 @@ class Result implements ResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the response.
+     *
+     * @return string The response
      */
     public function getResponse()
     {
@@ -109,7 +129,9 @@ class Result implements ResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the period of time over which the Activity was performed.
+     *
+     * @param string $duration The duration
      */
     public function setDuration($duration)
     {
@@ -117,7 +139,9 @@ class Result implements ResultInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the period of time over which the Activity was performed.
+     *
+     * @return string The duration
      */
     public function getDuration()
     {

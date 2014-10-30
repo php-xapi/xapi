@@ -37,8 +37,9 @@ class DocumentDataWrapper implements EventSubscriberInterface
     public function wrapData(PreDeserializeEvent $event)
     {
         $type = $event->getType();
+        $handledClass = 'Xabbuh\XApi\Model\Document';
 
-        if (is_subclass_of($type['name'], 'Xabbuh\XApi\Model\DocumentInterface')) {
+        if ($handledClass == $type['name'] || is_subclass_of($type['name'], $handledClass)) {
             $data = $event->getData();
             $event->setData(array('data' => $data));
         }

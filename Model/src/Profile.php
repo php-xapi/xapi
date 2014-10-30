@@ -16,7 +16,7 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-abstract class Profile implements ProfileInterface
+abstract class Profile
 {
     /**
      * @var string The profile id
@@ -24,7 +24,9 @@ abstract class Profile implements ProfileInterface
     protected $profileId;
 
     /**
-     * {@inheritDoc}
+     * Sets the profile id.
+     *
+     * @param string $profileId The id
      */
     public function setProfileId($profileId)
     {
@@ -32,7 +34,9 @@ abstract class Profile implements ProfileInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the profile id.
+     *
+     * @return string The id
      */
     public function getProfileId()
     {

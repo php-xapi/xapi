@@ -16,7 +16,7 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-abstract class Actor implements ActorInterface
+abstract class Actor
 {
     /**
      * Name of the {@link Agent} or {@link Group}
@@ -44,12 +44,14 @@ abstract class Actor implements ActorInterface
 
     /**
      * A user account on an existing system
-     * @var AccountInterface
+     * @var Account
      */
     protected $account;
 
     /**
-     * {@inheritDoc}
+     * Returns the Actor's inverse functional identifier.
+     *
+     * @return string The inverse functional identifier
      */
     public function getInverseFunctionalIdentifier()
     {
@@ -73,7 +75,9 @@ abstract class Actor implements ActorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the name of the {@link Agent} or {@link Group}.
+     *
+     * @param string $name The name
      */
     public function setName($name)
     {
@@ -81,7 +85,9 @@ abstract class Actor implements ActorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the name of the {@link Agent} or {@link Group}.
+     *
+     * @return string The name
      */
     public function getName()
     {
@@ -89,7 +95,9 @@ abstract class Actor implements ActorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the mailto IRI.
+     *
+     * @param string $mbox The mailto IRI
      */
     public function setMbox($mbox)
     {
@@ -97,7 +105,9 @@ abstract class Actor implements ActorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the mailto IRI.
+     *
+     * @return string The mailto IRI
      */
     public function getMbox()
     {
@@ -105,7 +115,9 @@ abstract class Actor implements ActorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the SHA1 hash of a mailto IRI.
+     *
+     * @param string $mboxSha1Sum The SHA1 of a mailto IRI
      */
     public function setMboxSha1Sum($mboxSha1Sum)
     {
@@ -113,7 +125,9 @@ abstract class Actor implements ActorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the SHA1 hash of a mailto IRI.
+     *
+     * @return string The SHA1 hash of a mailto IRI
      */
     public function getMboxSha1Sum()
     {
@@ -121,7 +135,9 @@ abstract class Actor implements ActorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the openID.
+     *
+     * @param string $openId The openID
      */
     public function setOpenId($openId)
     {
@@ -129,7 +145,9 @@ abstract class Actor implements ActorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the openID.
+     *
+     * @return string The openID
      */
     public function getOpenId()
     {
@@ -137,15 +155,19 @@ abstract class Actor implements ActorInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the user account of an existing system.
+     *
+     * @param Account $account The account
      */
-    public function setAccount(AccountInterface $account)
+    public function setAccount(Account $account)
     {
         $this->account = $account;
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the user account of an existing system.
+     *
+     * @return string The user account of an existing system
      */
     public function getAccount()
     {

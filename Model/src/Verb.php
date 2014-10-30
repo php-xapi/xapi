@@ -16,7 +16,7 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class Verb implements VerbInterface
+class Verb
 {
     /**
      * Reference to the verb definition
@@ -31,7 +31,9 @@ class Verb implements VerbInterface
     protected $display;
 
     /**
-     * {@inheritDoc}
+     * Sets the verb definition reference.
+     *
+     * @param string $id The reference
      */
     public function setId($id)
     {
@@ -39,7 +41,9 @@ class Verb implements VerbInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the verb definition reference.
+     *
+     * @return string The reference
      */
     public function getId()
     {
@@ -47,7 +51,9 @@ class Verb implements VerbInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the human readable representation of the Verb in one or more languages.
+     *
+     * @param array $display The mapping of languages to human readable strings
      */
     public function setDisplay(array $display)
     {
@@ -55,7 +61,9 @@ class Verb implements VerbInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the human readable representation of the Verb in one or more languages.
+     *
+     * @return array The language map
      */
     public function getDisplay()
     {
@@ -63,7 +71,9 @@ class Verb implements VerbInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Tests if the Verb can be used to void a Statement.
+     *
+     * @return boolean True, if the Verb is a void Verb, false otherwise
      */
     public function isVoidVerb()
     {
@@ -71,7 +81,7 @@ class Verb implements VerbInterface
     }
 
     /**
-     * Creates a Verb that can be used to void a {@link StatementInterface Statement}.
+     * Creates a Verb that can be used to void a {@link Statement}.
      *
      * @return Verb
      */

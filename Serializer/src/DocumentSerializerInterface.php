@@ -11,10 +11,10 @@
 
 namespace Xabbuh\XApi\Serializer;
 
-use Xabbuh\XApi\Model\DocumentInterface;
+use Xabbuh\XApi\Model\Document;
 
 /**
- * Serialize and deserialize {@link DocumentInterface documents}.
+ * Serialize and deserialize {@link Document documents}.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
@@ -23,18 +23,18 @@ interface DocumentSerializerInterface
     /**
      * Serializes a document into a JSON encoded string.
      *
-     * @param DocumentInterface $document The document to serialize
+     * @param Document $document The document to serialize
      *
      * @return string The serialized document
      */
-    public function serializeDocument(DocumentInterface $document);
+    public function serializeDocument(Document $document);
 
     /**
      * Parses a serialized activity profile document.
      *
      * @param string $data The serialized activity profile document
      *
-     * @return DocumentInterface The parsed activity profile document
+     * @return Document The parsed activity profile document
      */
     public function deserializeActivityProfileDocument($data);
 
@@ -43,7 +43,7 @@ interface DocumentSerializerInterface
      *
      * @param string $data The serialized agent profile document
      *
-     * @return DocumentInterface The parsed agent profile document
+     * @return Document The parsed agent profile document
      */
     public function deserializeAgentProfileDocument($data);
 
@@ -52,7 +52,7 @@ interface DocumentSerializerInterface
      *
      * @param string $data The serialized state document
      *
-     * @return DocumentInterface The parsed state document
+     * @return Document The parsed state document
      */
     public function deserializeStateDocument($data);
 }

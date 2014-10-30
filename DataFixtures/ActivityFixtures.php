@@ -24,7 +24,7 @@ class ActivityFixtures
     /**
      * Loads an activity.
      *
-     * @return \Xabbuh\XApi\Model\ActivityInterface
+     * @return Activity
      */
     public static function getActivity()
     {

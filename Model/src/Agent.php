@@ -16,6 +16,6 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class Agent extends Actor implements AgentInterface
+class Agent extends Actor
 {
 }

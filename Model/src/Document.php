@@ -16,7 +16,7 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class Document implements DocumentInterface
+class Document implements \ArrayAccess
 {
     /**
      * @var array The data
@@ -56,7 +56,9 @@ class Document implements DocumentInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the document's data.
+     *
+     * @return array The data
      */
     public function getData()
     {

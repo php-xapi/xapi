@@ -16,7 +16,7 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class Account implements AccountInterface
+class Account
 {
     /**
      * Canonical home page for the system the account is on
@@ -31,7 +31,9 @@ class Account implements AccountInterface
     protected $name;
 
     /**
-     * {@inheritDoc}
+     * Sets the home page for the system the account is on.
+     *
+     * @param string $homePage The home page
      */
     public function setHomePage($homePage)
     {
@@ -39,7 +41,9 @@ class Account implements AccountInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the home page for the system the account is on.
+     *
+     * @return string The home page
      */
     public function getHomePage()
     {
@@ -47,7 +51,9 @@ class Account implements AccountInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the unique id or name used to log in to this account.
+     *
+     * @param string $name The user name
      */
     public function setName($name)
     {
@@ -55,7 +61,9 @@ class Account implements AccountInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the unique id or name used to log in to this account.
+     *
+     * @return string The user name
      */
     public function getName()
     {

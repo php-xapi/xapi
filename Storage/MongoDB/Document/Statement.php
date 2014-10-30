@@ -12,16 +12,15 @@
 namespace Xabbuh\XApi\Storage\MongoDB\Document;
 
 use Xabbuh\XApi\Model\Statement as BaseStatement;
-use Xabbuh\XApi\Model\StatementInterface;
 
 /**
- * A {@link StatementInterface statement} mapped to a MongoDB document.
+ * A {@link BaseStatement statement} mapped to a MongoDB document.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
 class Statement extends BaseStatement
 {
-    public function __construct(StatementInterface $statement)
+    public function __construct(BaseStatement $statement)
     {
         $this->id = $statement->getId();
         $this->verb = new Verb($statement->getVerb());

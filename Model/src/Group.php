@@ -16,26 +16,29 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class Group extends Actor implements GroupInterface
+class Group extends Actor
 {
     /**
-     * The members of the Group
-     * @var AgentInterface[]
+     * @var Agent[] The members of the Group
      */
     protected $members = array();
 
     /**
-     * {@inheritDoc}
+     * Adds a member to this group.
+     *
+     * @param Agent $agent The member to add
      */
-    public function addMember(AgentInterface $agent)
+    public function addMember(Agent $agent)
     {
         $this->members[] = $agent;
     }
 
     /**
-     * {@inheritDoc}
+     * Removes a member.
+     *
+     * @param Agent $agent The member to remove
      */
-    public function removeMember(AgentInterface $agent)
+    public function removeMember(Agent $agent)
     {
         $index = array_search($agent, $this->members, true);
 
@@ -45,7 +48,9 @@ class Group extends Actor implements GroupInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the members of this group.
+     *
+     * @param Agent[] $members The members
      */
     public function setMembers(array $members)
     {
@@ -53,7 +58,9 @@ class Group extends Actor implements GroupInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the members of this group.
+     *
+     * @return Agent[] The members
      */
     public function getMembers()
     {

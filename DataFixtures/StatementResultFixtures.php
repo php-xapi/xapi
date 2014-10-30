@@ -23,7 +23,7 @@ class StatementResultFixtures
     /**
      * Loads a statement result.
      *
-     * @return \Xabbuh\XApi\Model\StatementResultInterface
+     * @return StatementResult
      */
     public static function getStatementResult()
     {
@@ -44,7 +44,7 @@ class StatementResultFixtures
     /**
      * Loads a statement result including a more reference.
      *
-     * @return \Xabbuh\XApi\Model\StatementResultInterface
+     * @return StatementResult
      */
     public static function getStatementResultWithMore()
     {

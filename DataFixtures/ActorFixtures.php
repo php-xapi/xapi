@@ -25,7 +25,7 @@ class ActorFixtures
     /**
      * Loads an agent.
      *
-     * @return \Xabbuh\XApi\Model\AgentInterface
+     * @return Agent
      */
     public static function getAgent()
     {
@@ -39,7 +39,7 @@ class ActorFixtures
     /**
      * Loads a group.
      *
-     * @return \Xabbuh\XApi\Model\GroupInterface
+     * @return Group
      */
     public static function getGroup()
     {
@@ -56,7 +56,7 @@ class ActorFixtures
     /**
      * Loads an anonymous group.
      *
-     * @return \Xabbuh\XApi\Model\GroupInterface
+     * @return Group
      */
     public static function getAnonymousGroup()
     {

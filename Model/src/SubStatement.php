@@ -12,10 +12,10 @@
 namespace Xabbuh\XApi\Model;
 
 /**
- * A Statement included as part of a parent Statement.
+ * A {@link Statement} included as part of a parent Statement.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class SubStatement extends Statement implements SubStatementInterface
+class SubStatement extends Statement
 {
 }

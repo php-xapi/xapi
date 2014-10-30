@@ -16,40 +16,37 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class Statement implements StatementInterface
+class Statement
 {
     /**
-     * The unique identifier
-     * @var string
+     * @var string The unique identifier
      */
     protected $id;
 
     /**
-     * The {@link VerbInterface Verb}
-     * @var \Xabbuh\XApi\Model\VerbInterface $verb
+     * @var Verb $verb The {@link Verb}
      */
     protected $verb;
 
     /**
-     * The {@ActorInterface Actor}
-     * @var \Xabbuh\XApi\Model\ActorInterface
+     * @var Actor The {@link Actor}
      */
     protected $actor;
 
     /**
-     * The {@link Object}
-     * @var \Xabbuh\XApi\Model\ObjectInterface
+     * @var Object The {@link Object}
      */
     protected $object;
 
     /**
-     * The {@link ActivityInterface Activity} {@link ResultInterface Result}
-     * @var \Xabbuh\XApi\Model\ResultInterface
+     * @var Result The {@link Activity} {@link Result}
      */
     protected $result;
 
     /**
-     * {@inheritDoc}
+     * Sets the Statement's unique identifier.
+     *
+     * @param string $id The identifier
      */
     public function setId($id)
     {
@@ -57,7 +54,9 @@ class Statement implements StatementInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the Statement's unique identifier.
+     *
+     * @return string The identifier
      */
     public function getId()
     {
@@ -65,15 +64,19 @@ class Statement implements StatementInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the Statement's {@link Verb}.
+     *
+     * @param Verb $verb The Verb
      */
-    public function setVerb(VerbInterface $verb)
+    public function setVerb(Verb $verb)
     {
         $this->verb = $verb;
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the Statement's {@link Verb}.
+     *
+     * @return Verb The Verb
      */
     public function getVerb()
     {
@@ -81,15 +84,19 @@ class Statement implements StatementInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the Statement's {@link Actor}.
+     *
+     * @param Actor $actor The Actor
      */
-    public function setActor(ActorInterface $actor)
+    public function setActor(Actor $actor)
     {
         $this->actor = $actor;
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the Statement's {@link Actor}.
+     *
+     * @return Actor The Actor
      */
     public function getActor()
     {
@@ -97,15 +104,19 @@ class Statement implements StatementInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the Statement's {@link Object}.
+     *
+     * @param Object $object The Object
      */
-    public function setObject(ObjectInterface $object)
+    public function setObject(Object $object)
     {
         $this->object = $object;
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the Statement's {@link Object}.
+     *
+     * @return Object The Object
      */
     public function getObject()
     {
@@ -113,15 +124,19 @@ class Statement implements StatementInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the {@link Activity} {@link Result}.
+     *
+     * @param Result $result The Result
      */
-    public function setResult(ResultInterface $result)
+    public function setResult(Result $result)
     {
         $this->result = $result;
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the {@link Activity} {@link Result}.
+     *
+     * @return Result The Result
      */
     public function getResult()
     {
@@ -129,7 +144,9 @@ class Statement implements StatementInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns a {@link StatementReference} for the Statement.
+     *
+     * @return StatementReference The reference
      */
     public function getStatementReference()
     {
@@ -140,9 +157,13 @@ class Statement implements StatementInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns a Statement that voids the current Statement.
+     *
+     * @param Actor $actor The Actor voiding this Statement
+     *
+     * @return Statement The voiding Statement
      */
-    public function getVoidStatement(ActorInterface $actor)
+    public function getVoidStatement(Actor $actor)
     {
         $voidStatement = new Statement();
         $voidStatement->setActor($actor);

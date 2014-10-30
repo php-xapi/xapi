@@ -12,11 +12,11 @@
 namespace Xabbuh\XApi\Model;
 
 /**
- * Definition of an {@link ActivityInterface Activity}.
+ * Definition of an {@link Activity}.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class Definition implements DefinitionInterface
+class Definition
 {
     /**
      * The human readable activity name
@@ -31,13 +31,15 @@ class Definition implements DefinitionInterface
     protected $description;
 
     /**
-     * The type of the {@link ActivityInterface Activity}
+     * The type of the {@link Activity}
      * @var string
      */
     protected $type;
 
     /**
-     * {@inheritDoc}
+     * Sets human readable names.
+     *
+     * @param array $name The name language map
      */
     public function setName(array $name)
     {
@@ -45,7 +47,9 @@ class Definition implements DefinitionInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the human readable names.
+     *
+     * @return array The name language map
      */
     public function getName()
     {
@@ -53,7 +57,9 @@ class Definition implements DefinitionInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets human readable descriptions.
+     *
+     * @param array $description The description language map
      */
     public function setDescription(array $description)
     {
@@ -61,7 +67,9 @@ class Definition implements DefinitionInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the human readable descriptions.
+     *
+     * @return array The description language map
      */
     public function getDescription()
     {
@@ -69,7 +77,9 @@ class Definition implements DefinitionInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the {@link Activity} type.
+     *
+     * @param string $type The type
      */
     public function setType($type)
     {
@@ -77,7 +87,9 @@ class Definition implements DefinitionInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the {@link Activity} type.
+     *
+     * @return string The type
      */
     public function getType()
     {

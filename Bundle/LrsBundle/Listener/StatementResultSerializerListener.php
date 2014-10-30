@@ -11,7 +11,7 @@
 
 namespace Xabbuh\XApi\Bundle\LrsBundle\Listener;
 
-use Xabbuh\XApi\Model\StatementResultInterface;
+use Xabbuh\XApi\Model\StatementResult;
 use Xabbuh\XApi\Serializer\StatementResultSerializerInterface;
 
 /**
@@ -37,7 +37,7 @@ class StatementResultSerializerListener extends AbstractSerializerListener
      */
     protected function isControllerResultSupported($result)
     {
-        return $result instanceof StatementResultInterface;
+        return $result instanceof StatementResult;
     }
 
     /**

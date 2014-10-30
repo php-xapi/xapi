@@ -11,7 +11,7 @@
 
 namespace Xabbuh\XApi\Storage\Api;
 
-use Xabbuh\XApi\Model\StatementInterface;
+use Xabbuh\XApi\Model\Statement;
 
 /**
  * Statement manager.
@@ -21,40 +21,39 @@ use Xabbuh\XApi\Model\StatementInterface;
 interface StatementManagerInterface
 {
     /**
-     * Find a {@link StatementInterface statement} by id.
+     * Find a {@link Statement} by id.
      *
      * @param string $statementId The statement id to filter by
      *
-     * @return StatementInterface The statement
+     * @return Statement The statement
      */
     public function findStatementById($statementId);
 
     /**
-     * Find a {@link StatementInterface statement} by the given criteria.
+     * Find a {@link Statement} by the given criteria.
      *
      * @param array $criteria The criteria to filter by
      *
-     * @return StatementInterface The statement
+     * @return Statement The statement
      */
     public function findStatementBy(array $criteria);
 
     /**
-     * Find a collection of {@link StatementInterface statements} by the given
+     * Find a collection of {@link Statement} by the given
      * criteria.
      *
      * @param array $criteria The criteria to filter by
      *
-     * @return StatementInterface[] The statements
+     * @return Statement[] The statements
      */
     public function findStatementsBy(array $criteria);
 
     /**
-     * Stores a {@link StatementInterface statement}.
+     * Stores a {@link Statement}.
      *
-     * @param StatementInterface $statement The statement to store
-     * @param bool               $flush     Whether or not to flush the
-     *                                      managed objects (i.e. write them
-     *                                      to the data storage)
+     * @param Statement $statement The statement to store
+     * @param bool      $flush     Whether or not to flush the managed objects
+     *                             (i.e. write them to the data storage)
      */
-    public function save(StatementInterface $statement, $flush = true);
+    public function save(Statement $statement, $flush = true);
 }

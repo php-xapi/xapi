@@ -11,10 +11,10 @@
 
 namespace Xabbuh\XApi\Serializer;
 
-use Xabbuh\XApi\Model\StatementResultInterface;
+use Xabbuh\XApi\Model\StatementResult;
 
 /**
- * Serialize and deserialize {@link \Xabbuh\XApi\Model\StatementResultInterface statement results}.
+ * Serialize and deserialize {@link StatementResult statement results}.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
@@ -23,18 +23,18 @@ interface StatementResultSerializerInterface
     /**
      * Serializes a statement result into a JSON encoded string.
      *
-     * @param StatementResultInterface $statementResult The statement result to serialize
+     * @param StatementResult $statementResult The statement result to serialize
      *
      * @return string The serialized statement result
      */
-    public function serializeStatementResult(StatementResultInterface $statementResult);
+    public function serializeStatementResult(StatementResult $statementResult);
 
     /**
      * Parses a serialized statement result.
      *
      * @param string $data The serialized statement result
      *
-     * @return StatementResultInterface The parsed statement result
+     * @return StatementResult The parsed statement result
      */
     public function deserializeStatementResult($data);
 }

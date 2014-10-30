@@ -12,11 +12,11 @@
 namespace Xabbuh\XApi\Model;
 
 /**
- * A reference to an existing {@link StatementInterface Statement}.
+ * A reference to an existing {@link Statement}.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class StatementReference extends Object implements StatementReferenceInterface
+class StatementReference extends Object
 {
     /**
      * @var string The id of the referenced Statement
@@ -24,7 +24,9 @@ class StatementReference extends Object implements StatementReferenceInterface
     protected $statementId;
 
     /**
-     * {@inheritDoc}
+     * Sets the id of the referenced Statement.
+     *
+     * @param string $statementId The id
      */
     public function setStatementId($statementId)
     {
@@ -32,7 +34,9 @@ class StatementReference extends Object implements StatementReferenceInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the id of the referenced Statement.
+     *
+     * @return string The id
      */
     public function getStatementId()
     {

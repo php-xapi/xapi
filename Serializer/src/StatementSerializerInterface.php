@@ -11,10 +11,10 @@
 
 namespace Xabbuh\XApi\Serializer;
 
-use Xabbuh\XApi\Model\StatementInterface;
+use Xabbuh\XApi\Model\Statement;
 
 /**
- * Serialize and deserialize {@link \Xabbuh\XApi\Model\StatementInterface statements}.
+ * Serialize and deserialize {@link Statement statements}.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
@@ -23,16 +23,16 @@ interface StatementSerializerInterface
     /**
      * Serializes a statement into a JSON encoded string.
      *
-     * @param StatementInterface $statement The statement to serialize
+     * @param Statement $statement The statement to serialize
      *
      * @return string The serialized statement
      */
-    public function serializeStatement(StatementInterface $statement);
+    public function serializeStatement(Statement $statement);
 
     /**
      * Serializes a collection of statements into a JSON encoded string.
      *
-     * @param StatementInterface[] $statements The statements to serialize
+     * @param Statement[] $statements The statements to serialize
      *
      * @return string The serialized statements
      */
@@ -43,7 +43,7 @@ interface StatementSerializerInterface
      *
      * @param string $data The serialized statement
      *
-     * @return StatementInterface The parsed statement
+     * @return Statement The parsed statement
      */
     public function deserializeStatement($data);
 
@@ -52,7 +52,7 @@ interface StatementSerializerInterface
      *
      * @param string $data The serialized statements
      *
-     * @return StatementInterface[] The parsed statements
+     * @return Statement[] The parsed statements
      */
     public function deserializeStatements($data);
 }

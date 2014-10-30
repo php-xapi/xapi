@@ -16,6 +16,6 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-abstract class Object implements ObjectInterface
+abstract class Object
 {
 }

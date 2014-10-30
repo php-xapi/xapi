@@ -12,27 +12,31 @@
 namespace Xabbuh\XApi\Model;
 
 /**
- * A {@link ProfileInterface Profile} related to an {@link AgentInterface Agent}.
+ * A {@link Profile} related to an {@link Agent}.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class AgentProfile extends Profile implements AgentProfileInterface
+class AgentProfile extends Profile
 {
     /**
-     * @var AgentInterface The agent
+     * @var Agent The agent
      */
     private $agent;
 
     /**
-     * {@inheritDoc}
+     * Sets the agent.
+     *
+     * @param Agent $agent The agent
      */
-    public function setAgent(AgentInterface $agent)
+    public function setAgent(Agent $agent)
     {
         $this->agent = $agent;
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the agent.
+     *
+     * @return Agent The agent
      */
     public function getAgent()
     {

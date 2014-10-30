@@ -41,9 +41,6 @@ class DocumentDataWrapperTest extends \PHPUnit_Framework_TestCase
         $event = new PreDeserializeEvent($context, $data, $type);
         $this->eventSubscriber->wrapData($event);
 
-        $this->assertEquals(
-            array('data' => array('x' => 'foo', 'y' => 'bar')),
-            $event->getData()
-        );
+        $this->assertSame(array('data' => array('x' => 'foo', 'y' => 'bar')), $event->getData());
     }
 }

@@ -12,27 +12,31 @@
 namespace Xabbuh\XApi\Model;
 
 /**
- * A {@link DocumentInterface Document} that is related to an {@link ActivityInterface Activity}.
+ * A {@link Document} that is related to an {@link Activity}.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class ActivityProfileDocument extends Document implements ActivityProfileDocumentInterface
+class ActivityProfileDocument extends Document
 {
     /**
-     * @var ActivityProfileInterface The activity profile
+     * @var ActivityProfile The activity profile
      */
     private $profile;
 
     /**
-     * {@inheritDoc}
+     * Sets the {@link ActivityProfile activity profile}.
+     *
+     * @param ActivityProfile $profile The activity profile
      */
-    public function setActivityProfile(ActivityProfileInterface $profile)
+    public function setActivityProfile(ActivityProfile $profile)
     {
         $this->profile = $profile;
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the {@link ActivityProfile activity profile}.
+     *
+     * @return ActivityProfile The activity profile
      */
     public function getActivityProfile()
     {

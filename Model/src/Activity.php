@@ -12,11 +12,11 @@
 namespace Xabbuh\XApi\Model;
 
 /**
- * An Activity in a {@StatementInterface}.
+ * An Activity in a {@link Statement}.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class Activity extends Object implements ActivityInterface
+class Activity extends Object
 {
     /**
      * The Activity's unique identifier
@@ -25,13 +25,14 @@ class Activity extends Object implements ActivityInterface
     protected $id;
 
     /**
-     * The Activity's {@link DefinitionInterface Definition}
-     * @var \Xabbuh\XApi\Model\DefinitionInterface
+     * @var Definition The Activity's {@link Definition}
      */
     protected $definition;
 
     /**
-     * {@inheritDoc}
+     * Sets this Activity's unique identifier.
+     *
+     * @param string $id The identifier
      */
     public function setId($id)
     {
@@ -39,7 +40,9 @@ class Activity extends Object implements ActivityInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the Activity's unique identifier.
+     *
+     * @return string The identifier
      */
     public function getId()
     {
@@ -47,15 +50,19 @@ class Activity extends Object implements ActivityInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the Activity's {@link Definition}.
+     *
+     * @param Definition $definition The definition
      */
-    public function setDefinition(DefinitionInterface $definition)
+    public function setDefinition(Definition $definition)
     {
         $this->definition = $definition;
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the Activity's {@link Definition}.
+     *
+     * @return Definition The Definition
      */
     public function getDefinition()
     {

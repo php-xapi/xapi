@@ -12,12 +12,11 @@
 namespace Xabbuh\XApi\Model;
 
 /**
- * The outcome of an {@link ActivityInterface Activity} achieved by an
- * {@link AgentInterface Agent}.
+ * The outcome of an {@link Activity} achieved by an {@link Agent}.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class Score implements ScoreInterface
+class Score
 {
     /**
      * @var double The scaled score (a number between -1 and 1)
@@ -40,7 +39,9 @@ class Score implements ScoreInterface
     protected $max;
 
     /**
-     * {@inheritDoc}
+     * Sets the Agent's scaled score (a number between -1 and 1).
+     *
+     * @param double $scaled The scaled score
      */
     public function setScaled($scaled)
     {
@@ -48,7 +49,9 @@ class Score implements ScoreInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the Agent's scaled score (a number between -1 and 1).
+     *
+     * @return double The scaled score
      */
     public function getScaled()
     {
@@ -56,7 +59,9 @@ class Score implements ScoreInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the Agent's score.
+     *
+     * @param double $raw The score
      */
     public function setRaw($raw)
     {
@@ -64,7 +69,9 @@ class Score implements ScoreInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the Agent's score.
+     *
+     * @return double The score
      */
     public function getRaw()
     {
@@ -72,7 +79,9 @@ class Score implements ScoreInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the lowest possible score.
+     *
+     * @param double $min The lowest possible score
      */
     public function setMin($min)
     {
@@ -80,7 +89,9 @@ class Score implements ScoreInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the lowest possible score.
+     *
+     * @return double The lowest possible score
      */
     public function getMin()
     {
@@ -88,7 +99,9 @@ class Score implements ScoreInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Sets the highest possible score.
+     *
+     * @param double $max The highest possible score
      */
     public function setMax($max)
     {
@@ -96,7 +109,9 @@ class Score implements ScoreInterface
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the highest possible score.
+     *
+     * @return double The highest possible score
      */
     public function getMax()
     {

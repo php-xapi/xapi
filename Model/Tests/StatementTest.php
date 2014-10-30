@@ -28,10 +28,7 @@ class StatementTest extends \PHPUnit_Framework_TestCase
         $statement->setVerb(new Verb());
         $statementReference = $statement->getStatementReference();
 
-        $this->assertInstanceOf(
-            '\Xabbuh\XApi\Model\StatementReferenceInterface',
-            $statementReference
-        );
+        $this->assertInstanceOf('\Xabbuh\XApi\Model\StatementReference', $statementReference);
         $this->assertEquals(
             'e05aa883-acaf-40ad-bf54-02c8ce485fb0',
             $statementReference->getStatementId()
@@ -46,15 +43,12 @@ class StatementTest extends \PHPUnit_Framework_TestCase
         $actor->setMbox('mailto:xapi@adlnet.gov');
         $voidStatement = $statement->getVoidStatement($actor);
 
-        /** @var \Xabbuh\XApi\Model\StatementReferenceInterface $statementReference */
+        /** @var \Xabbuh\XApi\Model\StatementReference $statementReference */
         $statementReference = $voidStatement->getObject();
 
         $this->assertEquals($actor, $voidStatement->getActor());
         $this->assertTrue($voidStatement->getVerb()->isVoidVerb());
-        $this->assertInstanceOf(
-            '\Xabbuh\XApi\Model\StatementReferenceInterface',
-            $statementReference
-        );
+        $this->assertInstanceOf('\Xabbuh\XApi\Model\StatementReference', $statementReference);
         $this->assertEquals(
             'e05aa883-acaf-40ad-bf54-02c8ce485fb0',
             $statementReference->getStatementId()

@@ -26,7 +26,7 @@ class DocumentFixtures
     /**
      * Loads a document.
      *
-     * @return \Xabbuh\XApi\Model\DocumentInterface
+     * @return Document
      */
     public static function getDocument()
     {
@@ -40,7 +40,7 @@ class DocumentFixtures
     /**
      * Loads an activity profile document.
      *
-     * @return \Xabbuh\XApi\Model\ActivityProfileDocumentInterface
+     * @return ActivityProfileDocument
      */
     public static function getActivityProfileDocument()
     {
@@ -54,7 +54,7 @@ class DocumentFixtures
     /**
      * Loads an agent profile document.
      *
-     * @return \Xabbuh\XApi\Model\AgentProfileDocumentInterface
+     * @return AgentProfileDocument
      */
     public static function getAgentProfileDocument()
     {
@@ -68,7 +68,7 @@ class DocumentFixtures
     /**
      * Loads a state document.
      *
-     * @return \Xabbuh\XApi\Model\StateDocumentInterface
+     * @return StateDocument
      */
     public static function getStateDocument()
     {

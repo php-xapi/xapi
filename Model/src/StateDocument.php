@@ -16,23 +16,27 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class StateDocument extends Document implements StateDocumentInterface
+class StateDocument extends Document
 {
     /**
-     * @var StateInterface The state the document is associated to
+     * @var State The state the document is associated to
      */
     protected $state;
 
     /**
-     * {@inheritDoc}
+     * Sets the document's {@link State}.
+     *
+     * @param State $state The state
      */
-    public function setState(StateInterface $state)
+    public function setState(State $state)
     {
         $this->state = $state;
     }
 
     /**
-     * {@inheritDoc}
+     * Returns the document's {@link State}.
+     *
+     * @return State The state
      */
     public function getState()
     {
