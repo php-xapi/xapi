@@ -12,9 +12,9 @@
 namespace Xabbuh\XApi\Storage\MongoDB\Repository;
 
 use Doctrine\ODM\MongoDB\DocumentRepository;
-use Xabbuh\XApi\Model\Statement as BaseStatement;
+use Xabbuh\XApi\Model\Statement;
 use Xabbuh\XApi\Storage\Doctrine\Repository\StatementRepositoryInterface;
-use Xabbuh\XApi\Storage\MongoDB\Document\Statement;
+use Xabbuh\XApi\Storage\MongoDB\Document\Statement as StatementDocument;
 
 /**
  * A MongoDB based statement repository.
@@ -24,17 +24,16 @@ use Xabbuh\XApi\Storage\MongoDB\Document\Statement;
 class StatementRepository extends DocumentRepository implements StatementRepositoryInterface
 {
     /**
-     * Saves a {@link BaseStatement statement} in the underlying storage.
+     * Saves a {@link Statement} in the underlying storage.
      *
-     * @param BaseStatement $statement The statement being stored
-     * @param bool          $flush     Whether or not to flush the managed
-     *                                 objects (i.e. write them to the data
-     *                                 storage)
+     * @param Statement $statement The statement being stored
+     * @param bool      $flush     Whether or not to flush the managed objects
+     *                             (i.e. write them to the data storage)
      */
-    public function save(BaseStatement $statement, $flush = true)
+    public function save(Statement $statement, $flush = true)
     {
-        if (!$statement instanceof Statement) {
-            $statement = new Statement($statement);
+        if (!$statement instanceof StatementDocument) {
+            $statement = new StatementDocument($statement);
         }
 
         $this->getDocumentManager()->persist($statement);
