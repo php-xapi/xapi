@@ -20,9 +20,9 @@ class StatementReferenceValidatorTest extends AbstractModelValidatorTest
 {
     public function getObjectsToValidate()
     {
-        $withStatementId = new StatementReference();
-        $withStatementId->setStatementId(md5(uniqid()));
-        $withoutStatementId = new StatementReference();
+        echo 'TEST';
+        $withStatementId = new StatementReference(md5(uniqid()));
+        $withoutStatementId = new StatementReference(null);
 
         return array(
             array($withStatementId, 0),
