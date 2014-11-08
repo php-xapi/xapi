@@ -45,13 +45,19 @@ class Result
     protected $duration;
 
     /**
-     * Sets the score the user achieved.
-     *
-     * @param Score $score The score
+     * @param Score       $score
+     * @param bool        $success
+     * @param bool        $completion
+     * @param string|null $response
+     * @param string|null $duration
      */
-    public function setScore(Score $score)
+    public function __construct(Score $score, $success, $completion, $response = null, $duration = null)
     {
         $this->score = $score;
+        $this->success = $success;
+        $this->completion = $completion;
+        $this->response = $response;
+        $this->duration = $duration;
     }
 
     /**
@@ -62,17 +68,6 @@ class Result
     public function getScore()
     {
         return $this->score;
-    }
-
-    /**
-     * Sets whether or not the user finished a task successfully.
-     *
-     * @param boolean $success True if the user finished an exercise successfully,
-     *                         false otherwise
-     */
-    public function setSuccess($success)
-    {
-        $this->success = $success;
     }
 
     /**
@@ -87,17 +82,6 @@ class Result
     }
 
     /**
-     * Sets the completion status.
-     *
-     * @param boolean $completion True, if the Activity was completed, false
-     *                            otherwise
-     */
-    public function setCompletion($completion)
-    {
-        $this->completion = $completion;
-    }
-
-    /**
      * Returns the completion status.
      *
      * @return boolean $completion True, if the Activity was completed, false
@@ -109,16 +93,6 @@ class Result
     }
 
     /**
-     * Sets a response for the given activity.
-     *
-     * @param string $response The response
-     */
-    public function setResponse($response)
-    {
-        $this->response = $response;
-    }
-
-    /**
      * Returns the response.
      *
      * @return string The response
@@ -126,16 +100,6 @@ class Result
     public function getResponse()
     {
         return $this->response;
-    }
-
-    /**
-     * Sets the period of time over which the Activity was performed.
-     *
-     * @param string $duration The duration
-     */
-    public function setDuration($duration)
-    {
-        $this->duration = $duration;
     }
 
     /**

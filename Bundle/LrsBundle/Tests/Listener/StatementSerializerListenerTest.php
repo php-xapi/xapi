@@ -27,4 +27,16 @@ class StatementSerializerListenerTest extends AbstractSerializerListenerTest
     {
         return new StatementSerializerListener($this->serializer);
     }
+
+    protected function getDefaultDomainObjectConstructorArguments()
+    {
+        return array(
+            '',
+            $this->getMock('\Xabbuh\XApi\Model\Actor'),
+            $this->getMockBuilder('\Xabbuh\XApi\Model\Verb')
+                ->disableOriginalConstructor()
+                ->getMock(),
+            $this->getMock('\Xabbuh\XApi\Model\Object'),
+        );
+    }
 }

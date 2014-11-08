@@ -24,11 +24,9 @@ class StatementReference extends Object
     protected $statementId;
 
     /**
-     * Sets the id of the referenced Statement.
-     *
-     * @param string $statementId The id
+     * @param string $statementId
      */
-    public function setStatementId($statementId)
+    public function __construct($statementId)
     {
         $this->statementId = $statementId;
     }

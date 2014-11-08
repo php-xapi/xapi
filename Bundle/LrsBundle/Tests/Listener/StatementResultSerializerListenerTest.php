@@ -27,4 +27,9 @@ class StatementResultSerializerListenerTest extends AbstractSerializerListenerTe
     {
         return new StatementResultSerializerListener($this->serializer);
     }
+
+    protected function getDefaultDomainObjectConstructorArguments()
+    {
+        return array(array());
+    }
 }

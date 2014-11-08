@@ -29,27 +29,17 @@ class StatementFixtures
     /**
      * Loads a minimal valid statement.
      *
+     * @param string $id The id of the new Statement
+     *
      * @return Statement
      */
-    public static function getMinimalStatement()
+    public static function getMinimalStatement($id = '12345678-1234-5678-8234-567812345678')
     {
-        $statement = new Statement();
-        $statement->setId('12345678-1234-5678-8234-567812345678');
+        $actor = new Agent('mailto:xapi@adlnet.gov');
+        $verb = new Verb('http://adlnet.gov/expapi/verbs/created', array('en-US' => 'created'));
+        $activity = new Activity('http://example.adlnet.gov/xapi/example/activity');
 
-        $actor = new Agent();
-        $actor->setMbox('mailto:xapi@adlnet.gov');
-        $statement->setActor($actor);
-
-        $verb = new Verb();
-        $verb->setId('http://adlnet.gov/expapi/verbs/created');
-        $verb->setDisplay(array('en-US' => 'created'));
-        $statement->setVerb($verb);
-
-        $activity = new Activity();
-        $activity->setId('http://example.adlnet.gov/xapi/example/activity');
-        $statement->setObject($activity);
-
-        return $statement;
+        return new Statement($id, $actor, $verb, $activity);
     }
 
     /**
@@ -59,13 +49,14 @@ class StatementFixtures
      */
     public static function getStatementWithStatementRef()
     {
-        $statementReference = new StatementReference();
-        $statementReference->setStatementId('8f87ccde-bb56-4c2e-ab83-44982ef22df0');
+        $minimalStatement = static::getMinimalStatement();
 
-        $statement = static::getMinimalStatement();
-        $statement->setObject($statementReference);
-
-        return $statement;
+        return new Statement(
+            $minimalStatement->getId(),
+            $minimalStatement->getActor(),
+            $minimalStatement->getVerb(),
+            new StatementReference('8f87ccde-bb56-4c2e-ab83-44982ef22df0')
+        );
     }
 
     /**
@@ -75,19 +66,12 @@ class StatementFixtures
      */
     public static function getStatementWithResult()
     {
-        $score = new Score();
-        $score->setScaled(0.95);
-        $score->setRaw(31);
-        $score->setMin(0);
-        $score->setMax(50);
-        $result = new Result();
-        $result->setScore($score);
-        $result->setSuccess(true);
-        $result->setCompletion(true);
+        $actor = new Agent('mailto:xapi@adlnet.gov');
+        $verb = new Verb('http://adlnet.gov/expapi/verbs/created', array('en-US' => 'created'));
+        $activity = new Activity('http://example.adlnet.gov/xapi/example/activity');
+        $score = new Score(0.95, 31, 0, 50);
+        $result = new Result($score, true, true);
 
-        $statement = static::getMinimalStatement();
-        $statement->setResult($result);
-
-        return $statement;
+        return new Statement('12345678-1234-5678-8234-567812345678', $actor, $verb, $activity, $result);
     }
 }

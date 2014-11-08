@@ -49,6 +49,22 @@ abstract class Actor
     protected $account;
 
     /**
+     * @param string  $mbox
+     * @param string  $mboxSha1Sum
+     * @param string  $openId
+     * @param Account $account
+     * @param string  $name
+     */
+    public function __construct($mbox = null, $mboxSha1Sum = null, $openId = null, Account $account = null, $name = null)
+    {
+        $this->name = $name;
+        $this->mbox = $mbox;
+        $this->mboxSha1Sum = $mboxSha1Sum;
+        $this->openId = $openId;
+        $this->account = $account;
+    }
+
+    /**
      * Returns the Actor's inverse functional identifier.
      *
      * @return string The inverse functional identifier
@@ -75,16 +91,6 @@ abstract class Actor
     }
 
     /**
-     * Sets the name of the {@link Agent} or {@link Group}.
-     *
-     * @param string $name The name
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    /**
      * Returns the name of the {@link Agent} or {@link Group}.
      *
      * @return string The name
@@ -92,16 +98,6 @@ abstract class Actor
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Sets the mailto IRI.
-     *
-     * @param string $mbox The mailto IRI
-     */
-    public function setMbox($mbox)
-    {
-        $this->mbox = $mbox;
     }
 
     /**
@@ -115,16 +111,6 @@ abstract class Actor
     }
 
     /**
-     * Sets the SHA1 hash of a mailto IRI.
-     *
-     * @param string $mboxSha1Sum The SHA1 of a mailto IRI
-     */
-    public function setMboxSha1Sum($mboxSha1Sum)
-    {
-        $this->mboxSha1Sum = $mboxSha1Sum;
-    }
-
-    /**
      * Returns the SHA1 hash of a mailto IRI.
      *
      * @return string The SHA1 hash of a mailto IRI
@@ -135,16 +121,6 @@ abstract class Actor
     }
 
     /**
-     * Sets the openID.
-     *
-     * @param string $openId The openID
-     */
-    public function setOpenId($openId)
-    {
-        $this->openId = $openId;
-    }
-
-    /**
      * Returns the openID.
      *
      * @return string The openID
@@ -152,16 +128,6 @@ abstract class Actor
     public function getOpenId()
     {
         return $this->openId;
-    }
-
-    /**
-     * Sets the user account of an existing system.
-     *
-     * @param Account $account The account
-     */
-    public function setAccount(Account $account)
-    {
-        $this->account = $account;
     }
 
     /**

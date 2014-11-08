@@ -23,13 +23,10 @@ class AgentProfile extends Profile
      */
     private $agent;
 
-    /**
-     * Sets the agent.
-     *
-     * @param Agent $agent The agent
-     */
-    public function setAgent(Agent $agent)
+    public function __construct($profileId, Agent $agent)
     {
+        parent::__construct($profileId);
+
         $this->agent = $agent;
     }
 

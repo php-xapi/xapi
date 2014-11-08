@@ -43,14 +43,13 @@ class Statement
      */
     protected $result;
 
-    /**
-     * Sets the Statement's unique identifier.
-     *
-     * @param string $id The identifier
-     */
-    public function setId($id)
+    public function __construct($id, Actor $actor, Verb $verb, Object $object, Result $result = null)
     {
         $this->id = $id;
+        $this->actor = $actor;
+        $this->verb = $verb;
+        $this->object = $object;
+        $this->result = $result;
     }
 
     /**
@@ -64,16 +63,6 @@ class Statement
     }
 
     /**
-     * Sets the Statement's {@link Verb}.
-     *
-     * @param Verb $verb The Verb
-     */
-    public function setVerb(Verb $verb)
-    {
-        $this->verb = $verb;
-    }
-
-    /**
      * Returns the Statement's {@link Verb}.
      *
      * @return Verb The Verb
@@ -81,16 +70,6 @@ class Statement
     public function getVerb()
     {
         return $this->verb;
-    }
-
-    /**
-     * Sets the Statement's {@link Actor}.
-     *
-     * @param Actor $actor The Actor
-     */
-    public function setActor(Actor $actor)
-    {
-        $this->actor = $actor;
     }
 
     /**
@@ -104,33 +83,13 @@ class Statement
     }
 
     /**
-     * Sets the Statement's {@link Object}.
-     *
-     * @param Object $object The Object
-     */
-    public function setObject(Object $object)
-    {
-        $this->object = $object;
-    }
-
-    /**
      * Returns the Statement's {@link Object}.
      *
-     * @return Object The Object
+     * @return \Xabbuh\XApi\Model\Object The Object
      */
     public function getObject()
     {
         return $this->object;
-    }
-
-    /**
-     * Sets the {@link Activity} {@link Result}.
-     *
-     * @param Result $result The Result
-     */
-    public function setResult(Result $result)
-    {
-        $this->result = $result;
     }
 
     /**
@@ -150,8 +109,7 @@ class Statement
      */
     public function getStatementReference()
     {
-        $reference = new StatementReference();
-        $reference->setStatementId($this->id);
+        $reference = new StatementReference($this->id);
 
         return $reference;
     }
@@ -165,13 +123,11 @@ class Statement
      */
     public function getVoidStatement(Actor $actor)
     {
-        $voidStatement = new Statement();
-        $voidStatement->setActor($actor);
-        $voidStatement->setVerb(Verb::createVoidVerb());
-        $statementReference = new StatementReference();
-        $statementReference->setStatementId($this->id);
-        $voidStatement->setObject($statementReference);
-
-        return $voidStatement;
+        return new Statement(
+            null,
+            $actor,
+            Verb::createVoidVerb(),
+            $this->getStatementReference()
+        );
     }
 }

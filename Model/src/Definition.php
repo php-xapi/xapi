@@ -36,6 +36,13 @@ class Definition
      */
     protected $type;
 
+    public function __construct(array $name, array $description, $type)
+    {
+        $this->name = $name;
+        $this->description = $description;
+        $this->type = $type;
+    }
+
     /**
      * Sets human readable names.
      *

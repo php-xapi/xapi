@@ -89,6 +89,11 @@ abstract class AbstractSerializerListenerTest extends \PHPUnit_Framework_TestCas
 
     abstract protected function createListener();
 
+    protected function getDefaultDomainObjectConstructorArguments()
+    {
+        return array();
+    }
+
     private function createSerializerMock()
     {
         return $this->getMock('\Xabbuh\XApi\Serializer\\'.$this->domainObjectClass.'SerializerInterface');
@@ -96,7 +101,7 @@ abstract class AbstractSerializerListenerTest extends \PHPUnit_Framework_TestCas
 
     private function createDomainObjectMock()
     {
-        return $this->getMock('\Xabbuh\XApi\Model\\'.$this->domainObjectClass);
+        return $this->getMock('\Xabbuh\XApi\Model\\'.$this->domainObjectClass, array(), $this->getDefaultDomainObjectConstructorArguments());
     }
 
     /**

@@ -38,14 +38,12 @@ class State
      */
     protected $stateId;
 
-    /**
-     * Sets the activity.
-     *
-     * @param Activity $activity The activity
-     */
-    public function setActivity(Activity $activity)
+    public function __construct(Activity $activity, Actor $actor, $stateId, $registrationId = null)
     {
         $this->activity = $activity;
+        $this->actor = $actor;
+        $this->stateId = $stateId;
+        $this->registrationId = $registrationId;
     }
 
     /**
@@ -59,16 +57,6 @@ class State
     }
 
     /**
-     * Sets the actor.
-     *
-     * @param Actor $actor The actor
-     */
-    public function setActor(Actor $actor)
-    {
-        $this->actor = $actor;
-    }
-
-    /**
      * Returns the actor.
      *
      * @return Actor The actor
@@ -79,16 +67,6 @@ class State
     }
 
     /**
-     * Sets the optional registration id.
-     *
-     * @param string $registrationId The registration id
-     */
-    public function setRegistrationId($registrationId)
-    {
-        $this->registrationId = $registrationId;
-    }
-
-    /**
      * Returns the registration id.
      *
      * @return string The registration id
@@ -96,16 +74,6 @@ class State
     public function getRegistrationId()
     {
         return $this->registrationId;
-    }
-
-    /**
-     * Sets the state's id.
-     *
-     * @param string $stateId The id
-     */
-    public function setStateId($stateId)
-    {
-        $this->stateId = $stateId;
     }
 
     /**

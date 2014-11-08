@@ -24,12 +24,13 @@ class ActivityProfile extends Profile
     private $activity;
 
     /**
-     * Sets the {@link Activity}.
-     *
-     * @param Activity $activity The activity
+     * @param string   $profileId
+     * @param Activity $activity
      */
-    public function setActivity(Activity $activity)
+    public function __construct($profileId, Activity $activity)
     {
+        parent::__construct($profileId);
+
         $this->activity = $activity;
     }
 

@@ -24,11 +24,9 @@ abstract class Profile
     protected $profileId;
 
     /**
-     * Sets the profile id.
-     *
      * @param string $profileId The id
      */
-    public function setProfileId($profileId)
+    public function __construct($profileId)
     {
         $this->profileId = $profileId;
     }

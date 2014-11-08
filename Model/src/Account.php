@@ -19,45 +19,25 @@ namespace Xabbuh\XApi\Model;
 class Account
 {
     /**
-     * Canonical home page for the system the account is on
-     * @var string
-     */
-    protected $homePage;
-
-    /**
      * The unique id or name used to log in to this account
      * @var string
      */
     protected $name;
 
     /**
-     * Sets the home page for the system the account is on.
-     *
-     * @param string $homePage The home page
+     * Canonical home page for the system the account is on
+     * @var string
      */
-    public function setHomePage($homePage)
-    {
-        $this->homePage = $homePage;
-    }
+    protected $homePage;
 
     /**
-     * Returns the home page for the system the account is on.
-     *
-     * @return string The home page
+     * @param string $name
+     * @param string $homePage
      */
-    public function getHomePage()
-    {
-        return $this->homePage;
-    }
-
-    /**
-     * Sets the unique id or name used to log in to this account.
-     *
-     * @param string $name The user name
-     */
-    public function setName($name)
+    public function __construct($name = '', $homePage = '')
     {
         $this->name = $name;
+        $this->homePage = $homePage;
     }
 
     /**
@@ -68,5 +48,15 @@ class Account
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Returns the home page for the system the account is on.
+     *
+     * @return string The home page
+     */
+    public function getHomePage()
+    {
+        return $this->homePage;
     }
 }

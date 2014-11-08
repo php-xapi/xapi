@@ -11,7 +11,10 @@
 
 namespace Xabbuh\XApi\DataFixtures;
 
+use Xabbuh\XApi\Model\Agent;
+use Xabbuh\XApi\Model\Statement;
 use Xabbuh\XApi\Model\StatementResult;
+use Xabbuh\XApi\Model\Verb;
 
 /**
  * Statement result fixtures.
@@ -23,20 +26,23 @@ class StatementResultFixtures
     /**
      * Loads a statement result.
      *
+     * @param string $urlPath An optional URL path refering to more results
+     *
      * @return StatementResult
      */
-    public static function getStatementResult()
+    public static function getStatementResult($urlPath = null)
     {
         $statement1 = StatementFixtures::getMinimalStatement();
 
-        $statement2 = StatementFixtures::getMinimalStatement();
-        $statement2->setId('12345678-1234-5678-8234-567812345679');
-        $statement2->getActor()->setMbox('mailto:bob@example.com');
-        $statement2->getVerb()->setId('http://adlnet.gov/expapi/verbs/deleted');
-        $statement2->getVerb()->setDisplay(array('en-US' => 'deleted'));
+        $verb = new Verb('http://adlnet.gov/expapi/verbs/deleted', array('en-US' => 'deleted'));
+        $statement2 = new Statement(
+            '12345678-1234-5678-8234-567812345679',
+            new Agent('mailto:bob@example.com'),
+            $verb,
+            $statement1->getObject()
+        );
 
-        $statementResult = new StatementResult();
-        $statementResult->setStatements(array($statement1, $statement2));
+        $statementResult = new StatementResult(array($statement1, $statement2), $urlPath);
 
         return $statementResult;
     }
@@ -48,8 +54,7 @@ class StatementResultFixtures
      */
     public static function getStatementResultWithMore()
     {
-        $statementResult = static::getStatementResult();
-        $statementResult->setMoreUrlPath('/xapi/statements/more/b381d8eca64a61a42c7b9b4ecc2fabb6');
+        $statementResult = static::getStatementResult('/xapi/statements/more/b381d8eca64a61a42c7b9b4ecc2fabb6');
 
         return $statementResult;
     }

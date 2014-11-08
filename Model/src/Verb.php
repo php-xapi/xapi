@@ -31,13 +31,13 @@ class Verb
     protected $display;
 
     /**
-     * Sets the verb definition reference.
-     *
-     * @param string $id The reference
+     * @param string $id
+     * @param array  $display
      */
-    public function setId($id)
+    public function __construct($id, array $display = array())
     {
         $this->id = $id;
+        $this->display = $display;
     }
 
     /**
@@ -48,16 +48,6 @@ class Verb
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Sets the human readable representation of the Verb in one or more languages.
-     *
-     * @param array $display The mapping of languages to human readable strings
-     */
-    public function setDisplay(array $display)
-    {
-        $this->display = $display;
     }
 
     /**
@@ -87,8 +77,7 @@ class Verb
      */
     public static function createVoidVerb()
     {
-        $verb = new Verb();
-        $verb->setId('http://adlnet.gov/expapi/verbs/voided');
+        $verb = new Verb('http://adlnet.gov/expapi/verbs/voided');
 
         return $verb;
     }

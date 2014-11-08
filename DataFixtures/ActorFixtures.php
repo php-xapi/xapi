@@ -29,9 +29,7 @@ class ActorFixtures
      */
     public static function getAgent()
     {
-        $agent = new Agent();
-        $agent->setName('Christian');
-        $agent->setMbox('mailto:christian@example.com');
+        $agent = new Agent('mailto:christian@example.com', null, null, null, 'Christian');
 
         return $agent;
     }
@@ -43,14 +41,9 @@ class ActorFixtures
      */
     public static function getGroup()
     {
-        $group = static::getAnonymousGroup();
-        $group->setName('Example Group');
-        $account = new Account();
-        $account->setHomePage('http://example.com/homePage');
-        $account->setName('GroupAccount');
-        $group->setAccount($account);
+        $account = new Account('GroupAccount', 'http://example.com/homePage');
 
-        return $group;
+        return static::createGroup('Example Group', $account);
     }
 
     /**
@@ -60,16 +53,14 @@ class ActorFixtures
      */
     public static function getAnonymousGroup()
     {
-        $group = new Group();
-        $group->setName('Anonymous Group');
+        return static::createGroup('Anonymous Group');
+    }
 
-        $agent1 = new Agent();
-        $agent1->setName('Andrew Downes');
-        $agent1->setMbox('mailto:andrew@example.com');
-        $agent2 = new Agent();
-        $agent2->setName('Aaron Silvers');
-        $agent2->setOpenId('aaron.openid.example.org');
-        $group->setMembers(array($agent1, $agent2));
+    private static function createGroup($name, Account $account = null)
+    {
+        $agent1 = new Agent('mailto:andrew@example.com', null, null, null, 'Andrew Downes');
+        $agent2 = new Agent(null, null, 'aaron.openid.example.org', null, 'Aaron Silvers');
+        $group = new Group(null, null, null, $account, $name, array($agent1, $agent2));
 
         return $group;
     }

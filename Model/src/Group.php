@@ -24,36 +24,17 @@ class Group extends Actor
     protected $members = array();
 
     /**
-     * Adds a member to this group.
-     *
-     * @param Agent $agent The member to add
+     * @param string  $mbox
+     * @param string  $mboxSha1Sum
+     * @param string  $openId
+     * @param Account $account
+     * @param string  $name
+     * @param Agent[] $members
      */
-    public function addMember(Agent $agent)
+    public function __construct($mbox = null, $mboxSha1Sum = null, $openId = null, Account $account = null, $name = null, array $members = array())
     {
-        $this->members[] = $agent;
-    }
+        parent::__construct($mbox, $mboxSha1Sum, $openId, $account, $name);
 
-    /**
-     * Removes a member.
-     *
-     * @param Agent $agent The member to remove
-     */
-    public function removeMember(Agent $agent)
-    {
-        $index = array_search($agent, $this->members, true);
-
-        if (false !== $index) {
-            unset($this->members[$index]);
-        }
-    }
-
-    /**
-     * Sets the members of this group.
-     *
-     * @param Agent[] $members The members
-     */
-    public function setMembers(array $members)
-    {
         $this->members = $members;
     }
 

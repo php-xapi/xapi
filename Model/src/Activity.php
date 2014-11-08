@@ -30,13 +30,13 @@ class Activity extends Object
     protected $definition;
 
     /**
-     * Sets this Activity's unique identifier.
-     *
-     * @param string $id The identifier
+     * @param string     $id
+     * @param Definition $definition
      */
-    public function setId($id)
+    public function __construct($id = '', Definition $definition = null)
     {
         $this->id = $id;
+        $this->definition = $definition;
     }
 
     /**
@@ -47,16 +47,6 @@ class Activity extends Object
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Sets the Activity's {@link Definition}.
-     *
-     * @param Definition $definition The definition
-     */
-    public function setDefinition(Definition $definition)
-    {
-        $this->definition = $definition;
     }
 
     /**

@@ -28,20 +28,16 @@ class ActivityFixtures
      */
     public static function getActivity()
     {
-        $definition = new Definition();
-        $definition->setName(array(
-            'en-GB' => 'example activity',
-            'en-US' => 'example activity',
-        ));
-        $definition->setDescription(array(
+        $description = array(
             'en-GB' => 'An example of an activity',
             'en-US' => 'An example of an activity',
-        ));
-        $definition->setType('http://www.example.co.uk/types/exampleactivitytype');
-        $activity = new Activity();
-        $activity->setId('http://www.example.co.uk/exampleactivity');
-        $activity->setDefinition($definition);
+        );
+        $name = array(
+            'en-GB' => 'example activity',
+            'en-US' => 'example activity',
+        );
+        $definition = new Definition($name, $description, 'http://www.example.co.uk/types/exampleactivitytype');
 
-        return $activity;
+        return new Activity('http://www.example.co.uk/exampleactivity', $definition);
     }
 }

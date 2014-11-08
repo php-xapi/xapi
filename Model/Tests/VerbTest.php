@@ -20,18 +20,17 @@ class VerbTest extends \PHPUnit_Framework_TestCase
 {
     public function testIsVoidVerb()
     {
-        $verb = new Verb();
-        $verb->setId('http://adlnet.gov/expapi/verbs/voided');
-        $verb->setDisplay(array('en-US' => 'voided'));
+        $verb = new Verb('http://adlnet.gov/expapi/verbs/voided', array('en-US' => 'voided'));
 
         $this->assertTrue($verb->isVoidVerb());
     }
 
     public function testIsVoidVerbWithoutVoidVerb()
     {
-        $verb = new Verb();
-        $verb->setId('http://www.adlnet.gov/XAPIprofile/ran(travelled_a_distance)');
-        $verb->setDisplay(array('en-US' => 'ran', 'es' => 'corrió'));
+        $verb = new Verb(
+            'http://www.adlnet.gov/XAPIprofile/ran(travelled_a_distance)',
+            array('en-US' => 'ran', 'es' => 'corrió')
+        );
 
         $this->assertFalse($verb->isVoidVerb());
     }

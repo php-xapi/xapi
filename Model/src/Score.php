@@ -39,13 +39,17 @@ class Score
     protected $max;
 
     /**
-     * Sets the Agent's scaled score (a number between -1 and 1).
-     *
-     * @param double $scaled The scaled score
+     * @param double $scaled
+     * @param double $raw
+     * @param double $min
+     * @param double $max
      */
-    public function setScaled($scaled)
+    public function __construct($scaled, $raw, $min, $max)
     {
         $this->scaled = $scaled;
+        $this->raw = $raw;
+        $this->min = $min;
+        $this->max = $max;
     }
 
     /**
@@ -59,16 +63,6 @@ class Score
     }
 
     /**
-     * Sets the Agent's score.
-     *
-     * @param double $raw The score
-     */
-    public function setRaw($raw)
-    {
-        $this->raw = $raw;
-    }
-
-    /**
      * Returns the Agent's score.
      *
      * @return double The score
@@ -79,16 +73,6 @@ class Score
     }
 
     /**
-     * Sets the lowest possible score.
-     *
-     * @param double $min The lowest possible score
-     */
-    public function setMin($min)
-    {
-        $this->min = $min;
-    }
-
-    /**
      * Returns the lowest possible score.
      *
      * @return double The lowest possible score
@@ -96,16 +80,6 @@ class Score
     public function getMin()
     {
         return $this->min;
-    }
-
-    /**
-     * Sets the highest possible score.
-     *
-     * @param double $max The highest possible score
-     */
-    public function setMax($max)
-    {
-        $this->max = $max;
     }
 
     /**

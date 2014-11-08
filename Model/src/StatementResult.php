@@ -30,13 +30,13 @@ class StatementResult
     protected $moreUrlPath;
 
     /**
-     * Sets the result's Statements.
-     *
-     * @param Statement[] $statements The collection of Statements
+     * @param Statement[] $statements  The collection of Statements
+     * @param string      $urlPath The URL path
      */
-    public function setStatements(array $statements)
+    public function __construct(array $statements, $urlPath = null)
     {
         $this->statements = $statements;
+        $this->moreUrlPath = $urlPath;
     }
 
     /**
@@ -47,16 +47,6 @@ class StatementResult
     public function getStatements()
     {
         return $this->statements;
-    }
-
-    /**
-     * Sets the absolute path under which the next results can be retrieved.
-     *
-     * @param string $urlPath The URL path
-     */
-    public function setMoreUrlPath($urlPath)
-    {
-        $this->moreUrlPath = $urlPath;
     }
 
     /**
