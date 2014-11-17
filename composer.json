@@ -47,6 +47,12 @@
             "Xabbuh\\XApi\\Validator\\": "Validator/src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Xabbuh\\XApi\\Serializer\\Tests\\": "Serializer/tests/",
+            "Xabbuh\\XApi\\Validator\\Tests\\": "Validator/tests/"
+        }
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
