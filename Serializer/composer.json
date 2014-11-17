@@ -24,6 +24,11 @@
             "Xabbuh\\XApi\\Serializer\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Xabbuh\\XApi\\Serializer\\Tests\\": "tests/"
+        }
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {

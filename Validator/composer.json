@@ -27,6 +27,11 @@
             "Xabbuh\\XApi\\Validator\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Xabbuh\\XApi\\Validator\\Tests\\": "tests/"
+        }
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
