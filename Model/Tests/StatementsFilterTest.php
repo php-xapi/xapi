@@ -11,10 +11,10 @@
 
 namespace Xabbuh\XApi\Client\Tests;
 
-use Xabbuh\XApi\Client\StatementsFilter;
 use Xabbuh\XApi\Model\Activity;
 use Xabbuh\XApi\Model\Agent;
 use Xabbuh\XApi\Model\Group;
+use Xabbuh\XApi\Model\StatementsFilter;
 use Xabbuh\XApi\Model\Verb;
 
 /**
