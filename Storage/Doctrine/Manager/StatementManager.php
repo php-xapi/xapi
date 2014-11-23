@@ -42,7 +42,7 @@ class StatementManager implements StatementManagerInterface
         /** @var Statement $statement */
         $statement = $this->repository->findOneBy(array('id' => $statementId));
 
-        if (null === $statement) {
+        if (null === $statement || $statement->isVoidStatement()) {
             throw new NotFoundException();
         }
 
@@ -57,7 +57,7 @@ class StatementManager implements StatementManagerInterface
         /** @var Statement $statement */
         $statement = $this->repository->findOneBy(array('id' => $statementId));
 
-        if (null === $statement) {
+        if (null === $statement || !$statement->isVoidStatement()) {
             throw new NotFoundException();
         }
 
