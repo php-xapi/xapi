@@ -103,6 +103,17 @@ class Statement
     }
 
     /**
+     * Tests whether or not this Statement is a void Statement (i.e. it voids
+     * another Statement).
+     *
+     * @return bool True if the Statement voids another Statement, false otherwise
+     */
+    public function isVoidStatement()
+    {
+        return $this->verb->isVoidVerb();
+    }
+
+    /**
      * Returns a {@link StatementReference} for the Statement.
      *
      * @return StatementReference The reference
