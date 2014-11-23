@@ -552,17 +552,17 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.5.6",
+            "version": "v2.5.7",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "6f177fca24200a5b97aef5ce7a5c98124a0f0db0"
+                "reference": "61b13c27c9258e97009249d4ef193c964bf346b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/6f177fca24200a5b97aef5ce7a5c98124a0f0db0",
-                "reference": "6f177fca24200a5b97aef5ce7a5c98124a0f0db0",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/61b13c27c9258e97009249d4ef193c964bf346b7",
+                "reference": "61b13c27c9258e97009249d4ef193c964bf346b7",
                 "shasum": ""
             },
             "require": {
@@ -603,7 +603,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-10-05 13:57:04"
+            "time": "2014-11-20 13:22:25"
         },
         {
             "name": "xabbuh/xapi-data-fixtures",
@@ -611,12 +611,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-data-fixtures.git",
-                "reference": "2c0608c1a30a6772edb9738f871b3ad49a72688b"
+                "reference": "216c0727b6d8c9b5439d8f8da9e9459e64a6a2f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-data-fixtures/zipball/2c0608c1a30a6772edb9738f871b3ad49a72688b",
-                "reference": "2c0608c1a30a6772edb9738f871b3ad49a72688b",
+                "url": "https://api.github.com/repos/xabbuh/xapi-data-fixtures/zipball/216c0727b6d8c9b5439d8f8da9e9459e64a6a2f1",
+                "reference": "216c0727b6d8c9b5439d8f8da9e9459e64a6a2f1",
                 "shasum": ""
             },
             "require": {
@@ -653,7 +653,7 @@
                 "fixtures",
                 "xAPI"
             ],
-            "time": "2014-10-30 22:32:25"
+            "time": "2014-11-23 11:29:18"
         },
         {
             "name": "xabbuh/xapi-doctrine-storage",
@@ -661,12 +661,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-doctrine-storage.git",
-                "reference": "c9169733ff86af670af64aa8c2548bfbfd4f7cae"
+                "reference": "38fd45f92165114a7ead7b9b9abf8c45cead30ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/c9169733ff86af670af64aa8c2548bfbfd4f7cae",
-                "reference": "c9169733ff86af670af64aa8c2548bfbfd4f7cae",
+                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/38fd45f92165114a7ead7b9b9abf8c45cead30ec",
+                "reference": "38fd45f92165114a7ead7b9b9abf8c45cead30ec",
                 "shasum": ""
             },
             "require": {
@@ -708,7 +708,7 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2014-10-30 22:32:25"
+            "time": "2014-11-23 11:33:06"
         },
         {
             "name": "xabbuh/xapi-model",
@@ -716,12 +716,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-model.git",
-                "reference": "e5d482424235d20f771fb40a0d6e330c95e4171d"
+                "reference": "151c06f829a6a1900237c9168cf85cffad251b18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-model/zipball/e5d482424235d20f771fb40a0d6e330c95e4171d",
-                "reference": "e5d482424235d20f771fb40a0d6e330c95e4171d",
+                "url": "https://api.github.com/repos/xabbuh/xapi-model/zipball/151c06f829a6a1900237c9168cf85cffad251b18",
+                "reference": "151c06f829a6a1900237c9168cf85cffad251b18",
                 "shasum": ""
             },
             "require": {
@@ -756,7 +756,7 @@
                 "models",
                 "xAPI"
             ],
-            "time": "2014-10-30 22:32:25"
+            "time": "2014-11-23 11:32:02"
         },
         {
             "name": "xabbuh/xapi-storage-api",
@@ -764,12 +764,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-storage-api.git",
-                "reference": "410415224c402b0b5858357ff0242b69dc98f09c"
+                "reference": "b0671e8e5147adbd3520bc25c5cede65924c3c3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-storage-api/zipball/410415224c402b0b5858357ff0242b69dc98f09c",
-                "reference": "410415224c402b0b5858357ff0242b69dc98f09c",
+                "url": "https://api.github.com/repos/xabbuh/xapi-storage-api/zipball/b0671e8e5147adbd3520bc25c5cede65924c3c3d",
+                "reference": "b0671e8e5147adbd3520bc25c5cede65924c3c3d",
                 "shasum": ""
             },
             "require": {
@@ -806,7 +806,7 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2014-10-30 22:32:25"
+            "time": "2014-11-23 11:29:18"
         }
     ],
     "packages-dev": [
