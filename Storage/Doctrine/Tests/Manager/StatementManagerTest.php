@@ -12,6 +12,8 @@
 namespace Xabbuh\XApi\Storage\Doctrine\Tests\Manager;
 
 use Xabbuh\XApi\DataFixtures\StatementFixtures;
+use Xabbuh\XApi\DataFixtures\VerbFixtures;
+use Xabbuh\XApi\Model\StatementsFilter;
 use Xabbuh\XApi\Storage\Doctrine\Manager\StatementManager;
 
 /**
@@ -42,37 +44,25 @@ class StatementManagerTest extends \PHPUnit_Framework_TestCase
             ->repository
             ->expects($this->once())
             ->method('findOneBy')
-            ->with(array('id' => $statementId));
+            ->with(array('id' => $statementId))
+            ->will($this->returnValue(StatementFixtures::getMinimalStatement()));
 
         $this->statementManager->findStatementById($statementId);
     }
 
-    public function testFindStatementByCriteria()
-    {
-        $this
-            ->repository
-            ->expects($this->once())
-            ->method('findOneBy')
-            ->with($this->equalTo(array('foo' => 'bar', 'baz' => 'foobar')));
-
-        $this->statementManager->findStatementBy(array(
-            'foo' => 'bar',
-            'baz' => 'foobar',
-        ));
-    }
-
     public function testFindStatementsByCriteria()
     {
+        $verb = VerbFixtures::getVerb();
+
         $this
             ->repository
             ->expects($this->once())
             ->method('findBy')
-            ->with($this->equalTo(array('foo' => 'bar', 'baz' => 'foobar')));
+            ->with($this->equalTo(array('verb' => $verb->getId())));
 
-        $this->statementManager->findStatementsBy(array(
-            'foo' => 'bar',
-            'baz' => 'foobar',
-        ));
+        $filter = new StatementsFilter();
+        $filter->byVerb($verb);
+        $this->statementManager->findStatementsBy($filter);
     }
 
     public function testSave()

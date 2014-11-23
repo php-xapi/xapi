@@ -9,20 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApi\Storage\Api;
+namespace Xabbuh\XApi\Storage\Api\Exception;
 
 /**
- * Base statement manager class.
+ * Exception to indicate that a {@link Xabbuh\XApi\Model\Statement} could not
+ * be found in the underlying persistence layer.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-abstract class StatementManager implements StatementManagerInterface
+class NotFoundException extends \Exception
 {
-    /**
-     * {@inheritDoc}
-     */
-    public function findStatementById($statementId)
-    {
-        return $this->findStatementBy(array('id' => $statementId));
-    }
 }

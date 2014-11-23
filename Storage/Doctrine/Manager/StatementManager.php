@@ -12,7 +12,9 @@
 namespace Xabbuh\XApi\Storage\Doctrine\Manager;
 
 use Xabbuh\XApi\Model\Statement;
-use Xabbuh\XApi\Storage\Api\StatementManager as BaseStatementManager;
+use Xabbuh\XApi\Model\StatementsFilter;
+use Xabbuh\XApi\Storage\Api\Exception\NotFoundException;
+use Xabbuh\XApi\Storage\Api\StatementManagerInterface;
 use Xabbuh\XApi\Storage\Doctrine\Repository\StatementRepositoryInterface;
 
 /**
@@ -20,7 +22,7 @@ use Xabbuh\XApi\Storage\Doctrine\Repository\StatementRepositoryInterface;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class StatementManager extends BaseStatementManager
+class StatementManager implements StatementManagerInterface
 {
     /**
      * @var StatementRepositoryInterface The statement repository
@@ -35,17 +37,39 @@ class StatementManager extends BaseStatementManager
     /**
      * {@inheritDoc}
      */
-    public function findStatementBy(array $criteria)
+    public function findStatementById($statementId)
     {
-        return $this->repository->findOneBy($criteria);
+        /** @var Statement $statement */
+        $statement = $this->repository->findOneBy(array('id' => $statementId));
+
+        if (null === $statement) {
+            throw new NotFoundException();
+        }
+
+        return $statement;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function findStatementsBy(array $criteria)
+    public function findVoidedStatementById($statementId)
     {
-        return $this->repository->findBy($criteria);
+        /** @var Statement $statement */
+        $statement = $this->repository->findOneBy(array('id' => $statementId));
+
+        if (null === $statement) {
+            throw new NotFoundException();
+        }
+
+        return $statement;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function findStatementsBy(StatementsFilter $filter)
+    {
+        return $this->repository->findBy($filter->getFilter());
     }
 
     /**

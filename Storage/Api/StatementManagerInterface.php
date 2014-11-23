@@ -12,6 +12,8 @@
 namespace Xabbuh\XApi\Storage\Api;
 
 use Xabbuh\XApi\Model\Statement;
+use Xabbuh\XApi\Model\StatementsFilter;
+use Xabbuh\XApi\Storage\Api\Exception\NotFoundException;
 
 /**
  * Statement manager.
@@ -21,39 +23,47 @@ use Xabbuh\XApi\Model\Statement;
 interface StatementManagerInterface
 {
     /**
-     * Find a {@link Statement} by id.
+     * Finds a {@link Statement} by id.
      *
      * @param string $statementId The statement id to filter by
      *
      * @return Statement The statement
+     *
+     * @throws NotFoundException if no Statement with the given UUID does exist
      */
     public function findStatementById($statementId);
 
     /**
-     * Find a {@link Statement} by the given criteria.
+     * Finds a voided {@link Statement} by id.
      *
-     * @param array $criteria The criteria to filter by
+     * @param string $voidedStatementId The voided statement id to filter by
      *
      * @return Statement The statement
+     *
+     * @throws NotFoundException if no voided Statement with the given UUID
+     *                           does exist
      */
-    public function findStatementBy(array $criteria);
+    public function findVoidedStatementById($voidedStatementId);
 
     /**
-     * Find a collection of {@link Statement} by the given
+     * Finds a collection of {@link Statement Statements} filtered by the given
      * criteria.
      *
-     * @param array $criteria The criteria to filter by
+     * @param StatementsFilter $criteria The criteria to filter by
      *
      * @return Statement[] The statements
      */
-    public function findStatementsBy(array $criteria);
+    public function findStatementsBy(StatementsFilter $criteria);
 
     /**
      * Stores a {@link Statement}.
      *
      * @param Statement $statement The statement to store
      * @param bool      $flush     Whether or not to flush the managed objects
-     *                             (i.e. write them to the data storage)
+     *                             immediately (i.e. write them to the data
+     *                             storage)
+     *
+     * @return string The UUID of the created Statement
      */
     public function save(Statement $statement, $flush = true);
 }
