@@ -30,8 +30,8 @@ class StatementResult
     protected $moreUrlPath;
 
     /**
-     * @param Statement[] $statements  The collection of Statements
-     * @param string      $urlPath The URL path
+     * @param Statement[] $statements The collection of Statements
+     * @param string      $urlPath    The URL path
      */
     public function __construct(array $statements, $urlPath = null)
     {
