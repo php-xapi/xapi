@@ -9,8 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApi\Storage\MongoDB\Tests\Document;
+namespace Xabbuh\XApi\Storage\MongoDB\Tests\Unit\Document;
 
+use Doctrine\Common\Persistence\Mapping\Driver\SymfonyFileLocator;
 use Doctrine\MongoDB\Connection;
 use Doctrine\ODM\MongoDB\Configuration;
 use Doctrine\ODM\MongoDB\DocumentManager;
@@ -45,16 +46,16 @@ class StatementTest extends \PHPUnit_Framework_TestCase
     private function createDocumentManager()
     {
         $config = new Configuration();
-        $config->setHydratorDir(__DIR__.'/hydrators');
+        $config->setHydratorDir(__DIR__.'/../../hydrators');
         $config->setHydratorNamespace('Hydrator');
-        $config->setProxyDir(__DIR__.'/proxy');
+        $config->setProxyDir(__DIR__.'/../../proxies');
         $config->setProxyNamespace('Proxy');
-        $config->setMetadataDriverImpl(new XmlDriver(
-            new FileLocator(array(
-                'Xabbuh\XApi\Storage\MongoDB\Document' => __DIR__.'/../../metadata',
-            ), '.mongodb.xml'),
+        $fileLocator = new SymfonyFileLocator(
+            array(__DIR__.'/../../../metadata' => 'Xabbuh\XApi\Storage\MongoDB\Document'),
             '.mongodb.xml'
-        ));
+        );
+        $driver = new XmlDriver($fileLocator);
+        $config->setMetadataDriverImpl($driver);
 
         return DocumentManager::create(new Connection(), $config);
     }

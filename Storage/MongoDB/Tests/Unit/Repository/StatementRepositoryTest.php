@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApi\Storage\MongoDB\Tests\Repository;
+namespace Xabbuh\XApi\Storage\MongoDB\Tests\Unit\Repository;
 
 use Xabbuh\XApi\DataFixtures\StatementFixtures;
 use Xabbuh\XApi\Storage\MongoDB\Document\Statement;

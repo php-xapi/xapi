@@ -29,6 +29,8 @@ class StatementRepository extends DocumentRepository implements StatementReposit
      * @param Statement $statement The statement being stored
      * @param bool      $flush     Whether or not to flush the managed objects
      *                             (i.e. write them to the data storage)
+     *
+     * @return string The UUID of the created Statement
      */
     public function save(Statement $statement, $flush = true)
     {
@@ -41,5 +43,16 @@ class StatementRepository extends DocumentRepository implements StatementReposit
         if ($flush) {
             $this->getDocumentManager()->flush();
         }
+
+        return $this->cleanUpUuid($statement->getId());
+    }
+
+    private function cleanUpUuid($id)
+    {
+        if (strlen($id) !== 32) {
+            return $id;
+        }
+
+        return sprintf('%s-%s-%s-%s-%s', substr($id, 0, 8), substr($id, 8, 4), substr($id, 12, 4), substr($id, 16, 4), substr($id, 20, 12));
     }
 }

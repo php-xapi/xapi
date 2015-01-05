@@ -21,6 +21,11 @@ use Xabbuh\XApi\Model\Statement;
 interface StatementRepositoryInterface
 {
     /**
+     * @return Statement[] The statements
+     */
+    public function findAll();
+
+    /**
      * @param array $criteria
      *
      * @return Statement The statement or null if no matching statement has

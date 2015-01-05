@@ -11,7 +11,7 @@
 
 namespace Xabbuh\XApi\Storage\MongoDB\Tests;
 
-use Xabbuh\XApi\Storage\Doctrine\Tests\Manager\StatementManagerTest as BaseStatementManagerTest;
+use Xabbuh\XApi\Storage\Doctrine\Tests\Unit\Manager\StatementManagerTest as BaseStatementManagerTest;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>

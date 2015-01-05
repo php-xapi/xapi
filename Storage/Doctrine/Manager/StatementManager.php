@@ -77,6 +77,6 @@ class StatementManager implements StatementManagerInterface
      */
     public function save(Statement $statement, $flush = true)
     {
-        $this->repository->save($statement, $flush);
+        return $this->repository->save($statement, $flush);
     }
 }

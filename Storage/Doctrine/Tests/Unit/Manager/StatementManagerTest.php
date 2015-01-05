@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApi\Storage\Doctrine\Tests\Manager;
+namespace Xabbuh\XApi\Storage\Doctrine\Tests\Unit\Manager;
 
 use Xabbuh\XApi\DataFixtures\StatementFixtures;
 use Xabbuh\XApi\DataFixtures\VerbFixtures;
