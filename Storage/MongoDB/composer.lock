@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "doctrine/annotations",
-            "version": "v1.2.1",
+            "version": "v1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "6a6bec0670bb6e71a263b08bc1b98ea242928633"
+                "reference": "eeda578cbe24a170331a1cfdf78be723412df7a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/6a6bec0670bb6e71a263b08bc1b98ea242928633",
-                "reference": "6a6bec0670bb6e71a263b08bc1b98ea242928633",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/eeda578cbe24a170331a1cfdf78be723412df7a4",
+                "reference": "eeda578cbe24a170331a1cfdf78be723412df7a4",
                 "shasum": ""
             },
             "require": {
@@ -72,7 +72,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2014-09-25 16:45:30"
+            "time": "2014-12-20 20:49:38"
         },
         {
             "name": "doctrine/cache",
@@ -291,22 +291,30 @@
         },
         {
             "name": "doctrine/inflector",
-            "version": "v1.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "54b8333d2a5682afdc690060c1cf384ba9f47f08"
+                "reference": "0bcb2e79d8571787f18b7eb036ed3d004908e604"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/54b8333d2a5682afdc690060c1cf384ba9f47f08",
-                "reference": "54b8333d2a5682afdc690060c1cf384ba9f47f08",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/0bcb2e79d8571787f18b7eb036ed3d004908e604",
+                "reference": "0bcb2e79d8571787f18b7eb036ed3d004908e604",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Doctrine\\Common\\Inflector\\": "lib/"
@@ -318,17 +326,6 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/",
-                    "role": "Creator"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com",
-                    "homepage": "http://www.instaclick.com"
-                },
-                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
@@ -337,40 +334,51 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
                     "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
-                    "role": "Developer of wrapped JMSSerializerBundle"
+                    "email": "schmittjoh@gmail.com"
                 }
             ],
             "description": "Common String Manipulations with regard to casing and singular/plural rules.",
             "homepage": "http://www.doctrine-project.org",
             "keywords": [
                 "inflection",
-                "pluarlize",
-                "singuarlize",
+                "pluralize",
+                "singularize",
                 "string"
             ],
-            "time": "2013-01-10 21:49:15"
+            "time": "2014-12-20 21:24:13"
         },
         {
             "name": "doctrine/lexer",
-            "version": "v1.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "2f708a85bb3aab5d99dab8be435abd73e0b18acb"
+                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/2f708a85bb3aab5d99dab8be435abd73e0b18acb",
-                "reference": "2f708a85bb3aab5d99dab8be435abd73e0b18acb",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/83893c552fd2045dd78aef794c31e694c37c0b8c",
+                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Doctrine\\Common\\Lexer\\": "lib/"
@@ -382,19 +390,16 @@
             ],
             "authors": [
                 {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com",
-                    "homepage": "http://www.instaclick.com"
-                },
-                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
                 {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
                     "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
-                    "role": "Developer of wrapped JMSSerializerBundle"
+                    "email": "schmittjoh@gmail.com"
                 }
             ],
             "description": "Base library for a lexer that can be used in Top-Down, Recursive Descent Parsers.",
@@ -403,7 +408,7 @@
                 "lexer",
                 "parser"
             ],
-            "time": "2013-01-12 18:59:04"
+            "time": "2014-09-09 13:34:57"
         },
         {
             "name": "doctrine/mongodb",
@@ -552,17 +557,17 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.5.7",
+            "version": "v2.6.3",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "61b13c27c9258e97009249d4ef193c964bf346b7"
+                "reference": "6ac6491ff60c0e5a941db3ccdc75a07adbb61476"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/61b13c27c9258e97009249d4ef193c964bf346b7",
-                "reference": "61b13c27c9258e97009249d4ef193c964bf346b7",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/6ac6491ff60c0e5a941db3ccdc75a07adbb61476",
+                "reference": "6ac6491ff60c0e5a941db3ccdc75a07adbb61476",
                 "shasum": ""
             },
             "require": {
@@ -570,16 +575,18 @@
             },
             "require-dev": {
                 "psr/log": "~1.0",
-                "symfony/event-dispatcher": "~2.1"
+                "symfony/event-dispatcher": "~2.1",
+                "symfony/process": "~2.1"
             },
             "suggest": {
                 "psr/log": "For using the console logger",
-                "symfony/event-dispatcher": ""
+                "symfony/event-dispatcher": "",
+                "symfony/process": ""
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5-dev"
+                    "dev-master": "2.6-dev"
                 }
             },
             "autoload": {
@@ -603,7 +610,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-11-20 13:22:25"
+            "time": "2015-01-06 17:50:02"
         },
         {
             "name": "xabbuh/xapi-data-fixtures",
@@ -611,12 +618,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-data-fixtures.git",
-                "reference": "216c0727b6d8c9b5439d8f8da9e9459e64a6a2f1"
+                "reference": "602f1897d7d6e70c09fb9f2f5c61557adaf82f3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-data-fixtures/zipball/216c0727b6d8c9b5439d8f8da9e9459e64a6a2f1",
-                "reference": "216c0727b6d8c9b5439d8f8da9e9459e64a6a2f1",
+                "url": "https://api.github.com/repos/xabbuh/xapi-data-fixtures/zipball/602f1897d7d6e70c09fb9f2f5c61557adaf82f3d",
+                "reference": "602f1897d7d6e70c09fb9f2f5c61557adaf82f3d",
                 "shasum": ""
             },
             "require": {
@@ -653,7 +660,7 @@
                 "fixtures",
                 "xAPI"
             ],
-            "time": "2014-11-23 11:29:18"
+            "time": "2015-01-01 22:59:47"
         },
         {
             "name": "xabbuh/xapi-doctrine-storage",
@@ -661,12 +668,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-doctrine-storage.git",
-                "reference": "38fd45f92165114a7ead7b9b9abf8c45cead30ec"
+                "reference": "b4337e5a7fe121db465df27e8d30e4da6578ccf1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/38fd45f92165114a7ead7b9b9abf8c45cead30ec",
-                "reference": "38fd45f92165114a7ead7b9b9abf8c45cead30ec",
+                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/b4337e5a7fe121db465df27e8d30e4da6578ccf1",
+                "reference": "b4337e5a7fe121db465df27e8d30e4da6578ccf1",
                 "shasum": ""
             },
             "require": {
@@ -708,7 +715,7 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2014-11-23 11:33:06"
+            "time": "2015-01-08 22:18:29"
         },
         {
             "name": "xabbuh/xapi-model",
@@ -716,12 +723,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-model.git",
-                "reference": "151c06f829a6a1900237c9168cf85cffad251b18"
+                "reference": "00f1b6fe691387e755bb29dc3ecd1a88a872d3a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-model/zipball/151c06f829a6a1900237c9168cf85cffad251b18",
-                "reference": "151c06f829a6a1900237c9168cf85cffad251b18",
+                "url": "https://api.github.com/repos/xabbuh/xapi-model/zipball/00f1b6fe691387e755bb29dc3ecd1a88a872d3a8",
+                "reference": "00f1b6fe691387e755bb29dc3ecd1a88a872d3a8",
                 "shasum": ""
             },
             "require": {
@@ -756,7 +763,7 @@
                 "models",
                 "xAPI"
             ],
-            "time": "2014-11-23 11:32:02"
+            "time": "2015-01-05 22:40:10"
         },
         {
             "name": "xabbuh/xapi-storage-api",
@@ -764,12 +771,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-storage-api.git",
-                "reference": "b0671e8e5147adbd3520bc25c5cede65924c3c3d"
+                "reference": "390fe919112697d27d12a8cb6ac8b59b20a9dc27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-storage-api/zipball/b0671e8e5147adbd3520bc25c5cede65924c3c3d",
-                "reference": "b0671e8e5147adbd3520bc25c5cede65924c3c3d",
+                "url": "https://api.github.com/repos/xabbuh/xapi-storage-api/zipball/390fe919112697d27d12a8cb6ac8b59b20a9dc27",
+                "reference": "390fe919112697d27d12a8cb6ac8b59b20a9dc27",
                 "shasum": ""
             },
             "require": {
@@ -806,7 +813,7 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2014-11-23 11:29:18"
+            "time": "2015-01-08 22:18:29"
         }
     ],
     "packages-dev": [
@@ -816,12 +823,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-common.git",
-                "reference": "597ca186ed36b3cd287beb4dd23a1420ad1f108c"
+                "reference": "b8a1bf637265f6f9a33699c7e583e5dcc0d631f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-common/zipball/597ca186ed36b3cd287beb4dd23a1420ad1f108c",
-                "reference": "597ca186ed36b3cd287beb4dd23a1420ad1f108c",
+                "url": "https://api.github.com/repos/xabbuh/xapi-common/zipball/b8a1bf637265f6f9a33699c7e583e5dcc0d631f2",
+                "reference": "b8a1bf637265f6f9a33699c7e583e5dcc0d631f2",
                 "shasum": ""
             },
             "require": {
@@ -855,13 +862,14 @@
                 "Tin Can API",
                 "xAPI"
             ],
-            "time": "2014-10-13 20:05:25"
+            "time": "2015-01-01 22:59:47"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": [],
     "prefer-stable": true,
+    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }
