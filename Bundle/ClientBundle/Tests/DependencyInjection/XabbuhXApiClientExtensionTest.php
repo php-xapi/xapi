@@ -106,7 +106,9 @@ class XabbuhXApiClientExtensionTest extends \PHPUnit_Framework_TestCase
 
     private function createContainerBuilderMock()
     {
-        $containerBuilder = $this->getMock('\Symfony\Component\DependencyInjection\ContainerBuilder');
+        $containerBuilder = $this->getMockBuilder('\Symfony\Component\DependencyInjection\ContainerBuilder')
+            ->setMethods(array('getParameterBag', 'setParameter', 'setDefinition'))
+            ->getMock();
         $containerBuilder->expects($this->any())
             ->method('getParameterBag')
             ->will($this->returnValue(new ParameterBag()));

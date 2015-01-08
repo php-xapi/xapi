@@ -55,7 +55,9 @@ class RegisterSerializerMetadataPassTest extends \PHPUnit_Framework_TestCase
 
     private function createContainerBuilderMock($fileLocator)
     {
-        $containerBuilder = $this->getMock('\Symfony\Component\DependencyInjection\ContainerBuilder');
+        $containerBuilder = $this->getMockBuilder('\Symfony\Component\DependencyInjection\ContainerBuilder')
+            ->setMethods(array('findDefinition'))
+            ->getMock();
         $containerBuilder->expects($this->any())
             ->method('findDefinition')
             ->with('jms_serializer.metadata.file_locator')

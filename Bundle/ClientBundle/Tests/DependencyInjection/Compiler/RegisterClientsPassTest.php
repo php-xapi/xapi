@@ -87,7 +87,9 @@ class RegisterClientsPassTest extends \PHPUnit_Framework_TestCase
 
     private function createContainerBuilder($clientManager)
     {
-        $containerBuilder = $this->getMock('\Symfony\Component\DependencyInjection\ContainerBuilder');
+        $containerBuilder = $this->getMockBuilder('\Symfony\Component\DependencyInjection\ContainerBuilder')
+            ->setMethods(array('getDefinition', 'getParameter'))
+            ->getMock();
         $containerBuilder->expects($this->any())
             ->method('getDefinition')
             ->with('xabbuh_xapi_client.client_manager')
