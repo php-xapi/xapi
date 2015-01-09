@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "xabbuh/xapi-data-fixtures": "1.0",
+        "xabbuh/xapi-data-fixtures": "~1.0",
         "xabbuh/xapi-model": "~1.0"
     },
     "minimum-stability": "dev",
