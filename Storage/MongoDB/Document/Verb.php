@@ -25,22 +25,6 @@ class Verb extends BaseVerb
      */
     protected $identifier;
 
-    public function __construct(BaseVerb $verb)
-    {
-        $this->id = $verb->getId();
-        $this->display = $verb->getDisplay();
-    }
-
-    /**
-     * Sets the identifier.
-     *
-     * @param string $identifier The identifier
-     */
-    public function setIdentifier($identifier)
-    {
-        $this->identifier = $identifier;
-    }
-
     /**
      * Returns the unique identifier.
      *

@@ -5,7 +5,7 @@
 >
     <document name="Xabbuh\XApi\Storage\MongoDB\Document\Verb">
         <field fieldName="identifier" id="true" strategy="AUTO" />
-        <field fieldName="id" type="string" />
+        <field fieldName="id" type="string" id="true" strategy="NONE" />
         <field fieldName="display" type="hash" />
     </document>
 </doctrine-mongo-mapping>

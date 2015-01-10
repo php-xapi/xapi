@@ -20,12 +20,4 @@ use Xabbuh\XApi\Model\Statement as BaseStatement;
  */
 class Statement extends BaseStatement
 {
-    public function __construct(BaseStatement $statement)
-    {
-        $this->id = $statement->getId();
-        $this->verb = new Verb($statement->getVerb());
-        $this->actor = $statement->getActor();
-        $this->object = $statement->getObject();
-        $this->result = $statement->getResult();
-    }
 }

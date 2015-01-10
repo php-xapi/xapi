@@ -12,9 +12,11 @@
 namespace Xabbuh\XApi\Storage\MongoDB\Repository;
 
 use Doctrine\ODM\MongoDB\DocumentRepository;
+use Rhumsaa\Uuid\Uuid;
 use Xabbuh\XApi\Model\Statement;
 use Xabbuh\XApi\Storage\Doctrine\Repository\StatementRepositoryInterface;
 use Xabbuh\XApi\Storage\MongoDB\Document\Statement as StatementDocument;
+use Xabbuh\XApi\Storage\MongoDB\Document\Verb;
 
 /**
  * A MongoDB based statement repository.
@@ -34,9 +36,17 @@ class StatementRepository extends DocumentRepository implements StatementReposit
      */
     public function save(Statement $statement, $flush = true)
     {
-        if (!$statement instanceof StatementDocument) {
-            $statement = new StatementDocument($statement);
+        $uuid = $statement->getId();
+
+        if (null === $uuid) {
+            $uuid = Uuid::uuid4()->toString();
         }
+
+        $actor = $statement->getActor();
+        $verb = new Verb($statement->getVerb()->getId(), $statement->getVerb()->getDisplay());
+        $object = $statement->getObject();
+        $result = $statement->getResult();
+        $statement = new StatementDocument($uuid, $actor, $verb, $object, $result);
 
         $this->getDocumentManager()->persist($statement);
 
