@@ -13,14 +13,10 @@ namespace Xabbuh\XApi\Storage\MongoDB\Tests\Functional;
 
 use Doctrine\Common\Persistence\Mapping\Driver\SymfonyFileLocator;
 use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\Common\Persistence\ObjectRepository;
 use Doctrine\MongoDB\Connection;
 use Doctrine\ODM\MongoDB\Configuration;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Doctrine\ODM\MongoDB\Mapping\Driver\XmlDriver;
-use Xabbuh\XApi\DataFixtures\StatementFixtures;
-use Xabbuh\XApi\Storage\Api\StatementManagerInterface;
-use Xabbuh\XApi\Storage\Doctrine\Manager\StatementManager;
 use Xabbuh\XApi\Storage\Doctrine\Tests\Functional\StatementManagerTest as BaseStatementManagerTest;
 
 /**
