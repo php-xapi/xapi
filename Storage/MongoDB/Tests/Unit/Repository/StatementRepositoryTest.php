@@ -51,16 +51,30 @@ class StatementRepositoryTest extends \PHPUnit_Framework_TestCase
         $this->repository->save(StatementFixtures::getMinimalStatement());
     }
 
-    public function testStatementDocumentIsNotWrapped()
+    public function testUuidIsGenerated()
     {
-        $statement = new Statement(StatementFixtures::getMinimalStatement());
+        $statement = StatementFixtures::getMinimalStatement(null);
+
         $this
             ->manager
             ->expects($this->once())
-            ->method('persist')
-            ->with($this->identicalTo($statement));
+            ->method('persist');
 
-        $this->repository->save($statement);
+        $this->assertNull($statement->getId());
+        $this->assertNotNull($this->repository->save($statement));
+    }
+
+    public function testUuidIsNotRegeneratedWhenPresent()
+    {
+        $statement = StatementFixtures::getMinimalStatement();
+        $expectedId = $statement->getId();
+
+        $this
+            ->manager
+            ->expects($this->once())
+            ->method('persist');
+
+        $this->assertSame($expectedId, $this->repository->save($statement));
     }
 
     public function testFlushIsCalledByDefault()

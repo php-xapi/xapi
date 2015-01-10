@@ -54,15 +54,6 @@ class StatementRepository extends DocumentRepository implements StatementReposit
             $this->getDocumentManager()->flush();
         }
 
-        return $this->cleanUpUuid($statement->getId());
-    }
-
-    private function cleanUpUuid($id)
-    {
-        if (strlen($id) !== 32) {
-            return $id;
-        }
-
-        return sprintf('%s-%s-%s-%s-%s', substr($id, 0, 8), substr($id, 8, 4), substr($id, 12, 4), substr($id, 16, 4), substr($id, 20, 12));
+        return $statement->getId();
     }
 }
