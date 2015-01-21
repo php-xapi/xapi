@@ -18,4 +18,14 @@ namespace Xabbuh\XApi\Model;
  */
 abstract class Object
 {
+    /**
+     * Checks if another object is equal.
+     *
+     * Two objects are equal if and only if all of their properties are equal.
+     *
+     * @param \Xabbuh\XApi\Model\Object $object The object to compare with
+     *
+     * @return bool True if the objects are equal, false otherwise
+     */
+    abstract public function equals(Object $object);
 }

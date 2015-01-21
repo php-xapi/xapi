@@ -61,6 +61,38 @@ class Verb
     }
 
     /**
+     * Checks if another verb is equal.
+     *
+     * Two verbs are equal if and only if all of their properties are equal.
+     *
+     * @param Verb $verb The verb to compare with
+     *
+     * @return bool True if the verbs are equal, false otherwise
+     */
+    public function equals(Verb $verb)
+    {
+        if ($this->id !== $verb->getId()) {
+            return false;
+        }
+
+        if (count($this->display) !== count($verb->getDisplay())) {
+            return false;
+        }
+
+        foreach ($this->display as $language => $value) {
+            if (!isset($verb->display[$language])) {
+                return false;
+            }
+
+            if ($value !== $verb->display[$language]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
      * Tests if the Verb can be used to void a Statement.
      *
      * @return boolean True, if the Verb is a void Verb, false otherwise

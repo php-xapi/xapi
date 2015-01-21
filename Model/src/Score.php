@@ -91,4 +91,34 @@ class Score
     {
         return $this->max;
     }
+
+    /**
+     * Checks if another score is equal.
+     *
+     * Two scores are equal if and only if all of their properties are equal.
+     *
+     * @param Score $score The score to compare with
+     *
+     * @return bool True if the scores are equal, false otherwise
+     */
+    public function equals(Score $score)
+    {
+        if ($this->scaled !== $score->scaled) {
+            return false;
+        }
+
+        if ($this->raw !== $score->raw) {
+            return false;
+        }
+
+        if ($this->min !== $score->min) {
+            return false;
+        }
+
+        if ($this->max !== $score->max) {
+            return false;
+        }
+
+        return true;
+    }
 }

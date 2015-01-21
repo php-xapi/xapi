@@ -102,4 +102,50 @@ class Definition
     {
         return $this->type;
     }
+
+    /**
+     * Checks if another definition is equal.
+     *
+     * Two definitions are equal if and only if all of their properties are equal.
+     *
+     * @param Definition $definition The definition to compare with
+     *
+     * @return bool True if the definitions are equal, false otherwise
+     */
+    public function equals(Definition $definition)
+    {
+        if ($this->type !== $definition->type) {
+            return false;
+        }
+
+        if (count($this->name) !== count($definition->name)) {
+            return false;
+        }
+
+        if (count($this->description) !== count($definition->description)) {
+            return false;
+        }
+
+        foreach ($this->name as $language => $value) {
+            if (!isset($definition->name[$language])) {
+                return false;
+            }
+
+            if ($value !== $definition->name[$language]) {
+                return false;
+            }
+        }
+
+        foreach ($this->description as $language => $value) {
+            if (!isset($definition->description[$language])) {
+                return false;
+            }
+
+            if ($value !== $definition->description[$language]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

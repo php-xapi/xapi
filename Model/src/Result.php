@@ -111,4 +111,38 @@ class Result
     {
         return $this->duration;
     }
+
+    /**
+     * Checks if another result is equal.
+     *
+     * Two results are equal if and only if all of their properties are equal.
+     *
+     * @param Result $result The result to compare with
+     *
+     * @return bool True if the results are equal, false otherwise
+     */
+    public function equals(Result $result)
+    {
+        if (!$this->score->equals($result->score)) {
+            return false;
+        }
+
+        if ($this->success !== $result->success) {
+            return false;
+        }
+
+        if ($this->completion !== $result->completion) {
+            return false;
+        }
+
+        if ($this->response !== $result->response) {
+            return false;
+        }
+
+        if ($this->duration !== $result->duration) {
+            return false;
+        }
+
+        return true;
+    }
 }

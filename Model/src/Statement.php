@@ -141,4 +141,46 @@ class Statement
             $this->getStatementReference()
         );
     }
+
+    /**
+     * Checks if another statement is equal.
+     *
+     * Two statements are equal if and only if all of their properties are equal.
+     *
+     * @param Statement $statement The statement to compare with
+     *
+     * @return bool True if the statements are equal, false otherwise
+     */
+    public function equals(Statement $statement)
+    {
+        if ($this->id !== $statement->id) {
+            return false;
+        }
+
+        if (!$this->actor->equals($statement->actor)) {
+            return false;
+        }
+
+        if (!$this->verb->equals($statement->verb)) {
+            return false;
+        }
+
+        if (!$this->object->equals($statement->object)) {
+            return false;
+        }
+
+        if (null === $this->result && null !== $statement->result) {
+            return false;
+        }
+
+        if (null !== $this->result && null === $statement->result) {
+            return false;
+        }
+
+        if (null !== $this->result && !$this->result->equals($statement->result)) {
+            return false;
+        }
+
+        return true;
+    }
 }

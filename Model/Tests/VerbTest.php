@@ -35,6 +35,46 @@ class VerbTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($verb->isVoidVerb());
     }
 
+    public function testVerbsEqualWhenTheirPropertiesAreEqual()
+    {
+        $verb1 = new Verb('http://adlnet.gov/expapi/verbs/voided', array('en-US' => 'voided'));
+        $verb2 = new Verb('http://adlnet.gov/expapi/verbs/voided', array('en-US' => 'voided'));
+
+        $this->assertTrue($verb1->equals($verb2));
+    }
+
+    public function testVerbsDoNotEqualWhenIdsDiffer()
+    {
+        $verb1 = new Verb('http://adlnet.gov/expapi/verbs/voided', array('en-US' => 'voided'));
+        $verb2 = new Verb('http://adlnet.gov/expapi/verbs/void', array('en-US' => 'voided'));
+
+        $this->assertFalse($verb1->equals($verb2));
+    }
+
+    public function testVerbsDoNotEqualWhenNumberOfDisplaysDiffers()
+    {
+        $verb1 = new Verb('http://adlnet.gov/expapi/verbs/voided', array('en-US' => 'voided'));
+        $verb2 = new Verb('http://adlnet.gov/expapi/verbs/voided', array());
+
+        $this->assertFalse($verb1->equals($verb2));
+    }
+
+    public function testVerbsDoNotEqualWhenDisplayLanguagesDiffer()
+    {
+        $verb1 = new Verb('http://adlnet.gov/expapi/verbs/voided', array('en-US' => 'voided'));
+        $verb2 = new Verb('http://adlnet.gov/expapi/verbs/voided', array('en-GB' => 'voided'));
+
+        $this->assertFalse($verb1->equals($verb2));
+    }
+
+    public function testVerbsDoNotEqualWhenDisplayValuesDiffer()
+    {
+        $verb1 = new Verb('http://adlnet.gov/expapi/verbs/voided', array('en-US' => 'voided'));
+        $verb2 = new Verb('http://adlnet.gov/expapi/verbs/voided', array('en-US' => 'void'));
+
+        $this->assertFalse($verb1->equals($verb2));
+    }
+
     public function testCreateVoidVerb()
     {
         $this->assertEquals('http://adlnet.gov/expapi/verbs/voided', Verb::createVoidVerb()->getId());

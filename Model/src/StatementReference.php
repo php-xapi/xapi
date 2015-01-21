@@ -40,4 +40,18 @@ class StatementReference extends Object
     {
         return $this->statementId;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function equals(Object $object)
+    {
+        if ('Xabbuh\XApi\Model\StatementReference' !== get_class($object)) {
+            return false;
+        }
+
+        /** @var StatementReference $object */
+
+        return $this->statementId === $object->statementId;
+    }
 }

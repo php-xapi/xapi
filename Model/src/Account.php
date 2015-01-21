@@ -59,4 +59,26 @@ class Account
     {
         return $this->homePage;
     }
+
+    /**
+     * Checks if another account is equal.
+     *
+     * Two accounts are equal if and only if all of their properties are equal.
+     *
+     * @param Account $account The account to compare with
+     *
+     * @return bool True if the accounts are equal, false otherwise
+     */
+    public function equals(Account $account)
+    {
+        if ($this->name !== $account->name) {
+            return false;
+        }
+
+        if ($this->homePage !== $account->homePage) {
+            return false;
+        }
+
+        return true;
+    }
 }

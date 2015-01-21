@@ -58,4 +58,34 @@ class Activity extends Object
     {
         return $this->definition;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function equals(Object $object)
+    {
+        if ('Xabbuh\XApi\Model\Activity' !== get_class($object)) {
+            return false;
+        }
+
+        /** @var Activity $object */
+
+        if ($this->id !== $object->id) {
+            return false;
+        }
+
+        if (null === $this->definition && null !== $object->definition) {
+            return false;
+        }
+
+        if (null !== $this->definition && null === $object->definition) {
+            return false;
+        }
+
+        if (null !== $this->definition && !$this->definition->equals($object->definition)) {
+            return false;
+        }
+
+        return true;
+    }
 }

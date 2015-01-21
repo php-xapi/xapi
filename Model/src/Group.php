@@ -47,4 +47,32 @@ class Group extends Actor
     {
         return $this->members;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function equals(Actor $actor)
+    {
+        if (!parent::equals($actor)) {
+            return false;
+        }
+
+        if ('Xabbuh\XApi\Model\Group' !== get_class($actor)) {
+            return false;
+        }
+
+        /** @var Group $actor */
+
+        if (count($this->members) !== count($actor->members)) {
+            return false;
+        }
+
+        foreach ($this->members as $member) {
+            if (!in_array($member, $actor->members)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

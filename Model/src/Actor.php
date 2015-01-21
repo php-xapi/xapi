@@ -139,4 +139,46 @@ abstract class Actor
     {
         return $this->account;
     }
+
+    /**
+     * Checks if another actor is equal.
+     *
+     * Two actors are equal if and only if all of their properties are equal.
+     *
+     * @param Actor $actor The actor to compare with
+     *
+     * @return bool True if the actors are equal, false otherwise
+     */
+    public function equals(Actor $actor)
+    {
+        if ($this->name !== $actor->name) {
+            return false;
+        }
+
+        if ($this->mbox !== $actor->mbox) {
+            return false;
+        }
+
+        if ($this->mboxSha1Sum !== $actor->mboxSha1Sum) {
+            return false;
+        }
+
+        if ($this->openId !== $actor->openId) {
+            return false;
+        }
+
+        if (null === $this->account && null !== $actor->account) {
+            return false;
+        }
+
+        if (null !== $this->account && null === $actor->account) {
+            return false;
+        }
+
+        if (null !== $this->account && !$this->account->equals($actor->account)) {
+            return false;
+        }
+
+        return true;
+    }
 }
