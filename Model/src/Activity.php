@@ -16,7 +16,7 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class Activity extends Object
+final class Activity extends Object
 {
     /**
      * The Activity's unique identifier

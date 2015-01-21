@@ -16,7 +16,7 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class Agent extends Actor
+final class Agent extends Actor
 {
     /**
      * {@inheritdoc}

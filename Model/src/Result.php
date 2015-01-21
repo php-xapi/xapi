@@ -17,7 +17,7 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class Result
+final class Result
 {
     /**
      * @var Score The score

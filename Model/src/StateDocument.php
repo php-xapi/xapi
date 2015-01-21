@@ -16,7 +16,7 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class StateDocument extends Document
+final class StateDocument extends Document
 {
     /**
      * @var State The state the document is associated to

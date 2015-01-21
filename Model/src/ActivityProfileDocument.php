@@ -16,7 +16,7 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class ActivityProfileDocument extends Document
+final class ActivityProfileDocument extends Document
 {
     /**
      * @var ActivityProfile The activity profile

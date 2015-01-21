@@ -16,6 +16,6 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class SubStatement extends Statement
+final class SubStatement extends Statement
 {
 }

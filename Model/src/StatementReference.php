@@ -16,7 +16,7 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class StatementReference extends Object
+final class StatementReference extends Object
 {
     /**
      * @var string The id of the referenced Statement

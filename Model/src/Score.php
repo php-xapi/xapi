@@ -16,7 +16,7 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class Score
+final class Score
 {
     /**
      * @var double The scaled score (a number between -1 and 1)

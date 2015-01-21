@@ -16,7 +16,7 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class Group extends Actor
+final class Group extends Actor
 {
     /**
      * @var Agent[] The members of the Group

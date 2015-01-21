@@ -16,7 +16,7 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class AgentProfileDocument extends Document
+final class AgentProfileDocument extends Document
 {
     /**
      * @var AgentProfile The agent profile

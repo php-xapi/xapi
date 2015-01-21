@@ -17,7 +17,7 @@ namespace Xabbuh\XApi\Model;
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class StatementResult
+final class StatementResult
 {
     /**
      * @var Statement[] The collection of Statements
