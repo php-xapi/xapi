@@ -23,13 +23,10 @@ class StateDocument extends Document
      */
     protected $state;
 
-    /**
-     * Sets the document's {@link State}.
-     *
-     * @param State $state The state
-     */
-    public function setState(State $state)
+    public function __construct(array $data = array(), State $state = null)
     {
+        parent::__construct($data);
+
         $this->state = $state;
     }
 

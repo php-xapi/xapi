@@ -44,16 +44,6 @@ class Definition
     }
 
     /**
-     * Sets human readable names.
-     *
-     * @param array $name The name language map
-     */
-    public function setName(array $name)
-    {
-        $this->name = $name;
-    }
-
-    /**
      * Returns the human readable names.
      *
      * @return array The name language map
@@ -64,16 +54,6 @@ class Definition
     }
 
     /**
-     * Sets human readable descriptions.
-     *
-     * @param array $description The description language map
-     */
-    public function setDescription(array $description)
-    {
-        $this->description = $description;
-    }
-
-    /**
      * Returns the human readable descriptions.
      *
      * @return array The description language map
@@ -81,16 +61,6 @@ class Definition
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * Sets the {@link Activity} type.
-     *
-     * @param string $type The type
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
     }
 
     /**

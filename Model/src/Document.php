@@ -21,7 +21,12 @@ class Document implements \ArrayAccess
     /**
      * @var array The data
      */
-    protected $data = array();
+    private $data = array();
+
+    public function __construct(array $data = array())
+    {
+        $this->data = $data;
+    }
 
     /**
      * {@inheritDoc}

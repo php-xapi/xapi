@@ -23,13 +23,10 @@ class ActivityProfileDocument extends Document
      */
     private $profile;
 
-    /**
-     * Sets the {@link ActivityProfile activity profile}.
-     *
-     * @param ActivityProfile $profile The activity profile
-     */
-    public function setActivityProfile(ActivityProfile $profile)
+    public function __construct(array $data = array(), ActivityProfile $profile = null)
     {
+        parent::__construct($data);
+
         $this->profile = $profile;
     }
 

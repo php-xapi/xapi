@@ -23,13 +23,10 @@ class AgentProfileDocument extends Document
      */
     private $profile;
 
-    /**
-     * Sets the agent profile.
-     *
-     * @param AgentProfile $profile The agent profile
-     */
-    public function setAgentProfile(AgentProfile $profile)
+    public function __construct(array $data = array(), AgentProfile $profile = null)
     {
+        parent::__construct($data);
+
         $this->profile = $profile;
     }
 
