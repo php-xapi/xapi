@@ -21,7 +21,7 @@ class Group extends Actor
     /**
      * @var Agent[] The members of the Group
      */
-    protected $members = array();
+    private $members = array();
 
     /**
      * @param string  $mbox

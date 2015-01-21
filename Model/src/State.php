@@ -21,22 +21,22 @@ class State
     /**
      * @var Activity The associated activity
      */
-    protected $activity;
+    private $activity;
 
     /**
      * @var Actor The associated actor
      */
-    protected $actor;
+    private $actor;
 
     /**
      * @var string An optional registration id
      */
-    protected $registrationId;
+    private $registrationId;
 
     /**
      * @var string The state id
      */
-    protected $stateId;
+    private $stateId;
 
     public function __construct(Activity $activity, Actor $actor, $stateId, $registrationId = null)
     {

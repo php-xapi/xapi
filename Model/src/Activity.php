@@ -22,12 +22,12 @@ class Activity extends Object
      * The Activity's unique identifier
      * @var string
      */
-    protected $id;
+    private $id;
 
     /**
      * @var Definition The Activity's {@link Definition}
      */
-    protected $definition;
+    private $definition;
 
     /**
      * @param string     $id

@@ -21,7 +21,7 @@ class StateDocument extends Document
     /**
      * @var State The state the document is associated to
      */
-    protected $state;
+    private $state;
 
     public function __construct(array $data = array(), State $state = null)
     {

@@ -22,27 +22,27 @@ class Result
     /**
      * @var Score The score
      */
-    protected $score;
+    private $score;
 
     /**
      * @var boolean Indicates whether or not the attempt was successful
      */
-    protected $success;
+    private $success;
 
     /**
      * @var boolean Indicates whether or not the Activity was completed
      */
-    protected $completion;
+    private $completion;
 
     /**
      * @var string A response for the given Activity
      */
-    protected $response;
+    private $response;
 
     /**
      * @var string Period of time over which the Activity was performed
      */
-    protected $duration;
+    private $duration;
 
     /**
      * @param Score       $score

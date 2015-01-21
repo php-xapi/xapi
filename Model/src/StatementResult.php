@@ -22,12 +22,12 @@ class StatementResult
     /**
      * @var Statement[] The collection of Statements
      */
-    protected $statements;
+    private $statements;
 
     /**
      * @var string
      */
-    protected $moreUrlPath;
+    private $moreUrlPath;
 
     /**
      * @param Statement[] $statements The collection of Statements

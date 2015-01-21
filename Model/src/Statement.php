@@ -21,27 +21,27 @@ class Statement
     /**
      * @var string The unique identifier
      */
-    protected $id;
+    private $id;
 
     /**
      * @var Verb $verb The {@link Verb}
      */
-    protected $verb;
+    private $verb;
 
     /**
      * @var Actor The {@link Actor}
      */
-    protected $actor;
+    private $actor;
 
     /**
      * @var Object The {@link Object}
      */
-    protected $object;
+    private $object;
 
     /**
      * @var Result The {@link Activity} {@link Result}
      */
-    protected $result;
+    private $result;
 
     public function __construct($id, Actor $actor, Verb $verb, Object $object, Result $result = null)
     {

@@ -22,19 +22,19 @@ class Definition
      * The human readable activity name
      * @var array
      */
-    protected $name;
+    private $name;
 
     /**
      * The human readable activity description
      * @var array
      */
-    protected $description;
+    private $description;
 
     /**
      * The type of the {@link Activity}
      * @var string
      */
-    protected $type;
+    private $type;
 
     public function __construct(array $name, array $description, $type)
     {

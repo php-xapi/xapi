@@ -22,13 +22,13 @@ class Verb
      * Reference to the verb definition
      * @var string
      */
-    protected $id;
+    private $id;
 
     /**
      * Human readable representation of the verb in one or more languages
      * @var array
      */
-    protected $display;
+    private $display;
 
     /**
      * @param string $id

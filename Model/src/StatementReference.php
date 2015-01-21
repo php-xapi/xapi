@@ -21,7 +21,7 @@ class StatementReference extends Object
     /**
      * @var string The id of the referenced Statement
      */
-    protected $statementId;
+    private $statementId;
 
     /**
      * @param string $statementId

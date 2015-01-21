@@ -22,31 +22,31 @@ abstract class Actor
      * Name of the {@link Agent} or {@link Group}
      * @var string
      */
-    protected $name;
+    private $name;
 
     /**
      * A mailto IRI
      * @var string
      */
-    protected $mbox;
+    private $mbox;
 
     /**
      * The SHA1 hash of a mailto IRI
      * @var string
      */
-    protected $mboxSha1Sum;
+    private $mboxSha1Sum;
 
     /**
      * An openID uniquely identifying an Agent
      * @var string
      */
-    protected $openId;
+    private $openId;
 
     /**
      * A user account on an existing system
      * @var Account
      */
-    protected $account;
+    private $account;
 
     /**
      * @param string  $mbox

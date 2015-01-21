@@ -21,7 +21,7 @@ abstract class Profile
     /**
      * @var string The profile id
      */
-    protected $profileId;
+    private $profileId;
 
     /**
      * @param string $profileId The id

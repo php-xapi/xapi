@@ -22,13 +22,13 @@ class Account
      * The unique id or name used to log in to this account
      * @var string
      */
-    protected $name;
+    private $name;
 
     /**
      * Canonical home page for the system the account is on
      * @var string
      */
-    protected $homePage;
+    private $homePage;
 
     /**
      * @param string $name

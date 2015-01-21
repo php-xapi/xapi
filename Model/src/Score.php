@@ -21,22 +21,22 @@ class Score
     /**
      * @var double The scaled score (a number between -1 and 1)
      */
-    protected $scaled;
+    private $scaled;
 
     /**
      * @var double The Agent's score (a number between min and max)
      */
-    protected $raw;
+    private $raw;
 
     /**
      * @var double The minimum score being possible
      */
-    protected $min;
+    private $min;
 
     /**
      * @var double The maximum score being possible
      */
-    protected $max;
+    private $max;
 
     /**
      * @param double $scaled
