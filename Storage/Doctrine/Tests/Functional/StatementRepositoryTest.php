@@ -12,14 +12,14 @@
 namespace Xabbuh\XApi\Storage\Doctrine\Tests\Functional;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use Xabbuh\XApi\Storage\Api\Test\Functional\StatementManagerTest as BaseStatementManagerTest;
-use Xabbuh\XApi\Storage\Doctrine\Manager\StatementManager;
-use Xabbuh\XApi\Storage\Doctrine\Repository\StatementRepositoryInterface;
+use Xabbuh\XApi\Storage\Api\Test\Functional\StatementRepositoryTest as BaseStatementRepositoryTest;
+use Xabbuh\XApi\Storage\Doctrine\Repository\MappedStatementRepository;
+use Xabbuh\XApi\Storage\Doctrine\Repository\StatementRepository;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-abstract class StatementManagerTest extends BaseStatementManagerTest
+abstract class StatementRepositoryTest extends BaseStatementRepositoryTest
 {
     /**
      * @var ObjectManager
@@ -27,7 +27,7 @@ abstract class StatementManagerTest extends BaseStatementManagerTest
     protected $objectManager;
 
     /**
-     * @var StatementRepositoryInterface
+     * @var MappedStatementRepository
      */
     protected $repository;
 
@@ -39,14 +39,18 @@ abstract class StatementManagerTest extends BaseStatementManagerTest
         parent::setUp();
     }
 
-    protected function createStatementManager()
+    protected function createStatementRepository()
     {
-        return new StatementManager($this->repository);
+        return new StatementRepository($this->repository);
     }
 
-    protected function createRepository()
+    protected function cleanDatabase()
     {
-        return $this->objectManager->getRepository($this->getStatementClassName());
+        foreach ($this->repository->findMappedStatements(array()) as $statement) {
+            $this->objectManager->remove($statement);
+        }
+
+        $this->objectManager->flush();
     }
 
     /**
@@ -58,4 +62,9 @@ abstract class StatementManagerTest extends BaseStatementManagerTest
      * @return string
      */
     abstract protected function getStatementClassName();
+
+    private function createRepository()
+    {
+        return $this->objectManager->getRepository($this->getStatementClassName());
+    }
 }

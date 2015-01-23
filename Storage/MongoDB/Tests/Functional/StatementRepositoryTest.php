@@ -17,12 +17,12 @@ use Doctrine\MongoDB\Connection;
 use Doctrine\ODM\MongoDB\Configuration;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Doctrine\ODM\MongoDB\Mapping\Driver\XmlDriver;
-use Xabbuh\XApi\Storage\Doctrine\Tests\Functional\StatementManagerTest as BaseStatementManagerTest;
+use Xabbuh\XApi\Storage\Doctrine\Tests\Functional\StatementRepositoryTest as BaseStatementRepositoryTest;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class StatementManagerTest extends BaseStatementManagerTest
+class StatementRepositoryTest extends BaseStatementRepositoryTest
 {
     /**
      * @return ObjectManager
@@ -35,7 +35,7 @@ class StatementManagerTest extends BaseStatementManagerTest
         $config->setHydratorDir(__DIR__.'/../hydrators');
         $config->setHydratorNamespace('Hydrator');
         $fileLocator = new SymfonyFileLocator(
-            array(__DIR__.'/../../metadata' => 'Xabbuh\XApi\Storage\MongoDB\Document'),
+            array(__DIR__.'/../../metadata' => 'Xabbuh\XApi\Storage\Api\Mapping'),
             '.mongodb.xml'
         );
         $driver = new XmlDriver($fileLocator);
@@ -46,14 +46,6 @@ class StatementManagerTest extends BaseStatementManagerTest
 
     protected function getStatementClassName()
     {
-        return 'Xabbuh\XApi\Storage\MongoDB\Document\Statement';
-    }
-    protected function cleanDatabase()
-    {
-        foreach ($this->repository->findAll() as $statement) {
-            $this->objectManager->remove($statement);
-        }
-
-        $this->objectManager->flush();
+        return 'Xabbuh\XApi\Storage\Api\Mapping\MappedStatement';
     }
 }

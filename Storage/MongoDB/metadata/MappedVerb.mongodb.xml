@@ -3,7 +3,7 @@
     xsi:schemaLocation="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping
         http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping.xsd"
 >
-    <document name="Xabbuh\XApi\Storage\MongoDB\Document\Verb">
+    <document name="Xabbuh\XApi\Storage\Api\Mapping\MappedVerb">
         <field fieldName="identifier" id="true" strategy="AUTO" />
         <field fieldName="id" type="string" id="true" strategy="NONE" />
         <field fieldName="display" type="hash" />
