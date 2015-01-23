@@ -12,6 +12,7 @@
 namespace Xabbuh\XApi\Bundle\LrsBundle\Tests\Listener;
 
 use Xabbuh\XApi\Bundle\LrsBundle\Listener\StatementSerializerListener;
+use Xabbuh\XApi\DataFixtures\StatementFixtures;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -28,15 +29,8 @@ class StatementSerializerListenerTest extends AbstractSerializerListenerTest
         return new StatementSerializerListener($this->serializer);
     }
 
-    protected function getDefaultDomainObjectConstructorArguments()
+    protected function getDomainObject()
     {
-        return array(
-            '',
-            $this->getMock('\Xabbuh\XApi\Model\Actor'),
-            $this->getMockBuilder('\Xabbuh\XApi\Model\Verb')
-                ->disableOriginalConstructor()
-                ->getMock(),
-            $this->getMock('\Xabbuh\XApi\Model\Object'),
-        );
+        return StatementFixtures::getMinimalStatement();
     }
 }

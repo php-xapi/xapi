@@ -13,6 +13,7 @@ namespace Xabbuh\XApi\Bundle\LrsBundle\Tests\Listener;
 
 use Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
+use Xabbuh\XApi\Bundle\LrsBundle\Listener\AbstractSerializerListener;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -28,6 +29,9 @@ abstract class AbstractSerializerListenerTest extends \PHPUnit_Framework_TestCas
      */
     protected $serializer;
 
+    /**
+     * @var AbstractSerializerListener
+     */
     protected $listener;
 
     public function __construct($domainObjectClass, $serializerMethod)
@@ -44,7 +48,7 @@ abstract class AbstractSerializerListenerTest extends \PHPUnit_Framework_TestCas
 
     public function testOnKernelView()
     {
-        $domainObject = $this->createDomainObjectMock();
+        $domainObject = $this->getDomainObject();
         $event = new GetResponseForControllerResultEvent(
             $this->createHttpKernelMock(),
             $this->createRequestMock(),
@@ -89,19 +93,11 @@ abstract class AbstractSerializerListenerTest extends \PHPUnit_Framework_TestCas
 
     abstract protected function createListener();
 
-    protected function getDefaultDomainObjectConstructorArguments()
-    {
-        return array();
-    }
+    abstract protected function getDomainObject();
 
     private function createSerializerMock()
     {
         return $this->getMock('\Xabbuh\XApi\Serializer\\'.$this->domainObjectClass.'SerializerInterface');
-    }
-
-    private function createDomainObjectMock()
-    {
-        return $this->getMock('\Xabbuh\XApi\Model\\'.$this->domainObjectClass, array(), $this->getDefaultDomainObjectConstructorArguments());
     }
 
     /**

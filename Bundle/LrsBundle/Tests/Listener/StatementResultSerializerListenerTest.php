@@ -12,6 +12,7 @@
 namespace Xabbuh\XApi\Bundle\LrsBundle\Tests\Listener;
 
 use Xabbuh\XApi\Bundle\LrsBundle\Listener\StatementResultSerializerListener;
+use Xabbuh\XApi\DataFixtures\StatementResultFixtures;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -26,6 +27,11 @@ class StatementResultSerializerListenerTest extends AbstractSerializerListenerTe
     protected function createListener()
     {
         return new StatementResultSerializerListener($this->serializer);
+    }
+
+    protected function getDomainObject()
+    {
+        return StatementResultFixtures::getStatementResult();
     }
 
     protected function getDefaultDomainObjectConstructorArguments()
