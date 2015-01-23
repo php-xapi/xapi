@@ -12,7 +12,7 @@
 namespace Xabbuh\XApi\Serializer\Tests;
 
 use Xabbuh\XApi\DataFixtures\DocumentFixtures;
-use Xabbuh\XApi\Serializer\DocumentSerializer;
+use Xabbuh\XApi\Serializer\DocumentDataSerializer;
 use Xabbuh\XApi\Serializer\Tests\Fixtures\DocumentJsonFixtures;
 
 /**
@@ -21,83 +21,33 @@ use Xabbuh\XApi\Serializer\Tests\Fixtures\DocumentJsonFixtures;
 class DocumentSerializerTest extends AbstractSerializerTest
 {
     /**
-     * @var DocumentSerializer
+     * @var DocumentDataSerializer
      */
-    private $documentSerializer;
+    private $documentDataSerializer;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->documentSerializer = new DocumentSerializer($this->serializer);
+
+        $this->documentDataSerializer = new DocumentDataSerializer($this->serializer);
     }
 
-    public function testDeserializeActivityProfileDocument()
+    public function testDeserializeDocumentData()
     {
-        /** @var \Xabbuh\XApi\Model\Document $document */
-        $document = $this->documentSerializer->deserializeActivityProfileDocument(DocumentJsonFixtures::getDocument());
+        $documentData = $this->documentDataSerializer->deserializeDocumentData(DocumentJsonFixtures::getDocument());
 
-        $this->assertInstanceOf('\Xabbuh\XApi\Model\ActivityProfileDocument', $document);
-        $this->assertEquals('foo', $document['x']);
-        $this->assertEquals('bar', $document['y']);
+        $this->assertInstanceOf('\Xabbuh\XApi\Model\DocumentData', $documentData);
+        $this->assertEquals('foo', $documentData['x']);
+        $this->assertEquals('bar', $documentData['y']);
     }
 
-    public function testDeserializeAgentProfileDocument()
+    public function testSerializeDocumentData()
     {
-        /** @var \Xabbuh\XApi\Model\Document $document */
-        $document = $this->documentSerializer->deserializeAgentProfileDocument(DocumentJsonFixtures::getDocument());
-
-        $this->assertInstanceOf('\Xabbuh\XApi\Model\AgentProfileDocument', $document);
-        $this->assertEquals('foo', $document['x']);
-        $this->assertEquals('bar', $document['y']);
-    }
-
-    public function testDeserializeStateDocument()
-    {
-        /** @var \Xabbuh\XApi\Model\Document $document */
-        $document = $this->documentSerializer->deserializeStateDocument(DocumentJsonFixtures::getDocument());
-
-        $this->assertInstanceOf('\Xabbuh\XApi\Model\StateDocument', $document);
-        $this->assertEquals('foo', $document['x']);
-        $this->assertEquals('bar', $document['y']);
-    }
-
-    public function testSerializeDocument()
-    {
-        $document = DocumentFixtures::getDocument();
+        $documentData = DocumentFixtures::getDocumentData();
 
         $this->assertJsonEquals(
             DocumentJsonFixtures::getDocument(),
-            $this->documentSerializer->serializeDocument($document)
-        );
-    }
-
-    public function testSerializeActivityProfileDocument()
-    {
-        $document = DocumentFixtures::getActivityProfileDocument();
-
-        $this->assertJsonEquals(
-            DocumentJsonFixtures::getDocument(),
-            $this->documentSerializer->serializeDocument($document)
-        );
-    }
-
-    public function testSerializeAgentProfileDocument()
-    {
-        $document = DocumentFixtures::getAgentProfileDocument();
-
-        $this->assertJsonEquals(
-            DocumentJsonFixtures::getDocument(),
-            $this->documentSerializer->serializeDocument($document)
-        );
-    }
-
-    public function testSerializeStateDocument()
-    {
-        $document = DocumentFixtures::getStateDocument();
-
-        $this->assertJsonEquals(
-            DocumentJsonFixtures::getDocument(),
-            $this->documentSerializer->serializeDocument($document)
+            $this->documentDataSerializer->serializeDocumentData($documentData)
         );
     }
 }

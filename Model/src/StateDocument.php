@@ -23,7 +23,7 @@ final class StateDocument extends Document
      */
     private $state;
 
-    public function __construct(array $data = array(), State $state = null)
+    public function __construct(State $state, DocumentData $data)
     {
         parent::__construct($data);
 

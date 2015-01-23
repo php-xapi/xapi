@@ -11,23 +11,25 @@
 
 namespace Xabbuh\XApi\Model;
 
+use Xabbuh\XApi\Common\Exception\UnsupportedOperationException;
+
 /**
- * An Experience API document.
+ * An xAPI document's data.
  *
- * A document is immutable. This means that it can be accessed like an array.
+ * Document data are immutable. This means that they can be accessed like an array.
  * But you can only do this to read data. Thus an {@link UnsupportedOperationException}
  * is thrown when you try to unset data or to manipulate them.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-abstract class Document implements \ArrayAccess
+final class DocumentData implements \ArrayAccess
 {
     /**
-     * @var DocumentData The document's data
+     * @var array The data
      */
-    private $data;
+    private $data = array();
 
-    public function __construct(DocumentData $data)
+    public function __construct(array $data = array())
     {
         $this->data = $data;
     }
@@ -53,7 +55,7 @@ abstract class Document implements \ArrayAccess
      */
     public function offsetSet($offset, $value)
     {
-        $this->data[$offset] = $value;
+        throw new UnsupportedOperationException('A document is immutable.');
     }
 
     /**
@@ -61,13 +63,13 @@ abstract class Document implements \ArrayAccess
      */
     public function offsetUnset($offset)
     {
-        unset($this->data[$offset]);
+        throw new UnsupportedOperationException('A document is immutable.');
     }
 
     /**
-     * Returns the document's data.
+     * Returns all data as an array.
      *
-     * @return DocumentData The data
+     * @return array The data
      */
     public function getData()
     {

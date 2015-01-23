@@ -9,17 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Xabbuh\XApi\Model\Tests;
-
-use Xabbuh\XApi\Model\Document;
+namespace Xabbuh\XApi\Common\Exception;
 
 /**
+ * Unsupported operation exception.
+ *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class DocumentTest extends AbstractDocumentTest
+class UnsupportedOperationException extends XApiException
 {
-    protected function createDocument()
-    {
-        return new Document();
-    }
 }

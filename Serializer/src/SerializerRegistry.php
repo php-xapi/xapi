@@ -34,9 +34,9 @@ class SerializerRegistry implements SerializerRegistryInterface
     private $actorSerializer;
 
     /**
-     * @var DocumentSerializerInterface The document serializer
+     * @var DocumentDataSerializerInterface The document data serializer
      */
-    private $documentSerializer;
+    private $documentDataSerializer;
 
     /**
      * {@inheritDoc}
@@ -89,16 +89,16 @@ class SerializerRegistry implements SerializerRegistryInterface
     /**
      * {@inheritDoc}
      */
-    public function setDocumentSerializer(DocumentSerializerInterface $serializer)
+    public function setDocumentDataSerializer(DocumentDataSerializerInterface $serializer)
     {
-        $this->documentSerializer = $serializer;
+        $this->documentDataSerializer = $serializer;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getDocumentSerializer()
+    public function getDocumentDataSerializer()
     {
-        return $this->documentSerializer;
+        return $this->documentDataSerializer;
     }
 }

@@ -61,16 +61,16 @@ interface SerializerRegistryInterface
     public function getActorSerializer();
 
     /**
-     * Sets the {@link DocumentSerializerInterface document serializer}.
+     * Sets the {@link DocumentDataSerializerInterface document data serializer}.
      *
-     * @param DocumentSerializerInterface $serializer The serializer
+     * @param DocumentDataSerializerInterface $serializer The serializer
      */
-    public function setDocumentSerializer(DocumentSerializerInterface $serializer);
+    public function setDocumentDataSerializer(DocumentDataSerializerInterface $serializer);
 
     /**
-     * Returns the {@link DocumentSerializerInterface document serializer}.
+     * Returns the {@link DocumentDataSerializerInterface document data serializer}.
      *
-     * @return DocumentSerializerInterface The serializer
+     * @return DocumentDataSerializerInterface The serializer
      */
-    public function getDocumentSerializer();
+    public function getDocumentDataSerializer();
 }

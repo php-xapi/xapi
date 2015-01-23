@@ -23,7 +23,7 @@ final class AgentProfileDocument extends Document
      */
     private $profile;
 
-    public function __construct(array $data = array(), AgentProfile $profile = null)
+    public function __construct(AgentProfile $profile, DocumentData $data)
     {
         parent::__construct($data);
 

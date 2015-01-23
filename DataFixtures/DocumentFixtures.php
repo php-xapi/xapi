@@ -11,9 +11,14 @@
 
 namespace Xabbuh\XApi\DataFixtures;
 
+use Xabbuh\XApi\Model\Activity;
+use Xabbuh\XApi\Model\ActivityProfile;
 use Xabbuh\XApi\Model\ActivityProfileDocument;
+use Xabbuh\XApi\Model\Agent;
+use Xabbuh\XApi\Model\AgentProfile;
 use Xabbuh\XApi\Model\AgentProfileDocument;
-use Xabbuh\XApi\Model\Document;
+use Xabbuh\XApi\Model\DocumentData;
+use Xabbuh\XApi\Model\State;
 use Xabbuh\XApi\Model\StateDocument;
 
 /**
@@ -24,58 +29,78 @@ use Xabbuh\XApi\Model\StateDocument;
 class DocumentFixtures
 {
     /**
-     * Loads a document.
+     * Loads empty document data.
      *
-     * @return Document
+     * @return DocumentData
      */
-    public static function getDocument()
+    public static function getEmptyDocumentData()
     {
-        $document = new Document();
-        $document['x'] = 'foo';
-        $document['y'] = 'bar';
+        return new DocumentData();
+    }
 
-        return $document;
+    /**
+     * Loads document data.
+     *
+     * @return DocumentData
+     */
+    public static function getDocumentData()
+    {
+        return new DocumentData(array('x' => 'foo', 'y' => 'bar'));
     }
 
     /**
      * Loads an activity profile document.
      *
+     * @param DocumentData $documentData The document data, by default, a some
+     *                                   default data will be used
+     *
      * @return ActivityProfileDocument
      */
-    public static function getActivityProfileDocument()
+    public static function getActivityProfileDocument(DocumentData $documentData = null)
     {
-        $document = new ActivityProfileDocument();
-        $document['x'] = 'foo';
-        $document['y'] = 'bar';
+        if (null === $documentData) {
+            $documentData = static::getDocumentData();
+        }
 
-        return $document;
+        $activityProfile = new ActivityProfile('profile-id', new Activity('activity-id'));
+
+        return new ActivityProfileDocument($activityProfile, $documentData);
     }
 
     /**
      * Loads an agent profile document.
      *
+     * @param DocumentData $documentData The document data, by default, a some
+     *                                   default data will be used
+     *
      * @return AgentProfileDocument
      */
-    public static function getAgentProfileDocument()
+    public static function getAgentProfileDocument(DocumentData $documentData = null)
     {
-        $document = new AgentProfileDocument();
-        $document['x'] = 'foo';
-        $document['y'] = 'bar';
+        if (null === $documentData) {
+            $documentData = static::getDocumentData();
+        }
 
-        return $document;
+        return new AgentProfileDocument(new AgentProfile('profile-id', new Agent()), $documentData);
     }
 
     /**
      * Loads a state document.
      *
+     * @param DocumentData $documentData The document data, by default, a some
+     *                                   default data will be used
+     *
      * @return StateDocument
      */
-    public static function getStateDocument()
+    public static function getStateDocument(DocumentData $documentData = null)
     {
-        $document = new StateDocument();
-        $document['x'] = 'foo';
-        $document['y'] = 'bar';
+        if (null === $documentData) {
+            $documentData = static::getDocumentData();
+        }
 
-        return $document;
+        $agent = new Agent('mailto:alice@example.com');
+        $activity = new Activity('activity-id');
+
+        return new StateDocument(new State($activity, $agent, 'state-id'), $documentData);
     }
 }

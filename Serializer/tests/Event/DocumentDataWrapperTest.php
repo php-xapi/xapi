@@ -35,7 +35,7 @@ class DocumentDataWrapperTest extends \PHPUnit_Framework_TestCase
         $context = new DeserializationContext();
         $data = array('x' => 'foo', 'y' => 'bar');
         $type = array(
-            'name' => 'Xabbuh\XApi\Model\Document',
+            'name' => 'Xabbuh\XApi\Model\DocumentData',
             'params' => array(),
         );
         $event = new PreDeserializeEvent($context, $data, $type);

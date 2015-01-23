@@ -11,44 +11,63 @@
 
 namespace Xabbuh\XApi\Model\Tests;
 
+use Xabbuh\XApi\DataFixtures\DocumentFixtures;
 use Xabbuh\XApi\Model\Document;
+use Xabbuh\XApi\Model\DocumentData;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
 abstract class AbstractDocumentTest extends \PHPUnit_Framework_TestCase
 {
-    public function testArrayAccessMethods()
+    public function testReadyOnlyArrayAccessMethods()
     {
-        $document = $this->createDocument();
+        $data = DocumentFixtures::getEmptyDocumentData();
+        $document = $this->createDocument($data);
 
         $this->assertFalse(isset($document['x']));
 
-        $document['x'] = 'foo';
+        $data = DocumentFixtures::getDocumentData();
+        $document = $this->createDocument($data);
 
         $this->assertTrue(isset($document['x']));
         $this->assertEquals('foo', $document['x']);
+        $this->assertTrue(isset($document['y']));
+        $this->assertEquals('bar', $document['y']);
+    }
 
+    /**
+     * @expectedException \Xabbuh\XApi\Common\Exception\UnsupportedOperationException
+     */
+    public function testSettingDataThrowsException()
+    {
+        $data = DocumentFixtures::getEmptyDocumentData();
+        $document = $this->createDocument($data);
         $document['x'] = 'bar';
+    }
 
-        $this->assertEquals('bar', $document['x']);
-
+    /**
+     * @expectedException \Xabbuh\XApi\Common\Exception\UnsupportedOperationException
+     */
+    public function testRemovingDataThrowsException()
+    {
+        $data = DocumentFixtures::getDocumentData();
+        $document = $this->createDocument($data);
         unset($document['x']);
-
-        $this->assertFalse(isset($document['x']));
     }
 
     public function testGetData()
     {
-        $document = $this->createDocument();
-        $document['x'] = 'foo';
-        $document['y'] = 'bar';
+        $data = DocumentFixtures::getDocumentData();
+        $document = $this->createDocument($data);
 
-        $this->assertEquals(array('x' => 'foo', 'y' => 'bar'), $document->getData());
+        $this->assertSame($data, $document->getData());
     }
 
     /**
+     * @param DocumentData $data
+     *
      * @return Document
      */
-    abstract protected function createDocument();
+    abstract protected function createDocument(DocumentData $data);
 }

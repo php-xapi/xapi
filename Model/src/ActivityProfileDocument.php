@@ -23,7 +23,7 @@ final class ActivityProfileDocument extends Document
      */
     private $profile;
 
-    public function __construct(array $data = array(), ActivityProfile $profile = null)
+    public function __construct(ActivityProfile $profile, DocumentData $data)
     {
         parent::__construct($data);
 

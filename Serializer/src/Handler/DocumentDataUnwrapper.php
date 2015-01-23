@@ -15,7 +15,7 @@ use JMS\Serializer\Context;
 use JMS\Serializer\GraphNavigator;
 use JMS\Serializer\Handler\SubscribingHandlerInterface;
 use JMS\Serializer\JsonSerializationVisitor;
-use Xabbuh\XApi\Model\Document;
+use Xabbuh\XApi\Model\DocumentData;
 
 /**
  * Unwraps the data of an xAPI document during the serialization process.
@@ -29,35 +29,15 @@ class DocumentDataUnwrapper implements SubscribingHandlerInterface
      */
     public static function getSubscribingMethods()
     {
-        return array(
-            array(
-                'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
-                'format' => 'json',
-                'type' => 'Xabbuh\XApi\Model\Document',
-                'method' => 'unwrapData',
-            ),
-            array(
-                'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
-                'format' => 'json',
-                'type' => 'Xabbuh\XApi\Model\ActivityProfileDocument',
-                'method' => 'unwrapData',
-            ),
-            array(
-                'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
-                'format' => 'json',
-                'type' => 'Xabbuh\XApi\Model\AgentProfileDocument',
-                'method' => 'unwrapData',
-            ),
-            array(
-                'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
-                'format' => 'json',
-                'type' => 'Xabbuh\XApi\Model\StateDocument',
-                'method' => 'unwrapData',
-            ),
-        );
+        return array(array(
+            'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
+            'format' => 'json',
+            'type' => 'Xabbuh\XApi\Model\DocumentData',
+            'method' => 'unwrapData',
+        ));
     }
 
-    public function unwrapData(JsonSerializationVisitor $visitor, Document $document, array $type, Context $context)
+    public function unwrapData(JsonSerializationVisitor $visitor, DocumentData $document, array $type, Context $context)
     {
         $visitor->setRoot($document->getData());
     }
