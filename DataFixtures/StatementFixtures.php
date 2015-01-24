@@ -26,6 +26,8 @@ use Xabbuh\XApi\Model\Verb;
  */
 class StatementFixtures
 {
+    const DEFAULT_STATEMENT_ID = '12345678-1234-5678-8234-567812345678';
+
     /**
      * Loads a minimal valid statement.
      *
@@ -33,7 +35,7 @@ class StatementFixtures
      *
      * @return Statement
      */
-    public static function getMinimalStatement($id = '12345678-1234-5678-8234-567812345678')
+    public static function getMinimalStatement($id = self::DEFAULT_STATEMENT_ID)
     {
         $actor = new Agent('mailto:xapi@adlnet.gov');
         $verb = new Verb('http://adlnet.gov/expapi/verbs/created', array('en-US' => 'created'));
@@ -43,13 +45,47 @@ class StatementFixtures
     }
 
     /**
-     * Loads a statement including a reference to another statement.
+     * Loads a statement with a group as an actor.
+     *
+     * @param string $id The id of the new Statement
      *
      * @return Statement
      */
-    public static function getStatementWithStatementRef()
+    public static function getStatementWithGroupActor($id = self::DEFAULT_STATEMENT_ID)
     {
-        $minimalStatement = static::getMinimalStatement();
+        $group = ActorFixtures::getGroup();
+        $verb = VerbFixtures::getVerb();
+        $activity = ActivityFixtures::getActivity();
+
+        return new Statement($id, $group, $verb, $activity);
+    }
+
+    /**
+     * Loads a statement with a group that has no members as an actor.
+     *
+     * @param string $id The id of the new Statement
+     *
+     * @return Statement
+     */
+    public static function getStatementWithGroupActorWithoutMembers($id = self::DEFAULT_STATEMENT_ID)
+    {
+        $group = ActorFixtures::getGroupWithoutMembers();
+        $verb = VerbFixtures::getVerb();
+        $activity = ActivityFixtures::getActivity();
+
+        return new Statement($id, $group, $verb, $activity);
+    }
+
+    /**
+     * Loads a statement including a reference to another statement.
+     *
+     * @param string $id The id of the new Statement
+     *
+     * @return Statement
+     */
+    public static function getStatementWithStatementRef($id = self::DEFAULT_STATEMENT_ID)
+    {
+        $minimalStatement = static::getMinimalStatement($id);
 
         return new Statement(
             $minimalStatement->getId(),
@@ -62,9 +98,11 @@ class StatementFixtures
     /**
      * Loads a statement including a result.
      *
+     * @param string $id The id of the new Statement
+     *
      * @return Statement
      */
-    public static function getStatementWithResult()
+    public static function getStatementWithResult($id = self::DEFAULT_STATEMENT_ID)
     {
         $actor = new Agent('mailto:xapi@adlnet.gov');
         $verb = new Verb('http://adlnet.gov/expapi/verbs/created', array('en-US' => 'created'));
@@ -72,6 +110,6 @@ class StatementFixtures
         $score = new Score(0.95, 31, 0, 50);
         $result = new Result($score, true, true);
 
-        return new Statement('12345678-1234-5678-8234-567812345678', $actor, $verb, $activity, $result);
+        return new Statement($id, $actor, $verb, $activity, $result);
     }
 }

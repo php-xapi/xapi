@@ -9,6 +9,10 @@
         {
             "name": "Andrew Downes",
             "mbox": "mailto:andrew@example.com",
+            "account": {
+                "name": "Member of a group",
+                "homePage": "http://example.com/account"
+            },
             "objectType": "Agent"
         },
         {

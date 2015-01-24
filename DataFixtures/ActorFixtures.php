@@ -47,6 +47,18 @@ class ActorFixtures
     }
 
     /**
+     * Loads a group that has no members.
+     *
+     * @return Group
+     */
+    public static function getGroupWithoutMembers()
+    {
+        $account = new Account('GroupAccount', 'http://example.com/homePage');
+
+        return new Group(null, null, null, $account, 'Example Group');
+    }
+
+    /**
      * Loads an anonymous group.
      *
      * @return Group
@@ -58,7 +70,8 @@ class ActorFixtures
 
     private static function createGroup($name, Account $account = null)
     {
-        $agent1 = new Agent('mailto:andrew@example.com', null, null, null, 'Andrew Downes');
+        $memberAccount = new Account('Member of a group', 'http://example.com/account');
+        $agent1 = new Agent('mailto:andrew@example.com', null, null, $memberAccount, 'Andrew Downes');
         $agent2 = new Agent(null, null, 'aaron.openid.example.org', null, 'Aaron Silvers');
         $group = new Group(null, null, null, $account, $name, array($agent1, $agent2));
 

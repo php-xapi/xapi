@@ -12,6 +12,7 @@
 namespace Xabbuh\XApi\Storage\Api\Test\Functional;
 
 use Xabbuh\XApi\DataFixtures\StatementFixtures;
+use Xabbuh\XApi\Model\Statement;
 use Xabbuh\XApi\Storage\Api\StatementRepository;
 
 /**
@@ -40,33 +41,89 @@ abstract class StatementRepositoryTest extends \PHPUnit_Framework_TestCase
         $this->statementRepository->findStatementById('12345678-1234-5678-8234-567812345678');
     }
 
-    public function testUuidIsGeneratedForNewStatement()
+    /**
+     * @dataProvider getStatementsWithoutId
+     */
+    public function testUuidIsGeneratedForNewStatementIfNotPresent(Statement $statement)
     {
-        $statement = StatementFixtures::getMinimalStatement(null);
         $statementId = $this->statementRepository->storeStatement($statement);
 
+        $this->assertNull($statement->getId());
         $this->assertRegExp(self::UUID_REGEXP, $statementId);
     }
 
-    public function testCreatedStatementCanBeRetrieved()
+    /**
+     * @dataProvider getStatementsWithId
+     */
+    public function testUuidIsNotGeneratedForNewStatementIfPresent(Statement $statement)
     {
-        $statement = StatementFixtures::getMinimalStatement(null);
+        $statementId = $this->statementRepository->storeStatement($statement);
+
+        $this->assertEquals($statement->getId(), $statementId);
+    }
+
+    /**
+     * @dataProvider getStatementsWithId
+     */
+    public function testCreatedStatementCanBeRetrievedByOriginalId(Statement $statement)
+    {
+        $this->statementRepository->storeStatement($statement);
+        $fetchedStatement = $this->statementRepository->findStatementById($statement->getId());
+
+        $this->assertStatementEquals($statement, $fetchedStatement);
+    }
+
+    /**
+     * @dataProvider getStatementsWithoutId
+     */
+    public function testCreatedStatementCanBeRetrievedByGeneratedId(Statement $statement)
+    {
         $statementId = $this->statementRepository->storeStatement($statement);
         $fetchedStatement = $this->statementRepository->findStatementById($statementId);
 
         $this->assertNull($statement->getId());
-        $this->assertTrue($fetchedStatement->getActor()->equals($statement->getActor()));
-        $this->assertTrue($fetchedStatement->getVerb()->equals($statement->getVerb()));
-        $this->assertTrue($fetchedStatement->getObject()->equals($statement->getObject()));
+        $this->assertStatementEquals($statement, $fetchedStatement, false);
+    }
 
-        if (null === $fetchedStatement->getResult()) {
-            $this->assertNull($statement->getResult());
-        } else {
-            $this->assertTrue($fetchedStatement->getResult()->equals($statement->getResult()));
-        }
+    public function getStatementsWithId()
+    {
+        return $this->getStatements(StatementFixtures::DEFAULT_STATEMENT_ID);
+    }
+
+    public function getStatementsWithoutId()
+    {
+        return $this->getStatements(null);
     }
 
     abstract protected function createStatementRepository();
 
     abstract protected function cleanDatabase();
+
+    private function getStatements($id)
+    {
+        return array(
+            'minimal-statement' => array(StatementFixtures::getMinimalStatement($id)),
+            'statement-with-group-actor' => array(StatementFixtures::getStatementWithGroupActor($id)),
+            'statement-with-group-actor-without-members' => array(StatementFixtures::getStatementWithGroupActorWithoutMembers($id)),
+            'object-is-statement-reference' => array(StatementFixtures::getStatementWithStatementRef($id)),
+            'statement-with-result' => array(StatementFixtures::getStatementWithResult($id)),
+        );
+    }
+
+    private function assertStatementEquals(Statement $expected, Statement $actual, $validateId = true)
+    {
+        if ($validateId) {
+            $this->assertSame($expected->getId(), $actual->getId());
+        }
+
+        $this->assertTrue($actual->getActor()->equals($expected->getActor()));
+        $this->assertTrue($actual->getVerb()->equals($expected->getVerb()));
+        $this->assertTrue($actual->getObject()->equals($expected->getObject()));
+
+        if (null === $expected->getResult()) {
+            $this->assertNull($actual->getResult());
+        } else {
+            $this->assertTrue($actual->getResult()->equals($expected->getResult()));
+        }
+    }
 }
