@@ -95,7 +95,7 @@ final class Verb
     /**
      * Tests if the Verb can be used to void a Statement.
      *
-     * @return boolean True, if the Verb is a void Verb, false otherwise
+     * @return bool True, if the Verb is a void Verb, false otherwise
      */
     public function isVoidVerb()
     {

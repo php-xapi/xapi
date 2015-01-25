@@ -19,43 +19,43 @@ namespace Xabbuh\XApi\Model;
 final class Score
 {
     /**
-     * @var double The scaled score (a number between -1 and 1)
+     * @var float The scaled score (a number between -1 and 1)
      */
     private $scaled;
 
     /**
-     * @var double The Agent's score (a number between min and max)
+     * @var float The Agent's score (a number between min and max)
      */
     private $raw;
 
     /**
-     * @var double The minimum score being possible
+     * @var float The minimum score being possible
      */
     private $min;
 
     /**
-     * @var double The maximum score being possible
+     * @var float The maximum score being possible
      */
     private $max;
 
     /**
-     * @param double $scaled
-     * @param double $raw
-     * @param double $min
-     * @param double $max
+     * @param float $scaled
+     * @param float $raw
+     * @param float $min
+     * @param float $max
      */
     public function __construct($scaled, $raw, $min, $max)
     {
-        $this->scaled = $scaled;
-        $this->raw = $raw;
-        $this->min = $min;
-        $this->max = $max;
+        $this->scaled = (float) $scaled;
+        $this->raw = (float) $raw;
+        $this->min = (float) $min;
+        $this->max = (float) $max;
     }
 
     /**
      * Returns the Agent's scaled score (a number between -1 and 1).
      *
-     * @return double The scaled score
+     * @return float The scaled score
      */
     public function getScaled()
     {
@@ -65,7 +65,7 @@ final class Score
     /**
      * Returns the Agent's score.
      *
-     * @return double The score
+     * @return float The score
      */
     public function getRaw()
     {
@@ -75,7 +75,7 @@ final class Score
     /**
      * Returns the lowest possible score.
      *
-     * @return double The lowest possible score
+     * @return float The lowest possible score
      */
     public function getMin()
     {
@@ -85,7 +85,7 @@ final class Score
     /**
      * Returns the highest possible score.
      *
-     * @return double The highest possible score
+     * @return float The highest possible score
      */
     public function getMax()
     {

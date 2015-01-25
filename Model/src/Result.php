@@ -25,12 +25,12 @@ final class Result
     private $score;
 
     /**
-     * @var boolean Indicates whether or not the attempt was successful
+     * @var bool Indicates whether or not the attempt was successful
      */
     private $success;
 
     /**
-     * @var boolean Indicates whether or not the Activity was completed
+     * @var bool Indicates whether or not the Activity was completed
      */
     private $completion;
 
@@ -73,8 +73,8 @@ final class Result
     /**
      * Returns whether or not the user finished a task successfully.
      *
-     * @return boolean True if the user finished an exercise successfully,
-     *                 false otherwise
+     * @return bool True if the user finished an exercise successfully, false
+     *              otherwise
      */
     public function getSuccess()
     {
@@ -84,8 +84,8 @@ final class Result
     /**
      * Returns the completion status.
      *
-     * @return boolean $completion True, if the Activity was completed, false
-     *                             otherwise
+     * @return bool $completion True, if the Activity was completed, false
+     *                          otherwise
      */
     public function getCompletion()
     {
