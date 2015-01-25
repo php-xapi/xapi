@@ -133,7 +133,7 @@ abstract class Actor
     /**
      * Returns the user account of an existing system.
      *
-     * @return string The user account of an existing system
+     * @return Account The user account of an existing system
      */
     public function getAccount()
     {
