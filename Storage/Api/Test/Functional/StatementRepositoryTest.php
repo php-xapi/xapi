@@ -33,6 +33,11 @@ abstract class StatementRepositoryTest extends \PHPUnit_Framework_TestCase
         $this->cleanDatabase();
     }
 
+    protected function tearDown()
+    {
+        $this->cleanDatabase();
+    }
+
     /**
      * @expectedException \Xabbuh\XApi\Storage\Api\Exception\NotFoundException
      */
