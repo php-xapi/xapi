@@ -358,6 +358,60 @@
             "time": "2014-12-20 21:24:13"
         },
         {
+            "name": "doctrine/instantiator",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/instantiator.git",
+                "reference": "f976e5de371104877ebc89bd8fecb0019ed9c119"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/f976e5de371104877ebc89bd8fecb0019ed9c119",
+                "reference": "f976e5de371104877ebc89bd8fecb0019ed9c119",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3,<8.0-DEV"
+            },
+            "require-dev": {
+                "athletic/athletic": "~0.1.8",
+                "ext-pdo": "*",
+                "ext-phar": "*",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "2.0.*@ALPHA"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Instantiator\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com",
+                    "homepage": "http://ocramius.github.com/"
+                }
+            ],
+            "description": "A small, lightweight utility to instantiate objects in PHP without invoking their constructors",
+            "homepage": "https://github.com/doctrine/instantiator",
+            "keywords": [
+                "constructor",
+                "instantiate"
+            ],
+            "time": "2014-10-13 12:58:55"
+        },
+        {
             "name": "doctrine/lexer",
             "version": "v1.0.1",
             "source": {
@@ -413,21 +467,21 @@
         },
         {
             "name": "doctrine/mongodb",
-            "version": "1.1.6",
+            "version": "1.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb.git",
-                "reference": "4eafa3e719bfe14422f4c1d928771331edd26b39"
+                "reference": "5cd7ab2aeb6783b9f2345a47767b5c0b2d2b3305"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/4eafa3e719bfe14422f4c1d928771331edd26b39",
-                "reference": "4eafa3e719bfe14422f4c1d928771331edd26b39",
+                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/5cd7ab2aeb6783b9f2345a47767b5c0b2d2b3305",
+                "reference": "5cd7ab2aeb6783b9f2345a47767b5c0b2d2b3305",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": ">=2.1.0,<2.5-dev",
-                "ext-mongo": ">=1.2.12,<1.6-dev",
+                "doctrine/common": "~2.1",
+                "ext-mongo": ">=1.2.12,<1.7-dev",
                 "php": ">=5.3.2"
             },
             "require-dev": {
@@ -448,25 +502,20 @@
             ],
             "authors": [
                 {
-                    "name": "Bulat Shakirzyanov",
-                    "email": "mallluhuct@gmail.com",
-                    "homepage": "http://avalanche123.com"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/",
-                    "role": "Creator"
-                },
-                {
-                    "name": "Kris Wallsmith",
-                    "email": "kris.wallsmith@gmail.com",
-                    "homepage": "http://kriswallsmith.net/"
+                    "name": "Jonathan H. Wage",
+                    "email": "jonwage@gmail.com"
                 },
                 {
                     "name": "Jeremy Mikola",
-                    "email": "jmikola@gmail.com",
-                    "homepage": "http://jmikola.net"
+                    "email": "jmikola@gmail.com"
+                },
+                {
+                    "name": "Bulat Shakirzyanov",
+                    "email": "mallluhuct@gmail.com"
+                },
+                {
+                    "name": "Kris Wallsmith",
+                    "email": "kris.wallsmith@gmail.com"
                 }
             ],
             "description": "Doctrine MongoDB Abstraction Layer",
@@ -476,28 +525,29 @@
                 "mongodb",
                 "persistence"
             ],
-            "time": "2014-04-29 21:14:37"
+            "time": "2015-02-25 00:38:50"
         },
         {
             "name": "doctrine/mongodb-odm",
-            "version": "1.0.0-BETA11",
+            "version": "1.0.0-BETA12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb-odm.git",
-                "reference": "d6110fa6840370fc49c5492cb6a30d8432ddfa8d"
+                "reference": "89bb1af203e85019b97b0994818454d2ca8ccb52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/d6110fa6840370fc49c5492cb6a30d8432ddfa8d",
-                "reference": "d6110fa6840370fc49c5492cb6a30d8432ddfa8d",
+                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/89bb1af203e85019b97b0994818454d2ca8ccb52",
+                "reference": "89bb1af203e85019b97b0994818454d2ca8ccb52",
                 "shasum": ""
             },
             "require": {
                 "doctrine/annotations": "~1.0",
                 "doctrine/cache": "~1.0",
                 "doctrine/collections": "~1.1",
-                "doctrine/common": "2.4.*",
+                "doctrine/common": "~2.4",
                 "doctrine/inflector": "~1.0",
+                "doctrine/instantiator": "~1.0.1",
                 "doctrine/mongodb": ">=1.1.5,<2.0",
                 "php": ">=5.3.2",
                 "symfony/console": "~2.0"
@@ -525,25 +575,20 @@
             ],
             "authors": [
                 {
-                    "name": "Bulat Shakirzyanov",
-                    "email": "mallluhuct@gmail.com",
-                    "homepage": "http://avalanche123.com"
-                },
-                {
                     "name": "Jonathan H. Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/",
-                    "role": "Creator"
-                },
-                {
-                    "name": "Kris Wallsmith",
-                    "email": "kris.wallsmith@gmail.com",
-                    "homepage": "http://kriswallsmith.net/"
+                    "email": "jonwage@gmail.com"
                 },
                 {
                     "name": "Jeremy Mikola",
-                    "email": "jmikola@gmail.com",
-                    "homepage": "http://jmikola.net"
+                    "email": "jmikola@gmail.com"
+                },
+                {
+                    "name": "Bulat Shakirzyanov",
+                    "email": "mallluhuct@gmail.com"
+                },
+                {
+                    "name": "Kris Wallsmith",
+                    "email": "kris.wallsmith@gmail.com"
                 }
             ],
             "description": "Doctrine MongoDB Object Document Mapper",
@@ -554,7 +599,7 @@
                 "odm",
                 "persistence"
             ],
-            "time": "2014-06-06 17:50:20"
+            "time": "2015-02-25 00:55:38"
         },
         {
             "name": "rhumsaa/uuid",
@@ -624,17 +669,17 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.6.3",
+            "version": "v2.6.5",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "6ac6491ff60c0e5a941db3ccdc75a07adbb61476"
+                "reference": "53f86497ccd01677e22435cfb7262599450a90d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/6ac6491ff60c0e5a941db3ccdc75a07adbb61476",
-                "reference": "6ac6491ff60c0e5a941db3ccdc75a07adbb61476",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/53f86497ccd01677e22435cfb7262599450a90d1",
+                "reference": "53f86497ccd01677e22435cfb7262599450a90d1",
                 "shasum": ""
             },
             "require": {
@@ -643,6 +688,7 @@
             "require-dev": {
                 "psr/log": "~1.0",
                 "symfony/event-dispatcher": "~2.1",
+                "symfony/phpunit-bridge": "~2.7",
                 "symfony/process": "~2.1"
             },
             "suggest": {
@@ -677,7 +723,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2015-01-06 17:50:02"
+            "time": "2015-03-13 17:37:22"
         },
         {
             "name": "xabbuh/xapi-common",
@@ -732,12 +778,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-data-fixtures.git",
-                "reference": "4ea5f602a47aeedc27ddc4c46dcd6019736234e1"
+                "reference": "b85e4cfe435452a3f3d1dac864ff18874bca787b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-data-fixtures/zipball/4ea5f602a47aeedc27ddc4c46dcd6019736234e1",
-                "reference": "4ea5f602a47aeedc27ddc4c46dcd6019736234e1",
+                "url": "https://api.github.com/repos/xabbuh/xapi-data-fixtures/zipball/b85e4cfe435452a3f3d1dac864ff18874bca787b",
+                "reference": "b85e4cfe435452a3f3d1dac864ff18874bca787b",
                 "shasum": ""
             },
             "require": {
@@ -774,7 +820,7 @@
                 "fixtures",
                 "xAPI"
             ],
-            "time": "2015-01-23 16:52:34"
+            "time": "2015-01-25 17:41:23"
         },
         {
             "name": "xabbuh/xapi-doctrine-storage",
@@ -782,12 +828,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-doctrine-storage.git",
-                "reference": "950776a4d89e9ccda01dce4ee1403f0f0edfd2b7"
+                "reference": "d854530790ea0369feaed939035619b23c39ea65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/950776a4d89e9ccda01dce4ee1403f0f0edfd2b7",
-                "reference": "950776a4d89e9ccda01dce4ee1403f0f0edfd2b7",
+                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/d854530790ea0369feaed939035619b23c39ea65",
+                "reference": "d854530790ea0369feaed939035619b23c39ea65",
                 "shasum": ""
             },
             "require": {
@@ -829,7 +875,7 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2015-01-23 13:32:26"
+            "time": "2015-03-20 20:10:59"
         },
         {
             "name": "xabbuh/xapi-model",
@@ -837,12 +883,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-model.git",
-                "reference": "5000c03917e1edd4fa195fe807c37380602819a7"
+                "reference": "62d790da0fdb468251c1b95136f9ece69802a6e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-model/zipball/5000c03917e1edd4fa195fe807c37380602819a7",
-                "reference": "5000c03917e1edd4fa195fe807c37380602819a7",
+                "url": "https://api.github.com/repos/xabbuh/xapi-model/zipball/62d790da0fdb468251c1b95136f9ece69802a6e4",
+                "reference": "62d790da0fdb468251c1b95136f9ece69802a6e4",
                 "shasum": ""
             },
             "require": {
@@ -881,7 +927,7 @@
                 "models",
                 "xAPI"
             ],
-            "time": "2015-01-23 16:52:34"
+            "time": "2015-03-20 20:10:59"
         },
         {
             "name": "xabbuh/xapi-storage-api",
@@ -889,12 +935,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-storage-api.git",
-                "reference": "fcc189cbe4dbacc6ef0627f6e8c0167ae8b80cdd"
+                "reference": "4fe9e180e80acd604a677d9364b4f5f5dd04a1bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-storage-api/zipball/fcc189cbe4dbacc6ef0627f6e8c0167ae8b80cdd",
-                "reference": "fcc189cbe4dbacc6ef0627f6e8c0167ae8b80cdd",
+                "url": "https://api.github.com/repos/xabbuh/xapi-storage-api/zipball/4fe9e180e80acd604a677d9364b4f5f5dd04a1bc",
+                "reference": "4fe9e180e80acd604a677d9364b4f5f5dd04a1bc",
                 "shasum": ""
             },
             "require": {
@@ -933,7 +979,7 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2015-01-23 13:32:26"
+            "time": "2015-03-20 20:10:59"
         }
     ],
     "packages-dev": [],
