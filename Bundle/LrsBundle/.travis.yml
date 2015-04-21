@@ -5,6 +5,7 @@ language: php
 env:
   global:
     - SYMFONY_VERSION=""
+    - deps=""
 
 php:
   - 5.3
@@ -15,6 +16,8 @@ php:
 matrix:
   fast_finish: true
   include:
+    - php: 5.3
+      env: deps="low"
     - php: 5.6
       env: SYMFONY_VERSION="2.3.x"
     - php: 5.6
@@ -28,7 +31,8 @@ before_install:
   - if [ "$SYMFONY_VERSION" != "" ]; then composer require symfony/symfony:${SYMFONY_VERSION} --dev --no-update; fi
 
 install:
-  - composer install
+  - if [ "$deps" = "low" ]; then composer update --prefer-lowest --prefer-stable; fi
+  - if [ "$deps" = "" ]; then composer install; fi
 
 script:
   - phpunit --coverage-clover=coverage.clover
