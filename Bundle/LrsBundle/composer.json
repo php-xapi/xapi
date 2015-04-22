@@ -24,6 +24,7 @@
     },
     "require-dev": {
         "matthiasnoback/symfony-dependency-injection-test": "~0.6",
+        "phpunit/phpunit": "~4.0",
         "xabbuh/xapi-data-fixtures": "~1.0",
         "xabbuh/xapi-mongodb-storage": "~1.0"
     },

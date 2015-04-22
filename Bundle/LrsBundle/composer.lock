@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "50e06d0ab6a47fecd70a5a987669fc53",
+    "hash": "97aca4a66cd9b75b48cc65bc54ee0252",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -631,9 +631,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -734,9 +734,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -804,9 +804,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -855,9 +855,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -905,9 +905,9 @@
             ],
             "authors": [
                 {
-                    "name": "Johannes M. Schmitt",
+                    "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -2141,12 +2141,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-mongodb-storage.git",
-                "reference": "d86f9bf318d7f70cfdd2fbed0ccd1b84d2fb637c"
+                "reference": "cbe998bed5fff93306b9285199ec4c4718ff8b85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-mongodb-storage/zipball/d86f9bf318d7f70cfdd2fbed0ccd1b84d2fb637c",
-                "reference": "d86f9bf318d7f70cfdd2fbed0ccd1b84d2fb637c",
+                "url": "https://api.github.com/repos/xabbuh/xapi-mongodb-storage/zipball/cbe998bed5fff93306b9285199ec4c4718ff8b85",
+                "reference": "cbe998bed5fff93306b9285199ec4c4718ff8b85",
                 "shasum": ""
             },
             "require": {
@@ -2194,7 +2194,7 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2015-04-21 21:09:24"
+            "time": "2015-04-22 15:45:21"
         },
         {
             "name": "xabbuh/xapi-serializer",
@@ -2305,16 +2305,16 @@
     "packages-dev": [
         {
             "name": "matthiasnoback/symfony-config-test",
-            "version": "v0.4.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/matthiasnoback/SymfonyConfigTest.git",
-                "reference": "8d3a62aa4ba4e9f2c4d3e8a635a047cd74e6c102"
+                "reference": "fe88b915a18399a1848ea30c77b56d099b771a38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/matthiasnoback/SymfonyConfigTest/zipball/8d3a62aa4ba4e9f2c4d3e8a635a047cd74e6c102",
-                "reference": "8d3a62aa4ba4e9f2c4d3e8a635a047cd74e6c102",
+                "url": "https://api.github.com/repos/matthiasnoback/SymfonyConfigTest/zipball/fe88b915a18399a1848ea30c77b56d099b771a38",
+                "reference": "fe88b915a18399a1848ea30c77b56d099b771a38",
                 "shasum": ""
             },
             "require": {
@@ -2348,32 +2348,32 @@
                 "phpunit",
                 "symfony"
             ],
-            "time": "2014-10-12 20:31:08"
+            "time": "2015-04-10 09:28:03"
         },
         {
             "name": "matthiasnoback/symfony-dependency-injection-test",
-            "version": "v0.8.0",
-            "target-dir": "Matthias/SymfonyDependencyInjectionTest",
+            "version": "v0.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/matthiasnoback/SymfonyDependencyInjectionTest.git",
-                "reference": "807c4374a7d65e7fd07f1383d3260c9178cb41d4"
+                "reference": "588fe3cec8449b721c1aba4da7e6065d08c4721b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/matthiasnoback/SymfonyDependencyInjectionTest/zipball/807c4374a7d65e7fd07f1383d3260c9178cb41d4",
-                "reference": "807c4374a7d65e7fd07f1383d3260c9178cb41d4",
+                "url": "https://api.github.com/repos/matthiasnoback/SymfonyDependencyInjectionTest/zipball/588fe3cec8449b721c1aba4da7e6065d08c4721b",
+                "reference": "588fe3cec8449b721c1aba4da7e6065d08c4721b",
                 "shasum": ""
             },
             "require": {
-                "matthiasnoback/symfony-config-test": "0.*",
+                "matthiasnoback/symfony-config-test": "0.*|~1.0",
                 "phpunit/phpunit": ">=3",
                 "sebastian/exporter": "~1",
-                "symfony/dependency-injection": "2.*"
+                "symfony/config": "^2.0.5",
+                "symfony/dependency-injection": "^2.0.5"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
+                "psr-4": {
                     "Matthias\\SymfonyDependencyInjectionTest\\": ""
                 }
             },
@@ -2395,7 +2395,7 @@
                 "dependency injection",
                 "phpunit"
             ],
-            "time": "2014-07-07 07:35:26"
+            "time": "2015-04-19 11:45:22"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
