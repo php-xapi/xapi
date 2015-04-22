@@ -13,8 +13,10 @@
     ],
     "require": {
         "jms/serializer-bundle": "~0.9",
-        "symfony/http-foundation": "~2.2",
-        "symfony/http-kernel": "~2.2",
+        "symfony/config": "~2.3",
+        "symfony/dependency-injection": "~2.3",
+        "symfony/http-foundation": "~2.3",
+        "symfony/http-kernel": "~2.3",
         "xabbuh/xapi-common": "~1.0",
         "xabbuh/xapi-model": "~1.0",
         "xabbuh/xapi-serializer": "~1.0",

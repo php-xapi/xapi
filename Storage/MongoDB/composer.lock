@@ -821,12 +821,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-doctrine-storage.git",
-                "reference": "d854530790ea0369feaed939035619b23c39ea65"
+                "reference": "8b070470f8c6921ce908d629cbb388279c0755cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/d854530790ea0369feaed939035619b23c39ea65",
-                "reference": "d854530790ea0369feaed939035619b23c39ea65",
+                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/8b070470f8c6921ce908d629cbb388279c0755cc",
+                "reference": "8b070470f8c6921ce908d629cbb388279c0755cc",
                 "shasum": ""
             },
             "require": {
@@ -868,7 +868,7 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2015-03-20 20:10:59"
+            "time": "2015-04-21 21:09:24"
         },
         {
             "name": "xabbuh/xapi-model",
@@ -876,12 +876,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-model.git",
-                "reference": "62d790da0fdb468251c1b95136f9ece69802a6e4"
+                "reference": "4294e950aead7ec744088b6373e468ce06234329"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-model/zipball/62d790da0fdb468251c1b95136f9ece69802a6e4",
-                "reference": "62d790da0fdb468251c1b95136f9ece69802a6e4",
+                "url": "https://api.github.com/repos/xabbuh/xapi-model/zipball/4294e950aead7ec744088b6373e468ce06234329",
+                "reference": "4294e950aead7ec744088b6373e468ce06234329",
                 "shasum": ""
             },
             "require": {
@@ -920,7 +920,7 @@
                 "models",
                 "xAPI"
             ],
-            "time": "2015-03-20 20:10:59"
+            "time": "2015-04-21 21:09:24"
         },
         {
             "name": "xabbuh/xapi-storage-api",
