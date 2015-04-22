@@ -19,9 +19,14 @@ use Xabbuh\XApi\DataFixtures\StatementFixtures;
  */
 class StatementSerializerListenerTest extends AbstractSerializerListenerTest
 {
-    public function __construct()
+    protected function getDomainObjectClass()
     {
-        parent::__construct('Statement', 'serializeStatement');
+        return 'Statement';
+    }
+
+    protected function getSerializerMethod()
+    {
+        return 'serializeStatement';
     }
 
     protected function createListener()

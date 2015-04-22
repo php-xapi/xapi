@@ -20,10 +20,6 @@ use Xabbuh\XApi\Bundle\LrsBundle\Listener\AbstractSerializerListener;
  */
 abstract class AbstractSerializerListenerTest extends \PHPUnit_Framework_TestCase
 {
-    protected $domainObjectClass;
-
-    protected $serializerMethod;
-
     /**
      * @var \PHPUnit_Framework_MockObject_MockObject
      */
@@ -33,12 +29,6 @@ abstract class AbstractSerializerListenerTest extends \PHPUnit_Framework_TestCas
      * @var AbstractSerializerListener
      */
     protected $listener;
-
-    public function __construct($domainObjectClass, $serializerMethod)
-    {
-        $this->domainObjectClass = $domainObjectClass;
-        $this->serializerMethod = $serializerMethod;
-    }
 
     protected function setUp()
     {
@@ -59,7 +49,7 @@ abstract class AbstractSerializerListenerTest extends \PHPUnit_Framework_TestCas
         $this
             ->serializer
             ->expects($this->once())
-            ->method($this->serializerMethod)
+            ->method($this->getSerializerMethod())
             ->with($this->equalTo($domainObject))
             ->will($this->returnValue('serialized-domain-object'));
 
@@ -91,13 +81,17 @@ abstract class AbstractSerializerListenerTest extends \PHPUnit_Framework_TestCas
         $this->assertNull($event->getResponse());
     }
 
+    abstract protected function getDomainObjectClass();
+
+    abstract protected function getSerializerMethod();
+
     abstract protected function createListener();
 
     abstract protected function getDomainObject();
 
     private function createSerializerMock()
     {
-        return $this->getMock('\Xabbuh\XApi\Serializer\\'.$this->domainObjectClass.'SerializerInterface');
+        return $this->getMock('\Xabbuh\XApi\Serializer\\'.$this->getDomainObjectClass().'SerializerInterface');
     }
 
     /**
