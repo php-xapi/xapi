@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e409ca053523e8d73001b06baa5f1f17",
+    "hash": "b17c15604ca970a450be06d6a9243870",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2034,12 +2034,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-doctrine-storage.git",
-                "reference": "d854530790ea0369feaed939035619b23c39ea65"
+                "reference": "8b070470f8c6921ce908d629cbb388279c0755cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/d854530790ea0369feaed939035619b23c39ea65",
-                "reference": "d854530790ea0369feaed939035619b23c39ea65",
+                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/8b070470f8c6921ce908d629cbb388279c0755cc",
+                "reference": "8b070470f8c6921ce908d629cbb388279c0755cc",
                 "shasum": ""
             },
             "require": {
@@ -2081,7 +2081,7 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2015-03-20 20:10:59"
+            "time": "2015-04-21 21:09:24"
         },
         {
             "name": "xabbuh/xapi-model",
@@ -2089,12 +2089,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-model.git",
-                "reference": "62d790da0fdb468251c1b95136f9ece69802a6e4"
+                "reference": "4294e950aead7ec744088b6373e468ce06234329"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-model/zipball/62d790da0fdb468251c1b95136f9ece69802a6e4",
-                "reference": "62d790da0fdb468251c1b95136f9ece69802a6e4",
+                "url": "https://api.github.com/repos/xabbuh/xapi-model/zipball/4294e950aead7ec744088b6373e468ce06234329",
+                "reference": "4294e950aead7ec744088b6373e468ce06234329",
                 "shasum": ""
             },
             "require": {
@@ -2133,7 +2133,7 @@
                 "models",
                 "xAPI"
             ],
-            "time": "2015-03-20 20:10:59"
+            "time": "2015-04-21 21:09:24"
         },
         {
             "name": "xabbuh/xapi-mongodb-storage",
@@ -2141,12 +2141,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-mongodb-storage.git",
-                "reference": "462afd97219d7aa956931b1df02b662e6f6adb1f"
+                "reference": "d86f9bf318d7f70cfdd2fbed0ccd1b84d2fb637c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-mongodb-storage/zipball/462afd97219d7aa956931b1df02b662e6f6adb1f",
-                "reference": "462afd97219d7aa956931b1df02b662e6f6adb1f",
+                "url": "https://api.github.com/repos/xabbuh/xapi-mongodb-storage/zipball/d86f9bf318d7f70cfdd2fbed0ccd1b84d2fb637c",
+                "reference": "d86f9bf318d7f70cfdd2fbed0ccd1b84d2fb637c",
                 "shasum": ""
             },
             "require": {
@@ -2194,7 +2194,7 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2015-03-20 20:46:16"
+            "time": "2015-04-21 21:09:24"
         },
         {
             "name": "xabbuh/xapi-serializer",
@@ -2202,12 +2202,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-serializer.git",
-                "reference": "8f6ad74a3e86da7cb4cf1bad011a3b1ad329ddba"
+                "reference": "a7c2d728c196fd40afa5ffa676f3ae7bcfbca18a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-serializer/zipball/8f6ad74a3e86da7cb4cf1bad011a3b1ad329ddba",
-                "reference": "8f6ad74a3e86da7cb4cf1bad011a3b1ad329ddba",
+                "url": "https://api.github.com/repos/xabbuh/xapi-serializer/zipball/a7c2d728c196fd40afa5ffa676f3ae7bcfbca18a",
+                "reference": "a7c2d728c196fd40afa5ffa676f3ae7bcfbca18a",
                 "shasum": ""
             },
             "require": {
@@ -2247,7 +2247,7 @@
                 "serializer",
                 "xAPI"
             ],
-            "time": "2015-03-20 20:10:59"
+            "time": "2015-04-21 21:09:24"
         },
         {
             "name": "xabbuh/xapi-storage-api",

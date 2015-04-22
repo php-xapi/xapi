@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "85c60cf24043855257e249b112579351",
+    "hash": "f7b33bfd21e530df9b17ce4228b0c637",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2115,16 +2115,16 @@
         },
         {
             "name": "matthiasnoback/symfony-config-test",
-            "version": "v0.4.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/matthiasnoback/SymfonyConfigTest.git",
-                "reference": "8d3a62aa4ba4e9f2c4d3e8a635a047cd74e6c102"
+                "reference": "fe88b915a18399a1848ea30c77b56d099b771a38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/matthiasnoback/SymfonyConfigTest/zipball/8d3a62aa4ba4e9f2c4d3e8a635a047cd74e6c102",
-                "reference": "8d3a62aa4ba4e9f2c4d3e8a635a047cd74e6c102",
+                "url": "https://api.github.com/repos/matthiasnoback/SymfonyConfigTest/zipball/fe88b915a18399a1848ea30c77b56d099b771a38",
+                "reference": "fe88b915a18399a1848ea30c77b56d099b771a38",
                 "shasum": ""
             },
             "require": {
@@ -2158,32 +2158,32 @@
                 "phpunit",
                 "symfony"
             ],
-            "time": "2014-10-12 20:31:08"
+            "time": "2015-04-10 09:28:03"
         },
         {
             "name": "matthiasnoback/symfony-dependency-injection-test",
             "version": "v0.7.3",
-            "target-dir": "Matthias/SymfonyDependencyInjectionTest",
             "source": {
                 "type": "git",
                 "url": "https://github.com/matthiasnoback/SymfonyDependencyInjectionTest.git",
-                "reference": "a0595d4a2e6e02a644506337e2f66bc40058267c"
+                "reference": "588fe3cec8449b721c1aba4da7e6065d08c4721b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/matthiasnoback/SymfonyDependencyInjectionTest/zipball/a0595d4a2e6e02a644506337e2f66bc40058267c",
-                "reference": "a0595d4a2e6e02a644506337e2f66bc40058267c",
+                "url": "https://api.github.com/repos/matthiasnoback/SymfonyDependencyInjectionTest/zipball/588fe3cec8449b721c1aba4da7e6065d08c4721b",
+                "reference": "588fe3cec8449b721c1aba4da7e6065d08c4721b",
                 "shasum": ""
             },
             "require": {
-                "matthiasnoback/symfony-config-test": "0.*",
+                "matthiasnoback/symfony-config-test": "0.*|~1.0",
                 "phpunit/phpunit": ">=3",
                 "sebastian/exporter": "~1",
-                "symfony/dependency-injection": "2.*"
+                "symfony/config": "^2.0.5",
+                "symfony/dependency-injection": "^2.0.5"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
+                "psr-4": {
                     "Matthias\\SymfonyDependencyInjectionTest\\": ""
                 }
             },
@@ -2205,7 +2205,7 @@
                 "dependency injection",
                 "phpunit"
             ],
-            "time": "2015-04-18 07:23:24"
+            "time": "2015-04-19 11:45:22"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
