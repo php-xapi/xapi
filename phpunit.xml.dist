@@ -21,6 +21,8 @@
                 <directory>./Bundle/*/Resources</directory>
                 <directory>./Bundle/*/Tests</directory>
                 <directory>./Bundle/*/vendor</directory>
+                <directory>./DataFixtures</directory>
+                <directory>./Storage/*/Test</directory>
                 <directory>./Storage/*/Tests</directory>
                 <directory>./Storage/*/vendor</directory>
                 <directory>./vendor</directory>

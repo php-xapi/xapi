@@ -26,7 +26,11 @@
             "definition": {
                 "name" : {
                     "en-US":"Some Awesome Website"
-                }
+                },
+                "description" : {
+                    "en-US":"The visited website"
+                },
+                "type":"http://example.com/definition-type"
             }
         }
     }

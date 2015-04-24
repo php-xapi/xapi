@@ -47,6 +47,17 @@ abstract class StatementRepositoryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @expectedException \Xabbuh\XApi\Storage\Api\Exception\NotFoundException
+     * @dataProvider getStatementsWithoutId
+     */
+    public function testFetchingStatementAsVoidedStatementThrowsException(Statement $statement)
+    {
+        $statementId = $this->statementRepository->storeStatement($statement);
+
+        $this->statementRepository->findVoidedStatementById($statementId);
+    }
+
+    /**
      * @dataProvider getStatementsWithoutId
      */
     public function testUuidIsGeneratedForNewStatementIfNotPresent(Statement $statement)
@@ -98,6 +109,61 @@ abstract class StatementRepositoryTest extends \PHPUnit_Framework_TestCase
     public function getStatementsWithoutId()
     {
         return $this->getStatements(null);
+    }
+
+    /**
+     * @expectedException \Xabbuh\XApi\Storage\Api\Exception\NotFoundException
+     */
+    public function testFetchingNonExistingVoidStatementThrowsException()
+    {
+        $this->statementRepository->findVoidedStatementById('12345678-1234-5678-8234-567812345678');
+    }
+
+    /**
+     * @expectedException \Xabbuh\XApi\Storage\Api\Exception\NotFoundException
+     */
+    public function testFetchingVoidStatementAsStatementThrowsException()
+    {
+        $statement = StatementFixtures::getVoidStatement(null);
+        $statementId = $this->statementRepository->storeStatement($statement);
+
+        $this->statementRepository->findStatementById($statementId);
+    }
+
+    public function testUuidIsGeneratedForNewVoidStatementIfNotPresent()
+    {
+        $statement = StatementFixtures::getVoidStatement(null);
+        $statementId = $this->statementRepository->storeStatement($statement);
+
+        $this->assertNull($statement->getId());
+        $this->assertRegExp(self::UUID_REGEXP, $statementId);
+    }
+
+    public function testUuidIsNotGeneratedForNewVoidStatementIfPresent()
+    {
+        $statement = StatementFixtures::getVoidStatement();
+        $statementId = $this->statementRepository->storeStatement($statement);
+
+        $this->assertEquals($statement->getId(), $statementId);
+    }
+
+    public function testCreatedVoidStatementCanBeRetrievedByOriginalId()
+    {
+        $statement = StatementFixtures::getVoidStatement();
+        $this->statementRepository->storeStatement($statement);
+        $fetchedStatement = $this->statementRepository->findVoidedStatementById($statement->getId());
+
+        $this->assertStatementEquals($statement, $fetchedStatement);
+    }
+
+    public function testCreatedVoidStatementCanBeRetrievedByGeneratedId()
+    {
+        $statement = StatementFixtures::getVoidStatement(null);
+        $statementId = $this->statementRepository->storeStatement($statement);
+        $fetchedStatement = $this->statementRepository->findVoidedStatementById($statementId);
+
+        $this->assertNull($statement->getId());
+        $this->assertStatementEquals($statement, $fetchedStatement, false);
     }
 
     abstract protected function createStatementRepository();

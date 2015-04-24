@@ -5,6 +5,6 @@
         <property name="success" type="boolean" expose="true"/>
         <property name="completion" type="boolean" expose="true"/>
         <property name="response" type="string" expose="true"/>
-        <property name="duration" type="double" expose="true"/>
+        <property name="duration" type="string" expose="true"/>
     </class>
 </serializer>

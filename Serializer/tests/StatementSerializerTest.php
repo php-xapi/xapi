@@ -121,6 +121,11 @@ class StatementSerializerTest extends AbstractSerializerTest
         $this->assertEquals('will visit', $display['en-US']);
 
         $this->assertInstanceOf('\Xabbuh\XApi\Model\Activity', $subStatement->getObject());
+
+        $definition = $subStatement->getObject()->getDefinition();
+        $this->assertSame(array('en-US' => 'Some Awesome Website'), $definition->getName());
+        $this->assertSame(array('en-US' => 'The visited website'), $definition->getDescription());
+        $this->assertSame('http://example.com/definition-type', $definition->getType());
     }
 
     public function testDeserializeWithResult()
@@ -138,6 +143,8 @@ class StatementSerializerTest extends AbstractSerializerTest
         $this->assertEquals(50, $result->getScore()->getMax());
         $this->assertTrue($result->getSuccess());
         $this->assertTrue($result->getCompletion());
+        $this->assertSame('Wow, nice work!', $result->getResponse());
+        $this->assertSame('PT1H0M0S', $result->getDuration());
     }
 
     public function testDeserializeStatementCollection()

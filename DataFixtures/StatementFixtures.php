@@ -108,8 +108,24 @@ class StatementFixtures
         $verb = new Verb('http://adlnet.gov/expapi/verbs/created', array('en-US' => 'created'));
         $activity = new Activity('http://example.adlnet.gov/xapi/example/activity');
         $score = new Score(0.95, 31, 0, 50);
-        $result = new Result($score, true, true);
+        $result = new Result($score, true, true, 'Wow, nice work!', 'PT1H0M0S');
 
         return new Statement($id, $actor, $verb, $activity, $result);
+    }
+
+    /**
+     * Loads a void statement.
+     *
+     * @param string $id The id of the new Statement
+     *
+     * @return Statement
+     */
+    public static function getVoidStatement($id = self::DEFAULT_STATEMENT_ID)
+    {
+        $actor = new Agent('mailto:xapi@adlnet.gov');
+        $verb = Verb::createVoidVerb();
+        $object = new StatementReference('e05aa883-acaf-40ad-bf54-02c8ce485fb0');
+
+        return new Statement($id, $actor, $verb, $object);
     }
 }
