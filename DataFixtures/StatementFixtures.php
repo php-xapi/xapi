@@ -13,10 +13,12 @@ namespace Xabbuh\XApi\DataFixtures;
 
 use Xabbuh\XApi\Model\Agent;
 use Xabbuh\XApi\Model\Activity;
+use Xabbuh\XApi\Model\Definition;
 use Xabbuh\XApi\Model\Result;
 use Xabbuh\XApi\Model\Score;
 use Xabbuh\XApi\Model\Statement;
 use Xabbuh\XApi\Model\StatementReference;
+use Xabbuh\XApi\Model\SubStatement;
 use Xabbuh\XApi\Model\Verb;
 
 /**
@@ -111,6 +113,31 @@ class StatementFixtures
         $result = new Result($score, true, true, 'Wow, nice work!', 'PT1H0M0S');
 
         return new Statement($id, $actor, $verb, $activity, $result);
+    }
+
+    /**
+     * Loads a statement including a sub statement.
+     *
+     * @param string $id The id of the new Statement
+     *
+     * @return Statement
+     */
+    public static function getStatementWithSubStatement($id = self::DEFAULT_STATEMENT_ID)
+    {
+        $actor = new Agent('mailto:test@example.com');
+        $verb = new Verb('http://example.com/visited', array('en-US' => 'will visit'));
+        $definition = new Definition(
+            array('en-US' => 'Some Awesome Website'),
+            array('en-US' => 'The visited website'),
+            'http://example.com/definition-type'
+        );
+        $activity = new Activity('http://example.com/website', $definition);
+        $subStatement = new SubStatement(null, $actor, $verb, $activity);
+
+        $actor = new Agent('mailto:test@example.com');
+        $verb = new Verb('http://example.com/planned', array('en-US' => 'planned'));
+
+        return new Statement($id, $actor, $verb, $subStatement);
     }
 
     /**

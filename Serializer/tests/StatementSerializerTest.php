@@ -12,6 +12,7 @@
 namespace Xabbuh\XApi\Serializer\Tests;
 
 use Xabbuh\XApi\DataFixtures\StatementFixtures;
+use Xabbuh\XApi\Model\Statement;
 use Xabbuh\XApi\Serializer\StatementSerializer;
 use Xabbuh\XApi\Serializer\Tests\Fixtures\StatementJsonFixtures;
 
@@ -31,120 +32,52 @@ class StatementSerializerTest extends AbstractSerializerTest
         $this->statementSerializer = new StatementSerializer($this->serializer);
     }
 
-    public function testDeserializeMinimalStatement()
+    /**
+     * @dataProvider statementProvider
+     *
+     * @param string    $serializedStatement
+     * @param Statement $expectedStatement
+     */
+    public function testDeserializeStatement($serializedStatement, Statement $expectedStatement)
     {
-        /** @var \Xabbuh\XApi\Model\Statement $statement */
-        $statement = $this->statementSerializer->deserializeStatement(
-            StatementJsonFixtures::getMinimalStatement()
-        );
+        $statement = $this->statementSerializer->deserializeStatement($serializedStatement);
 
-        $this->assertEquals(
-            '12345678-1234-5678-8234-567812345678',
-            $statement->getId()
-        );
-        $this->assertEquals(
-            'mailto:xapi@adlnet.gov',
-            $statement->getActor()->getMbox()
-        );
-
-        $verb = $statement->getVerb();
-        $display = $verb->getDisplay();
-        $this->assertEquals('http://adlnet.gov/expapi/verbs/created', $verb->getId());
-        $this->assertEquals('created', $display['en-US']);
-
-        /** @var \Xabbuh\XApi\Model\Activity $activity */
-        $activity = $statement->getObject();
-        $this->assertEquals(
-            'http://example.adlnet.gov/xapi/example/activity',
-            $activity->getId()
-        );
+        $this->assertTrue($expectedStatement->equals($statement));
     }
 
-    public function testDeserializeWithStatementReference()
+    /**
+     * @dataProvider statementProvider
+     *
+     * @param string    $expectedStatement
+     * @param Statement $statement
+     */
+    public function testSerializeStatement($expectedStatement, Statement $statement)
     {
-        /** @var \Xabbuh\XApi\Model\Statement $statement */
-        $statement = $this->statementSerializer->deserializeStatement(
-            StatementJsonFixtures::getStatementWithStatementRef()
-        );
+        $serializedStatement = $this->statementSerializer->serializeStatement($statement);
 
-        $this->assertEquals(
-            '12345678-1234-5678-8234-567812345678',
-            $statement->getId()
-        );
-        $this->assertEquals(
-            'mailto:xapi@adlnet.gov',
-            $statement->getActor()->getMbox()
-        );
-
-        $verb = $statement->getVerb();
-        $display = $verb->getDisplay();
-        $this->assertEquals('http://adlnet.gov/expapi/verbs/created', $verb->getId());
-        $this->assertEquals('created', $display['en-US']);
-
-        /** @var \Xabbuh\XApi\Model\StatementReference $statementReference */
-        $statementReference = $statement->getObject();
-        $this->assertEquals(
-            '8f87ccde-bb56-4c2e-ab83-44982ef22df0',
-            $statementReference->getStatementId()
-        );
+        $this->assertJsonEquals($expectedStatement, $serializedStatement);
     }
 
-    public function testDeserializeWithSubStatement()
+    public function statementProvider()
     {
-        /** @var \Xabbuh\XApi\Model\Statement $statement */
-        $statement = $this->statementSerializer->deserializeStatement(
-            StatementJsonFixtures::getStatementWithSubStatement()
+        return array(
+            'minimal-statement' => array(
+                StatementJsonFixtures::getMinimalStatement(),
+                StatementFixtures::getMinimalStatement(),
+            ),
+            'statement-reference' => array(
+                StatementJsonFixtures::getStatementWithStatementRef(),
+                StatementFixtures::getStatementWithStatementRef(),
+            ),
+            'statement-with-sub-statement' => array(
+                StatementJsonFixtures::getStatementWithSubStatement(),
+                StatementFixtures::getStatementWithSubStatement(),
+            ),
+            'statement-with-result' => array(
+                StatementJsonFixtures::getStatementWithResult(),
+                StatementFixtures::getStatementWithResult(),
+            ),
         );
-
-        $this->assertEquals(
-            'mailto:test@example.com',
-            $statement->getActor()->getMbox()
-        );
-
-        $verb = $statement->getVerb();
-        $display = $verb->getDisplay();
-        $this->assertEquals('http://example.com/planned', $verb->getId());
-        $this->assertEquals('planned', $display['en-US']);
-
-        /** @var \Xabbuh\XApi\Model\SubStatement $subStatement */
-        $subStatement = $statement->getObject();
-        $this->assertInstanceOf('\Xabbuh\XApi\Model\SubStatement', $subStatement);
-
-        $this->assertEquals(
-            'mailto:test@example.com',
-            $subStatement->getActor()->getMbox()
-        );
-
-        $verb = $subStatement->getVerb();
-        $display = $verb->getDisplay();
-        $this->assertEquals('http://example.com/visited', $verb->getId());
-        $this->assertEquals('will visit', $display['en-US']);
-
-        $this->assertInstanceOf('\Xabbuh\XApi\Model\Activity', $subStatement->getObject());
-
-        $definition = $subStatement->getObject()->getDefinition();
-        $this->assertSame(array('en-US' => 'Some Awesome Website'), $definition->getName());
-        $this->assertSame(array('en-US' => 'The visited website'), $definition->getDescription());
-        $this->assertSame('http://example.com/definition-type', $definition->getType());
-    }
-
-    public function testDeserializeWithResult()
-    {
-        /** @var \Xabbuh\XApi\Model\Statement $statement */
-        $statement = $this->statementSerializer->deserializeStatement(
-            StatementJsonFixtures::getStatementWithResult()
-        );
-        $result = $statement->getResult();
-
-        $this->assertInstanceOf('\Xabbuh\XApi\Model\Result', $result);
-        $this->assertEquals(0.95, $result->getScore()->getScaled(), '', 0.01);
-        $this->assertEquals(31, $result->getScore()->getRaw());
-        $this->assertEquals(0, $result->getScore()->getMin());
-        $this->assertEquals(50, $result->getScore()->getMax());
-        $this->assertTrue($result->getSuccess());
-        $this->assertTrue($result->getCompletion());
-        $this->assertSame('Wow, nice work!', $result->getResponse());
-        $this->assertSame('PT1H0M0S', $result->getDuration());
     }
 
     public function testDeserializeStatementCollection()
@@ -163,36 +96,6 @@ class StatementSerializerTest extends AbstractSerializerTest
         $this->assertEquals(
             '12345678-1234-5678-8234-567812345679',
             $statements[1]->getId()
-        );
-    }
-
-    public function testSerializeMinimalStatement()
-    {
-        $statement = StatementFixtures::getMinimalStatement();
-
-        $this->assertJsonEquals(
-            StatementJsonFixtures::getMinimalStatement(),
-            $this->statementSerializer->serializeStatement($statement)
-        );
-    }
-
-    public function testSerializeWithStatementReference()
-    {
-        $statement = StatementFixtures::getStatementWithStatementRef();
-
-        $this->assertJsonEquals(
-            StatementJsonFixtures::getStatementWithStatementRef(),
-            $this->statementSerializer->serializeStatement($statement)
-        );
-    }
-
-    public function testSerializeWithResult()
-    {
-        $statement = StatementFixtures::getStatementWithResult();
-
-        $this->assertJsonEquals(
-            StatementJsonFixtures::getStatementWithResult(),
-            $this->statementSerializer->serializeStatement($statement)
         );
     }
 }

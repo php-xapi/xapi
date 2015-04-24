@@ -1,4 +1,5 @@
 {
+    "id":"12345678-1234-5678-8234-567812345678",
     "actor": {
         "objectType": "Agent",
         "mbox":"mailto:test@example.com"
@@ -31,7 +32,8 @@
                     "en-US":"The visited website"
                 },
                 "type":"http://example.com/definition-type"
-            }
+            },
+            "objectType":"Activity"
         }
     }
 }
