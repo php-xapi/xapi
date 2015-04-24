@@ -1,3 +1,4 @@
+/phpunit.xml
 /Storage/MongoDB/Tests/hydrators
 /Storage/MongoDB/Tests/proxies
 /vendor
