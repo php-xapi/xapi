@@ -6,5 +6,6 @@
         <property name="actor" type="Xabbuh\XApi\Model\Actor" expose="true"/>
         <property name="object" type="Xabbuh\XApi\Model\Object" expose="true"/>
         <property name="result" type="Xabbuh\XApi\Model\Result" expose="true"/>
+        <property name="authority" type="Xabbuh\XApi\Model\Actor" expose="true"/>
     </class>
 </serializer>

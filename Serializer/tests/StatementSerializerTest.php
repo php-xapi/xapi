@@ -77,6 +77,14 @@ class StatementSerializerTest extends AbstractSerializerTest
                 StatementJsonFixtures::getStatementWithResult(),
                 StatementFixtures::getStatementWithResult(),
             ),
+            'statement-with-agent-authority' => array(
+                StatementJsonFixtures::getStatementWithAgentAuthority(),
+                StatementFixtures::getStatementWithAgentAuthority(),
+            ),
+            'statement-with-group-authority' => array(
+                StatementJsonFixtures::getStatementWithGroupAuthority(),
+                StatementFixtures::getStatementWithGroupAuthority(),
+            ),
         );
     }
 

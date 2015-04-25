@@ -11,6 +11,8 @@
 
 namespace Xabbuh\XApi\Storage\Api\Mapping;
 
+use Xabbuh\XApi\Model\Actor;
+use Xabbuh\XApi\Model\Result;
 use Xabbuh\XApi\Model\Statement;
 
 /**
@@ -20,15 +22,39 @@ use Xabbuh\XApi\Model\Statement;
  */
 class MappedStatement
 {
+    /**
+     * @var string
+     */
     public $id;
+
+    /**
+     * @var Actor
+     */
     public $actor;
+
+    /**
+     * @var MappedVerb
+     */
     public $verb;
+
+    /**
+     * @var \Xabbuh\XApi\Model\Object
+     */
     public $object;
+
+    /**
+     * @var Result
+     */
     public $result;
+
+    /**
+     * @var Actor
+     */
+    public $authority;
 
     public function getModel()
     {
-        return new Statement($this->id, $this->actor, $this->verb->getModel(), $this->object, $this->result);
+        return new Statement($this->id, $this->actor, $this->verb->getModel(), $this->object, $this->result, $this->authority);
     }
 
     public static function createFromModel(Statement $statement)
@@ -39,6 +65,7 @@ class MappedStatement
         $mappedStatement->verb = MappedVerb::createFromModel($statement->getVerb());
         $mappedStatement->object = $statement->getObject();
         $mappedStatement->result = $statement->getResult();
+        $mappedStatement->authority = $statement->getAuthority();
 
         return $mappedStatement;
     }

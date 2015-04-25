@@ -11,9 +11,11 @@
 
 namespace Xabbuh\XApi\DataFixtures;
 
+use Xabbuh\XApi\Model\Account;
 use Xabbuh\XApi\Model\Agent;
 use Xabbuh\XApi\Model\Activity;
 use Xabbuh\XApi\Model\Definition;
+use Xabbuh\XApi\Model\Group;
 use Xabbuh\XApi\Model\Result;
 use Xabbuh\XApi\Model\Score;
 use Xabbuh\XApi\Model\Statement;
@@ -138,6 +140,42 @@ class StatementFixtures
         $verb = new Verb('http://example.com/planned', array('en-US' => 'planned'));
 
         return new Statement($id, $actor, $verb, $subStatement);
+    }
+
+    /**
+     * Loads a statement including an agent authority.
+     *
+     * @param string $id The id of the new Statement
+     *
+     * @return Statement
+     */
+    public static function getStatementWithAgentAuthority($id = self::DEFAULT_STATEMENT_ID)
+    {
+        $actor = new Agent('mailto:xapi@adlnet.gov');
+        $verb = new Verb('http://adlnet.gov/expapi/verbs/created', array('en-US' => 'created'));
+        $activity = new Activity('http://example.adlnet.gov/xapi/example/activity');
+        $authority = new Agent(null, null, null, new Account('anonymous', 'http://cloud.scorm.com/'));
+
+        return new Statement($id, $actor, $verb, $activity, null, $authority);
+    }
+
+    /**
+     * Loads a statement including a group authority.
+     *
+     * @param string $id The id of the new Statement
+     *
+     * @return Statement
+     */
+    public static function getStatementWithGroupAuthority($id = self::DEFAULT_STATEMENT_ID)
+    {
+        $actor = new Agent('mailto:xapi@adlnet.gov');
+        $verb = new Verb('http://adlnet.gov/expapi/verbs/created', array('en-US' => 'created'));
+        $activity = new Activity('http://example.adlnet.gov/xapi/example/activity');
+        $user = new Agent(null, null, null, new Account('oauth_consumer_x75db', 'http://example.com/xAPI/OAuth/Token'));
+        $application = new Agent('mailto:bob@example.com');
+        $authority = new Group(null, null, null, null, null, array($user, $application));
+
+        return new Statement($id, $actor, $verb, $activity, null, $authority);
     }
 
     /**

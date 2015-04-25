@@ -1,0 +1,33 @@
+{
+  "id": "12345678-1234-5678-8234-567812345678",
+  "actor": {
+    "mbox": "mailto:xapi@adlnet.gov",
+    "objectType": "Agent"
+  },
+  "verb": {
+    "id": "http://adlnet.gov/expapi/verbs/created",
+    "display": {
+      "en-US": "created"
+    }
+  },
+  "object": {
+    "id": "http://example.adlnet.gov/xapi/example/activity",
+    "objectType": "Activity"
+  },
+  "authority": {
+    "member": [
+      {
+        "account": {
+          "homePage": "http://example.com/xAPI/OAuth/Token",
+          "name": "oauth_consumer_x75db"
+        },
+        "objectType": "Agent"
+      },
+      {
+        "mbox": "mailto:bob@example.com",
+        "objectType": "Agent"
+      }
+    ],
+    "objectType": "Group"
+  }
+}

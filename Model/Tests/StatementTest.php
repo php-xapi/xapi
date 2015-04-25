@@ -11,6 +11,8 @@
 
 namespace Xabbuh\XApi\Model\Tests;
 
+use Xabbuh\XApi\DataFixtures\ActorFixtures;
+use Xabbuh\XApi\DataFixtures\StatementFixtures;
 use Xabbuh\XApi\Model\Activity;
 use Xabbuh\XApi\Model\Agent;
 use Xabbuh\XApi\Model\Statement;
@@ -59,5 +61,35 @@ class StatementTest extends \PHPUnit_Framework_TestCase
             'e05aa883-acaf-40ad-bf54-02c8ce485fb0',
             $statementReference->getStatementId()
         );
+    }
+
+    public function testWithAuthority()
+    {
+        $statement = StatementFixtures::getMinimalStatement();
+        $authority = ActorFixtures::getAgent();
+        $statementWithAuthority = $statement->withAuthority($authority);
+
+        $this->assertFalse($statement->equals($statementWithAuthority));
+        $this->assertNull($statement->getAuthority());
+        $this->assertSame($statement->getId(), $statementWithAuthority->getId());
+        $this->assertTrue($statement->getActor()->equals($statementWithAuthority->getActor()));
+        $this->assertTrue($statement->getVerb()->equals($statementWithAuthority->getVerb()));
+        $this->assertTrue($statement->getObject()->equals($statementWithAuthority->getObject()));
+        $this->assertTrue($authority->equals($statementWithAuthority->getAuthority()));
+    }
+
+    public function testWithAuthorityReplacesExistingAuthority()
+    {
+        $statement = StatementFixtures::getStatementWithGroupAuthority();
+        $agentAuthority = ActorFixtures::getAgent();
+        $statementWithAuthority = $statement->withAuthority($agentAuthority);
+
+        $this->assertFalse($statement->equals($statementWithAuthority));
+        $this->assertSame($statement->getId(), $statementWithAuthority->getId());
+        $this->assertTrue($statement->getActor()->equals($statementWithAuthority->getActor()));
+        $this->assertTrue($statement->getVerb()->equals($statementWithAuthority->getVerb()));
+        $this->assertTrue($statement->getObject()->equals($statementWithAuthority->getObject()));
+        $this->assertTrue($agentAuthority->equals($statementWithAuthority->getAuthority()));
+        $this->assertFalse($statement->getAuthority()->equals($statementWithAuthority->getAuthority()));
     }
 }

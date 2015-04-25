@@ -43,13 +43,19 @@ class Statement
      */
     private $result;
 
-    public function __construct($id, Actor $actor, Verb $verb, Object $object, Result $result = null)
+    /**
+     * @var Actor The Authority that asserted the Statement true
+     */
+    private $authority;
+
+    public function __construct($id, Actor $actor, Verb $verb, Object $object, Result $result = null, Actor $authority = null)
     {
         $this->id = $id;
         $this->actor = $actor;
         $this->verb = $verb;
         $this->object = $object;
         $this->result = $result;
+        $this->authority = $authority;
     }
 
     /**
@@ -103,6 +109,16 @@ class Statement
     }
 
     /**
+     * Returns the Authority that asserted the Statement true.
+     *
+     * @return Actor The Authority
+     */
+    public function getAuthority()
+    {
+        return $this->authority;
+    }
+
+    /**
      * Tests whether or not this Statement is a void Statement (i.e. it voids
      * another Statement).
      *
@@ -143,6 +159,19 @@ class Statement
     }
 
     /**
+     * Creates a new Statement based on the current one containing an Authority
+     * that asserts the Statement true.
+     *
+     * @param Actor $authority The Authority asserting the Statement true
+     *
+     * @return Statement The new Statement
+     */
+    public function withAuthority(Actor $authority)
+    {
+        return new Statement($this->id, $this->actor, $this->verb, $this->object, $this->result, $authority);
+    }
+
+    /**
      * Checks if another statement is equal.
      *
      * Two statements are equal if and only if all of their properties are equal.
@@ -178,6 +207,18 @@ class Statement
         }
 
         if (null !== $this->result && !$this->result->equals($statement->result)) {
+            return false;
+        }
+
+        if (null === $this->authority && null !== $statement->authority) {
+            return false;
+        }
+
+        if (null !== $this->authority && null === $statement->authority) {
+            return false;
+        }
+
+        if (null !== $this->authority && !$this->authority->equals($statement->authority)) {
             return false;
         }
 
