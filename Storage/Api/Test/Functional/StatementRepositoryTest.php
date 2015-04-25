@@ -198,5 +198,11 @@ abstract class StatementRepositoryTest extends \PHPUnit_Framework_TestCase
         } else {
             $this->assertTrue($actual->getResult()->equals($expected->getResult()));
         }
+
+        if (null === $expected->getAuthority()) {
+            $this->assertNull($actual->getAuthority());
+        } else {
+            $this->assertTrue($actual->getAuthority()->equals($expected->getAuthority()));
+        }
     }
 }
