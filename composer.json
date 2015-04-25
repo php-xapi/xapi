@@ -24,7 +24,7 @@
         "symfony/validator": "^2.6.2"
     },
     "require-dev": {
-        "doctrine/mongodb-odm": "~1.0",
+        "doctrine/mongodb-odm": "~1.0,>=1.0.0-BETA5",
         "doctrine/mongodb-odm-bundle": "~3.0",
         "matthiasnoback/symfony-dependency-injection-test": "~0.6",
         "phpunit/phpunit": "~4.0",
