@@ -178,6 +178,8 @@ abstract class StatementRepositoryTest extends \PHPUnit_Framework_TestCase
             'statement-with-group-actor-without-members' => array(StatementFixtures::getStatementWithGroupActorWithoutMembers($id)),
             'object-is-statement-reference' => array(StatementFixtures::getStatementWithStatementRef($id)),
             'statement-with-result' => array(StatementFixtures::getStatementWithResult($id)),
+            'statement-with-agent-authority' => array(StatementFixtures::getStatementWithAgentAuthority($id)),
+            'statement-with-group-authority' => array(StatementFixtures::getStatementWithGroupAuthority($id)),
         );
     }
 
