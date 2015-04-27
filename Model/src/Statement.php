@@ -48,7 +48,17 @@ class Statement
      */
     private $authority;
 
-    public function __construct($id, Actor $actor, Verb $verb, Object $object, Result $result = null, Actor $authority = null)
+    /**
+     * @var \DateTime The timestamp of when the events described in this statement occurred
+     */
+    private $created;
+
+    /**
+     * @var \DateTime The timestamp of when this statement was recorded by the LRS
+     */
+    private $stored;
+
+    public function __construct($id, Actor $actor, Verb $verb, Object $object, Result $result = null, Actor $authority = null, \DateTime $created = null, \DateTime $stored = null)
     {
         $this->id = $id;
         $this->actor = $actor;
@@ -56,6 +66,8 @@ class Statement
         $this->object = $object;
         $this->result = $result;
         $this->authority = $authority;
+        $this->created = $created;
+        $this->stored = $stored;
     }
 
     /**
@@ -116,6 +128,27 @@ class Statement
     public function getAuthority()
     {
         return $this->authority;
+    }
+
+    /**
+     * Returns the timestamp of when the events described in this statement
+     * occurred.
+     *
+     * @return \DateTime The timestamp
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Returns the timestamp of when this statement was recorded by the LRS.
+     *
+     * @return \DateTime The timestamp
+     */
+    public function getStored()
+    {
+        return $this->stored;
     }
 
     /**

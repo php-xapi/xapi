@@ -52,9 +52,19 @@ class MappedStatement
      */
     public $authority;
 
+    /**
+     * @var \DateTime
+     */
+    public $created;
+
+    /**
+     * @var \DateTime
+     */
+    public $stored;
+
     public function getModel()
     {
-        return new Statement($this->id, $this->actor, $this->verb->getModel(), $this->object, $this->result, $this->authority);
+        return new Statement($this->id, $this->actor, $this->verb->getModel(), $this->object, $this->result, $this->authority, $this->created, $this->stored);
     }
 
     public static function createFromModel(Statement $statement)
@@ -66,6 +76,8 @@ class MappedStatement
         $mappedStatement->object = $statement->getObject();
         $mappedStatement->result = $statement->getResult();
         $mappedStatement->authority = $statement->getAuthority();
+        $mappedStatement->created = $statement->getCreated();
+        $mappedStatement->stored = $statement->getStored();
 
         return $mappedStatement;
     }

@@ -137,6 +137,7 @@ abstract class StatementRepository
     {
         $uuid = $statement->getId();
         $mappedStatement = MappedStatement::createFromModel($statement);
+        $mappedStatement->stored = new \DateTime();
 
         if (null === $uuid) {
             $uuid = Uuid::uuid4()->toString();
