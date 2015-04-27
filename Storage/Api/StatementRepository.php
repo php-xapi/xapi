@@ -12,6 +12,7 @@
 namespace Xabbuh\XApi\Storage\Api;
 
 use Rhumsaa\Uuid\Uuid;
+use Xabbuh\XApi\Model\Actor;
 use Xabbuh\XApi\Model\Statement;
 use Xabbuh\XApi\Model\StatementsFilter;
 use Xabbuh\XApi\Storage\Api\Exception\NotFoundException;
@@ -27,15 +28,23 @@ abstract class StatementRepository
     /**
      * Finds a {@link Statement} by id.
      *
-     * @param string $statementId The statement id to filter by
+     * @param string     $statementId The statement id to filter by
+     * @param Actor|null $authority   (Optional) actor that must be the authority
+     *                                of the returned statement
      *
      * @return Statement The statement
      *
      * @throws NotFoundException if no Statement with the given UUID does exist
      */
-    final public function findStatementById($statementId)
+    final public function findStatementById($statementId, Actor $authority = null)
     {
-        $mappedStatement = $this->findMappedStatement(array('id' => $statementId));
+        $criteria = array('id' => $statementId);
+
+        if (null !== $authority) {
+            $criteria['authority'] = $authority;
+        }
+
+        $mappedStatement = $this->findMappedStatement($criteria);
 
         if (null === $mappedStatement) {
             throw new NotFoundException();
@@ -53,16 +62,25 @@ abstract class StatementRepository
     /**
      * Finds a voided {@link Statement} by id.
      *
-     * @param string $voidedStatementId The voided statement id to filter by
+     * @param string     $voidedStatementId The voided statement id to filter
+     *                                      by
+     * @param Actor|null $authority         (Optional) actor that must be the
+     *                                      authority of the returned statement
      *
      * @return Statement The statement
      *
      * @throws NotFoundException if no voided Statement with the given UUID
      *                           does exist
      */
-    final public function findVoidedStatementById($voidedStatementId)
+    final public function findVoidedStatementById($voidedStatementId, Actor $authority = null)
     {
-        $mappedStatement = $this->findMappedStatement(array('id' => $voidedStatementId));
+        $criteria = array('id' => $voidedStatementId);
+
+        if (null !== $authority) {
+            $criteria['authority'] = $authority;
+        }
+
+        $mappedStatement = $this->findMappedStatement($criteria);
 
         if (null === $mappedStatement) {
             throw new NotFoundException();
@@ -81,13 +99,21 @@ abstract class StatementRepository
      * Finds a collection of {@link Statement Statements} filtered by the given
      * criteria.
      *
-     * @param StatementsFilter $criteria The criteria to filter by
+     * @param StatementsFilter $criteria  The criteria to filter by
+     * @param Actor|null       $authority (Optional) actor that must be the
+     *                                    authority of the returned statements
      *
      * @return Statement[] The statements
      */
-    final public function findStatementsBy(StatementsFilter $criteria)
+    final public function findStatementsBy(StatementsFilter $criteria, Actor $authority = null)
     {
-        $mappedStatements = $this->findMappedStatements($criteria->getFilter());
+        $criteria = $criteria->getFilter();
+
+        if (null !== $authority) {
+            $criteria['authority'] = $authority;
+        }
+
+        $mappedStatements = $this->findMappedStatements($criteria);
         $statements = array();
 
         foreach ($mappedStatements as $mappedStatement) {
