@@ -74,7 +74,15 @@ class StatementRepositoryTest extends \PHPUnit_Framework_TestCase
             ->mappedStatementRepository
             ->expects($this->once())
             ->method('storeMappedStatement')
-            ->with($this->equalTo(MappedStatement::createFromModel($statement)), true);
+            ->with(
+                $this->callback(function (MappedStatement $mappedStatement) use ($statement) {
+                    return $this->assertMappedStatement(
+                        MappedStatement::createFromModel($statement),
+                        $mappedStatement
+                    );
+                }),
+                true
+            );
 
         $this->statementRepository->storeStatement($statement);
     }
@@ -86,7 +94,15 @@ class StatementRepositoryTest extends \PHPUnit_Framework_TestCase
             ->mappedStatementRepository
             ->expects($this->once())
             ->method('storeMappedStatement')
-            ->with($this->equalTo(MappedStatement::createFromModel($statement)), false);
+            ->with(
+                $this->callback(function (MappedStatement $mappedStatement) use ($statement) {
+                    return $this->assertMappedStatement(
+                        MappedStatement::createFromModel($statement),
+                        $mappedStatement
+                    );
+                }),
+                false
+            );
 
         $this->statementRepository->storeStatement($statement, false);
     }
@@ -97,5 +113,58 @@ class StatementRepositoryTest extends \PHPUnit_Framework_TestCase
     protected function createMappedStatementRepositoryMock()
     {
         return $this->getMock('\Xabbuh\XApi\Storage\Doctrine\Repository\MappedStatementRepository');
+    }
+
+    private function assertMappedStatement(MappedStatement $expected, MappedStatement $actual)
+    {
+        if ($expected->id !== $actual->id) {
+            return false;
+        }
+
+        if (!$expected->actor->equals($actual->actor)) {
+            return false;
+        }
+
+        if (!$expected->verb->equals($actual->verb)) {
+            return false;
+        }
+
+        if (!$expected->object->equals($actual->object)) {
+            return false;
+        }
+
+        if (null === $expected->result && null !== $actual->result) {
+            return false;
+        }
+
+        if (null !== $expected->result && null === $actual->result) {
+            return false;
+        }
+
+        if (null !== $expected->result && !$expected->result->equals($actual->result)) {
+            return false;
+        }
+
+        if (null === $expected->authority && null !== $actual->authority) {
+            return false;
+        }
+
+        if (null !== $expected->authority && null === $actual->authority) {
+            return false;
+        }
+
+        if (null !== $expected->authority && !$expected->authority->equals($actual->authority)) {
+            return false;
+        }
+
+        if ($expected->created != $actual->created) {
+            return false;
+        }
+
+        if (null === $actual->stored) {
+            return false;
+        }
+
+        return true;
     }
 }

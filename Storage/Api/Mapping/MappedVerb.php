@@ -29,6 +29,23 @@ class MappedVerb
         return new Verb($this->id, $this->display);
     }
 
+    public function equals(MappedVerb $verb)
+    {
+        if ($this->identifier !== $verb->identifier) {
+            return false;
+        }
+
+        if ($this->id !== $verb->id) {
+            return false;
+        }
+
+        if ($this->display !== $verb->display) {
+            return false;
+        }
+
+        return true;
+    }
+
     public static function createFromModel(Verb $verb)
     {
         $mappedVerb = new MappedVerb();
