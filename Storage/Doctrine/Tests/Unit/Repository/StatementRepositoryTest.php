@@ -117,7 +117,10 @@ class StatementRepositoryTest extends \PHPUnit_Framework_TestCase
         return $this->getMock('\Xabbuh\XApi\Storage\Doctrine\Repository\MappedStatementRepository');
     }
 
-    private function assertMappedStatement(MappedStatement $expected, MappedStatement $actual)
+    /**
+     * Ths method is only public to support PHP 5.3.
+     */
+    public function assertMappedStatement(MappedStatement $expected, MappedStatement $actual)
     {
         if ($expected->id !== $actual->id) {
             return false;
