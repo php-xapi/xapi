@@ -70,13 +70,14 @@ class StatementRepositoryTest extends \PHPUnit_Framework_TestCase
     public function testSave()
     {
         $statement = StatementFixtures::getMinimalStatement();
+        $self = $this;
         $this
             ->mappedStatementRepository
             ->expects($this->once())
             ->method('storeMappedStatement')
             ->with(
-                $this->callback(function (MappedStatement $mappedStatement) use ($statement) {
-                    return $this->assertMappedStatement(
+                $this->callback(function (MappedStatement $mappedStatement) use ($self, $statement) {
+                    return $self->assertMappedStatement(
                         MappedStatement::createFromModel($statement),
                         $mappedStatement
                     );
@@ -90,13 +91,14 @@ class StatementRepositoryTest extends \PHPUnit_Framework_TestCase
     public function testSaveWithoutFlush()
     {
         $statement = StatementFixtures::getMinimalStatement();
+        $self = $this;
         $this
             ->mappedStatementRepository
             ->expects($this->once())
             ->method('storeMappedStatement')
             ->with(
-                $this->callback(function (MappedStatement $mappedStatement) use ($statement) {
-                    return $this->assertMappedStatement(
+                $this->callback(function (MappedStatement $mappedStatement) use ($self, $statement) {
+                    return $self->assertMappedStatement(
                         MappedStatement::createFromModel($statement),
                         $mappedStatement
                     );
