@@ -959,7 +959,7 @@
             "time": "2012-12-21 11:40:51"
         },
         {
-            "name": "rhumsaa/uuid",
+            "name": "ramsey/uuid",
             "version": "2.8.0",
             "source": {
                 "type": "git",
@@ -1984,12 +1984,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-data-fixtures.git",
-                "reference": "b85e4cfe435452a3f3d1dac864ff18874bca787b"
+                "reference": "5d0fb8d4d8fc1193c23159e0b80ccf9f2218a420"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-data-fixtures/zipball/b85e4cfe435452a3f3d1dac864ff18874bca787b",
-                "reference": "b85e4cfe435452a3f3d1dac864ff18874bca787b",
+                "url": "https://api.github.com/repos/xabbuh/xapi-data-fixtures/zipball/5d0fb8d4d8fc1193c23159e0b80ccf9f2218a420",
+                "reference": "5d0fb8d4d8fc1193c23159e0b80ccf9f2218a420",
                 "shasum": ""
             },
             "require": {
@@ -2026,7 +2026,7 @@
                 "fixtures",
                 "xAPI"
             ],
-            "time": "2015-01-25 17:41:23"
+            "time": "2015-04-25 09:15:52"
         },
         {
             "name": "xabbuh/xapi-doctrine-storage",
@@ -2034,12 +2034,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-doctrine-storage.git",
-                "reference": "8b070470f8c6921ce908d629cbb388279c0755cc"
+                "reference": "1fd880128d68bc19c348922f6c6bd90c539022a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/8b070470f8c6921ce908d629cbb388279c0755cc",
-                "reference": "8b070470f8c6921ce908d629cbb388279c0755cc",
+                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/1fd880128d68bc19c348922f6c6bd90c539022a6",
+                "reference": "1fd880128d68bc19c348922f6c6bd90c539022a6",
                 "shasum": ""
             },
             "require": {
@@ -2081,7 +2081,7 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2015-04-21 21:09:24"
+            "time": "2015-04-29 16:43:51"
         },
         {
             "name": "xabbuh/xapi-model",
@@ -2089,12 +2089,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-model.git",
-                "reference": "4294e950aead7ec744088b6373e468ce06234329"
+                "reference": "678ee1b01166e2657baf5fef79245238986eccef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-model/zipball/4294e950aead7ec744088b6373e468ce06234329",
-                "reference": "4294e950aead7ec744088b6373e468ce06234329",
+                "url": "https://api.github.com/repos/xabbuh/xapi-model/zipball/678ee1b01166e2657baf5fef79245238986eccef",
+                "reference": "678ee1b01166e2657baf5fef79245238986eccef",
                 "shasum": ""
             },
             "require": {
@@ -2133,7 +2133,7 @@
                 "models",
                 "xAPI"
             ],
-            "time": "2015-04-21 21:09:24"
+            "time": "2015-04-27 21:45:25"
         },
         {
             "name": "xabbuh/xapi-mongodb-storage",
@@ -2141,16 +2141,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-mongodb-storage.git",
-                "reference": "cbe998bed5fff93306b9285199ec4c4718ff8b85"
+                "reference": "b4c42584ba20808eb0c5487a06713c751f761ae1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-mongodb-storage/zipball/cbe998bed5fff93306b9285199ec4c4718ff8b85",
-                "reference": "cbe998bed5fff93306b9285199ec4c4718ff8b85",
+                "url": "https://api.github.com/repos/xabbuh/xapi-mongodb-storage/zipball/b4c42584ba20808eb0c5487a06713c751f761ae1",
+                "reference": "b4c42584ba20808eb0c5487a06713c751f761ae1",
                 "shasum": ""
             },
             "require": {
-                "doctrine/mongodb-odm": "~1.0",
+                "doctrine/mongodb-odm": "~1.0,>=1.0.0-BETA6",
                 "xabbuh/xapi-doctrine-storage": "~1.0",
                 "xabbuh/xapi-model": "~1.0",
                 "xabbuh/xapi-storage-api": "~1.0"
@@ -2194,7 +2194,7 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2015-04-22 15:45:21"
+            "time": "2015-05-01 13:48:48"
         },
         {
             "name": "xabbuh/xapi-serializer",
@@ -2202,12 +2202,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-serializer.git",
-                "reference": "a7c2d728c196fd40afa5ffa676f3ae7bcfbca18a"
+                "reference": "556e32538e99b2d25c77ea3832a4be5ec5b78712"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-serializer/zipball/a7c2d728c196fd40afa5ffa676f3ae7bcfbca18a",
-                "reference": "a7c2d728c196fd40afa5ffa676f3ae7bcfbca18a",
+                "url": "https://api.github.com/repos/xabbuh/xapi-serializer/zipball/556e32538e99b2d25c77ea3832a4be5ec5b78712",
+                "reference": "556e32538e99b2d25c77ea3832a4be5ec5b78712",
                 "shasum": ""
             },
             "require": {
@@ -2247,7 +2247,7 @@
                 "serializer",
                 "xAPI"
             ],
-            "time": "2015-04-21 21:09:24"
+            "time": "2015-04-25 09:15:52"
         },
         {
             "name": "xabbuh/xapi-storage-api",
@@ -2255,16 +2255,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-storage-api.git",
-                "reference": "4fe9e180e80acd604a677d9364b4f5f5dd04a1bc"
+                "reference": "b62ddc4457846f45718b2100762da36c79e3c3b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-storage-api/zipball/4fe9e180e80acd604a677d9364b4f5f5dd04a1bc",
-                "reference": "4fe9e180e80acd604a677d9364b4f5f5dd04a1bc",
+                "url": "https://api.github.com/repos/xabbuh/xapi-storage-api/zipball/b62ddc4457846f45718b2100762da36c79e3c3b6",
+                "reference": "b62ddc4457846f45718b2100762da36c79e3c3b6",
                 "shasum": ""
             },
             "require": {
-                "rhumsaa/uuid": "~2.8",
+                "ramsey/uuid": "~2.8",
                 "xabbuh/xapi-data-fixtures": "~1.0",
                 "xabbuh/xapi-model": "~1.0"
             },
@@ -2299,7 +2299,7 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2015-03-20 20:10:59"
+            "time": "2015-05-01 13:34:14"
         }
     ],
     "packages-dev": [
@@ -2448,16 +2448,16 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.4.0",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "8724cd239f8ef4c046f55a3b18b4d91cc7f3e4c5"
+                "reference": "3132b1f44c7bf2ec4c7eb2d3cb78fdeca760d373"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/8724cd239f8ef4c046f55a3b18b4d91cc7f3e4c5",
-                "reference": "8724cd239f8ef4c046f55a3b18b4d91cc7f3e4c5",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/3132b1f44c7bf2ec4c7eb2d3cb78fdeca760d373",
+                "reference": "3132b1f44c7bf2ec4c7eb2d3cb78fdeca760d373",
                 "shasum": ""
             },
             "require": {
@@ -2504,7 +2504,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2015-03-27 19:31:25"
+            "time": "2015-04-27 22:15:08"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -2754,16 +2754,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.6.4",
+            "version": "4.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "163232991e652e6efed2f8470326fffa61e848e2"
+                "reference": "3afe303d873a4d64c62ef84de491b97b006fbdac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/163232991e652e6efed2f8470326fffa61e848e2",
-                "reference": "163232991e652e6efed2f8470326fffa61e848e2",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3afe303d873a4d64c62ef84de491b97b006fbdac",
+                "reference": "3afe303d873a4d64c62ef84de491b97b006fbdac",
                 "shasum": ""
             },
             "require": {
@@ -2822,7 +2822,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-04-11 05:23:21"
+            "time": "2015-04-29 15:18:52"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
