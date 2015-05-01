@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "rhumsaa/uuid": "~2.8",
+        "ramsey/uuid": "~2.8",
         "xabbuh/xapi-data-fixtures": "~1.0",
         "xabbuh/xapi-model": "~1.0"
     },
