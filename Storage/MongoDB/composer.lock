@@ -522,16 +522,16 @@
         },
         {
             "name": "doctrine/mongodb-odm",
-            "version": "1.0.0-BETA12",
+            "version": "1.0.0-BETA13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb-odm.git",
-                "reference": "89bb1af203e85019b97b0994818454d2ca8ccb52"
+                "reference": "f9d26e2839c657659dc129fe5b4aaa7f87d0ea55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/89bb1af203e85019b97b0994818454d2ca8ccb52",
-                "reference": "89bb1af203e85019b97b0994818454d2ca8ccb52",
+                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/f9d26e2839c657659dc129fe5b4aaa7f87d0ea55",
+                "reference": "f9d26e2839c657659dc129fe5b4aaa7f87d0ea55",
                 "shasum": ""
             },
             "require": {
@@ -543,10 +543,10 @@
                 "doctrine/instantiator": "~1.0.1",
                 "doctrine/mongodb": ">=1.1.5,<2.0",
                 "php": ">=5.3.2",
-                "symfony/console": "~2.0"
+                "symfony/console": "~2.3|~3.0"
             },
             "require-dev": {
-                "symfony/yaml": "~2.0"
+                "symfony/yaml": "~2.3|~3.0"
             },
             "suggest": {
                 "symfony/yaml": "Enables the YAML metadata mapping driver"
@@ -582,6 +582,14 @@
                 {
                     "name": "Kris Wallsmith",
                     "email": "kris.wallsmith@gmail.com"
+                },
+                {
+                    "name": "Maciej Malarz",
+                    "email": "malarzm@gmail.com"
+                },
+                {
+                    "name": "Andreas Braun",
+                    "email": "alcaeus@alcaeus.org"
                 }
             ],
             "description": "Doctrine MongoDB Object Document Mapper",
@@ -592,7 +600,7 @@
                 "odm",
                 "persistence"
             ],
-            "time": "2015-02-25 00:55:38"
+            "time": "2015-05-22 07:35:15"
         },
         {
             "name": "ramsey/uuid",
@@ -662,21 +670,20 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.6.6",
-            "target-dir": "Symfony/Component/Console",
+            "version": "v2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "5b91dc4ed5eb08553f57f6df04c4730a73992667"
+                "reference": "7f0bec04961c61c961df0cb8c2ae88dbfd83f399"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/5b91dc4ed5eb08553f57f6df04c4730a73992667",
-                "reference": "5b91dc4ed5eb08553f57f6df04c4730a73992667",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/7f0bec04961c61c961df0cb8c2ae88dbfd83f399",
+                "reference": "7f0bec04961c61c961df0cb8c2ae88dbfd83f399",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.3.9"
             },
             "require-dev": {
                 "psr/log": "~1.0",
@@ -692,11 +699,11 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6-dev"
+                    "dev-master": "2.7-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
+                "psr-4": {
                     "Symfony\\Component\\Console\\": ""
                 }
             },
@@ -706,17 +713,17 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony Console Component",
-            "homepage": "http://symfony.com",
-            "time": "2015-03-30 15:54:10"
+            "homepage": "https://symfony.com",
+            "time": "2015-05-29 16:22:24"
         },
         {
             "name": "xabbuh/xapi-common",
@@ -821,12 +828,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-doctrine-storage.git",
-                "reference": "1fd880128d68bc19c348922f6c6bd90c539022a6"
+                "reference": "5b25ef10b811abdcc2c92b15061e071802adc64e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/1fd880128d68bc19c348922f6c6bd90c539022a6",
-                "reference": "1fd880128d68bc19c348922f6c6bd90c539022a6",
+                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/5b25ef10b811abdcc2c92b15061e071802adc64e",
+                "reference": "5b25ef10b811abdcc2c92b15061e071802adc64e",
                 "shasum": ""
             },
             "require": {
@@ -868,7 +875,7 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2015-04-29 16:43:51"
+            "time": "2015-05-13 21:17:55"
         },
         {
             "name": "xabbuh/xapi-model",
@@ -876,12 +883,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-model.git",
-                "reference": "678ee1b01166e2657baf5fef79245238986eccef"
+                "reference": "491cd0a8fc89ad7b79f5ab030b63090471c8ee7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-model/zipball/678ee1b01166e2657baf5fef79245238986eccef",
-                "reference": "678ee1b01166e2657baf5fef79245238986eccef",
+                "url": "https://api.github.com/repos/xabbuh/xapi-model/zipball/491cd0a8fc89ad7b79f5ab030b63090471c8ee7f",
+                "reference": "491cd0a8fc89ad7b79f5ab030b63090471c8ee7f",
                 "shasum": ""
             },
             "require": {
@@ -920,7 +927,7 @@
                 "models",
                 "xAPI"
             ],
-            "time": "2015-04-27 21:45:25"
+            "time": "2015-05-13 21:15:27"
         },
         {
             "name": "xabbuh/xapi-storage-api",
@@ -928,12 +935,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xabbuh/xapi-storage-api.git",
-                "reference": "b62ddc4457846f45718b2100762da36c79e3c3b6"
+                "reference": "5d82770a74fd6cb9840f1dd97c010c7e4fa1895e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-storage-api/zipball/b62ddc4457846f45718b2100762da36c79e3c3b6",
-                "reference": "b62ddc4457846f45718b2100762da36c79e3c3b6",
+                "url": "https://api.github.com/repos/xabbuh/xapi-storage-api/zipball/5d82770a74fd6cb9840f1dd97c010c7e4fa1895e",
+                "reference": "5d82770a74fd6cb9840f1dd97c010c7e4fa1895e",
                 "shasum": ""
             },
             "require": {
@@ -972,7 +979,7 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2015-05-01 13:34:14"
+            "time": "2015-05-13 21:15:27"
         }
     ],
     "packages-dev": [],
