@@ -13,15 +13,11 @@
         </service>
         <service id="xabbuh_lrs.statement_object_manager"
             class="Doctrine\ODM\MongoDB\DocumentManager"
-            public="false"
-            factory-service="doctrine_mongodb"
-            factory-method="getManagerForClass">
+            public="false">
             <argument>Xabbuh\XApi\Storage\MongoDB\Document\Statement</argument>
         </service>
         <service id="xabbuh_lrs.statement_repository"
             class="Xabbuh\XApi\Storage\MongoDB\Repository\StatementRepository"
-            public="false"
-            factory-service="xabbuh_lrs.statement_object_manager"
-            factory-method="getRepository" />
+            public="false" />
     </services>
 </container>

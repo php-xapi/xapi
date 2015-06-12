@@ -12,7 +12,7 @@
 namespace Xabbuh\XApi\Validator\Tests;
 
 use Symfony\Component\Validator\Validation;
-use Symfony\Component\Validator\Validator;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
@@ -26,7 +26,18 @@ abstract class AbstractModelValidatorTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->validator = Validation::createValidatorBuilder()
+        $validatorBuilder = Validation::createValidatorBuilder();
+
+        $errorReporting = error_reporting();
+        error_reporting($errorReporting & ~E_USER_DEPRECATED);
+
+        if (method_exists($validatorBuilder, 'setApiVersion')) {
+            $validatorBuilder->setApiVersion(Validation::API_VERSION_2_5);
+        }
+
+        error_reporting($errorReporting);
+
+        $this->validator = $validatorBuilder
             ->addXmlMapping(__DIR__.'/../metadata/Activity.xml')
             ->addXmlMapping(__DIR__.'/../metadata/Agent.xml')
             ->addXmlMapping(__DIR__.'/../metadata/Group.xml')
@@ -40,7 +51,15 @@ abstract class AbstractModelValidatorTest extends \PHPUnit_Framework_TestCase
      */
     public function testValidateObject($object, $violationCount, $groups = array())
     {
-        $this->assertEquals($violationCount, $this->validator->validate($object, $groups)->count());
+        if (0 === count($groups)) {
+            $groups = null;
+        }
+
+        if ($this->validator instanceof ValidatorInterface) {
+            $this->assertEquals($violationCount, $this->validator->validate($object, null, $groups)->count());
+        } else {
+            $this->assertEquals($violationCount, $this->validator->validate($object, $groups)->count());
+        }
     }
 
     public abstract function getObjectsToValidate();

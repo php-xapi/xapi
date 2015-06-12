@@ -11,6 +11,7 @@
 
 namespace Xabbuh\XApi\Validator\Tests;
 
+use Symfony\Component\Validator\Mapping\Factory\MetadataFactoryInterface;
 use Symfony\Component\Validator\ValidatorInterface;
 use Xabbuh\XApi\Validator\Validator;
 
@@ -42,7 +43,11 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
 
     private function validateXApiValidator(ValidatorInterface $validator)
     {
-        $metadataFactory = $validator->getMetadataFactory();
+        if ($validator instanceof MetadataFactoryInterface) {
+            $metadataFactory = $validator;
+        } else {
+            $metadataFactory = $validator->getMetadataFactory();
+        }
 
         $this->assertTrue(
             $metadataFactory->hasMetadataFor('\Xabbuh\XApi\Model\Activity')
