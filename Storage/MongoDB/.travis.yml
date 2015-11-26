@@ -22,8 +22,6 @@ matrix:
   include:
     - php: 5.3
       env: deps="low"
-  allow_failures:
-    - php: 7.0
 
 services:
   - mongodb
