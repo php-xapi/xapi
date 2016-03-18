@@ -5,9 +5,9 @@ Common Doctrine Based xAPI Storage Classes
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/php-xapi/xapi-doctrine-storage/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/php-xapi/xapi-doctrine-storage/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/php-xapi/xapi-doctrine-storage/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/php-xapi/xapi-doctrine-storage/?branch=master)
 
-Common classes for Doctrine based [xAPI storage](https://github.com/xabbuh/xapi-storage-api/)
+Common classes for Doctrine based [xAPI storage](https://github.com/php-xapi/xapi-storage-api/)
 implementations.
 
 Existing implementations:
 
-* [MongoDB](https://github.com/xabbuh/xapi-mongodb-storage/)
+* [MongoDB](https://github.com/php-xapi/xapi-mongodb-storage/)

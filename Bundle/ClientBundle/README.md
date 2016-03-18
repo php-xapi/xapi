@@ -6,7 +6,7 @@ XabbuhXApiClientBundle
 [![Code Coverage](https://scrutinizer-ci.com/g/xabbuh/XApiClientBundle/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/xabbuh/XApiClientBundle/?branch=master)
 
 The XabbuhXApiClientBundle integrates the
-[XApiClient PHP library](https://github.com/xabbuh/xapi-client), a client side
+[XApiClient PHP library](https://github.com/php-xapi/xapi-client), a client side
 implementation of the [Experience API](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md)
 into the Symfony2 framework.
 
