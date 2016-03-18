@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+* remove unneeded minimum stability settings
+
+0.1.1
+-----
+
+* fixed GitHub homepage link
+
 0.1.0
 -----
 
