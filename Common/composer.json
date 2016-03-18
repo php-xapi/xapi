@@ -3,7 +3,7 @@
     "type": "library",
     "description": "base package for Experience API implementations",
     "keywords": ["xAPI", "Experience API", "Tin Can API"],
-    "homepage": "https://github.com/xabbuh/xapi-common",
+    "homepage": "https://github.com/php-xapi/xapi-common",
     "license": "MIT",
     "authors": [
         {

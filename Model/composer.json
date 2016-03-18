@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Experience API model classes",
     "keywords": ["xAPI", "Experience API", "Tin Can API", "models"],
-    "homepage": "https://github.com/xabbuh/xapi-model",
+    "homepage": "https://github.com/php-xapi/xapi-model",
     "license": "MIT",
     "authors": [
         {

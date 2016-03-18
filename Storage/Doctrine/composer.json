@@ -2,7 +2,7 @@
     "name": "xabbuh/xapi-doctrine-storage",
     "description": "common classes for Doctrine based driver implementations of an xAPI storage",
     "keywords": ["xAPI", "Tin Can API", "Experience API", "storage", "database", "repository", "document", "Doctrine"],
-    "homepage": "https://github.com/xabbuh/xapi-doctrine-storage/",
+    "homepage": "https://github.com/php-xapi/xapi-doctrine-storage/",
     "license": "MIT",
     "authors": [
         {

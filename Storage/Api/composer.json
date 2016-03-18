@@ -2,7 +2,7 @@
     "name": "xabbuh/xapi-storage-api",
     "description": "abstract definition of an xAPI storage interface",
     "keywords": ["xAPI", "Tin Can API", "Experience API", "storage", "database", "repository"],
-    "homepage": "https://github.com/xabbuh/xapi-storage-api",
+    "homepage": "https://github.com/php-xapi/xapi-storage-api",
     "license": "MIT",
     "authors": [
         {

@@ -2,7 +2,7 @@
     "name": "xabbuh/xapi-mongodb-storage",
     "description": "MongoDB driver implementation of an xAPI storage",
     "keywords": ["xAPI", "Tin Can API", "Experience API", "storage", "database", "repository", "document", "MongoDB"],
-    "homepage": "https://github.com/xabbuh/xapi-mongodb-storage/",
+    "homepage": "https://github.com/php-xapi/xapi-mongodb-storage/",
     "license": "MIT",
     "authors": [
         {

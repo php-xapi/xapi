@@ -3,7 +3,7 @@
     "type": "library",
     "description": "common test data fixtures for the xAPI libraries",
     "keywords": ["xAPI", "Experience API", "Tin Can API", "fixtures", "data fixtures"],
-    "homepage": "https://github.com/xabbuh/xapi-data-fixtures",
+    "homepage": "https://github.com/php-xapi/xapi-data-fixtures",
     "license": "MIT",
     "authors": [
         {
