@@ -14,9 +14,6 @@ Install the MongoDB driver using Composer:
 
 ```bash
 $ composer require --no-update doctrine/mongodb-odm "~1.0@dev"
-$ composer require --no-update xabbuh/xapi-data-fixtures "~1.0@dev"
 $ composer require --no-update xabbuh/xapi-doctrine-storage "~1.0@dev"
-$ composer require --no-update xabbuh/xapi-model "~1.0@dev"
-$ composer require --no-update xabbuh/xapi-mongodb-storage "~1.0@dev"
-$ composer require xabbuh/xapi-storage-api "~1.0@dev"
+$ composer require xabbuh/xapi-mongodb-storage "~0.1@dev"
 ```
