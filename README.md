@@ -1,9 +1,9 @@
 xAPI
 ====
 
-[![Build Status](https://travis-ci.org/xabbuh/xapi.svg?branch=master)](https://travis-ci.org/xabbuh/xapi)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/xabbuh/xapi/badges/quality-score.png?s=176833c9dd53501e31729b623881104a2fa696f2)](https://scrutinizer-ci.com/g/xabbuh/xapi/)
-[![Code Coverage](https://scrutinizer-ci.com/g/xabbuh/xapi/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/xabbuh/xapi/?branch=master)
+[![Build Status](https://travis-ci.org/php-xapi/xapi.svg?branch=master)](https://travis-ci.org/php-xapi/xapi)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/php-xapi/xapi/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/php-xapi/xapi/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/php-xapi/xapi/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/php-xapi/xapi/?branch=master)
 
 A bundle of PHP libraries covering different aspects of the Experience API:
 
