@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+0.2.1
+-----
+
+* depend on a released version of the `xabbuh/xapi-data-fixtures-package`
+
 0.2.0
 -----
 

@@ -16,15 +16,13 @@
         "xabbuh/xapi-common": "~0.1"
     },
     "require-dev": {
-        "xabbuh/xapi-data-fixtures": "~1.0"
+        "xabbuh/xapi-data-fixtures": "~0.1"
     },
     "autoload": {
         "psr-4": {
             "Xabbuh\\XApi\\Model\\": "src/"
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "extra": {
         "branch-alias": {
             "dev-master": "0.1.x-dev"
