@@ -13,11 +13,11 @@
     "require": {
         "doctrine/mongodb-odm": "~1.0,>=1.0.0-BETA6",
         "xabbuh/xapi-doctrine-storage": "~1.0",
-        "xabbuh/xapi-model": "~1.0",
+        "xabbuh/xapi-model": "~0.1",
         "xabbuh/xapi-storage-api": "~1.0"
     },
     "require-dev": {
-        "xabbuh/xapi-common": "~1.0"
+        "xabbuh/xapi-common": "~0.1"
     },
     "provide": {
         "xabbuh/xapi-storage-implementation": "1.0"

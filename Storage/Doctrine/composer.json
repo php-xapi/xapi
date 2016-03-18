@@ -12,8 +12,8 @@
     ],
     "require": {
         "doctrine/common": "~2.4",
-        "xabbuh/xapi-data-fixtures": "~1.0",
-        "xabbuh/xapi-model": "~1.0",
+        "xabbuh/xapi-data-fixtures": "~0.1",
+        "xabbuh/xapi-model": "~0.1",
         "xabbuh/xapi-storage-api": "~1.0"
     },
     "autoload": {

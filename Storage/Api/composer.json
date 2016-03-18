@@ -12,11 +12,9 @@
     ],
     "require": {
         "ramsey/uuid": "~2.8",
-        "xabbuh/xapi-data-fixtures": "~1.0",
-        "xabbuh/xapi-model": "~1.0"
+        "xabbuh/xapi-data-fixtures": "~0.1",
+        "xabbuh/xapi-model": "~0.1"
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Xabbuh\\XApi\\Storage\\Api\\": ""

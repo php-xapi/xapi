@@ -17,15 +17,15 @@
         "symfony/dependency-injection": "~2.3",
         "symfony/http-foundation": "~2.3",
         "symfony/http-kernel": "~2.3",
-        "xabbuh/xapi-common": "~1.0",
-        "xabbuh/xapi-model": "~1.0",
-        "xabbuh/xapi-serializer": "~1.0",
+        "xabbuh/xapi-common": "~0.1",
+        "xabbuh/xapi-model": "~0.1",
+        "xabbuh/xapi-serializer": "~0.1",
         "xabbuh/xapi-storage-implementation": "~1.0"
     },
     "require-dev": {
         "matthiasnoback/symfony-dependency-injection-test": "~0.6",
         "phpunit/phpunit": "~4.0",
-        "xabbuh/xapi-data-fixtures": "~1.0",
+        "xabbuh/xapi-data-fixtures": "~0.1",
         "xabbuh/xapi-mongodb-storage": "~1.0"
     },
     "suggest": {
