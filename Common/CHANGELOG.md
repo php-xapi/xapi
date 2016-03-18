@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+0.1.2
+-----
+
 * remove unneeded minimum stability settings
 
 0.1.1
