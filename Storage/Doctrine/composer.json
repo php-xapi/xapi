@@ -13,7 +13,7 @@
     "require": {
         "doctrine/common": "~2.4",
         "xabbuh/xapi-data-fixtures": "~0.1",
-        "xabbuh/xapi-model": "~0.1",
+        "xabbuh/xapi-model": "~0.2",
         "xabbuh/xapi-storage-api": "~0.1"
     },
     "autoload": {

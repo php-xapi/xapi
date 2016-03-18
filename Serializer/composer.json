@@ -14,7 +14,7 @@
     "require": {
         "php": ">=5.3.0",
         "jms/serializer": "~0.16",
-        "xabbuh/xapi-model": "~0.1"
+        "xabbuh/xapi-model": "~0.2"
     },
     "require-dev": {
         "xabbuh/xapi-data-fixtures": "~0.1"
