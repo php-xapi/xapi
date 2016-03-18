@@ -1,7 +1,7 @@
 Xabbuh xApi Common
 ==================
 
-[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/xabbuh/xapi-common/badges/quality-score.png?s=b67412cc8bad9e86bd8fc24fdeb77a6bfea89a70)](https://scrutinizer-ci.com/g/xabbuh/xapi-common/)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/php-xapi/xapi-common/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/php-xapi/xapi-common/?branch=master)
 
 Package providing common functionality for both server and client side implementations
 of the [Experience API](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md).
