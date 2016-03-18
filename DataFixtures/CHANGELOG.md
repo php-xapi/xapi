@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+0.1.1
+-----
+
+* fix lowest required dependency of the model package that contains all
+  required classes
+
 0.1.0
 -----
 
