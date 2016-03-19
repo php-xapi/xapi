@@ -12,8 +12,10 @@
     ],
     "require": {
         "ramsey/uuid": "~2.8",
-        "xabbuh/xapi-data-fixtures": "~0.1",
-        "xabbuh/xapi-model": "~0.2"
+        "php-xapi/model": "~0.1"
+    },
+    "require-dev": {
+        "php-xapi/test-fixtures": "~0.1"
     },
     "autoload": {
         "psr-4": {
@@ -22,7 +24,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.1.x-dev"
+            "dev-master": "0.2.x-dev"
         }
     }
 }
