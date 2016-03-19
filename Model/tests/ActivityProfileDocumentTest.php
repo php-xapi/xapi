@@ -11,16 +11,20 @@
 
 namespace Xabbuh\XApi\Model\Tests;
 
-use Xabbuh\XApi\DataFixtures\DocumentFixtures;
+use Xabbuh\XApi\Model\Activity;
+use Xabbuh\XApi\Model\ActivityProfile;
+use Xabbuh\XApi\Model\ActivityProfileDocument;
 use Xabbuh\XApi\Model\DocumentData;
 
 /**
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */
-class AgentProfileDocumentTest extends AbstractDocumentTest
+class ActivityProfileDocumentTest extends AbstractDocumentTest
 {
     protected function createDocument(DocumentData $data)
     {
-        return DocumentFixtures::getAgentProfileDocument($data);
+        $activityProfile = new ActivityProfile('profile-id', new Activity('activity-id'));
+
+        return new ActivityProfileDocument($activityProfile, $data);
     }
 }

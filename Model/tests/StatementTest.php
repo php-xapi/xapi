@@ -11,10 +11,10 @@
 
 namespace Xabbuh\XApi\Model\Tests;
 
-use Xabbuh\XApi\DataFixtures\ActorFixtures;
-use Xabbuh\XApi\DataFixtures\StatementFixtures;
+use Xabbuh\XApi\Model\Account;
 use Xabbuh\XApi\Model\Activity;
 use Xabbuh\XApi\Model\Agent;
+use Xabbuh\XApi\Model\Group;
 use Xabbuh\XApi\Model\Statement;
 use Xabbuh\XApi\Model\Verb;
 
@@ -65,8 +65,8 @@ class StatementTest extends \PHPUnit_Framework_TestCase
 
     public function testWithAuthority()
     {
-        $statement = StatementFixtures::getMinimalStatement();
-        $authority = ActorFixtures::getAgent();
+        $statement = $this->createMinimalStatement();
+        $authority = $this->createAgent();
         $statementWithAuthority = $statement->withAuthority($authority);
 
         $this->assertFalse($statement->equals($statementWithAuthority));
@@ -80,8 +80,8 @@ class StatementTest extends \PHPUnit_Framework_TestCase
 
     public function testWithAuthorityReplacesExistingAuthority()
     {
-        $statement = StatementFixtures::getStatementWithGroupAuthority();
-        $agentAuthority = ActorFixtures::getAgent();
+        $statement = $this->createStatementWithGroupAuthority();
+        $agentAuthority = $this->createAgent();
         $statementWithAuthority = $statement->withAuthority($agentAuthority);
 
         $this->assertFalse($statement->equals($statementWithAuthority));
@@ -91,5 +91,31 @@ class StatementTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($statement->getObject()->equals($statementWithAuthority->getObject()));
         $this->assertTrue($agentAuthority->equals($statementWithAuthority->getAuthority()));
         $this->assertFalse($statement->getAuthority()->equals($statementWithAuthority->getAuthority()));
+    }
+
+    private function createMinimalStatement()
+    {
+        $actor = new Agent('mailto:xapi@adlnet.gov');
+        $verb = new Verb('http://adlnet.gov/expapi/verbs/created', array('en-US' => 'created'));
+        $activity = new Activity('http://example.adlnet.gov/xapi/example/activity');
+
+        return new Statement('12345678-1234-5678-8234-567812345678', $actor, $verb, $activity);
+    }
+
+    private function createStatementWithGroupAuthority()
+    {
+        $actor = new Agent('mailto:xapi@adlnet.gov');
+        $verb = new Verb('http://adlnet.gov/expapi/verbs/created', array('en-US' => 'created'));
+        $activity = new Activity('http://example.adlnet.gov/xapi/example/activity');
+        $user = new Agent(null, null, null, new Account('oauth_consumer_x75db', 'http://example.com/xAPI/OAuth/Token'));
+        $application = new Agent('mailto:bob@example.com');
+        $authority = new Group(null, null, null, null, null, array($user, $application));
+
+        return new Statement('12345678-1234-5678-8234-567812345678', $actor, $verb, $activity, null, $authority);
+    }
+
+    private function createAgent()
+    {
+        return new Agent('mailto:christian@example.com', null, null, null, 'Christian');
     }
 }

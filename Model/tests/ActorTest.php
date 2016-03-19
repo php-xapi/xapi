@@ -11,7 +11,6 @@
 
 namespace Xabbuh\XApi\Model\Tests;
 
-use Xabbuh\XApi\DataFixtures\ActorFixtures;
 use Xabbuh\XApi\Model\Account;
 use Xabbuh\XApi\Model\Actor;
 use Xabbuh\XApi\Model\Agent;
@@ -24,21 +23,21 @@ class ActorTest extends \PHPUnit_Framework_TestCase
 {
     public function testActorsEqualWhenAllPropertiesAreEqual()
     {
-        $agent1 = ActorFixtures::getAgent();
-        $agent2 = ActorFixtures::getAgent();
+        $agent1 = $this->createAgent();
+        $agent2 = $this->createAgent();
 
         $this->assertTrue($agent1->equals($agent2));
 
-        $group1 = ActorFixtures::getGroup();
-        $group2 = ActorFixtures::getGroup();
+        $group1 = $this->createGroup();
+        $group2 = $this->createGroup();
 
         $this->assertTrue($group1->equals($group2));
     }
 
     public function testAgentAndGroupDoNotEqual()
     {
-        $agent = ActorFixtures::getAgent();
-        $group = ActorFixtures::getGroup();
+        $agent = $this->createAgent();
+        $group = $this->createGroup();
 
         $this->assertFalse($agent->equals($group));
         $this->assertFalse($group->equals($agent));
@@ -151,6 +150,11 @@ class ActorTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+    private function createAgent()
+    {
+        return new Agent('mailto:christian@example.com', null, null, null, 'Christian');
+    }
+
     private function createAgent1()
     {
         return new Agent('mailto:andrew@example.com', null, null, null, 'Andrew Downes');
@@ -164,5 +168,10 @@ class ActorTest extends \PHPUnit_Framework_TestCase
     private function createAgent3()
     {
         return new Agent('mailto:christian@example.com', null, null, null, 'Christian');
+    }
+
+    private function createGroup()
+    {
+        return new Group(null, null, null, new Account('GroupAccount', 'http://example.com/homePage'), 'Example Group');
     }
 }

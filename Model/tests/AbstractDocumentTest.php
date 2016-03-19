@@ -11,7 +11,6 @@
 
 namespace Xabbuh\XApi\Model\Tests;
 
-use Xabbuh\XApi\DataFixtures\DocumentFixtures;
 use Xabbuh\XApi\Model\Document;
 use Xabbuh\XApi\Model\DocumentData;
 
@@ -22,12 +21,12 @@ abstract class AbstractDocumentTest extends \PHPUnit_Framework_TestCase
 {
     public function testReadyOnlyArrayAccessMethods()
     {
-        $data = DocumentFixtures::getEmptyDocumentData();
+        $data = new DocumentData();
         $document = $this->createDocument($data);
 
         $this->assertFalse(isset($document['x']));
 
-        $data = DocumentFixtures::getDocumentData();
+        $data = new DocumentData(array('x' => 'foo', 'y' => 'bar'));
         $document = $this->createDocument($data);
 
         $this->assertTrue(isset($document['x']));
@@ -41,7 +40,7 @@ abstract class AbstractDocumentTest extends \PHPUnit_Framework_TestCase
      */
     public function testSettingDataThrowsException()
     {
-        $data = DocumentFixtures::getEmptyDocumentData();
+        $data = new DocumentData();
         $document = $this->createDocument($data);
         $document['x'] = 'bar';
     }
@@ -51,14 +50,14 @@ abstract class AbstractDocumentTest extends \PHPUnit_Framework_TestCase
      */
     public function testRemovingDataThrowsException()
     {
-        $data = DocumentFixtures::getDocumentData();
+        $data = new DocumentData(array('x' => 'foo', 'y' => 'bar'));
         $document = $this->createDocument($data);
         unset($document['x']);
     }
 
     public function testGetData()
     {
-        $data = DocumentFixtures::getDocumentData();
+        $data = new DocumentData(array('x' => 'foo', 'y' => 'bar'));
         $document = $this->createDocument($data);
 
         $this->assertSame($data, $document->getData());
