@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+0.1.1
+-----
+
+* fix lowest required version of `xabbuh/xapi-model`
+
 0.1.0
 -----
 
