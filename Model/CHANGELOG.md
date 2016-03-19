@@ -1,10 +1,22 @@
 CHANGELOG
 =========
 
+0.3.0
+-----
+
+* removed dependency on `xabbuh/xapi-data-fixtures` to fix  cyclic dependency
+
+* replaced dependency on `xabbuh/xapi-common` with its `php-xapi/exception`
+  replacement
+
+**CAUTION**: This is the last release of this package and it will no longer be
+maintained in the future. Please use the `php-xapi/model` package instead which
+provides the same features.
+
 0.2.1
 -----
 
-* depend on a released version of the `xabbuh/xapi-data-fixtures-package`
+* depend on a released version of the `xabbuh/xapi-data-fixtures` package
 
 0.2.0
 -----

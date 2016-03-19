@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "xabbuh/xapi-common": "~0.1"
+        "php-xapi/exception": "~0.1"
     },
     "autoload": {
         "psr-4": {
