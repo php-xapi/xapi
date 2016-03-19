@@ -26,10 +26,10 @@
         "matthiasnoback/symfony-dependency-injection-test": "~0.6",
         "phpunit/phpunit": "~4.0",
         "xabbuh/xapi-data-fixtures": "~0.1",
-        "xabbuh/xapi-mongodb-storage": "~1.0"
+        "xabbuh/xapi-mongodb-storage": "~0.1@dev"
     },
     "suggest": {
-        "xabbuh/xapi-storage-mongodb": "Allows to store statements in MongoDB"
+        "xabbuh/xapi-mongodb-storage": "Allows to store statements in MongoDB"
     },
     "autoload": {
         "psr-4": {

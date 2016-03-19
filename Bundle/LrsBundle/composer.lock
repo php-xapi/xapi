@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "97aca4a66cd9b75b48cc65bc54ee0252",
-    "content-hash": "1ff927bbd7e8f07ad477e124027ea34d",
+    "hash": "5e3b8e4dbb53cc307f616786b96c5abc",
+    "content-hash": "70cfd5f3a42aab40c696a2bbde8590d6",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -883,16 +883,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v1.3.0",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "ff76e1a660669bb56ba74ba0583fd8d41417bf39"
+                "reference": "c7e26a21ba357863de030f0b9e701c7d04593774"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/ff76e1a660669bb56ba74ba0583fd8d41417bf39",
-                "reference": "ff76e1a660669bb56ba74ba0583fd8d41417bf39",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/c7e26a21ba357863de030f0b9e701c7d04593774",
+                "reference": "c7e26a21ba357863de030f0b9e701c7d04593774",
                 "shasum": ""
             },
             "require": {
@@ -927,7 +927,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-03-17 16:11:57"
+            "time": "2016-03-18 20:34:03"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -2570,16 +2570,16 @@
         },
         {
             "name": "xabbuh/xapi-common",
-            "version": "dev-master",
+            "version": "v0.1.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/xabbuh/xapi-common.git",
-                "reference": "b39c5fee9dd125498ee380ed75ee2b6d718174d2"
+                "url": "https://github.com/php-xapi/xapi-common.git",
+                "reference": "21208380a542ad484681556341e663cf93f6a262"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-common/zipball/b39c5fee9dd125498ee380ed75ee2b6d718174d2",
-                "reference": "b39c5fee9dd125498ee380ed75ee2b6d718174d2",
+                "url": "https://api.github.com/repos/php-xapi/xapi-common/zipball/21208380a542ad484681556341e663cf93f6a262",
+                "reference": "21208380a542ad484681556341e663cf93f6a262",
                 "shasum": ""
             },
             "require": {
@@ -2588,7 +2588,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "0.1.x-dev"
                 }
             },
             "autoload": {
@@ -2607,36 +2607,36 @@
                 }
             ],
             "description": "base package for Experience API implementations",
-            "homepage": "https://github.com/xabbuh/xapi-common",
+            "homepage": "https://github.com/php-xapi/xapi-common",
             "keywords": [
                 "Experience API",
                 "Tin Can API",
                 "xAPI"
             ],
-            "time": "2015-01-23 16:52:34"
+            "time": "2016-03-18 12:55:39"
         },
         {
             "name": "xabbuh/xapi-data-fixtures",
-            "version": "dev-master",
+            "version": "v0.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/xabbuh/xapi-data-fixtures.git",
-                "reference": "5d0fb8d4d8fc1193c23159e0b80ccf9f2218a420"
+                "url": "https://github.com/php-xapi/xapi-data-fixtures.git",
+                "reference": "db31e1a75e66b775358548ba854d9ada621e9f09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-data-fixtures/zipball/5d0fb8d4d8fc1193c23159e0b80ccf9f2218a420",
-                "reference": "5d0fb8d4d8fc1193c23159e0b80ccf9f2218a420",
+                "url": "https://api.github.com/repos/php-xapi/xapi-data-fixtures/zipball/db31e1a75e66b775358548ba854d9ada621e9f09",
+                "reference": "db31e1a75e66b775358548ba854d9ada621e9f09",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
-                "xabbuh/xapi-model": "~1.0"
+                "xabbuh/xapi-model": "~0.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "0.1.x-dev"
                 }
             },
             "autoload": {
@@ -2655,7 +2655,7 @@
                 }
             ],
             "description": "common test data fixtures for the xAPI libraries",
-            "homepage": "https://github.com/xabbuh/xapi-data-fixtures",
+            "homepage": "https://github.com/php-xapi/xapi-data-fixtures",
             "keywords": [
                 "Data fixtures",
                 "Experience API",
@@ -2663,32 +2663,32 @@
                 "fixtures",
                 "xAPI"
             ],
-            "time": "2015-04-25 09:15:52"
+            "time": "2016-03-18 17:25:07"
         },
         {
             "name": "xabbuh/xapi-doctrine-storage",
-            "version": "dev-master",
+            "version": "v0.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/xabbuh/xapi-doctrine-storage.git",
-                "reference": "5b25ef10b811abdcc2c92b15061e071802adc64e"
+                "url": "https://github.com/php-xapi/xapi-doctrine-storage.git",
+                "reference": "43807ae45969274c3faa378d7db00dc0a3bc242e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-doctrine-storage/zipball/5b25ef10b811abdcc2c92b15061e071802adc64e",
-                "reference": "5b25ef10b811abdcc2c92b15061e071802adc64e",
+                "url": "https://api.github.com/repos/php-xapi/xapi-doctrine-storage/zipball/43807ae45969274c3faa378d7db00dc0a3bc242e",
+                "reference": "43807ae45969274c3faa378d7db00dc0a3bc242e",
                 "shasum": ""
             },
             "require": {
                 "doctrine/common": "~2.4",
-                "xabbuh/xapi-data-fixtures": "~1.0",
-                "xabbuh/xapi-model": "~1.0",
-                "xabbuh/xapi-storage-api": "~1.0"
+                "xabbuh/xapi-data-fixtures": "~0.1",
+                "xabbuh/xapi-model": "~0.2",
+                "xabbuh/xapi-storage-api": "~0.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "0.1.x-dev"
                 }
             },
             "autoload": {
@@ -2707,7 +2707,7 @@
                 }
             ],
             "description": "common classes for Doctrine based driver implementations of an xAPI storage",
-            "homepage": "https://github.com/xabbuh/xapi-doctrine-storage/",
+            "homepage": "https://github.com/php-xapi/xapi-doctrine-storage/",
             "keywords": [
                 "Experience API",
                 "Tin Can API",
@@ -2718,33 +2718,33 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2015-05-13 21:17:55"
+            "time": "2016-03-18 18:07:25"
         },
         {
             "name": "xabbuh/xapi-model",
-            "version": "dev-master",
+            "version": "v0.2.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/xabbuh/xapi-model.git",
-                "reference": "491cd0a8fc89ad7b79f5ab030b63090471c8ee7f"
+                "url": "https://github.com/php-xapi/xapi-model.git",
+                "reference": "a4d870aff5af27b73d72dfcd4ce79c51ae5888db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-model/zipball/491cd0a8fc89ad7b79f5ab030b63090471c8ee7f",
-                "reference": "491cd0a8fc89ad7b79f5ab030b63090471c8ee7f",
+                "url": "https://api.github.com/repos/php-xapi/xapi-model/zipball/a4d870aff5af27b73d72dfcd4ce79c51ae5888db",
+                "reference": "a4d870aff5af27b73d72dfcd4ce79c51ae5888db",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
-                "xabbuh/xapi-common": "~1.0"
+                "xabbuh/xapi-common": "~0.1"
             },
             "require-dev": {
-                "xabbuh/xapi-data-fixtures": "~1.0"
+                "xabbuh/xapi-data-fixtures": "~0.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "0.1.x-dev"
                 }
             },
             "autoload": {
@@ -2763,45 +2763,45 @@
                 }
             ],
             "description": "Experience API model classes",
-            "homepage": "https://github.com/xabbuh/xapi-model",
+            "homepage": "https://github.com/php-xapi/xapi-model",
             "keywords": [
                 "Experience API",
                 "Tin Can API",
                 "models",
                 "xAPI"
             ],
-            "time": "2015-05-13 21:15:27"
+            "time": "2016-03-18 13:43:51"
         },
         {
             "name": "xabbuh/xapi-mongodb-storage",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/xabbuh/xapi-mongodb-storage.git",
-                "reference": "c564a10225ab380c625dc96382dc7cd31d4b7eee"
+                "url": "https://github.com/php-xapi/xapi-mongodb-storage.git",
+                "reference": "7a8e229b4ca85f0bd2ef4bd0bef975fe022ff8b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-mongodb-storage/zipball/c564a10225ab380c625dc96382dc7cd31d4b7eee",
-                "reference": "c564a10225ab380c625dc96382dc7cd31d4b7eee",
+                "url": "https://api.github.com/repos/php-xapi/xapi-mongodb-storage/zipball/7a8e229b4ca85f0bd2ef4bd0bef975fe022ff8b9",
+                "reference": "7a8e229b4ca85f0bd2ef4bd0bef975fe022ff8b9",
                 "shasum": ""
             },
             "require": {
                 "doctrine/mongodb-odm": "~1.0,>=1.0.0-BETA6",
-                "xabbuh/xapi-doctrine-storage": "~1.0",
-                "xabbuh/xapi-model": "~1.0",
-                "xabbuh/xapi-storage-api": "~1.0"
+                "xabbuh/xapi-doctrine-storage": "~0.1",
+                "xabbuh/xapi-model": "~0.1",
+                "xabbuh/xapi-storage-api": "~0.1"
             },
             "provide": {
                 "xabbuh/xapi-storage-implementation": "1.0"
             },
             "require-dev": {
-                "xabbuh/xapi-common": "~1.0"
+                "xabbuh/xapi-common": "~0.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "0.1.x-dev"
                 }
             },
             "autoload": {
@@ -2820,7 +2820,7 @@
                 }
             ],
             "description": "MongoDB driver implementation of an xAPI storage",
-            "homepage": "https://github.com/xabbuh/xapi-mongodb-storage/",
+            "homepage": "https://github.com/php-xapi/xapi-mongodb-storage/",
             "keywords": [
                 "Experience API",
                 "Tin Can API",
@@ -2831,34 +2831,34 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2015-11-26 22:43:56"
+            "time": "2016-03-19 09:38:54"
         },
         {
             "name": "xabbuh/xapi-serializer",
-            "version": "dev-master",
+            "version": "v0.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/xabbuh/xapi-serializer.git",
-                "reference": "e6bfb91ba30493743ce186217db7b8b61dd01975"
+                "url": "https://github.com/php-xapi/xapi-serializer.git",
+                "reference": "8d63b9933ab65357a00ce9ba325995007341cd85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-serializer/zipball/e6bfb91ba30493743ce186217db7b8b61dd01975",
-                "reference": "e6bfb91ba30493743ce186217db7b8b61dd01975",
+                "url": "https://api.github.com/repos/php-xapi/xapi-serializer/zipball/8d63b9933ab65357a00ce9ba325995007341cd85",
+                "reference": "8d63b9933ab65357a00ce9ba325995007341cd85",
                 "shasum": ""
             },
             "require": {
                 "jms/serializer": "~0.16",
                 "php": ">=5.3.0",
-                "xabbuh/xapi-model": "~1.0"
+                "xabbuh/xapi-model": "~0.1"
             },
             "require-dev": {
-                "xabbuh/xapi-data-fixtures": "~1.0"
+                "xabbuh/xapi-data-fixtures": "~0.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "0.1.x-dev"
                 }
             },
             "autoload": {
@@ -2877,38 +2877,38 @@
                 }
             ],
             "description": "Experience API model serializer",
-            "homepage": "https://github.com/xabbuh/xapi-serializer",
+            "homepage": "https://github.com/php-xapi/xapi-serializer",
             "keywords": [
                 "Experience API",
                 "Tin Can API",
                 "serializer",
                 "xAPI"
             ],
-            "time": "2015-05-13 21:15:27"
+            "time": "2016-03-18 14:09:21"
         },
         {
             "name": "xabbuh/xapi-storage-api",
-            "version": "dev-master",
+            "version": "v0.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/xabbuh/xapi-storage-api.git",
-                "reference": "5d82770a74fd6cb9840f1dd97c010c7e4fa1895e"
+                "url": "https://github.com/php-xapi/xapi-storage-api.git",
+                "reference": "d65f91ad767062869641fe15c2298a0997c08aa6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xabbuh/xapi-storage-api/zipball/5d82770a74fd6cb9840f1dd97c010c7e4fa1895e",
-                "reference": "5d82770a74fd6cb9840f1dd97c010c7e4fa1895e",
+                "url": "https://api.github.com/repos/php-xapi/xapi-storage-api/zipball/d65f91ad767062869641fe15c2298a0997c08aa6",
+                "reference": "d65f91ad767062869641fe15c2298a0997c08aa6",
                 "shasum": ""
             },
             "require": {
                 "ramsey/uuid": "~2.8",
-                "xabbuh/xapi-data-fixtures": "~1.0",
-                "xabbuh/xapi-model": "~1.0"
+                "xabbuh/xapi-data-fixtures": "~0.1",
+                "xabbuh/xapi-model": "~0.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "0.1.x-dev"
                 }
             },
             "autoload": {
@@ -2927,7 +2927,7 @@
                 }
             ],
             "description": "abstract definition of an xAPI storage interface",
-            "homepage": "https://github.com/xabbuh/xapi-storage-api",
+            "homepage": "https://github.com/php-xapi/xapi-storage-api",
             "keywords": [
                 "Experience API",
                 "Tin Can API",
@@ -2936,7 +2936,7 @@
                 "storage",
                 "xAPI"
             ],
-            "time": "2015-05-13 21:15:27"
+            "time": "2016-03-18 14:31:40"
         }
     ],
     "packages-dev": [
@@ -3939,7 +3939,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "xabbuh/xapi-mongodb-storage": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],

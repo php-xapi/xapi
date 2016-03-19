@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "doctrine/mongodb-odm": "~1.0,>=1.0.0-BETA6",
+        "doctrine/mongodb-odm": "~1.0",
         "xabbuh/xapi-doctrine-storage": "~0.1",
         "xabbuh/xapi-model": "~0.1",
         "xabbuh/xapi-storage-api": "~0.1"
