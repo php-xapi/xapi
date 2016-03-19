@@ -36,7 +36,7 @@ before_install:
 
 install:
   - if [ "$deps" = "low" ]; then composer update --prefer-lowest --prefer-stable; fi
-  - if [ "$deps" = "" ]; then composer install; fi
+  - if [ "$deps" = "" ]; then composer update; fi
 
 script:
   - ./vendor/bin/phpunit --coverage-clover=coverage.clover
