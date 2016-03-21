@@ -12,15 +12,15 @@
     ],
     "require": {
         "doctrine/mongodb-odm": "~1.0",
-        "xabbuh/xapi-doctrine-storage": "~0.1",
-        "xabbuh/xapi-model": "~0.1",
-        "xabbuh/xapi-storage-api": "~0.1"
+        "php-xapi/model": "^0.1.0",
+        "php-xapi/repository-api": "^0.1.1",
+        "php-xapi/repository-doctrine": "^0.1.0"
     },
     "require-dev": {
-        "xabbuh/xapi-common": "~0.1"
+        "php-xapi/exception": "^0.1.0"
     },
     "provide": {
-        "xabbuh/xapi-storage-implementation": "1.0"
+        "php-xapi/repository-implementation": "1.0"
     },
     "autoload": {
         "psr-4": {
