@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5e3b8e4dbb53cc307f616786b96c5abc",
-    "content-hash": "70cfd5f3a42aab40c696a2bbde8590d6",
+    "hash": "8200c43257e373d45586a9db7e6da42d",
+    "content-hash": "0c8d64c7d2fac5f8ececd36b65797340",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -461,16 +461,16 @@
         },
         {
             "name": "doctrine/mongodb",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb.git",
-                "reference": "7a724d9f200b032afc69ee1ad373f6fe5bcbdd9a"
+                "reference": "9fa84e26943a654a278b477d8d341c9916cc8e8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/7a724d9f200b032afc69ee1ad373f6fe5bcbdd9a",
-                "reference": "7a724d9f200b032afc69ee1ad373f6fe5bcbdd9a",
+                "url": "https://api.github.com/repos/doctrine/mongodb/zipball/9fa84e26943a654a278b477d8d341c9916cc8e8c",
+                "reference": "9fa84e26943a654a278b477d8d341c9916cc8e8c",
                 "shasum": ""
             },
             "require": {
@@ -527,7 +527,7 @@
                 "mongodb",
                 "persistence"
             ],
-            "time": "2015-11-24 13:28:35"
+            "time": "2016-03-19 18:20:33"
         },
         {
             "name": "doctrine/mongodb-odm",
@@ -928,6 +928,398 @@
                 "random"
             ],
             "time": "2016-03-18 20:34:03"
+        },
+        {
+            "name": "php-xapi/exception",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-xapi/exception.git",
+                "reference": "a2648a9b7478efad9b45dccca4e29acb659776fc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-xapi/exception/zipball/a2648a9b7478efad9b45dccca4e29acb659776fc",
+                "reference": "a2648a9b7478efad9b45dccca4e29acb659776fc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "conflict": {
+                "xabbuh/xapi-common": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Xabbuh\\XApi\\Common\\Exception\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Flothmann",
+                    "homepage": "https://github.com/xabbuh"
+                }
+            ],
+            "description": "common exception classes for Experience API implementations",
+            "homepage": "https://github.com/php-xapi/exception",
+            "keywords": [
+                "Experience API",
+                "Tin Can API",
+                "exception",
+                "xAPI"
+            ],
+            "time": "2016-03-19 13:48:45"
+        },
+        {
+            "name": "php-xapi/model",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-xapi/model.git",
+                "reference": "53cbbd52135b9aad354e5e22994960846a89fdd7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-xapi/model/zipball/53cbbd52135b9aad354e5e22994960846a89fdd7",
+                "reference": "53cbbd52135b9aad354e5e22994960846a89fdd7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "php-xapi/exception": "~0.1"
+            },
+            "conflict": {
+                "xabbuh/xapi-model": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Xabbuh\\XApi\\Model\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Flothmann",
+                    "homepage": "https://github.com/xabbuh"
+                }
+            ],
+            "description": "Experience API model classes",
+            "homepage": "https://github.com/php-xapi/model",
+            "keywords": [
+                "Experience API",
+                "Tin Can API",
+                "models",
+                "xAPI"
+            ],
+            "time": "2016-03-19 14:50:27"
+        },
+        {
+            "name": "php-xapi/repository-api",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-xapi/repository-api.git",
+                "reference": "9ea77f2c5f0eb351515d48c58d493916d6445bf3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-xapi/repository-api/zipball/9ea77f2c5f0eb351515d48c58d493916d6445bf3",
+                "reference": "9ea77f2c5f0eb351515d48c58d493916d6445bf3",
+                "shasum": ""
+            },
+            "require": {
+                "php-xapi/model": "~0.1",
+                "php-xapi/test-fixtures": "~0.1",
+                "ramsey/uuid": "~2.8"
+            },
+            "conflict": {
+                "xabbuh/xapi-storage-api": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Xabbuh\\XApi\\Storage\\Api\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Flothmann",
+                    "homepage": "https://github.com/xabbuh"
+                }
+            ],
+            "description": "abstract definition of an xAPI repository interface",
+            "homepage": "https://github.com/php-xapi/repository-api",
+            "keywords": [
+                "Experience API",
+                "Tin Can API",
+                "database",
+                "repository",
+                "storage",
+                "xAPI"
+            ],
+            "time": "2016-03-21 11:56:25"
+        },
+        {
+            "name": "php-xapi/repository-doctrine",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-xapi/repository-doctrine.git",
+                "reference": "ffb8174c94c38ee62a74d2ccf122bf74b4df5c9f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-xapi/repository-doctrine/zipball/ffb8174c94c38ee62a74d2ccf122bf74b4df5c9f",
+                "reference": "ffb8174c94c38ee62a74d2ccf122bf74b4df5c9f",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": "~2.4",
+                "php-xapi/model": "^0.1.0",
+                "php-xapi/repository-api": "^0.1.0"
+            },
+            "conflict": {
+                "xabbuh/xapi-doctrine-storage": "*"
+            },
+            "require-dev": {
+                "php-xapi/test-fixtures": "^0.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Xabbuh\\XApi\\Storage\\Doctrine\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Flothmann",
+                    "homepage": "https://github.com/xabbuh"
+                }
+            ],
+            "description": "common classes for Doctrine based implementations of an xAPI repository",
+            "homepage": "https://github.com/php-xapi/repository-doctrine/",
+            "keywords": [
+                "Experience API",
+                "Tin Can API",
+                "database",
+                "doctrine",
+                "document",
+                "repository",
+                "storage",
+                "xAPI"
+            ],
+            "time": "2016-03-21 11:02:29"
+        },
+        {
+            "name": "php-xapi/repository-mongodb",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-xapi/repository-mongodb.git",
+                "reference": "ba1f328b3f3d99ea04cc7216a663dc8af7d82229"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-xapi/repository-mongodb/zipball/ba1f328b3f3d99ea04cc7216a663dc8af7d82229",
+                "reference": "ba1f328b3f3d99ea04cc7216a663dc8af7d82229",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/mongodb-odm": "~1.0",
+                "php-xapi/model": "^0.1.0",
+                "php-xapi/repository-api": "^0.1.1",
+                "php-xapi/repository-doctrine": "^0.1.0"
+            },
+            "conflict": {
+                "xabbuh/xapi-mongodb-storage": "*"
+            },
+            "provide": {
+                "php-xapi/repository-implementation": "0.1"
+            },
+            "require-dev": {
+                "php-xapi/exception": "^0.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Xabbuh\\XApi\\Storage\\MongoDB\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Flothmann",
+                    "homepage": "https://github.com/xabbuh"
+                }
+            ],
+            "description": "MongoDB implementation of an xAPI (Experience API) repository",
+            "homepage": "https://github.com/php-xapi/repository-mongodb/",
+            "keywords": [
+                "Experience API",
+                "Tin Can API",
+                "database",
+                "document",
+                "mongodb",
+                "repository",
+                "storage",
+                "xAPI"
+            ],
+            "time": "2016-03-21 12:30:12"
+        },
+        {
+            "name": "php-xapi/serializer",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-xapi/serializer.git",
+                "reference": "54f569e72217b051fb3fd0c606122c800a26a2a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-xapi/serializer/zipball/54f569e72217b051fb3fd0c606122c800a26a2a3",
+                "reference": "54f569e72217b051fb3fd0c606122c800a26a2a3",
+                "shasum": ""
+            },
+            "require": {
+                "jms/serializer": "~0.16",
+                "php": ">=5.3.0",
+                "php-xapi/model": "~0.1"
+            },
+            "conflict": {
+                "xabbuh/xapi-serializer": "*"
+            },
+            "require-dev": {
+                "php-xapi/test-fixtures": "~0.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Xabbuh\\XApi\\Serializer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Flothmann",
+                    "homepage": "https://github.com/xabbuh"
+                }
+            ],
+            "description": "transform Experience API model objects to JSON strings and vice versa",
+            "homepage": "https://github.com/php-xapi/serializer",
+            "keywords": [
+                "Experience API",
+                "Tin Can API",
+                "serializer",
+                "xAPI"
+            ],
+            "time": "2016-03-20 08:19:24"
+        },
+        {
+            "name": "php-xapi/test-fixtures",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-xapi/test-fixtures.git",
+                "reference": "dd1fd603970812c4af0376cb23d4afbb16ae85e2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-xapi/test-fixtures/zipball/dd1fd603970812c4af0376cb23d4afbb16ae85e2",
+                "reference": "dd1fd603970812c4af0376cb23d4afbb16ae85e2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "php-xapi/model": "~0.1"
+            },
+            "conflict": {
+                "xabbuh/xapi-data-fixtures": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Xabbuh\\XApi\\DataFixtures\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Flothmann",
+                    "homepage": "https://github.com/xabbuh"
+                }
+            ],
+            "description": "common test data fixtures for Experience API related packages",
+            "homepage": "https://github.com/php-xapi/test-fixtures",
+            "keywords": [
+                "Data fixtures",
+                "Experience API",
+                "Tin Can API",
+                "fixtures",
+                "test fixtures",
+                "xAPI"
+            ],
+            "time": "2016-03-19 15:28:46"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -2567,376 +2959,6 @@
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
             "time": "2016-02-02 09:49:18"
-        },
-        {
-            "name": "xabbuh/xapi-common",
-            "version": "v0.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-xapi/xapi-common.git",
-                "reference": "21208380a542ad484681556341e663cf93f6a262"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-xapi/xapi-common/zipball/21208380a542ad484681556341e663cf93f6a262",
-                "reference": "21208380a542ad484681556341e663cf93f6a262",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Xabbuh\\XApi\\Common\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christian Flothmann",
-                    "homepage": "https://github.com/xabbuh"
-                }
-            ],
-            "description": "base package for Experience API implementations",
-            "homepage": "https://github.com/php-xapi/xapi-common",
-            "keywords": [
-                "Experience API",
-                "Tin Can API",
-                "xAPI"
-            ],
-            "time": "2016-03-18 12:55:39"
-        },
-        {
-            "name": "xabbuh/xapi-data-fixtures",
-            "version": "v0.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-xapi/xapi-data-fixtures.git",
-                "reference": "db31e1a75e66b775358548ba854d9ada621e9f09"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-xapi/xapi-data-fixtures/zipball/db31e1a75e66b775358548ba854d9ada621e9f09",
-                "reference": "db31e1a75e66b775358548ba854d9ada621e9f09",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "xabbuh/xapi-model": "~0.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Xabbuh\\XApi\\DataFixtures\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christian Flothmann",
-                    "homepage": "https://github.com/xabbuh"
-                }
-            ],
-            "description": "common test data fixtures for the xAPI libraries",
-            "homepage": "https://github.com/php-xapi/xapi-data-fixtures",
-            "keywords": [
-                "Data fixtures",
-                "Experience API",
-                "Tin Can API",
-                "fixtures",
-                "xAPI"
-            ],
-            "time": "2016-03-18 17:25:07"
-        },
-        {
-            "name": "xabbuh/xapi-doctrine-storage",
-            "version": "v0.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-xapi/xapi-doctrine-storage.git",
-                "reference": "43807ae45969274c3faa378d7db00dc0a3bc242e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-xapi/xapi-doctrine-storage/zipball/43807ae45969274c3faa378d7db00dc0a3bc242e",
-                "reference": "43807ae45969274c3faa378d7db00dc0a3bc242e",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/common": "~2.4",
-                "xabbuh/xapi-data-fixtures": "~0.1",
-                "xabbuh/xapi-model": "~0.2",
-                "xabbuh/xapi-storage-api": "~0.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Xabbuh\\XApi\\Storage\\Doctrine\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christian Flothmann",
-                    "homepage": "https://github.com/xabbuh"
-                }
-            ],
-            "description": "common classes for Doctrine based driver implementations of an xAPI storage",
-            "homepage": "https://github.com/php-xapi/xapi-doctrine-storage/",
-            "keywords": [
-                "Experience API",
-                "Tin Can API",
-                "database",
-                "doctrine",
-                "document",
-                "repository",
-                "storage",
-                "xAPI"
-            ],
-            "time": "2016-03-18 18:07:25"
-        },
-        {
-            "name": "xabbuh/xapi-model",
-            "version": "v0.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-xapi/xapi-model.git",
-                "reference": "a4d870aff5af27b73d72dfcd4ce79c51ae5888db"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-xapi/xapi-model/zipball/a4d870aff5af27b73d72dfcd4ce79c51ae5888db",
-                "reference": "a4d870aff5af27b73d72dfcd4ce79c51ae5888db",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "xabbuh/xapi-common": "~0.1"
-            },
-            "require-dev": {
-                "xabbuh/xapi-data-fixtures": "~0.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Xabbuh\\XApi\\Model\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christian Flothmann",
-                    "homepage": "https://github.com/xabbuh"
-                }
-            ],
-            "description": "Experience API model classes",
-            "homepage": "https://github.com/php-xapi/xapi-model",
-            "keywords": [
-                "Experience API",
-                "Tin Can API",
-                "models",
-                "xAPI"
-            ],
-            "time": "2016-03-18 13:43:51"
-        },
-        {
-            "name": "xabbuh/xapi-mongodb-storage",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-xapi/xapi-mongodb-storage.git",
-                "reference": "7a8e229b4ca85f0bd2ef4bd0bef975fe022ff8b9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-xapi/xapi-mongodb-storage/zipball/7a8e229b4ca85f0bd2ef4bd0bef975fe022ff8b9",
-                "reference": "7a8e229b4ca85f0bd2ef4bd0bef975fe022ff8b9",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/mongodb-odm": "~1.0,>=1.0.0-BETA6",
-                "xabbuh/xapi-doctrine-storage": "~0.1",
-                "xabbuh/xapi-model": "~0.1",
-                "xabbuh/xapi-storage-api": "~0.1"
-            },
-            "provide": {
-                "xabbuh/xapi-storage-implementation": "1.0"
-            },
-            "require-dev": {
-                "xabbuh/xapi-common": "~0.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Xabbuh\\XApi\\Storage\\MongoDB\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christian Flothmann",
-                    "homepage": "https://github.com/xabbuh"
-                }
-            ],
-            "description": "MongoDB driver implementation of an xAPI storage",
-            "homepage": "https://github.com/php-xapi/xapi-mongodb-storage/",
-            "keywords": [
-                "Experience API",
-                "Tin Can API",
-                "database",
-                "document",
-                "mongodb",
-                "repository",
-                "storage",
-                "xAPI"
-            ],
-            "time": "2016-03-19 09:38:54"
-        },
-        {
-            "name": "xabbuh/xapi-serializer",
-            "version": "v0.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-xapi/xapi-serializer.git",
-                "reference": "8d63b9933ab65357a00ce9ba325995007341cd85"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-xapi/xapi-serializer/zipball/8d63b9933ab65357a00ce9ba325995007341cd85",
-                "reference": "8d63b9933ab65357a00ce9ba325995007341cd85",
-                "shasum": ""
-            },
-            "require": {
-                "jms/serializer": "~0.16",
-                "php": ">=5.3.0",
-                "xabbuh/xapi-model": "~0.1"
-            },
-            "require-dev": {
-                "xabbuh/xapi-data-fixtures": "~0.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Xabbuh\\XApi\\Serializer\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christian Flothmann",
-                    "homepage": "https://github.com/xabbuh"
-                }
-            ],
-            "description": "Experience API model serializer",
-            "homepage": "https://github.com/php-xapi/xapi-serializer",
-            "keywords": [
-                "Experience API",
-                "Tin Can API",
-                "serializer",
-                "xAPI"
-            ],
-            "time": "2016-03-18 14:09:21"
-        },
-        {
-            "name": "xabbuh/xapi-storage-api",
-            "version": "v0.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-xapi/xapi-storage-api.git",
-                "reference": "d65f91ad767062869641fe15c2298a0997c08aa6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-xapi/xapi-storage-api/zipball/d65f91ad767062869641fe15c2298a0997c08aa6",
-                "reference": "d65f91ad767062869641fe15c2298a0997c08aa6",
-                "shasum": ""
-            },
-            "require": {
-                "ramsey/uuid": "~2.8",
-                "xabbuh/xapi-data-fixtures": "~0.1",
-                "xabbuh/xapi-model": "~0.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Xabbuh\\XApi\\Storage\\Api\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christian Flothmann",
-                    "homepage": "https://github.com/xabbuh"
-                }
-            ],
-            "description": "abstract definition of an xAPI storage interface",
-            "homepage": "https://github.com/php-xapi/xapi-storage-api",
-            "keywords": [
-                "Experience API",
-                "Tin Can API",
-                "database",
-                "repository",
-                "storage",
-                "xAPI"
-            ],
-            "time": "2016-03-18 14:31:40"
         }
     ],
     "packages-dev": [
@@ -3938,11 +3960,9 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
-    "stability-flags": {
-        "xabbuh/xapi-mongodb-storage": 20
-    },
-    "prefer-stable": true,
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": []

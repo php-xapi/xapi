@@ -13,34 +13,32 @@
     ],
     "require": {
         "jms/serializer-bundle": "~0.9",
+        "php-xapi/exception": "^0.1.0",
+        "php-xapi/model": "^0.1.0",
+        "php-xapi/serializer": "^0.1.0",
+        "php-xapi/repository-implementation": "^0.1.0",
         "symfony/config": "~2.3",
         "symfony/dependency-injection": "~2.3",
         "symfony/http-foundation": "~2.3",
-        "symfony/http-kernel": "~2.3",
-        "xabbuh/xapi-common": "~0.1",
-        "xabbuh/xapi-model": "~0.1",
-        "xabbuh/xapi-serializer": "~0.1",
-        "xabbuh/xapi-storage-implementation": "~1.0"
+        "symfony/http-kernel": "~2.3"
     },
     "require-dev": {
         "matthiasnoback/symfony-dependency-injection-test": "~0.6",
         "phpunit/phpunit": "~4.0",
-        "xabbuh/xapi-data-fixtures": "~0.1",
-        "xabbuh/xapi-mongodb-storage": "~0.1@dev"
+        "php-xapi/repository-mongodb": "^0.1.0",
+        "php-xapi/test-fixtures": "^0.1.0"
     },
     "suggest": {
-        "xabbuh/xapi-mongodb-storage": "Allows to store statements in MongoDB"
+        "php-xapi/repository-mongodb": "Allows to store statements in MongoDB"
     },
     "autoload": {
         "psr-4": {
             "Xabbuh\\XApi\\Bundle\\LrsBundle\\": ""
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0.x-dev"
+            "dev-master": "0.1.x-dev"
         }
     }
 }
